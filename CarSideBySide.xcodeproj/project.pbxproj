@@ -13,9 +13,6 @@
 		FA2AF96A1755A50A001BA8ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9681755A50A001BA8ED /* InfoPlist.strings */; };
 		FA2AF96C1755A50A001BA8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF96B1755A50A001BA8ED /* main.m */; };
 		FA2AF9701755A50A001BA8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF96F1755A50A001BA8ED /* AppDelegate.m */; };
-		FA2AF9721755A50A001BA8ED /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9711755A50A001BA8ED /* Default.png */; };
-		FA2AF9741755A50A001BA8ED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9731755A50A001BA8ED /* Default@2x.png */; };
-		FA2AF9761755A50A001BA8ED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9751755A50A001BA8ED /* Default-568h@2x.png */; };
 		FA2AF9791755A50A001BA8ED /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9771755A50A001BA8ED /* MainStoryboard.storyboard */; };
 		FA2AF97C1755A50A001BA8ED /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF97B1755A50A001BA8ED /* FirstViewController.m */; };
 		FA2AF97E1755A50A001BA8ED /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF97D1755A50A001BA8ED /* first.png */; };
@@ -29,6 +26,10 @@
 		FA2AF9991755A50B001BA8ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9971755A50B001BA8ED /* InfoPlist.strings */; };
 		FA2AF99C1755A50B001BA8ED /* CarSideBySideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF99B1755A50B001BA8ED /* CarSideBySideTests.m */; };
 		FA2AF9A61755B3B9001BA8ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9A51755B3B9001BA8ED /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		FA5D5FB71755C91000C14D02 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */; };
+		FA5D5FB81755C91000C14D02 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */; };
+		FA5D5FB91755C91000C14D02 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB51755C91000C14D02 /* Icon-72.png */; };
+		FA5D5FBA1755C91000C14D02 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB61755C91000C14D02 /* Icon-72@2x.png */; };
 		FA88C2BB1755B90400603295 /* CarSideBySide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */; };
 		FA88C2C21755BDFB00603295 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2C11755BDFB00603295 /* Line.m */; };
 		FA88C2C51755BDFB00603295 /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2C41755BDFB00603295 /* Serie.m */; };
@@ -57,9 +58,6 @@
 		FA2AF96D1755A50A001BA8ED /* CarSideBySide-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CarSideBySide-Prefix.pch"; sourceTree = "<group>"; };
 		FA2AF96E1755A50A001BA8ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA2AF96F1755A50A001BA8ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FA2AF9711755A50A001BA8ED /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		FA2AF9731755A50A001BA8ED /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		FA2AF9751755A50A001BA8ED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FA2AF9781755A50A001BA8ED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FA2AF97A1755A50A001BA8ED /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		FA2AF97B1755A50A001BA8ED /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
@@ -76,6 +74,10 @@
 		FA2AF99A1755A50B001BA8ED /* CarSideBySideTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarSideBySideTests.h; sourceTree = "<group>"; };
 		FA2AF99B1755A50B001BA8ED /* CarSideBySideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarSideBySideTests.m; sourceTree = "<group>"; };
 		FA2AF9A51755B3B9001BA8ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../CarSideBySide.old/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../CarSideBySide.old/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		FA5D5FB51755C91000C14D02 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../../CarSideBySide.old/Icon-72.png"; sourceTree = "<group>"; };
+		FA5D5FB61755C91000C14D02 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "../../CarSideBySide.old/Icon-72@2x.png"; sourceTree = "<group>"; };
 		FA88C2BA1755B90400603295 /* CarSideBySide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarSideBySide.xcdatamodel; sourceTree = "<group>"; };
 		FA88C2C01755BDFB00603295 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		FA88C2C11755BDFB00603295 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
@@ -166,13 +168,14 @@
 		FA2AF9661755A50A001BA8ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */,
+				FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */,
+				FA5D5FB51755C91000C14D02 /* Icon-72.png */,
+				FA5D5FB61755C91000C14D02 /* Icon-72@2x.png */,
 				FA2AF9671755A50A001BA8ED /* CarSideBySide-Info.plist */,
 				FA2AF9681755A50A001BA8ED /* InfoPlist.strings */,
 				FA2AF96B1755A50A001BA8ED /* main.m */,
 				FA2AF96D1755A50A001BA8ED /* CarSideBySide-Prefix.pch */,
-				FA2AF9711755A50A001BA8ED /* Default.png */,
-				FA2AF9731755A50A001BA8ED /* Default@2x.png */,
-				FA2AF9751755A50A001BA8ED /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -284,14 +287,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2AF96A1755A50A001BA8ED /* InfoPlist.strings in Resources */,
-				FA2AF9721755A50A001BA8ED /* Default.png in Resources */,
-				FA2AF9741755A50A001BA8ED /* Default@2x.png in Resources */,
-				FA2AF9761755A50A001BA8ED /* Default-568h@2x.png in Resources */,
 				FA2AF9791755A50A001BA8ED /* MainStoryboard.storyboard in Resources */,
 				FA2AF97E1755A50A001BA8ED /* first.png in Resources */,
 				FA2AF9801755A50B001BA8ED /* first@2x.png in Resources */,
 				FA2AF9851755A50B001BA8ED /* second.png in Resources */,
 				FA2AF9871755A50B001BA8ED /* second@2x.png in Resources */,
+				FA5D5FB71755C91000C14D02 /* Default-Landscape~ipad.png in Resources */,
+				FA5D5FB81755C91000C14D02 /* Default-Portrait~ipad.png in Resources */,
+				FA5D5FB91755C91000C14D02 /* Icon-72.png in Resources */,
+				FA5D5FBA1755C91000C14D02 /* Icon-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
