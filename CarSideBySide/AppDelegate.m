@@ -7,11 +7,40 @@
 //
 
 #import "AppDelegate.h"
+#import <YISplashScreen.h>
+#import <YISplashScreen+Migration.h>
+#import <YISplashScreenAnimation.h>
+
+#define SHOWS_MIGRATION_ALERT 0
+#define USES_PRESET_ANIMATION 0
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [YISplashScreen show];
+    
+#if SHOWS_MIGRATION_ALERT
+    void (^migrationBlock)(void) = nil;
+//    void (^migrationBlock)(void) = ^{
+//        [self loadInitialData];
+//    };
+#else
+    void (^migrationBlock)(void) = nil;
+#endif
+    
+    [YISplashScreen waitForMigration:migrationBlock completion:^{
+        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+        
+        
+        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+        if (orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown)
+            [YISplashScreen hideWithAnimation:[YISplashScreenAnimation cubeAnimation]];
+        else
+            [YISplashScreen hideWithAnimation:[YISplashScreenAnimation fadeOutAnimation]];
+        
+    }];
     // Override point for customization after application launch.
     return YES;
 }

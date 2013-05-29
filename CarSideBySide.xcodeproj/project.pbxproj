@@ -46,6 +46,28 @@
 			<key>shellScript</key>
 			<string>"${SRCROOT}/Pods/Pods-resources.sh"
 </string>
+		</dict>
+		<key>7E2342C1FD0949B083FF8FF6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
 			<key>showEnvVarsInLog</key>
 			<string>1</string>
 		</dict>
@@ -76,10 +98,38 @@ EOM
     exit 1
 fi
 </string>
+		</dict>
+		<key>99214348A4BB48E9987F4AA8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
 			<key>showEnvVarsInLog</key>
 			<string>1</string>
 		</dict>
-		<key>A5B39176C06B461E8F55CE7E</key>
+		<key>BA175803BEF341EA9B8C7411</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>archive.ar</string>
@@ -94,14 +144,29 @@ fi
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>DB4CFED839364DFCBEFB858B</key>
+		<key>C9B39D556D31477BAE2EEF18</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A5B39176C06B461E8F55CE7E</string>
+			<string>BA175803BEF341EA9B8C7411</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
+		</dict>
+		<key>EA8A7BCB30AF4C2F975DC048</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
 		</dict>
 		<key>FA2AF9531755A50A001BA8ED</key>
 		<dict>
@@ -112,6 +177,7 @@ fi
 				<string>FA2AF95E1755A50A001BA8ED</string>
 				<string>FA2AF95D1755A50A001BA8ED</string>
 				<string>511A34432BBD49F78CF7B806</string>
+				<string>EA8A7BCB30AF4C2F975DC048</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -202,7 +268,7 @@ fi
 				<string>FA2AF9601755A50A001BA8ED</string>
 				<string>FA2AF9621755A50A001BA8ED</string>
 				<string>FA2AF9641755A50A001BA8ED</string>
-				<string>DB4CFED839364DFCBEFB858B</string>
+				<string>C9B39D556D31477BAE2EEF18</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -263,11 +329,13 @@ fi
 			<string>FA2AF99F1755A50B001BA8ED</string>
 			<key>buildPhases</key>
 			<array>
+				<string>99214348A4BB48E9987F4AA8</string>
 				<string>9163863AEFC344968983A568</string>
 				<string>FA2AF9581755A50A001BA8ED</string>
 				<string>FA2AF9591755A50A001BA8ED</string>
 				<string>FA2AF95A1755A50A001BA8ED</string>
 				<string>702D6ADA80D343D9A6D2320F</string>
+				<string>7E2342C1FD0949B083FF8FF6</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -320,7 +388,7 @@ fi
 				<string>FA2AF9611755A50A001BA8ED</string>
 				<string>FA2AF9631755A50A001BA8ED</string>
 				<string>FA2AF98E1755A50B001BA8ED</string>
-				<string>A5B39176C06B461E8F55CE7E</string>
+				<string>BA175803BEF341EA9B8C7411</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1087,7 +1155,7 @@ fi
 		<key>FA2AF9A01755A50B001BA8ED</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>511A34432BBD49F78CF7B806</string>
+			<string>EA8A7BCB30AF4C2F975DC048</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
@@ -1109,7 +1177,7 @@ fi
 		<key>FA2AF9A11755A50B001BA8ED</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>511A34432BBD49F78CF7B806</string>
+			<string>EA8A7BCB30AF4C2F975DC048</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
