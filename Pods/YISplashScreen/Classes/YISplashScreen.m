@@ -40,11 +40,14 @@ static CALayer* __splashLayer = nil;
     // splash layer (portrait)
     // TODO: show/hide landscape splash image
     CALayer* splashLayer = [CALayer layer];
-    if (YI_IS_4_INCH) {
-        splashLayer.contents = (id)[UIImage imageNamed:@"Default-568h.png"].CGImage;
+
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+
+    if (orientation == UIInterfaceOrientationPortrait) {
+        splashLayer.contents = (id)[UIImage imageNamed:@"Default-Portrait~ipad.png"].CGImage;
     }
     else {
-        splashLayer.contents = (id)[UIImage imageNamed:@"Default.png"].CGImage;
+        splashLayer.contents = (id)[UIImage imageNamed:@"Default-Landscape~ipad.png"].CGImage;
     }
     splashLayer.frame = [UIScreen mainScreen].applicationFrame;
     
