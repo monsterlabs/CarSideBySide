@@ -1,0 +1,1 @@
+../../YISplashScreen/Classes/YISplashScreen.h

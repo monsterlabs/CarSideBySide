@@ -1,0 +1,10 @@
+PODS:
+  - YISplashScreen (1.0.0)
+
+DEPENDENCIES:
+  - YISplashScreen (~> 1.0.0)
+
+SPEC CHECKSUMS:
+  YISplashScreen: c0d3f8d37e32baf8346d750c038f6e7b0dcbbb25
+
+COCOAPODS: 0.20.2
