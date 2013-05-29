@@ -30,7 +30,6 @@
 		FA590727175674B8008F8B78 /* bmw_offer_test_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */; };
 		FA590728175674B8008F8B78 /* bmw_offer_test_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */; };
 		FA590729175674B8008F8B78 /* bmw_offer_test_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */; };
-		FA59072C17567A54008F8B78 /* OfferListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59072B17567A54008F8B78 /* OfferListViewController.m */; };
 		FA5D5FB71755C91000C14D02 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */; };
 		FA5D5FB81755C91000C14D02 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */; };
 		FA5D5FB91755C91000C14D02 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB51755C91000C14D02 /* Icon-72.png */; };
@@ -41,6 +40,8 @@
 		FA88C2CB1755BDFB00603295 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2CA1755BDFB00603295 /* Maker.m */; };
 		FA88C2D11755BE4A00603295 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2D01755BE4A00603295 /* Car.m */; };
 		FAD4A37A175654F600CB039A /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD4A379175654F600CB039A /* Offer.m */; };
+		FAD9DA781756B54500293DA4 /* OfferListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9DA771756B54500293DA4 /* OfferListViewController.m */; };
+		FAD9DA811756B7BB00293DA4 /* OfferCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9DA801756B7BB00293DA4 /* OfferCollectionViewCell.m */; };
 		FADABF4F1755CC490072E8C9 /* bmw_s1_3_puertas_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF351755CC490072E8C9 /* bmw_s1_3_puertas_large.jpg */; };
 		FADABF501755CC490072E8C9 /* bmw_s1_3_puertas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF361755CC490072E8C9 /* bmw_s1_3_puertas.jpg */; };
 		FADABF511755CC490072E8C9 /* bmw_s1_5_puertas_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF371755CC490072E8C9 /* bmw_s1_5_puertas_large.jpg */; };
@@ -112,8 +113,6 @@
 		FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_1.jpg; sourceTree = "<group>"; };
 		FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_2.jpg; sourceTree = "<group>"; };
 		FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_3.jpg; sourceTree = "<group>"; };
-		FA59072A17567A54008F8B78 /* OfferListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferListViewController.h; sourceTree = "<group>"; };
-		FA59072B17567A54008F8B78 /* OfferListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferListViewController.m; sourceTree = "<group>"; };
 		FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../CarSideBySide.old/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../CarSideBySide.old/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		FA5D5FB51755C91000C14D02 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../../CarSideBySide.old/Icon-72.png"; sourceTree = "<group>"; };
@@ -129,6 +128,10 @@
 		FA88C2D01755BE4A00603295 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		FAD4A378175654F600CB039A /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		FAD4A379175654F600CB039A /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
+		FAD9DA761756B54500293DA4 /* OfferListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferListViewController.h; sourceTree = "<group>"; };
+		FAD9DA771756B54500293DA4 /* OfferListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferListViewController.m; sourceTree = "<group>"; };
+		FAD9DA7F1756B7BB00293DA4 /* OfferCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferCollectionViewCell.h; sourceTree = "<group>"; };
+		FAD9DA801756B7BB00293DA4 /* OfferCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferCollectionViewCell.m; sourceTree = "<group>"; };
 		FADABF351755CC490072E8C9 /* bmw_s1_3_puertas_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_3_puertas_large.jpg; sourceTree = "<group>"; };
 		FADABF361755CC490072E8C9 /* bmw_s1_3_puertas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_3_puertas.jpg; sourceTree = "<group>"; };
 		FADABF371755CC490072E8C9 /* bmw_s1_5_puertas_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_5_puertas_large.jpg; sourceTree = "<group>"; };
@@ -226,8 +229,8 @@
 				FA2AF9771755A50A001BA8ED /* MainStoryboard.storyboard */,
 				FA2AF97A1755A50A001BA8ED /* FirstViewController.h */,
 				FA2AF97B1755A50A001BA8ED /* FirstViewController.m */,
-				FA59072A17567A54008F8B78 /* OfferListViewController.h */,
-				FA59072B17567A54008F8B78 /* OfferListViewController.m */,
+				FAD9DA761756B54500293DA4 /* OfferListViewController.h */,
+				FAD9DA771756B54500293DA4 /* OfferListViewController.m */,
 				FA2AF97D1755A50A001BA8ED /* first.png */,
 				FA2AF97F1755A50B001BA8ED /* first@2x.png */,
 				FA2AF9811755A50B001BA8ED /* SecondViewController.h */,
@@ -235,6 +238,8 @@
 				FA2AF9841755A50B001BA8ED /* second.png */,
 				FA2AF9861755A50B001BA8ED /* second@2x.png */,
 				FA2AF9661755A50A001BA8ED /* Supporting Files */,
+				FAD9DA7F1756B7BB00293DA4 /* OfferCollectionViewCell.h */,
+				FAD9DA801756B7BB00293DA4 /* OfferCollectionViewCell.m */,
 			);
 			path = CarSideBySide;
 			sourceTree = "<group>";
@@ -558,7 +563,8 @@
 				FA88C2CB1755BDFB00603295 /* Maker.m in Sources */,
 				FA88C2D11755BE4A00603295 /* Car.m in Sources */,
 				FAD4A37A175654F600CB039A /* Offer.m in Sources */,
-				FA59072C17567A54008F8B78 /* OfferListViewController.m in Sources */,
+				FAD9DA781756B54500293DA4 /* OfferListViewController.m in Sources */,
+				FAD9DA811756B7BB00293DA4 /* OfferCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
