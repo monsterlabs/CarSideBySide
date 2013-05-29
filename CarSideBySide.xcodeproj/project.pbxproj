@@ -27,6 +27,9 @@
 		FA2AF9991755A50B001BA8ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9971755A50B001BA8ED /* InfoPlist.strings */; };
 		FA2AF99C1755A50B001BA8ED /* CarSideBySideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF99B1755A50B001BA8ED /* CarSideBySideTests.m */; };
 		FA2AF9A61755B3B9001BA8ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9A51755B3B9001BA8ED /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		FA590727175674B8008F8B78 /* bmw_offer_test_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */; };
+		FA590728175674B8008F8B78 /* bmw_offer_test_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */; };
+		FA590729175674B8008F8B78 /* bmw_offer_test_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */; };
 		FA5D5FB71755C91000C14D02 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */; };
 		FA5D5FB81755C91000C14D02 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */; };
 		FA5D5FB91755C91000C14D02 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB51755C91000C14D02 /* Icon-72.png */; };
@@ -105,6 +108,9 @@
 		FA2AF99A1755A50B001BA8ED /* CarSideBySideTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarSideBySideTests.h; sourceTree = "<group>"; };
 		FA2AF99B1755A50B001BA8ED /* CarSideBySideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarSideBySideTests.m; sourceTree = "<group>"; };
 		FA2AF9A51755B3B9001BA8ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_1.jpg; sourceTree = "<group>"; };
+		FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_2.jpg; sourceTree = "<group>"; };
+		FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_3.jpg; sourceTree = "<group>"; };
 		FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../CarSideBySide.old/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../CarSideBySide.old/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		FA5D5FB51755C91000C14D02 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../../CarSideBySide.old/Icon-72.png"; sourceTree = "<group>"; };
@@ -317,6 +323,9 @@
 		FAD4A377175652F700CB039A /* Offers */ = {
 			isa = PBXGroup;
 			children = (
+				FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */,
+				FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */,
+				FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */,
 			);
 			name = Offers;
 			sourceTree = "<group>";
@@ -441,6 +450,9 @@
 				FADABF661755CC490072E8C9 /* bmw_s5_gran_turismo.jpg in Resources */,
 				FADABF671755CC490072E8C9 /* bmw_s5_sedan_large.jpg in Resources */,
 				FADABF681755CC490072E8C9 /* bmw_s5_sedan.jpg in Resources */,
+				FA590727175674B8008F8B78 /* bmw_offer_test_1.jpg in Resources */,
+				FA590728175674B8008F8B78 /* bmw_offer_test_2.jpg in Resources */,
+				FA590729175674B8008F8B78 /* bmw_offer_test_3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
