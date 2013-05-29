@@ -22,15 +22,23 @@
         <attribute name="name" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="series" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Serie" inverseName="maker" inverseEntity="Serie" syncable="YES"/>
     </entity>
+    <entity name="Offer" representedClassName="Offer" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="validUntil" attributeType="Date" indexed="YES" syncable="YES"/>
+    </entity>
     <entity name="Serie" representedClassName="Serie" syncable="YES">
         <attribute name="name" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="lines" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Line" inverseName="serie" inverseEntity="Line" syncable="YES"/>
         <relationship name="maker" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Maker" inverseName="series" inverseEntity="Maker" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Car" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="Line" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Maker" positionX="160" positionY="192" width="128" height="75"/>
         <element name="Serie" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Line" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Car" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="Offer" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>
