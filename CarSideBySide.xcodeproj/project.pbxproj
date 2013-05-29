@@ -28,6 +28,12 @@
 		FA2AF9911755A50B001BA8ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9611755A50A001BA8ED /* Foundation.framework */; };
 		FA2AF9991755A50B001BA8ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9971755A50B001BA8ED /* InfoPlist.strings */; };
 		FA2AF99C1755A50B001BA8ED /* CarSideBySideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF99B1755A50B001BA8ED /* CarSideBySideTests.m */; };
+		FA2AF9A61755B3B9001BA8ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9A51755B3B9001BA8ED /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		FA88C2BB1755B90400603295 /* CarSideBySide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */; };
+		FA88C2C21755BDFB00603295 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2C11755BDFB00603295 /* Line.m */; };
+		FA88C2C51755BDFB00603295 /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2C41755BDFB00603295 /* Serie.m */; };
+		FA88C2CB1755BDFB00603295 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2CA1755BDFB00603295 /* Maker.m */; };
+		FA88C2D11755BE4A00603295 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2D01755BE4A00603295 /* Car.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +75,16 @@
 		FA2AF9981755A50B001BA8ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA2AF99A1755A50B001BA8ED /* CarSideBySideTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarSideBySideTests.h; sourceTree = "<group>"; };
 		FA2AF99B1755A50B001BA8ED /* CarSideBySideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarSideBySideTests.m; sourceTree = "<group>"; };
+		FA2AF9A51755B3B9001BA8ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FA88C2BA1755B90400603295 /* CarSideBySide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarSideBySide.xcdatamodel; sourceTree = "<group>"; };
+		FA88C2C01755BDFB00603295 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		FA88C2C11755BDFB00603295 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		FA88C2C31755BDFB00603295 /* Serie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serie.h; sourceTree = "<group>"; };
+		FA88C2C41755BDFB00603295 /* Serie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Serie.m; sourceTree = "<group>"; };
+		FA88C2C91755BDFB00603295 /* Maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maker.h; sourceTree = "<group>"; };
+		FA88C2CA1755BDFB00603295 /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
+		FA88C2CF1755BE4A00603295 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		FA88C2D01755BE4A00603295 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2AF9A61755B3B9001BA8ED /* CoreData.framework in Frameworks */,
 				FA2AF9601755A50A001BA8ED /* UIKit.framework in Frameworks */,
 				FA2AF9621755A50A001BA8ED /* Foundation.framework in Frameworks */,
 				FA2AF9641755A50A001BA8ED /* CoreGraphics.framework in Frameworks */,
@@ -117,6 +134,7 @@
 		FA2AF95E1755A50A001BA8ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA2AF9A51755B3B9001BA8ED /* CoreData.framework */,
 				FA2AF95F1755A50A001BA8ED /* UIKit.framework */,
 				FA2AF9611755A50A001BA8ED /* Foundation.framework */,
 				FA2AF9631755A50A001BA8ED /* CoreGraphics.framework */,
@@ -128,6 +146,7 @@
 		FA2AF9651755A50A001BA8ED /* CarSideBySide */ = {
 			isa = PBXGroup;
 			children = (
+				FA2AF9A71755B41C001BA8ED /* Models */,
 				FA2AF96E1755A50A001BA8ED /* AppDelegate.h */,
 				FA2AF96F1755A50A001BA8ED /* AppDelegate.m */,
 				FA2AF9771755A50A001BA8ED /* MainStoryboard.storyboard */,
@@ -175,6 +194,22 @@
 				FA2AF9971755A50B001BA8ED /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA2AF9A71755B41C001BA8ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA88C2CF1755BE4A00603295 /* Car.h */,
+				FA88C2D01755BE4A00603295 /* Car.m */,
+				FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */,
+				FA88C2C91755BDFB00603295 /* Maker.h */,
+				FA88C2CA1755BDFB00603295 /* Maker.m */,
+				FA88C2C31755BDFB00603295 /* Serie.h */,
+				FA88C2C41755BDFB00603295 /* Serie.m */,
+				FA88C2C01755BDFB00603295 /* Line.h */,
+				FA88C2C11755BDFB00603295 /* Line.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +330,11 @@
 				FA2AF9701755A50A001BA8ED /* AppDelegate.m in Sources */,
 				FA2AF97C1755A50A001BA8ED /* FirstViewController.m in Sources */,
 				FA2AF9831755A50B001BA8ED /* SecondViewController.m in Sources */,
+				FA88C2BB1755B90400603295 /* CarSideBySide.xcdatamodeld in Sources */,
+				FA88C2C21755BDFB00603295 /* Line.m in Sources */,
+				FA88C2C51755BDFB00603295 /* Serie.m in Sources */,
+				FA88C2CB1755BDFB00603295 /* Maker.m in Sources */,
+				FA88C2D11755BE4A00603295 /* Car.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +517,7 @@
 				FA2AF9A11755A50B001BA8ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA2AF9A21755A50B001BA8ED /* Build configuration list for PBXNativeTarget "CarSideBySideTests" */ = {
 			isa = XCConfigurationList;
@@ -485,8 +526,22 @@
 				FA2AF9A41755A50B001BA8ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA88C2BA1755B90400603295 /* CarSideBySide.xcdatamodel */,
+			);
+			currentVersion = FA88C2BA1755B90400603295 /* CarSideBySide.xcdatamodel */;
+			path = CarSideBySide.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FA2AF9541755A50A001BA8ED /* Project object */;
 }
