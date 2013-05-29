@@ -1,5 +1,5 @@
 //
-//  OfferListViewController.h
+//  OfferCollectionViewCell.h
 //  CarSideBySide
 //
 //  Created by Alejandro Juarez on 5/29/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OfferListViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface OfferCollectionViewCell : UICollectionViewCell
 
 @end
