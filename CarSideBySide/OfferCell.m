@@ -9,8 +9,13 @@
 #import "OfferCell.h"
 
 @implementation OfferCell
-@synthesize offer;
 
+-(void)setOffer:(id)newOffer
+{
+    if (_offer != newOffer) {
+        _offer = newOffer;
+    }
+}
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -24,13 +29,12 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    NSLog(@"TITLE %@", offer.title);
-    titleLabel.text = offer.title;
-    bodyTextView.text = self.offer.body;
-    offerImageView.image = [UIImage imageNamed:self.offer.image];
+    titleLabel.text = [self.offer valueForKey:@"title"];
+    bodyTextView.text = [self.offer valueForKey:@"body"];
+    offerImageView.image = [UIImage imageNamed:[self.offer valueForKey:@"image"]];
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *dateString = [dateFormatter stringFromDate:self.offer.validUntil];
+    NSString *dateString = [dateFormatter stringFromDate:[self.offer valueForKey:@"validUntil"]];
     validUntilLabel.text = dateString;
     [super drawRect:rect];
 }

@@ -16,6 +16,6 @@
     IBOutlet UILabel *validUntilLabel;
 }
 
-@property (nonatomic, strong) Offer *offer;
+@property (strong, nonatomic) id offer;
 
 @end
