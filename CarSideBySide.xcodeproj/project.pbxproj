@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9B39D556D31477BAE2EEF18 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA175803BEF341EA9B8C7411 /* libPods.a */; };
 		FA2AF9601755A50A001BA8ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF95F1755A50A001BA8ED /* UIKit.framework */; };
 		FA2AF9621755A50A001BA8ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9611755A50A001BA8ED /* Foundation.framework */; };
 		FA2AF9641755A50A001BA8ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9631755A50A001BA8ED /* CoreGraphics.framework */; };
@@ -30,6 +29,19 @@
 		FA590727175674B8008F8B78 /* bmw_offer_test_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */; };
 		FA590728175674B8008F8B78 /* bmw_offer_test_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */; };
 		FA590729175674B8008F8B78 /* bmw_offer_test_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */; };
+		FA5A9B081756FD0600B718C1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AE61756FD0600B718C1 /* Podfile */; };
+		FA5A9B091756FD0600B718C1 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AE71756FD0600B718C1 /* Podfile.lock */; };
+		FA5A9B0A1756FD0600B718C1 /* Manifest.lock in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AF31756FD0600B718C1 /* Manifest.lock */; };
+		FA5A9B0B1756FD0600B718C1 /* Pods-acknowledgements.markdown in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AF41756FD0600B718C1 /* Pods-acknowledgements.markdown */; };
+		FA5A9B0C1756FD0600B718C1 /* Pods-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AF51756FD0600B718C1 /* Pods-acknowledgements.plist */; };
+		FA5A9B0D1756FD0600B718C1 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5A9AF61756FD0600B718C1 /* Pods-dummy.m */; };
+		FA5A9B0E1756FD0600B718C1 /* Pods-resources.sh in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AF91756FD0600B718C1 /* Pods-resources.sh */; };
+		FA5A9B0F1756FD0600B718C1 /* Pods.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AFA1756FD0600B718C1 /* Pods.xcconfig */; };
+		FA5A9B101756FD0600B718C1 /* YISplashScreen+Migration.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5A9B011756FD0600B718C1 /* YISplashScreen+Migration.m */; };
+		FA5A9B111756FD0600B718C1 /* YISplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5A9B031756FD0600B718C1 /* YISplashScreen.m */; };
+		FA5A9B121756FD0600B718C1 /* YISplashScreenAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5A9B051756FD0600B718C1 /* YISplashScreenAnimation.m */; };
+		FA5A9B131756FD0600B718C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9B061756FD0600B718C1 /* README.md */; };
+		FA5A9B141756FD0600B718C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9B071756FD0600B718C1 /* README.md */; };
 		FA5D5FB71755C91000C14D02 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */; };
 		FA5D5FB81755C91000C14D02 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */; };
 		FA5D5FB91755C91000C14D02 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB51755C91000C14D02 /* Icon-72.png */; };
@@ -39,9 +51,9 @@
 		FA88C2C51755BDFB00603295 /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2C41755BDFB00603295 /* Serie.m */; };
 		FA88C2CB1755BDFB00603295 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2CA1755BDFB00603295 /* Maker.m */; };
 		FA88C2D11755BE4A00603295 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2D01755BE4A00603295 /* Car.m */; };
+		FA953D141757027D004F770D /* OfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA953D131757027D004F770D /* OfferCell.m */; };
 		FAD4A37A175654F600CB039A /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD4A379175654F600CB039A /* Offer.m */; };
 		FAD9DA781756B54500293DA4 /* OfferListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9DA771756B54500293DA4 /* OfferListViewController.m */; };
-		FAD9DA811756B7BB00293DA4 /* OfferCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9DA801756B7BB00293DA4 /* OfferCollectionViewCell.m */; };
 		FADABF4F1755CC490072E8C9 /* bmw_s1_3_puertas_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF351755CC490072E8C9 /* bmw_s1_3_puertas_large.jpg */; };
 		FADABF501755CC490072E8C9 /* bmw_s1_3_puertas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF361755CC490072E8C9 /* bmw_s1_3_puertas.jpg */; };
 		FADABF511755CC490072E8C9 /* bmw_s1_5_puertas_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF371755CC490072E8C9 /* bmw_s1_5_puertas_large.jpg */; };
@@ -78,12 +90,17 @@
 			remoteGlobalIDString = FA2AF95B1755A50A001BA8ED;
 			remoteInfo = CarSideBySide;
 		};
+		FA5A9B161756FD0600B718C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA5A9AFB1756FD0600B718C1 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 09410A49B7D04B929359D2C9;
+			remoteInfo = Pods;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		511A34432BBD49F78CF7B806 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		BA175803BEF341EA9B8C7411 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA8A7BCB30AF4C2F975DC048 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		966C47EF87414A41B6537359 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		FA2AF95C1755A50A001BA8ED /* CarSideBySide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSideBySide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2AF95F1755A50A001BA8ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA2AF9611755A50A001BA8ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -113,6 +130,31 @@
 		FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_1.jpg; sourceTree = "<group>"; };
 		FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_2.jpg; sourceTree = "<group>"; };
 		FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_3.jpg; sourceTree = "<group>"; };
+		FA5A9AE61756FD0600B718C1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FA5A9AE71756FD0600B718C1 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
+		FA5A9AEB1756FD0600B718C1 /* YISplashScreen+Migration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YISplashScreen+Migration.h"; sourceTree = "<group>"; };
+		FA5A9AEC1756FD0600B718C1 /* YISplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreen.h; sourceTree = "<group>"; };
+		FA5A9AED1756FD0600B718C1 /* YISplashScreenAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreenAnimation.h; sourceTree = "<group>"; };
+		FA5A9AF01756FD0600B718C1 /* YISplashScreen+Migration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YISplashScreen+Migration.h"; sourceTree = "<group>"; };
+		FA5A9AF11756FD0600B718C1 /* YISplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreen.h; sourceTree = "<group>"; };
+		FA5A9AF21756FD0600B718C1 /* YISplashScreenAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreenAnimation.h; sourceTree = "<group>"; };
+		FA5A9AF31756FD0600B718C1 /* Manifest.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Manifest.lock; sourceTree = "<group>"; };
+		FA5A9AF41756FD0600B718C1 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FA5A9AF51756FD0600B718C1 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		FA5A9AF61756FD0600B718C1 /* Pods-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		FA5A9AF71756FD0600B718C1 /* Pods-environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		FA5A9AF81756FD0600B718C1 /* Pods-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pods-prefix.pch"; sourceTree = "<group>"; };
+		FA5A9AF91756FD0600B718C1 /* Pods-resources.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		FA5A9AFA1756FD0600B718C1 /* Pods.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = "<group>"; };
+		FA5A9AFB1756FD0600B718C1 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
+		FA5A9B001756FD0600B718C1 /* YISplashScreen+Migration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YISplashScreen+Migration.h"; sourceTree = "<group>"; };
+		FA5A9B011756FD0600B718C1 /* YISplashScreen+Migration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YISplashScreen+Migration.m"; sourceTree = "<group>"; };
+		FA5A9B021756FD0600B718C1 /* YISplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreen.h; sourceTree = "<group>"; };
+		FA5A9B031756FD0600B718C1 /* YISplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YISplashScreen.m; sourceTree = "<group>"; };
+		FA5A9B041756FD0600B718C1 /* YISplashScreenAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreenAnimation.h; sourceTree = "<group>"; };
+		FA5A9B051756FD0600B718C1 /* YISplashScreenAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YISplashScreenAnimation.m; sourceTree = "<group>"; };
+		FA5A9B061756FD0600B718C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		FA5A9B071756FD0600B718C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../CarSideBySide.old/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../CarSideBySide.old/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		FA5D5FB51755C91000C14D02 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../../CarSideBySide.old/Icon-72.png"; sourceTree = "<group>"; };
@@ -126,12 +168,12 @@
 		FA88C2CA1755BDFB00603295 /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
 		FA88C2CF1755BE4A00603295 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		FA88C2D01755BE4A00603295 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		FA953D121757027D004F770D /* OfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferCell.h; sourceTree = "<group>"; };
+		FA953D131757027D004F770D /* OfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferCell.m; sourceTree = "<group>"; };
 		FAD4A378175654F600CB039A /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		FAD4A379175654F600CB039A /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		FAD9DA761756B54500293DA4 /* OfferListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferListViewController.h; sourceTree = "<group>"; };
 		FAD9DA771756B54500293DA4 /* OfferListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferListViewController.m; sourceTree = "<group>"; };
-		FAD9DA7F1756B7BB00293DA4 /* OfferCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferCollectionViewCell.h; sourceTree = "<group>"; };
-		FAD9DA801756B7BB00293DA4 /* OfferCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferCollectionViewCell.m; sourceTree = "<group>"; };
 		FADABF351755CC490072E8C9 /* bmw_s1_3_puertas_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_3_puertas_large.jpg; sourceTree = "<group>"; };
 		FADABF361755CC490072E8C9 /* bmw_s1_3_puertas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_3_puertas.jpg; sourceTree = "<group>"; };
 		FADABF371755CC490072E8C9 /* bmw_s1_5_puertas_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_5_puertas_large.jpg; sourceTree = "<group>"; };
@@ -169,7 +211,6 @@
 				FA2AF9601755A50A001BA8ED /* UIKit.framework in Frameworks */,
 				FA2AF9621755A50A001BA8ED /* Foundation.framework in Frameworks */,
 				FA2AF9641755A50A001BA8ED /* CoreGraphics.framework in Frameworks */,
-				C9B39D556D31477BAE2EEF18 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,10 +232,13 @@
 			children = (
 				FA2AF9651755A50A001BA8ED /* CarSideBySide */,
 				FA2AF9941755A50B001BA8ED /* CarSideBySideTests */,
+				FA5A9AE61756FD0600B718C1 /* Podfile */,
+				FA5A9AE71756FD0600B718C1 /* Podfile.lock */,
+				FA5A9AE81756FD0600B718C1 /* Pods */,
+				FA5A9B071756FD0600B718C1 /* README.md */,
 				FA2AF95E1755A50A001BA8ED /* Frameworks */,
 				FA2AF95D1755A50A001BA8ED /* Products */,
-				511A34432BBD49F78CF7B806 /* Pods.xcconfig */,
-				EA8A7BCB30AF4C2F975DC048 /* Pods.xcconfig */,
+				966C47EF87414A41B6537359 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,7 +259,6 @@
 				FA2AF9611755A50A001BA8ED /* Foundation.framework */,
 				FA2AF9631755A50A001BA8ED /* CoreGraphics.framework */,
 				FA2AF98E1755A50B001BA8ED /* SenTestingKit.framework */,
-				BA175803BEF341EA9B8C7411 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -231,6 +274,8 @@
 				FA2AF97B1755A50A001BA8ED /* FirstViewController.m */,
 				FAD9DA761756B54500293DA4 /* OfferListViewController.h */,
 				FAD9DA771756B54500293DA4 /* OfferListViewController.m */,
+				FA953D121757027D004F770D /* OfferCell.h */,
+				FA953D131757027D004F770D /* OfferCell.m */,
 				FA2AF97D1755A50A001BA8ED /* first.png */,
 				FA2AF97F1755A50B001BA8ED /* first@2x.png */,
 				FA2AF9811755A50B001BA8ED /* SecondViewController.h */,
@@ -238,8 +283,6 @@
 				FA2AF9841755A50B001BA8ED /* second.png */,
 				FA2AF9861755A50B001BA8ED /* second@2x.png */,
 				FA2AF9661755A50A001BA8ED /* Supporting Files */,
-				FAD9DA7F1756B7BB00293DA4 /* OfferCollectionViewCell.h */,
-				FAD9DA801756B7BB00293DA4 /* OfferCollectionViewCell.m */,
 			);
 			path = CarSideBySide;
 			sourceTree = "<group>";
@@ -295,6 +338,91 @@
 				FA88C2C11755BDFB00603295 /* Line.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FA5A9AE81756FD0600B718C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA5A9AE91756FD0600B718C1 /* BuildHeaders */,
+				FA5A9AEE1756FD0600B718C1 /* Headers */,
+				FA5A9AF31756FD0600B718C1 /* Manifest.lock */,
+				FA5A9AF41756FD0600B718C1 /* Pods-acknowledgements.markdown */,
+				FA5A9AF51756FD0600B718C1 /* Pods-acknowledgements.plist */,
+				FA5A9AF61756FD0600B718C1 /* Pods-dummy.m */,
+				FA5A9AF71756FD0600B718C1 /* Pods-environment.h */,
+				FA5A9AF81756FD0600B718C1 /* Pods-prefix.pch */,
+				FA5A9AF91756FD0600B718C1 /* Pods-resources.sh */,
+				FA5A9AFA1756FD0600B718C1 /* Pods.xcconfig */,
+				FA5A9AFB1756FD0600B718C1 /* Pods.xcodeproj */,
+				FA5A9AFE1756FD0600B718C1 /* YISplashScreen */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA5A9AE91756FD0600B718C1 /* BuildHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				FA5A9AEA1756FD0600B718C1 /* YISplashScreen */,
+			);
+			path = BuildHeaders;
+			sourceTree = "<group>";
+		};
+		FA5A9AEA1756FD0600B718C1 /* YISplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA5A9AEB1756FD0600B718C1 /* YISplashScreen+Migration.h */,
+				FA5A9AEC1756FD0600B718C1 /* YISplashScreen.h */,
+				FA5A9AED1756FD0600B718C1 /* YISplashScreenAnimation.h */,
+			);
+			path = YISplashScreen;
+			sourceTree = "<group>";
+		};
+		FA5A9AEE1756FD0600B718C1 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				FA5A9AEF1756FD0600B718C1 /* YISplashScreen */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		FA5A9AEF1756FD0600B718C1 /* YISplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA5A9AF01756FD0600B718C1 /* YISplashScreen+Migration.h */,
+				FA5A9AF11756FD0600B718C1 /* YISplashScreen.h */,
+				FA5A9AF21756FD0600B718C1 /* YISplashScreenAnimation.h */,
+			);
+			path = YISplashScreen;
+			sourceTree = "<group>";
+		};
+		FA5A9AFC1756FD0600B718C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA5A9B171756FD0600B718C1 /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA5A9AFE1756FD0600B718C1 /* YISplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA5A9AFF1756FD0600B718C1 /* Classes */,
+				FA5A9B061756FD0600B718C1 /* README.md */,
+			);
+			path = YISplashScreen;
+			sourceTree = "<group>";
+		};
+		FA5A9AFF1756FD0600B718C1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FA5A9B001756FD0600B718C1 /* YISplashScreen+Migration.h */,
+				FA5A9B011756FD0600B718C1 /* YISplashScreen+Migration.m */,
+				FA5A9B021756FD0600B718C1 /* YISplashScreen.h */,
+				FA5A9B031756FD0600B718C1 /* YISplashScreen.m */,
+				FA5A9B041756FD0600B718C1 /* YISplashScreenAnimation.h */,
+				FA5A9B051756FD0600B718C1 /* YISplashScreenAnimation.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		FAD4A376175652D500CB039A /* Cars */ = {
@@ -356,6 +484,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA2AF99F1755A50B001BA8ED /* Build configuration list for PBXNativeTarget "CarSideBySide" */;
 			buildPhases = (
+				7D31D978B22B4099BFBE992B /* Check Pods Manifest.lock */,
+				53774DFE7CAB4928A640B8D6 /* Check Pods Manifest.lock */,
+				1ECA49F1D8114DBE84890535 /* Check Pods Manifest.lock */,
 				99214348A4BB48E9987F4AA8 /* Check Pods Manifest.lock */,
 				9163863AEFC344968983A568 /* Check Pods Manifest.lock */,
 				FA2AF9581755A50A001BA8ED /* Sources */,
@@ -363,6 +494,9 @@
 				FA2AF95A1755A50A001BA8ED /* Resources */,
 				702D6ADA80D343D9A6D2320F /* Copy Pods Resources */,
 				7E2342C1FD0949B083FF8FF6 /* Copy Pods Resources */,
+				D2D73A937FC34085A2073288 /* Copy Pods Resources */,
+				7EC78669A07E4236A3827B04 /* Copy Pods Resources */,
+				C561D85885364BCDA0442A1A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -411,6 +545,12 @@
 			mainGroup = FA2AF9531755A50A001BA8ED;
 			productRefGroup = FA2AF95D1755A50A001BA8ED /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FA5A9AFC1756FD0600B718C1 /* Products */;
+					ProjectRef = FA5A9AFB1756FD0600B718C1 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FA2AF95B1755A50A001BA8ED /* CarSideBySide */,
@@ -418,6 +558,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FA5A9B171756FD0600B718C1 /* libPods.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPods.a;
+			remoteRef = FA5A9B161756FD0600B718C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FA2AF95A1755A50A001BA8ED /* Resources */ = {
@@ -463,6 +613,15 @@
 				FA590727175674B8008F8B78 /* bmw_offer_test_1.jpg in Resources */,
 				FA590728175674B8008F8B78 /* bmw_offer_test_2.jpg in Resources */,
 				FA590729175674B8008F8B78 /* bmw_offer_test_3.jpg in Resources */,
+				FA5A9B081756FD0600B718C1 /* Podfile in Resources */,
+				FA5A9B091756FD0600B718C1 /* Podfile.lock in Resources */,
+				FA5A9B0A1756FD0600B718C1 /* Manifest.lock in Resources */,
+				FA5A9B0B1756FD0600B718C1 /* Pods-acknowledgements.markdown in Resources */,
+				FA5A9B0C1756FD0600B718C1 /* Pods-acknowledgements.plist in Resources */,
+				FA5A9B0E1756FD0600B718C1 /* Pods-resources.sh in Resources */,
+				FA5A9B0F1756FD0600B718C1 /* Pods.xcconfig in Resources */,
+				FA5A9B131756FD0600B718C1 /* README.md in Resources */,
+				FA5A9B141756FD0600B718C1 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +636,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1ECA49F1D8114DBE84890535 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		53774DFE7CAB4928A640B8D6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
 		702D6ADA80D343D9A6D2320F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,7 +678,35 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
+		7D31D978B22B4099BFBE992B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
 		7E2342C1FD0949B083FF8FF6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		7EC78669A07E4236A3827B04 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -533,6 +748,34 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 		};
+		C561D85885364BCDA0442A1A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		D2D73A937FC34085A2073288 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		FA2AF98B1755A50B001BA8ED /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -564,7 +807,11 @@
 				FA88C2D11755BE4A00603295 /* Car.m in Sources */,
 				FAD4A37A175654F600CB039A /* Offer.m in Sources */,
 				FAD9DA781756B54500293DA4 /* OfferListViewController.m in Sources */,
-				FAD9DA811756B7BB00293DA4 /* OfferCollectionViewCell.m in Sources */,
+				FA5A9B0D1756FD0600B718C1 /* Pods-dummy.m in Sources */,
+				FA5A9B101756FD0600B718C1 /* YISplashScreen+Migration.m in Sources */,
+				FA5A9B111756FD0600B718C1 /* YISplashScreen.m in Sources */,
+				FA5A9B121756FD0600B718C1 /* YISplashScreenAnimation.m in Sources */,
+				FA953D141757027D004F770D /* OfferCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,11 +921,12 @@
 		};
 		FA2AF9A01755A50B001BA8ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA8A7BCB30AF4C2F975DC048 /* Pods.xcconfig */;
+			baseConfigurationReference = 966C47EF87414A41B6537359 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarSideBySide/CarSideBySide-Prefix.pch";
 				INFOPLIST_FILE = "CarSideBySide/CarSideBySide-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -686,11 +934,12 @@
 		};
 		FA2AF9A11755A50B001BA8ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA8A7BCB30AF4C2F975DC048 /* Pods.xcconfig */;
+			baseConfigurationReference = 966C47EF87414A41B6537359 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarSideBySide/CarSideBySide-Prefix.pch";
 				INFOPLIST_FILE = "CarSideBySide/CarSideBySide-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

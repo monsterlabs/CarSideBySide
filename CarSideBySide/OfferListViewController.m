@@ -7,18 +7,20 @@
 //
 
 #import "OfferListViewController.h"
-
+#import "AppDelegate.h"
+#import "OfferCell.h"
+#import "Offer.h"
 @interface OfferListViewController ()
 
 @end
 
 @implementation OfferListViewController
+@synthesize offers;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,6 +28,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    persistentStoreCoordinator = [(AppDelegate *)[[UIApplication sharedApplication] delegate] persistentStoreCoordinator];
+
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
+    [context setPersistentStoreCoordinator:persistentStoreCoordinator];
+
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Offer" inManagedObjectContext:context];
+    [request setEntity:entity];
+    NSError *error = nil;
+    offers = [NSArray arrayWithArray: [context executeFetchRequest:request error:&error]];
+    [self.collectionView reloadData];
 	// Do any additional setup after loading the view.
 }
 
@@ -40,17 +54,18 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 3;
+    return 1;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 1;
+    return [offers count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell =  [self.collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    OfferCell *cell =  [self.collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.offer = (Offer *)[offers objectAtIndex: indexPath.row];
     return cell;
 }
 @end

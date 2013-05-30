@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface OfferListViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+{
+    NSManagedObjectContext *managedObjectContext;
+    NSManagedObjectModel *managedObjectModel;
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+}
+@property (readonly, strong, nonatomic) NSArray *offers;
 @end
