@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Offer.h"
+
 @interface OfferCell : UICollectionViewCell
 {
     IBOutlet UIImageView *offerImageView;

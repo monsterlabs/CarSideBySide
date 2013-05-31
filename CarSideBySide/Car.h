@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSNumber * valid;
 @property (nonatomic, retain) NSDate * validUntil;
 @property (nonatomic, retain) NSNumber * year;
+@property (nonatomic, retain) NSString * modelHighlights;
 @property (nonatomic, retain) Line *line;
 
 @end
