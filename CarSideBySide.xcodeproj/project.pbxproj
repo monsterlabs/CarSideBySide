@@ -14,10 +14,8 @@
 		FA2AF96C1755A50A001BA8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF96B1755A50A001BA8ED /* main.m */; };
 		FA2AF9701755A50A001BA8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF96F1755A50A001BA8ED /* AppDelegate.m */; };
 		FA2AF9791755A50A001BA8ED /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9771755A50A001BA8ED /* MainStoryboard.storyboard */; };
-		FA2AF97C1755A50A001BA8ED /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF97B1755A50A001BA8ED /* FirstViewController.m */; };
 		FA2AF97E1755A50A001BA8ED /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF97D1755A50A001BA8ED /* first.png */; };
 		FA2AF9801755A50B001BA8ED /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF97F1755A50B001BA8ED /* first@2x.png */; };
-		FA2AF9831755A50B001BA8ED /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF9821755A50B001BA8ED /* SecondViewController.m */; };
 		FA2AF9851755A50B001BA8ED /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9841755A50B001BA8ED /* second.png */; };
 		FA2AF9871755A50B001BA8ED /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9861755A50B001BA8ED /* second@2x.png */; };
 		FA2AF98F1755A50B001BA8ED /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF98E1755A50B001BA8ED /* SenTestingKit.framework */; };
@@ -26,6 +24,9 @@
 		FA2AF9991755A50B001BA8ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9971755A50B001BA8ED /* InfoPlist.strings */; };
 		FA2AF99C1755A50B001BA8ED /* CarSideBySideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF99B1755A50B001BA8ED /* CarSideBySideTests.m */; };
 		FA2AF9A61755B3B9001BA8ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9A51755B3B9001BA8ED /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		FA2B057D1758FFD0000EBAB1 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B057C1758FFD0000EBAB1 /* Car.m */; };
+		FA2B058117590313000EBAB1 /* CarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B058017590313000EBAB1 /* CarListViewController.m */; };
+		FA2B0584175905DD000EBAB1 /* CarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B0583175905DD000EBAB1 /* CarCell.m */; };
 		FA590727175674B8008F8B78 /* bmw_offer_test_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */; };
 		FA590728175674B8008F8B78 /* bmw_offer_test_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */; };
 		FA590729175674B8008F8B78 /* bmw_offer_test_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */; };
@@ -77,7 +78,6 @@
 		FADABF681755CC490072E8C9 /* bmw_s5_sedan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF4E1755CC490072E8C9 /* bmw_s5_sedan.jpg */; };
 		FAF531BF1758F3CA00D938DA /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF531BE1758F3CA00D938DA /* Line.m */; };
 		FAF531C31758F3CA00D938DA /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF531C21758F3CA00D938DA /* Serie.m */; };
-		FAF531C61758F3CA00D938DA /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF531C51758F3CA00D938DA /* Car.m */; };
 		FAF531C91758F3CA00D938DA /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF531C81758F3CA00D938DA /* Maker.m */; };
 		FAF531CC1758F3CA00D938DA /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF531CB1758F3CA00D938DA /* Offer.m */; };
 /* End PBXBuildFile section */
@@ -112,12 +112,8 @@
 		FA2AF96E1755A50A001BA8ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA2AF96F1755A50A001BA8ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FA2AF9781755A50A001BA8ED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		FA2AF97A1755A50A001BA8ED /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		FA2AF97B1755A50A001BA8ED /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		FA2AF97D1755A50A001BA8ED /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		FA2AF97F1755A50B001BA8ED /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		FA2AF9811755A50B001BA8ED /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		FA2AF9821755A50B001BA8ED /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		FA2AF9841755A50B001BA8ED /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		FA2AF9861755A50B001BA8ED /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		FA2AF98D1755A50B001BA8ED /* CarSideBySideTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarSideBySideTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +123,12 @@
 		FA2AF99A1755A50B001BA8ED /* CarSideBySideTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarSideBySideTests.h; sourceTree = "<group>"; };
 		FA2AF99B1755A50B001BA8ED /* CarSideBySideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarSideBySideTests.m; sourceTree = "<group>"; };
 		FA2AF9A51755B3B9001BA8ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FA2B057B1758FFD0000EBAB1 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		FA2B057C1758FFD0000EBAB1 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		FA2B057F17590313000EBAB1 /* CarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarListViewController.h; sourceTree = "<group>"; };
+		FA2B058017590313000EBAB1 /* CarListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarListViewController.m; sourceTree = "<group>"; };
+		FA2B0582175905DD000EBAB1 /* CarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarCell.h; sourceTree = "<group>"; };
+		FA2B0583175905DD000EBAB1 /* CarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarCell.m; sourceTree = "<group>"; };
 		FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_1.jpg; sourceTree = "<group>"; };
 		FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_2.jpg; sourceTree = "<group>"; };
 		FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_3.jpg; sourceTree = "<group>"; };
@@ -194,8 +196,6 @@
 		FAF531BE1758F3CA00D938DA /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		FAF531C11758F3CA00D938DA /* Serie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serie.h; sourceTree = "<group>"; };
 		FAF531C21758F3CA00D938DA /* Serie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Serie.m; sourceTree = "<group>"; };
-		FAF531C41758F3CA00D938DA /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
-		FAF531C51758F3CA00D938DA /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		FAF531C71758F3CA00D938DA /* Maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maker.h; sourceTree = "<group>"; };
 		FAF531C81758F3CA00D938DA /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
 		FAF531CA1758F3CA00D938DA /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
@@ -270,16 +270,16 @@
 				FA2AF96E1755A50A001BA8ED /* AppDelegate.h */,
 				FA2AF96F1755A50A001BA8ED /* AppDelegate.m */,
 				FA2AF9771755A50A001BA8ED /* MainStoryboard.storyboard */,
-				FA2AF97A1755A50A001BA8ED /* FirstViewController.h */,
-				FA2AF97B1755A50A001BA8ED /* FirstViewController.m */,
+				FA2B057F17590313000EBAB1 /* CarListViewController.h */,
+				FA2B058017590313000EBAB1 /* CarListViewController.m */,
 				FAD9DA761756B54500293DA4 /* OfferListViewController.h */,
 				FAD9DA771756B54500293DA4 /* OfferListViewController.m */,
 				FA953D121757027D004F770D /* OfferCell.h */,
 				FA953D131757027D004F770D /* OfferCell.m */,
+				FA2B0582175905DD000EBAB1 /* CarCell.h */,
+				FA2B0583175905DD000EBAB1 /* CarCell.m */,
 				FA2AF97D1755A50A001BA8ED /* first.png */,
 				FA2AF97F1755A50B001BA8ED /* first@2x.png */,
-				FA2AF9811755A50B001BA8ED /* SecondViewController.h */,
-				FA2AF9821755A50B001BA8ED /* SecondViewController.m */,
 				FA2AF9841755A50B001BA8ED /* second.png */,
 				FA2AF9861755A50B001BA8ED /* second@2x.png */,
 				FA2AF9661755A50A001BA8ED /* Supporting Files */,
@@ -325,9 +325,9 @@
 		FA2AF9A71755B41C001BA8ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA2B057B1758FFD0000EBAB1 /* Car.h */,
+				FA2B057C1758FFD0000EBAB1 /* Car.m */,
 				FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */,
-				FAF531C41758F3CA00D938DA /* Car.h */,
-				FAF531C51758F3CA00D938DA /* Car.m */,
 				FAF531CA1758F3CA00D938DA /* Offer.h */,
 				FAF531CB1758F3CA00D938DA /* Offer.m */,
 				FAF531C71758F3CA00D938DA /* Maker.h */,
@@ -798,8 +798,6 @@
 			files = (
 				FA2AF96C1755A50A001BA8ED /* main.m in Sources */,
 				FA2AF9701755A50A001BA8ED /* AppDelegate.m in Sources */,
-				FA2AF97C1755A50A001BA8ED /* FirstViewController.m in Sources */,
-				FA2AF9831755A50B001BA8ED /* SecondViewController.m in Sources */,
 				FA88C2BB1755B90400603295 /* CarSideBySide.xcdatamodeld in Sources */,
 				FAD9DA781756B54500293DA4 /* OfferListViewController.m in Sources */,
 				FA5A9B0D1756FD0600B718C1 /* Pods-dummy.m in Sources */,
@@ -809,9 +807,11 @@
 				FA953D141757027D004F770D /* OfferCell.m in Sources */,
 				FAF531BF1758F3CA00D938DA /* Line.m in Sources */,
 				FAF531C31758F3CA00D938DA /* Serie.m in Sources */,
-				FAF531C61758F3CA00D938DA /* Car.m in Sources */,
 				FAF531C91758F3CA00D938DA /* Maker.m in Sources */,
 				FAF531CC1758F3CA00D938DA /* Offer.m in Sources */,
+				FA2B057D1758FFD0000EBAB1 /* Car.m in Sources */,
+				FA2B058117590313000EBAB1 /* CarListViewController.m in Sources */,
+				FA2B0584175905DD000EBAB1 /* CarCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

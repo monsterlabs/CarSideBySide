@@ -7,6 +7,7 @@
 //
 
 #import "OfferCell.h"
+#import "Offer.h"
 
 @implementation OfferCell
 
@@ -16,6 +17,7 @@
         _offer = newOffer;
     }
 }
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

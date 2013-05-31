@@ -4,7 +4,8 @@
         <attribute name="hp" optional="YES" attributeType="Integer 32" indexed="YES" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="largeImage" optional="YES" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
-        <attribute name="modelName" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
+        <attribute name="modelHighlights" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modelName" attributeType="String" minValueString="1" indexed="YES" spotlightIndexingEnabled="YES" syncable="YES"/>
         <attribute name="orderKey" optional="YES" attributeType="Integer 32" minValueString="0" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="priceList" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" indexed="YES" syncable="YES"/>
         <attribute name="retailPrice" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" indexed="YES" syncable="YES"/>
@@ -35,7 +36,7 @@
         <relationship name="maker" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Maker" inverseName="series" inverseEntity="Maker" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Car" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="Car" positionX="160" positionY="192" width="128" height="225"/>
         <element name="Line" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Maker" positionX="160" positionY="192" width="128" height="75"/>
         <element name="Offer" positionX="160" positionY="192" width="128" height="120"/>

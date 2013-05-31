@@ -11,7 +11,7 @@
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="bmS-nD-kJY">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Ja-EV-jLK">
                             <size key="itemSize" width="747" height="259"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -98,11 +98,11 @@
                             <outlet property="delegate" destination="jy0-5g-B2G" id="f6b-GB-1tp"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Q9G-QF-jVa"/>
+                    <tabBarItem key="tabBarItem" title="Promociones" image="first.png" id="Q9G-QF-jVa"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDx-29-u9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="-42"/>
+            <point key="canvasLocation" x="-153" y="-314"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -115,14 +115,121 @@
                     </tabBar>
                     <connections>
                         <segue destination="jy0-5g-B2G" kind="relationship" relationship="viewControllers" id="jk4-dc-QNk"/>
+                        <segue destination="ura-EV-9Tb" kind="relationship" relationship="viewControllers" id="QGq-Xg-0CE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050" y="1164"/>
+            <point key="canvasLocation" x="-1146" y="832"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jBY-Oh-Chf">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="ura-EV-9Tb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="bB8-I1-3Q9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KRM-aL-05p">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PaU-8A-NcY" kind="relationship" relationship="rootViewController" id="aY5-ar-Nfx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emY-mR-Wfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-98" y="1254"/>
+        </scene>
+        <!--Car List View Controller-->
+        <scene sceneID="G2e-2b-HBJ">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="PaU-8A-NcY" customClass="CarListViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="gYC-YK-i8t">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tqJ-ZT-XAT">
+                            <size key="itemSize" width="746" height="439"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="" reuseIdentifier="CarCell" id="VtG-sa-oXc" customClass="CarCell">
+                                <rect key="frame" x="11" y="0.0" width="746" height="439"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="746" height="439"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJn-GF-c1a">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="274" id="D8i-wB-wy9"/>
+                                            </constraints>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShT-LM-zJz">
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="GHU-WN-eHl"/>
+                                            </constraints>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Model Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5E-Ju-irg">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="911" id="5yl-DM-cUb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="xJn-GF-c1a" firstAttribute="leading" secondItem="VtG-sa-oXc" secondAttribute="leading" constant="20" type="default" id="Bjg-y6-yxx"/>
+                                    <constraint firstItem="ShT-LM-zJz" firstAttribute="leading" secondItem="VtG-sa-oXc" secondAttribute="leading" constant="20" type="default" id="JNQ-L6-i6p"/>
+                                    <constraint firstItem="d5E-Ju-irg" firstAttribute="top" secondItem="VtG-sa-oXc" secondAttribute="top" constant="-428" id="Joo-MS-b3a"/>
+                                    <constraint firstAttribute="trailing" secondItem="ShT-LM-zJz" secondAttribute="trailing" constant="20" type="default" id="PU2-5K-cjU"/>
+                                    <constraint firstAttribute="trailing" secondItem="d5E-Ju-irg" secondAttribute="trailing" constant="20" type="default" id="Q09-ha-0ig"/>
+                                    <constraint firstItem="xJn-GF-c1a" firstAttribute="top" secondItem="VtG-sa-oXc" secondAttribute="top" constant="49" id="W2h-NI-ZL5"/>
+                                    <constraint firstItem="ShT-LM-zJz" firstAttribute="top" secondItem="xJn-GF-c1a" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WHI-CM-4eb"/>
+                                    <constraint firstItem="d5E-Ju-irg" firstAttribute="leading" secondItem="VtG-sa-oXc" secondAttribute="leading" constant="20" type="default" id="XAg-Np-pK0"/>
+                                    <constraint firstAttribute="trailing" secondItem="xJn-GF-c1a" secondAttribute="trailing" constant="20" type="default" id="uDt-oc-kEZ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="carImageView" destination="xJn-GF-c1a" id="CSh-T5-ZaQ"/>
+                                    <outlet property="modelHighlightsTextView" destination="ShT-LM-zJz" id="4c6-R3-BtS"/>
+                                    <outlet property="modelNameLabel" destination="d5E-Ju-irg" id="MPK-0f-ePv"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="PaU-8A-NcY" id="Kzb-DG-m26"/>
+                            <outlet property="delegate" destination="PaU-8A-NcY" id="F9e-Ii-xzW"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="P7t-WA-qBn"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCB-XB-Iw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="1239"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first.png" width="30" height="30"/>
+    </resources>
     <classes>
+        <class className="CarCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="carImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="modelHighlightsTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="modelNameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CarListViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarListViewController.h"/>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>

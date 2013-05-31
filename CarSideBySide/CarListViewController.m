@@ -1,20 +1,21 @@
 //
-//  OfferListViewController.m
+//  CarListViewController.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 5/29/13.
+//  Created by Alejandro Juarez on 5/31/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
-#import "OfferListViewController.h"
+#import "CarListViewController.h"
 #import "AppDelegate.h"
-#import "OfferCell.h"
-#import "Offer.h"
-@interface OfferListViewController ()
-- (void)configureCell:(OfferCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+#import "CarCell.h"
+#import "AppDelegate.h"
+
+@interface CarListViewController ()
+- (void)configureCell:(CarCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation OfferListViewController
+@implementation CarListViewController
 @synthesize fetchedResultsController, managedObjectContext, persistentStoreCoordinator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,7 +33,6 @@
 {
     [super viewDidLoad];
     [self.collectionView reloadData];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,7 +40,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 # pragma - UICollectionViewDataSource
 
@@ -57,8 +56,8 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    OfferCell *cell =  [self.collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-
+    CarCell *cell =  [self.collectionView dequeueReusableCellWithReuseIdentifier:@"CarCell" forIndexPath:indexPath];
+    
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -72,11 +71,11 @@
         return fetchedResultsController;
     }
     managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-
+    
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Offer" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Car" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
@@ -105,9 +104,10 @@
     return fetchedResultsController;
 }
 
-- (void)configureCell:(OfferCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(CarCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.offer = object;
+    cell.car = object;
 }
+
 @end

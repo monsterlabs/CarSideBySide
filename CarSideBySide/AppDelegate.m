@@ -18,7 +18,7 @@
 #import "Line.h"
 #import "Car.h"
 
-#define SHOWS_MIGRATION_ALERT 1
+#define SHOWS_MIGRATION_ALERT 0
 #define USES_PRESET_ANIMATION 0
 
 @implementation AppDelegate
@@ -244,16 +244,16 @@
     
     /* Loading cars for serie 1 */
     Serie *serie_1 = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext: context];
-    [serie_1 setName: @"1"];
+    [serie_1 setName: @"Serie 1"];
     [maker addSeriesObject:serie_1];
     
     NSArray *lines = [NSArray arrayWithObjects: @"3 puertas", @"5 puertas", @"Coupe", @"Convertible", @"Active E", nil];
     NSArray *cars = [NSArray arrayWithObjects:
                      [NSDictionary dictionaryWithObjectsAndKeys: @"125i", @"modelName", @"2013", @"year", @"bmw_s1_3_puertas.jpg", @"image", @"bmw_s1_3_puertas_main.jpg", @"largeImage", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys: @"126i", @"modelName", @"2013", @"year", @"bmw_s1_5_puertas.jpg", @"icon", @"bmw_s1_5_puertas_main.jpg", @"largeImage", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys: @"127i", @"modelName", @"2013", @"year", @"bmw_s1_coupe.jpg", @"icon", @"bmw_s1_coupe_main.jpg", @"largeImage", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys: @"128i", @"modelName", @"2013", @"year", @"bmw_s1_convertible.jpg", @"icon", @"bmw_s1_convertible_main.jpg", @"largeImage", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys: @"129i", @"modelName", @"2013", @"year", @"bmw_s1_active_e.jpg", @"icon", @"bmw_s1_active_e.jpg", @"largeImage", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys: @"126i", @"modelName", @"2013", @"year", @"bmw_s1_5_puertas.jpg", @"image", @"bmw_s1_5_puertas_main.jpg", @"largeImage", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys: @"127i", @"modelName", @"2013", @"year", @"bmw_s1_coupe.jpg", @"image", @"bmw_s1_coupe_main.jpg", @"largeImage", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys: @"128i", @"modelName", @"2013", @"year", @"bmw_s1_convertible.jpg", @"image", @"bmw_s1_convertible_main.jpg", @"largeImage", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys: @"129i", @"modelName", @"2013", @"year", @"bmw_s1_active_e.jpg", @"image", @"bmw_s1_active_e.jpg", @"largeImage", nil],
                      nil];
     
     for (NSString *lineName in lines) {
@@ -261,7 +261,7 @@
         [line setName:lineName];
         for (NSDictionary *dict in cars) {
             Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName: @"Car" inManagedObjectContext: context];
-            NSString *modelName = [NSString stringWithFormat:@"%@ %@ %@", serie_1, [dict valueForKey:@"modelName"], lineName];
+            NSString *modelName = [NSString stringWithFormat:@"%@ %@ %@",  @"Serie 1", [dict valueForKey:@"modelName"], lineName];
             [car setModelName:modelName];
             [car setYear:[NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]]];
             [car setImage:[dict valueForKey:@"image"]];
@@ -273,7 +273,7 @@
     
     /* Loading cars for serie 3 */
     Serie *serie_3 = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext: context];
-    [serie_3 setName: @"3"];
+    [serie_3 setName: @"Serie 3"];
     [maker addSeriesObject:serie_3];
     lines = [NSArray arrayWithObjects:@"Sedan", @"Sedan Active Hybrid", @"Touring", @"Gran Turismo", @"Coupe", @"Convertible", nil];
     cars = [NSArray arrayWithObjects:
@@ -290,7 +290,7 @@
         [line setName:lineName];
         for (NSDictionary *dict in cars) {
             Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName: @"Car" inManagedObjectContext: context];
-            NSString *modelName = [NSString stringWithFormat:@"%@ %@ %@", serie_3, [dict valueForKey:@"modelName"], lineName];
+            NSString *modelName = [NSString stringWithFormat:@"%@ %@ %@",  @"Serie 3", [dict valueForKey:@"modelName"], lineName];
             [car setModelName:modelName];
             [car setYear:[NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]]];
             [car setImage:[dict valueForKey:@"image"]];
@@ -302,7 +302,7 @@
     
     /* Loading cars for serie 5 */
     Serie *serie_5 = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext: context];
-    [serie_5 setName: @"5"];
+    [serie_5 setName: @"Serie 5"];
     [maker addSeriesObject:serie_5];
     lines = [NSArray arrayWithObjects:@"Sedan", @"Gran turismo", nil];
     cars = [NSArray arrayWithObjects:
@@ -318,7 +318,7 @@
         [line setName:lineName];
         for (NSDictionary *dict in cars) {
             Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName: @"Car" inManagedObjectContext: context];
-            NSString *modelName = [NSString stringWithFormat:@"%@ %@ %@", serie_5, [dict valueForKey:@"modelName"], lineName];
+            NSString *modelName = [NSString stringWithFormat:@"%@ %@ %@", @"Serie 5", [dict valueForKey:@"modelName"], lineName];
             [car setModelName:modelName];
             [car setYear:[NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]]];
             [car setImage:[dict valueForKey:@"image"]];

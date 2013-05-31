@@ -22,6 +22,7 @@
 @dynamic valid;
 @dynamic validUntil;
 @dynamic year;
+@dynamic modelHighlights;
 @dynamic line;
 
 @end
