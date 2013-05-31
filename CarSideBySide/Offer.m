@@ -2,7 +2,7 @@
 //  Offer.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 5/29/13.
+//  Created by Alejandro Juarez on 5/31/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -11,10 +11,10 @@
 
 @implementation Offer
 
-@dynamic title;
 @dynamic body;
-@dynamic url;
 @dynamic image;
+@dynamic title;
+@dynamic url;
 @dynamic validUntil;
 
 @end
