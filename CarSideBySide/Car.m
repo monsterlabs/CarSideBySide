@@ -2,7 +2,7 @@
 //  Car.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez Robles on 5/28/13.
+//  Created by Alejandro Juarez on 5/31/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -12,16 +12,16 @@
 
 @implementation Car
 
-@dynamic modelName;
-@dynamic year;
+@dynamic hp;
 @dynamic image;
 @dynamic largeImage;
-@dynamic valid;
-@dynamic validUntil;
+@dynamic modelName;
+@dynamic orderKey;
 @dynamic priceList;
 @dynamic retailPrice;
-@dynamic orderKey;
-@dynamic hp;
+@dynamic valid;
+@dynamic validUntil;
+@dynamic year;
 @dynamic line;
 
 @end
