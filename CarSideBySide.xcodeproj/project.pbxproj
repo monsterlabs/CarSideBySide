@@ -27,45 +27,16 @@
 		FA2AF9991755A50B001BA8ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9971755A50B001BA8ED /* InfoPlist.strings */; };
 		FA2AF99C1755A50B001BA8ED /* CarSideBySideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF99B1755A50B001BA8ED /* CarSideBySideTests.m */; };
 		FA2AF9A61755B3B9001BA8ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9A51755B3B9001BA8ED /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-<<<<<<< Updated upstream
-=======
-		FA4CB4FA1758E4DD00E97C27 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB4F91758E4DD00E97C27 /* Car.m */; };
-		FA4CB4FE1758E4DD00E97C27 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB4FD1758E4DD00E97C27 /* Line.m */; };
-		FA4CB5011758E4DD00E97C27 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB5001758E4DD00E97C27 /* Offer.m */; };
-		FA4CB5041758E4DD00E97C27 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB5031758E4DD00E97C27 /* Maker.m */; };
-		FA4CB5071758E4DD00E97C27 /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CB5061758E4DD00E97C27 /* Serie.m */; };
-		FA590727175674B8008F8B78 /* bmw_offer_test_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */; };
-		FA590728175674B8008F8B78 /* bmw_offer_test_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */; };
-		FA590729175674B8008F8B78 /* bmw_offer_test_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */; };
-		FA5A9B081756FD0600B718C1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AE61756FD0600B718C1 /* Podfile */; };
-		FA5A9B091756FD0600B718C1 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AE71756FD0600B718C1 /* Podfile.lock */; };
-		FA5A9B0A1756FD0600B718C1 /* Manifest.lock in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AF31756FD0600B718C1 /* Manifest.lock */; };
-		FA5A9B0B1756FD0600B718C1 /* Pods-acknowledgements.markdown in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AF41756FD0600B718C1 /* Pods-acknowledgements.markdown */; };
-		FA5A9B0C1756FD0600B718C1 /* Pods-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AF51756FD0600B718C1 /* Pods-acknowledgements.plist */; };
-		FA5A9B0D1756FD0600B718C1 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5A9AF61756FD0600B718C1 /* Pods-dummy.m */; };
-		FA5A9B0E1756FD0600B718C1 /* Pods-resources.sh in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AF91756FD0600B718C1 /* Pods-resources.sh */; };
-		FA5A9B0F1756FD0600B718C1 /* Pods.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AFA1756FD0600B718C1 /* Pods.xcconfig */; };
-		FA5A9B101756FD0600B718C1 /* YISplashScreen+Migration.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5A9B011756FD0600B718C1 /* YISplashScreen+Migration.m */; };
-		FA5A9B111756FD0600B718C1 /* YISplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5A9B031756FD0600B718C1 /* YISplashScreen.m */; };
-		FA5A9B121756FD0600B718C1 /* YISplashScreenAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5A9B051756FD0600B718C1 /* YISplashScreenAnimation.m */; };
-		FA5A9B131756FD0600B718C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9B061756FD0600B718C1 /* README.md */; };
-		FA5A9B141756FD0600B718C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9B071756FD0600B718C1 /* README.md */; };
->>>>>>> Stashed changes
 		FA5D5FB71755C91000C14D02 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */; };
 		FA5D5FB81755C91000C14D02 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */; };
 		FA5D5FB91755C91000C14D02 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB51755C91000C14D02 /* Icon-72.png */; };
 		FA5D5FBA1755C91000C14D02 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5FB61755C91000C14D02 /* Icon-72@2x.png */; };
 		FA88C2BB1755B90400603295 /* CarSideBySide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */; };
-<<<<<<< Updated upstream
 		FA88C2C21755BDFB00603295 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2C11755BDFB00603295 /* Line.m */; };
 		FA88C2C51755BDFB00603295 /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2C41755BDFB00603295 /* Serie.m */; };
 		FA88C2CB1755BDFB00603295 /* Maker.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2CA1755BDFB00603295 /* Maker.m */; };
 		FA88C2D11755BE4A00603295 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2D01755BE4A00603295 /* Car.m */; };
 		FAD4A37A175654F600CB039A /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD4A379175654F600CB039A /* Offer.m */; };
-=======
-		FA953D141757027D004F770D /* OfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA953D131757027D004F770D /* OfferCell.m */; };
-		FAD9DA781756B54500293DA4 /* OfferListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9DA771756B54500293DA4 /* OfferListViewController.m */; };
->>>>>>> Stashed changes
 		FADABF4F1755CC490072E8C9 /* bmw_s1_3_puertas_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF351755CC490072E8C9 /* bmw_s1_3_puertas_large.jpg */; };
 		FADABF501755CC490072E8C9 /* bmw_s1_3_puertas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF361755CC490072E8C9 /* bmw_s1_3_puertas.jpg */; };
 		FADABF511755CC490072E8C9 /* bmw_s1_5_puertas_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF371755CC490072E8C9 /* bmw_s1_5_puertas_large.jpg */; };
@@ -134,53 +105,11 @@
 		FA2AF99A1755A50B001BA8ED /* CarSideBySideTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarSideBySideTests.h; sourceTree = "<group>"; };
 		FA2AF99B1755A50B001BA8ED /* CarSideBySideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarSideBySideTests.m; sourceTree = "<group>"; };
 		FA2AF9A51755B3B9001BA8ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-<<<<<<< Updated upstream
-=======
-		FA4CB4F81758E4DD00E97C27 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
-		FA4CB4F91758E4DD00E97C27 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
-		FA4CB4FC1758E4DD00E97C27 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
-		FA4CB4FD1758E4DD00E97C27 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
-		FA4CB4FF1758E4DD00E97C27 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
-		FA4CB5001758E4DD00E97C27 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
-		FA4CB5021758E4DD00E97C27 /* Maker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maker.h; sourceTree = "<group>"; };
-		FA4CB5031758E4DD00E97C27 /* Maker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maker.m; sourceTree = "<group>"; };
-		FA4CB5051758E4DD00E97C27 /* Serie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serie.h; sourceTree = "<group>"; };
-		FA4CB5061758E4DD00E97C27 /* Serie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Serie.m; sourceTree = "<group>"; };
-		FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_1.jpg; sourceTree = "<group>"; };
-		FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_2.jpg; sourceTree = "<group>"; };
-		FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_3.jpg; sourceTree = "<group>"; };
-		FA5A9AE61756FD0600B718C1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FA5A9AE71756FD0600B718C1 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
-		FA5A9AEB1756FD0600B718C1 /* YISplashScreen+Migration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YISplashScreen+Migration.h"; sourceTree = "<group>"; };
-		FA5A9AEC1756FD0600B718C1 /* YISplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreen.h; sourceTree = "<group>"; };
-		FA5A9AED1756FD0600B718C1 /* YISplashScreenAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreenAnimation.h; sourceTree = "<group>"; };
-		FA5A9AF01756FD0600B718C1 /* YISplashScreen+Migration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YISplashScreen+Migration.h"; sourceTree = "<group>"; };
-		FA5A9AF11756FD0600B718C1 /* YISplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreen.h; sourceTree = "<group>"; };
-		FA5A9AF21756FD0600B718C1 /* YISplashScreenAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreenAnimation.h; sourceTree = "<group>"; };
-		FA5A9AF31756FD0600B718C1 /* Manifest.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Manifest.lock; sourceTree = "<group>"; };
-		FA5A9AF41756FD0600B718C1 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FA5A9AF51756FD0600B718C1 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		FA5A9AF61756FD0600B718C1 /* Pods-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		FA5A9AF71756FD0600B718C1 /* Pods-environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		FA5A9AF81756FD0600B718C1 /* Pods-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pods-prefix.pch"; sourceTree = "<group>"; };
-		FA5A9AF91756FD0600B718C1 /* Pods-resources.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		FA5A9AFA1756FD0600B718C1 /* Pods.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = "<group>"; };
-		FA5A9AFB1756FD0600B718C1 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
-		FA5A9B001756FD0600B718C1 /* YISplashScreen+Migration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YISplashScreen+Migration.h"; sourceTree = "<group>"; };
-		FA5A9B011756FD0600B718C1 /* YISplashScreen+Migration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YISplashScreen+Migration.m"; sourceTree = "<group>"; };
-		FA5A9B021756FD0600B718C1 /* YISplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreen.h; sourceTree = "<group>"; };
-		FA5A9B031756FD0600B718C1 /* YISplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YISplashScreen.m; sourceTree = "<group>"; };
-		FA5A9B041756FD0600B718C1 /* YISplashScreenAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISplashScreenAnimation.h; sourceTree = "<group>"; };
-		FA5A9B051756FD0600B718C1 /* YISplashScreenAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YISplashScreenAnimation.m; sourceTree = "<group>"; };
-		FA5A9B061756FD0600B718C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		FA5A9B071756FD0600B718C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 		FA5D5FB31755C91000C14D02 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../CarSideBySide.old/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		FA5D5FB41755C91000C14D02 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../CarSideBySide.old/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		FA5D5FB51755C91000C14D02 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../../CarSideBySide.old/Icon-72.png"; sourceTree = "<group>"; };
 		FA5D5FB61755C91000C14D02 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "../../CarSideBySide.old/Icon-72@2x.png"; sourceTree = "<group>"; };
 		FA88C2BA1755B90400603295 /* CarSideBySide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarSideBySide.xcdatamodel; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
 		FA88C2C01755BDFB00603295 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		FA88C2C11755BDFB00603295 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		FA88C2C31755BDFB00603295 /* Serie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serie.h; sourceTree = "<group>"; };
@@ -191,12 +120,6 @@
 		FA88C2D01755BE4A00603295 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		FAD4A378175654F600CB039A /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		FAD4A379175654F600CB039A /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
-=======
-		FA953D121757027D004F770D /* OfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferCell.h; sourceTree = "<group>"; };
-		FA953D131757027D004F770D /* OfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferCell.m; sourceTree = "<group>"; };
-		FAD9DA761756B54500293DA4 /* OfferListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferListViewController.h; sourceTree = "<group>"; };
-		FAD9DA771756B54500293DA4 /* OfferListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferListViewController.m; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 		FADABF351755CC490072E8C9 /* bmw_s1_3_puertas_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_3_puertas_large.jpg; sourceTree = "<group>"; };
 		FADABF361755CC490072E8C9 /* bmw_s1_3_puertas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_3_puertas.jpg; sourceTree = "<group>"; };
 		FADABF371755CC490072E8C9 /* bmw_s1_5_puertas_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_5_puertas_large.jpg; sourceTree = "<group>"; };
@@ -343,17 +266,17 @@
 		FA2AF9A71755B41C001BA8ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA88C2CF1755BE4A00603295 /* Car.h */,
+				FA88C2D01755BE4A00603295 /* Car.m */,
 				FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */,
-				FA4CB4F81758E4DD00E97C27 /* Car.h */,
-				FA4CB4F91758E4DD00E97C27 /* Car.m */,
-				FA4CB4FC1758E4DD00E97C27 /* Line.h */,
-				FA4CB4FD1758E4DD00E97C27 /* Line.m */,
-				FA4CB4FF1758E4DD00E97C27 /* Offer.h */,
-				FA4CB5001758E4DD00E97C27 /* Offer.m */,
-				FA4CB5021758E4DD00E97C27 /* Maker.h */,
-				FA4CB5031758E4DD00E97C27 /* Maker.m */,
-				FA4CB5051758E4DD00E97C27 /* Serie.h */,
-				FA4CB5061758E4DD00E97C27 /* Serie.m */,
+				FAD4A378175654F600CB039A /* Offer.h */,
+				FAD4A379175654F600CB039A /* Offer.m */,
+				FA88C2C91755BDFB00603295 /* Maker.h */,
+				FA88C2CA1755BDFB00603295 /* Maker.m */,
+				FA88C2C31755BDFB00603295 /* Serie.h */,
+				FA88C2C41755BDFB00603295 /* Serie.m */,
+				FA88C2C01755BDFB00603295 /* Line.h */,
+				FA88C2C11755BDFB00603295 /* Line.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -613,25 +536,11 @@
 				FA2AF97C1755A50A001BA8ED /* FirstViewController.m in Sources */,
 				FA2AF9831755A50B001BA8ED /* SecondViewController.m in Sources */,
 				FA88C2BB1755B90400603295 /* CarSideBySide.xcdatamodeld in Sources */,
-<<<<<<< Updated upstream
 				FA88C2C21755BDFB00603295 /* Line.m in Sources */,
 				FA88C2C51755BDFB00603295 /* Serie.m in Sources */,
 				FA88C2CB1755BDFB00603295 /* Maker.m in Sources */,
 				FA88C2D11755BE4A00603295 /* Car.m in Sources */,
 				FAD4A37A175654F600CB039A /* Offer.m in Sources */,
-=======
-				FAD9DA781756B54500293DA4 /* OfferListViewController.m in Sources */,
-				FA5A9B0D1756FD0600B718C1 /* Pods-dummy.m in Sources */,
-				FA5A9B101756FD0600B718C1 /* YISplashScreen+Migration.m in Sources */,
-				FA5A9B111756FD0600B718C1 /* YISplashScreen.m in Sources */,
-				FA5A9B121756FD0600B718C1 /* YISplashScreenAnimation.m in Sources */,
-				FA953D141757027D004F770D /* OfferCell.m in Sources */,
-				FA4CB4FA1758E4DD00E97C27 /* Car.m in Sources */,
-				FA4CB4FE1758E4DD00E97C27 /* Line.m in Sources */,
-				FA4CB5011758E4DD00E97C27 /* Offer.m in Sources */,
-				FA4CB5041758E4DD00E97C27 /* Maker.m in Sources */,
-				FA4CB5071758E4DD00E97C27 /* Serie.m in Sources */,
->>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

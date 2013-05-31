@@ -2,27 +2,19 @@
 //  Line.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 5/31/13.
+//  Created by Alejandro Juarez Robles on 5/28/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Car, Serie;
+@class Car;
 
 @interface Line : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *cars;
-@property (nonatomic, retain) Serie *serie;
-@end
-
-@interface Line (CoreDataGeneratedAccessors)
-
-- (void)addCarsObject:(Car *)value;
-- (void)removeCarsObject:(Car *)value;
-- (void)addCars:(NSSet *)values;
-- (void)removeCars:(NSSet *)values;
+@property (nonatomic, retain) NSManagedObject *serie;
+@property (nonatomic, retain) Car *cars;
 
 @end

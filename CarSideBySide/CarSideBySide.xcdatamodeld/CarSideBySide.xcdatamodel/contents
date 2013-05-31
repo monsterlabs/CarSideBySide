@@ -15,12 +15,12 @@
     </entity>
     <entity name="Line" representedClassName="Line" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
-        <relationship name="cars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="line" inverseEntity="Car" syncable="YES"/>
+        <relationship name="cars" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="line" inverseEntity="Car" syncable="YES"/>
         <relationship name="serie" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Serie" inverseName="lines" inverseEntity="Serie" syncable="YES"/>
     </entity>
     <entity name="Maker" representedClassName="Maker" syncable="YES">
         <attribute name="name" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
-        <relationship name="series" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Serie" inverseName="maker" inverseEntity="Serie" syncable="YES"/>
+        <relationship name="series" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Serie" inverseName="maker" inverseEntity="Serie" syncable="YES"/>
     </entity>
     <entity name="Offer" representedClassName="Offer" syncable="YES">
         <attribute name="body" optional="YES" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
@@ -31,14 +31,14 @@
     </entity>
     <entity name="Serie" representedClassName="Serie" syncable="YES">
         <attribute name="name" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
-        <relationship name="lines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Line" inverseName="serie" inverseEntity="Line" syncable="YES"/>
+        <relationship name="lines" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Line" inverseName="serie" inverseEntity="Line" syncable="YES"/>
         <relationship name="maker" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Maker" inverseName="series" inverseEntity="Maker" syncable="YES"/>
     </entity>
     <elements>
         <element name="Car" positionX="160" positionY="192" width="128" height="210"/>
         <element name="Line" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Maker" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="Offer" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Serie" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Offer" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>
