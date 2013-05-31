@@ -2,7 +2,7 @@
 //  Maker.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez Robles on 5/28/13.
+//  Created by Alejandro Juarez on 5/31/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -14,6 +14,14 @@
 @interface Maker : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) Serie *series;
+@property (nonatomic, retain) NSSet *series;
+@end
+
+@interface Maker (CoreDataGeneratedAccessors)
+
+- (void)addSeriesObject:(Serie *)value;
+- (void)removeSeriesObject:(Serie *)value;
+- (void)addSeries:(NSSet *)values;
+- (void)removeSeries:(NSSet *)values;
 
 @end
