@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "CarCell.h"
 #import "AppDelegate.h"
+#import "CarDetailViewController.h"
 
 @interface CarListViewController ()
 - (void)configureCell:(CarCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -59,9 +60,38 @@
     CarCell *cell =  [self.collectionView dequeueReusableCellWithReuseIdentifier:@"CarCell" forIndexPath:indexPath];
     
     [self configureCell:cell atIndexPath:indexPath];
+    
     return cell;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
+    
+    //UICollectionViewCell *datasetCell = [collectionView cellForItemAtIndexPath:indexPath];
+    //    datasetCell.backgroundColor = [UIColor blueColor]; // highlight selection
+    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    CarDetailViewController *detail = (CarDetailViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"CarDetailViewController"];
+    detail.car = object;
+
+    [self.navigationController pushViewController:detail animated:YES];
+
+}
+
+//-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
+//    datasetCell.backgroundColor = [UIColor whiteColor]; // Default color
+//}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
 
 #pragma mark - Fetched results controller
 
