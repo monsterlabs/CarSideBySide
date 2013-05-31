@@ -8,7 +8,7 @@
 
 #import "OfferCell.h"
 #import "Offer.h"
-
+#import <QuartzCore/QuartzCore.h>
 @implementation OfferCell
 
 -(void)setOffer:(id)newOffer
@@ -31,13 +31,25 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+
     titleLabel.text = [self.offer valueForKey:@"title"];
     bodyTextView.text = [self.offer valueForKey:@"body"];
+
     offerImageView.image = [UIImage imageNamed:[self.offer valueForKey:@"image"]];
+    //offerImageView.layer.cornerRadius = 10.0f;
+    offerImageView.layer.masksToBounds = YES;
+    offerImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    offerImageView.layer.borderWidth = 1.0;
+     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *dateString = [dateFormatter stringFromDate:[self.offer valueForKey:@"validUntil"]];
     validUntilLabel.text = dateString;
+    
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 256, self.contentView.bounds.size.width, 1)];
+    lineView.backgroundColor = [UIColor lightGrayColor];
+    
+    [self addSubview: lineView];
     [super drawRect:rect];
 }
 
