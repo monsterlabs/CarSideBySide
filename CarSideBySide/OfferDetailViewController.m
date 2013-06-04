@@ -1,55 +1,58 @@
 //
-//  OfferCell.m
+//  OfferDetailViewController.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez Robles on 5/29/13.
+//  Created by Alejandro Juarez Robles on 6/1/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
-#import "OfferCell.h"
+#import "OfferDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
-@implementation OfferCell
 
--(void)setOffer:(id)newOffer
-{
-    if (_offer != newOffer) {
-        _offer = newOffer;
-    }
-}
+@interface OfferDetailViewController ()
 
-- (id)initWithFrame:(CGRect)frame
+@end
+
+@implementation OfferDetailViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code
+        // Custom initialization
     }
     return self;
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)viewDidLoad
 {
-
+    [super viewDidLoad];
     titleLabel.text = [self.offer valueForKey:@"title"];
     bodyTextView.text = [self.offer valueForKey:@"body"];
-
+    
     offerImageView.image = [UIImage imageNamed:[self.offer valueForKey:@"image"]];
     offerImageView.layer.cornerRadius = 05.0f;
     offerImageView.layer.masksToBounds = YES;
     offerImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     offerImageView.layer.borderWidth = 1.0;
-     
+    
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *dateString = [dateFormatter stringFromDate:[self.offer valueForKey:@"validUntil"]];
     validUntilLabel.text = dateString;
-    
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 266, self.contentView.bounds.size.width, 1)];
-    lineView.backgroundColor = [UIColor lightGrayColor];
-    
-    [self addSubview: lineView];
-    [super drawRect:rect];
+
+    urlLabel.text = [self.offer valueForKey:@"url"];
+	// Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)done:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{}];
 }
 
 @end

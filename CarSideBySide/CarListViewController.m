@@ -133,6 +133,10 @@
     
     return fetchedResultsController;
 }
+- (NSFetchedResultsController *)doSearch:(NSString*)text;
+{
+    
+}
 
 - (void)configureCell:(CarCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {

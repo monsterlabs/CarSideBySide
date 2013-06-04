@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface CarListViewController : UICollectionViewController  <UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate>
+@interface CarListViewController : UICollectionViewController  <UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate,UITextFieldDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
