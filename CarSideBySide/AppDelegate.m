@@ -18,7 +18,7 @@
 #import "Line.h"
 #import "Car.h"
 
-#define SHOWS_MIGRATION_ALERT 1
+#define SHOWS_MIGRATION_ALERT 0
 #define USES_PRESET_ANIMATION 0
 
 @implementation AppDelegate
