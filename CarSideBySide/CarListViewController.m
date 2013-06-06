@@ -72,6 +72,7 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
     CarDetailViewController *detail = (CarDetailViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"CarDetailViewController"];
     detail.car = object;
+    detail.hidesBottomBarWhenPushed  = YES;
 
     [self.navigationController pushViewController:detail animated:YES];
 

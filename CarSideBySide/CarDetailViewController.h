@@ -11,8 +11,14 @@
 @interface CarDetailViewController : UIViewController{
     IBOutlet UIImageView *largeImageView;
     IBOutlet UILabel *modelNameLabel;
+    IBOutlet UIBarButtonItem *technicalDetailButton;
 }
 
 @property (strong, nonatomic) id car;
 
+- (IBAction)showEquipment:(id)sender;
+- (IBAction)showLines:(id)sender;
+- (IBAction)showPrice:(id)sender;
+- (IBAction)showSafety:(id)sender;
+- (IBAction)showTechnicalDetail:(id)sender;
 @end
