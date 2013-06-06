@@ -9,6 +9,7 @@
 #import "CarDetailViewController.h"
 #import "Car.h"
 #import <QuartzCore/QuartzCore.h>
+#import "DummyViewController.h"
 @interface CarDetailViewController ()
 
 @end
@@ -48,5 +49,67 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (IBAction)showEquipment:(id)sender;
+{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    
+    DummyViewController *dummyController = (DummyViewController *)[mainStoryboard instantiateViewControllerWithIdentifier: @"DummyViewController"];
+    dummyController.sectionTitle = @"Equipment";
+    int year = [[self.car valueForKey: @"year"] integerValue];
+    dummyController.sectionTitle =  [NSString stringWithFormat: @"%@ %d", [self.car valueForKey: @"modelName"], year];
+    dummyController.dummyImage = @"equipment.png";
+    [self.navigationController pushViewController:dummyController animated:YES];
+}
+
+- (IBAction)showLines:(id)sender;
+{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    
+    DummyViewController *dummyController = (DummyViewController *)[mainStoryboard instantiateViewControllerWithIdentifier: @"DummyViewController"];
+    dummyController.sectionTitle = @"Lines";
+    int year = [[self.car valueForKey: @"year"] integerValue];
+    dummyController.sectionTitle =  [NSString stringWithFormat: @"%@ %d", [self.car valueForKey: @"modelName"], year];
+    dummyController.dummyImage = @"lines.png";
+    [self.navigationController pushViewController:dummyController animated:YES];
+}
+
+- (IBAction)showPrice:(id)sender;
+{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    
+    DummyViewController *dummyController = (DummyViewController *)[mainStoryboard instantiateViewControllerWithIdentifier: @"DummyViewController"];
+    dummyController.sectionTitle = @"Price";
+    int year = [[self.car valueForKey: @"year"] integerValue];
+    dummyController.sectionTitle =  [NSString stringWithFormat: @"%@ %d", [self.car valueForKey: @"modelName"], year];
+    dummyController.dummyImage = @"price.png";
+    [self.navigationController pushViewController:dummyController animated:YES];
+}
+
+- (IBAction)showSafety:(id)sender;
+{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    
+    DummyViewController *dummyController = (DummyViewController *)[mainStoryboard instantiateViewControllerWithIdentifier: @"DummyViewController"];
+    dummyController.sectionTitle = @"Safety";
+    int year = [[self.car valueForKey: @"year"] integerValue];
+    dummyController.sectionTitle =  [NSString stringWithFormat: @"%@ %d", [self.car valueForKey: @"modelName"], year];
+    dummyController.dummyImage = @"safety.png";
+    [self.navigationController pushViewController:dummyController animated:YES];
+}
+
+- (IBAction)showTechnicalDetail:(id)sender;
+{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    
+    DummyViewController *dummyController = (DummyViewController *)[mainStoryboard instantiateViewControllerWithIdentifier: @"DummyViewController"];
+    dummyController.sectionTitle = @"Tecnical detail";
+    int year = [[self.car valueForKey: @"year"] integerValue];
+    dummyController.sectionTitle =  [NSString stringWithFormat: @"%@ %d", [self.car valueForKey: @"modelName"], year];
+    dummyController.dummyImage = @"technical_details.png";
+    [self.navigationController pushViewController:dummyController animated:YES];
+}
+
 
 @end
