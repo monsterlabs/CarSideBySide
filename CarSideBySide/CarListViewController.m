@@ -9,7 +9,7 @@
 #import "CarListViewController.h"
 #import "AppDelegate.h"
 #import "CarCell.h"
-#import "AppDelegate.h"
+#import "CarListHeaderView.h"
 #import "CarDetailViewController.h"
 
 @interface CarListViewController ()
@@ -133,15 +133,21 @@
     
     return fetchedResultsController;
 }
-- (NSFetchedResultsController *)doSearch:(NSString*)text;
-{
-    
-}
 
 - (void)configureCell:(CarCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.car = object;
+}
+
+# pragma mark - UICollectionReusableView
+- (UICollectionReusableView *)collectionView: (UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    CarListHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
+                                       UICollectionElementKindSectionHeader withReuseIdentifier:@"CarListHeaderView" forIndexPath:indexPath];
+    
+    //NSString *searchTerm = self.searches[indexPath.section]; [headerView setSearchText:searchTerm];
+    return headerView;
 }
 
 @end

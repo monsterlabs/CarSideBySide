@@ -49,6 +49,8 @@
 		FA8B0835175A321300C58E04 /* OfferListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8B0834175A321300C58E04 /* OfferListHeaderView.m */; };
 		FA8B0839175A397700C58E04 /* OfferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8B0838175A397700C58E04 /* OfferDetailViewController.m */; };
 		FA953D141757027D004F770D /* OfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA953D131757027D004F770D /* OfferCell.m */; };
+		FA98C5A11760FB4600B64805 /* CarListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA98C5A01760FB4600B64805 /* CarListHeaderView.m */; };
+		FA98C5A517610B1F00B64805 /* SerieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA98C5A417610B1F00B64805 /* SerieListViewController.m */; };
 		FAA37F8117594483005DC530 /* CarDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA37F8017594483005DC530 /* CarDetailViewController.m */; };
 		FACE6928175E75870009F595 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FACE6926175E75870009F595 /* Default-Landscape~ipad.png */; };
 		FACE6929175E75870009F595 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FACE6927175E75870009F595 /* Default-Portrait~ipad.png */; };
@@ -169,6 +171,10 @@
 		FA8B0838175A397700C58E04 /* OfferDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferDetailViewController.m; sourceTree = "<group>"; };
 		FA953D121757027D004F770D /* OfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferCell.h; sourceTree = "<group>"; };
 		FA953D131757027D004F770D /* OfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferCell.m; sourceTree = "<group>"; };
+		FA98C59F1760FB4600B64805 /* CarListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarListHeaderView.h; sourceTree = "<group>"; };
+		FA98C5A01760FB4600B64805 /* CarListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarListHeaderView.m; sourceTree = "<group>"; };
+		FA98C5A317610B1F00B64805 /* SerieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerieListViewController.h; sourceTree = "<group>"; };
+		FA98C5A417610B1F00B64805 /* SerieListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerieListViewController.m; sourceTree = "<group>"; };
 		FAA37F7F17594483005DC530 /* CarDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarDetailViewController.h; sourceTree = "<group>"; };
 		FAA37F8017594483005DC530 /* CarDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarDetailViewController.m; sourceTree = "<group>"; };
 		FACE6926175E75870009F595 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -279,10 +285,14 @@
 				FA2AF96E1755A50A001BA8ED /* AppDelegate.h */,
 				FA2AF96F1755A50A001BA8ED /* AppDelegate.m */,
 				FA2AF9771755A50A001BA8ED /* MainStoryboard.storyboard */,
+				FA98C5A317610B1F00B64805 /* SerieListViewController.h */,
+				FA98C5A417610B1F00B64805 /* SerieListViewController.m */,
 				FA8B0837175A397700C58E04 /* OfferDetailViewController.h */,
 				FA8B0838175A397700C58E04 /* OfferDetailViewController.m */,
 				FA8B0833175A321300C58E04 /* OfferListHeaderView.h */,
 				FA8B0834175A321300C58E04 /* OfferListHeaderView.m */,
+				FA98C59F1760FB4600B64805 /* CarListHeaderView.h */,
+				FA98C5A01760FB4600B64805 /* CarListHeaderView.m */,
 				FAA37F7F17594483005DC530 /* CarDetailViewController.h */,
 				FAA37F8017594483005DC530 /* CarDetailViewController.m */,
 				FA2B057F17590313000EBAB1 /* CarListViewController.h */,
@@ -830,6 +840,8 @@
 				FAA37F8117594483005DC530 /* CarDetailViewController.m in Sources */,
 				FA8B0835175A321300C58E04 /* OfferListHeaderView.m in Sources */,
 				FA8B0839175A397700C58E04 /* OfferDetailViewController.m in Sources */,
+				FA98C5A11760FB4600B64805 /* CarListHeaderView.m in Sources */,
+				FA98C5A517610B1F00B64805 /* SerieListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
