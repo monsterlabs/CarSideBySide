@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -288,6 +288,36 @@
             </objects>
             <point key="canvasLocation" x="-98" y="1254"/>
         </scene>
+        <!--Serie List View Controller-->
+        <scene sceneID="zo4-iC-tWS">
+            <objects>
+                <tableViewController modalPresentationStyle="currentContext" id="H2w-P3-ulU" customClass="SerieListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="I8A-IQ-hdU">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SerieCell" id="5pF-Sg-Rf0">
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="H2w-P3-ulU" id="gHF-bW-plo"/>
+                            <outlet property="delegate" destination="H2w-P3-ulU" id="u55-DJ-I8E"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="150" height="300"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tr3-QU-eDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1594" y="68"/>
+        </scene>
         <!--Car List View Controller-->
         <scene sceneID="G2e-2b-HBJ">
             <objects>
@@ -298,13 +328,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tqJ-ZT-XAT">
                             <size key="itemSize" width="746" height="479"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="100"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="" reuseIdentifier="CarCell" id="VtG-sa-oXc" customClass="CarCell">
-                                <rect key="frame" x="11" y="0.0" width="746" height="479"/>
+                                <rect key="frame" x="11" y="100" width="746" height="479"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="746" height="479"/>
@@ -337,15 +367,15 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ShT-LM-zJz" secondAttribute="trailing" constant="20" type="default" id="9Wn-qQ-W0b"/>
-                                    <constraint firstItem="d5E-Ju-irg" firstAttribute="leading" secondItem="VtG-sa-oXc" secondAttribute="leading" constant="20" type="default" id="Ipo-fC-fzh"/>
-                                    <constraint firstItem="d5E-Ju-irg" firstAttribute="top" secondItem="VtG-sa-oXc" secondAttribute="top" constant="-428" id="Joo-MS-b3a"/>
-                                    <constraint firstItem="xJn-GF-c1a" firstAttribute="leading" secondItem="VtG-sa-oXc" secondAttribute="leading" constant="20" type="default" id="N5H-SD-2PO"/>
-                                    <constraint firstItem="ShT-LM-zJz" firstAttribute="leading" secondItem="VtG-sa-oXc" secondAttribute="leading" constant="20" type="default" id="Q16-le-kW9"/>
-                                    <constraint firstItem="xJn-GF-c1a" firstAttribute="top" secondItem="VtG-sa-oXc" secondAttribute="top" constant="49" id="W2h-NI-ZL5"/>
+                                    <constraint firstItem="ShT-LM-zJz" firstAttribute="leading" secondItem="VtG-sa-oXc" secondAttribute="leading" constant="20" type="default" id="5oP-bP-ZFl"/>
+                                    <constraint firstAttribute="trailing" secondItem="xJn-GF-c1a" secondAttribute="trailing" constant="20" type="default" id="KbR-lr-UAV"/>
+                                    <constraint firstAttribute="trailing" secondItem="ShT-LM-zJz" secondAttribute="trailing" constant="20" type="default" id="MgS-Sk-2f3"/>
+                                    <constraint firstItem="xJn-GF-c1a" firstAttribute="leading" secondItem="VtG-sa-oXc" secondAttribute="leading" constant="20" type="default" id="OMQ-Xx-t2o"/>
+                                    <constraint firstItem="d5E-Ju-irg" firstAttribute="leading" secondItem="VtG-sa-oXc" secondAttribute="leading" constant="20" type="default" id="R9z-fe-K5d"/>
+                                    <constraint firstAttribute="trailing" secondItem="d5E-Ju-irg" secondAttribute="trailing" constant="20" type="default" id="ShY-at-9Ih"/>
                                     <constraint firstItem="ShT-LM-zJz" firstAttribute="top" secondItem="xJn-GF-c1a" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WHI-CM-4eb"/>
-                                    <constraint firstAttribute="trailing" secondItem="xJn-GF-c1a" secondAttribute="trailing" constant="20" type="default" id="Xf2-z9-bIt"/>
-                                    <constraint firstAttribute="trailing" secondItem="d5E-Ju-irg" secondAttribute="trailing" constant="20" type="default" id="sYn-Fv-wqQ"/>
+                                    <constraint firstItem="xJn-GF-c1a" firstAttribute="top" secondItem="VtG-sa-oXc" secondAttribute="top" constant="49" id="XZk-kk-S47"/>
+                                    <constraint firstItem="d5E-Ju-irg" firstAttribute="top" secondItem="VtG-sa-oXc" secondAttribute="top" constant="-426" id="t9q-Xl-2KC"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="carImageView" destination="xJn-GF-c1a" id="CSh-T5-ZaQ"/>
@@ -354,12 +384,38 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CarListHeaderView" id="Z1B-E1-ZsK" customClass="CarListHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="100"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yvI-Z7-fEt">
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="yvI-Z7-fEt" firstAttribute="trailing" secondItem="Z1B-E1-ZsK" secondAttribute="trailing" type="default" id="0lE-kP-fZV"/>
+                                <constraint firstItem="yvI-Z7-fEt" firstAttribute="top" secondItem="Z1B-E1-ZsK" secondAttribute="top" type="default" id="8v0-TE-4pt"/>
+                                <constraint firstItem="yvI-Z7-fEt" firstAttribute="leading" secondItem="Z1B-E1-ZsK" secondAttribute="leading" type="default" id="TLX-60-xuw"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="theSearchBar" destination="yvI-Z7-fEt" id="QIq-0T-VTB"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="PaU-8A-NcY" id="Kzb-DG-m26"/>
                             <outlet property="delegate" destination="PaU-8A-NcY" id="F9e-Ii-xzW"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="P7t-WA-qBn"/>
+                    <navigationItem key="navigationItem" id="P7t-WA-qBn">
+                        <barButtonItem key="leftBarButtonItem" title="Series" id="ogx-dK-UBC">
+                            <connections>
+                                <segue destination="H2w-P3-ulU" kind="popover" popoverAnchorBarButtonItem="ogx-dK-UBC" id="XnE-jZ-fF8">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCB-XB-Iw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -410,67 +466,6 @@
         <image name="first.png" width="30" height="30"/>
         <image name="second" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="CarCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="modelHighlightsTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="modelNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CarDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="largeImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="modelNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CarListViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarListViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="OfferCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bodyTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="offerImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="validUntilLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="OfferDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="bodyTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="offerImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="urlLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="validUntilLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="OfferListHeaderView" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferListHeaderView.h"/>
-        </class>
-        <class className="OfferListViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferListViewController.h"/>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

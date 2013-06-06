@@ -68,15 +68,7 @@
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
-# pragma mark - UICollectionReusableView
-- (UICollectionReusableView *)collectionView: (UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    OfferListHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
-                                         UICollectionElementKindSectionHeader withReuseIdentifier:@"OfferListHeaderView" forIndexPath:indexPath];
 
-    //NSString *searchTerm = self.searches[indexPath.section]; [headerView setSearchText:searchTerm];
-    return headerView;
-}
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
     
@@ -86,6 +78,16 @@
     [self performSegueWithIdentifier:@"OfferDetailViewController"
                               sender:object ];
     [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
+}
+
+# pragma mark - UICollectionReusableView
+- (UICollectionReusableView *)collectionView: (UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    OfferListHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
+                                       UICollectionElementKindSectionHeader withReuseIdentifier:@"OfferListHeaderView" forIndexPath:indexPath];
+    
+    //NSString *searchTerm = self.searches[indexPath.section]; [headerView setSearchText:searchTerm];
+    return headerView;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
