@@ -9,6 +9,7 @@
 #import "Specification.h"
 #import "Car.h"
 #import "Comparative.h"
+#import "SpecificationType.h"
 
 
 @implementation Specification
