@@ -7,6 +7,8 @@
 //
 
 #import "Comparative.h"
+#import "ComparedCar.h"
+#import "Specification.h"
 
 
 @implementation Comparative

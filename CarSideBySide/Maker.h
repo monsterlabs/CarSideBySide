@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Serie;
+@class ComparedCar, Serie;
 
 @interface Maker : NSManagedObject
 
@@ -20,8 +20,8 @@
 
 @interface Maker (CoreDataGeneratedAccessors)
 
-- (void)addComparedCarsObject:(NSManagedObject *)value;
-- (void)removeComparedCarsObject:(NSManagedObject *)value;
+- (void)addComparedCarsObject:(ComparedCar *)value;
+- (void)removeComparedCarsObject:(ComparedCar *)value;
 - (void)addComparedCars:(NSSet *)values;
 - (void)removeComparedCars:(NSSet *)values;
 

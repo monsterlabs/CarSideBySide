@@ -8,21 +8,24 @@
 
 #import "Car.h"
 #import "Line.h"
+#import "Model.h"
+#import "Specification.h"
 
 
 @implementation Car
 
 @dynamic image;
 @dynamic largeImage;
-@dynamic modelHighlights;
-@dynamic modelName;
+@dynamic subModelName;
 @dynamic orderKey;
 @dynamic priceList;
 @dynamic retailPrice;
 @dynamic valid;
 @dynamic validUntil;
 @dynamic year;
-@dynamic line;
+@dynamic modelDescr;
+@dynamic model;
 @dynamic specifications;
+@dynamic lines;
 
 @end

@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class ComparedCar, Specification;
 
 @interface Comparative : NSManagedObject
 
 @property (nonatomic, retain) NSString * descr;
-@property (nonatomic, retain) NSManagedObject *comparedCar;
-@property (nonatomic, retain) NSManagedObject *specification;
+@property (nonatomic, retain) ComparedCar *comparedCar;
+@property (nonatomic, retain) Specification *specification;
 
 @end

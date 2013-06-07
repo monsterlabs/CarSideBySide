@@ -9,20 +9,20 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Line, Maker;
+@class Maker, Model;
 
 @interface Serie : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *lines;
+@property (nonatomic, retain) NSSet *models;
 @property (nonatomic, retain) Maker *maker;
 @end
 
 @interface Serie (CoreDataGeneratedAccessors)
 
-- (void)addLinesObject:(Line *)value;
-- (void)removeLinesObject:(Line *)value;
-- (void)addLines:(NSSet *)values;
-- (void)removeLines:(NSSet *)values;
+- (void)addModelsObject:(Model *)value;
+- (void)removeModelsObject:(Model *)value;
+- (void)addModels:(NSSet *)values;
+- (void)removeModels:(NSSet *)values;
 
 @end

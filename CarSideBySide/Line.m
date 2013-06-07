@@ -8,13 +8,12 @@
 
 #import "Line.h"
 #import "Car.h"
-#import "Serie.h"
 
 
 @implementation Line
 
 @dynamic name;
-@dynamic cars;
-@dynamic serie;
+@dynamic descr;
+@dynamic car;
 
 @end
