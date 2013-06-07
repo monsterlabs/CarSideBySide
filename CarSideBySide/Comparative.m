@@ -1,20 +1,18 @@
 //
-//  Line.m
+//  Comparative.m
 //  CarSideBySide
 //
 //  Created by Alejandro Juarez on 6/7/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
-#import "Line.h"
-#import "Car.h"
-#import "Serie.h"
+#import "Comparative.h"
 
 
-@implementation Line
+@implementation Comparative
 
-@dynamic name;
-@dynamic cars;
-@dynamic serie;
+@dynamic descr;
+@dynamic comparedCar;
+@dynamic specification;
 
 @end

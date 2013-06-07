@@ -2,7 +2,7 @@
 //  Offer.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 5/31/13.
+//  Created by Alejandro Juarez on 6/7/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 

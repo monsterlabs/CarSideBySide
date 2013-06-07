@@ -2,7 +2,7 @@
 //  Serie.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 5/31/13.
+//  Created by Alejandro Juarez on 6/7/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -14,8 +14,8 @@
 @interface Serie : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) Maker *maker;
 @property (nonatomic, retain) NSSet *lines;
+@property (nonatomic, retain) Maker *maker;
 @end
 
 @interface Serie (CoreDataGeneratedAccessors)
