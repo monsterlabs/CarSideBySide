@@ -15,7 +15,7 @@
 #import "Offer.h"
 #import "Maker.h"
 #import "Serie.h"
-#import "Line.h"
+#import "Model.h"
 #import "Car.h"
 
 #define SHOWS_MIGRATION_ALERT 1
@@ -256,85 +256,85 @@
 //        [serie_1 setName: @"Serie 1"];
 //        [maker addSeriesObject:serie_1];
 //        
-//        NSArray *lines = [NSArray arrayWithObjects: @"3 puertas", @"5 puertas", @"Coupe", @"Convertible", @"Active E", nil];
+//        NSArray *models = [NSArray arrayWithObjects: @"3 puertas", @"5 puertas", @"Coupe", @"Convertible", @"Active E", nil];
 //        NSArray *cars = [NSArray arrayWithObjects:
-//                         [NSDictionary dictionaryWithObjectsAndKeys: @"125i", @"modelName", @"2013", @"year", @"bmw_s1_3_puertas.jpg", @"image", @"bmw_s1_3_puertas_large.jpg", @"largeImage", nil],
-//                         [NSDictionary dictionaryWithObjectsAndKeys: @"126i", @"modelName", @"2013", @"year", @"bmw_s1_5_puertas.jpg", @"image", @"bmw_s1_5_puertas_large.jpg", @"largeImage", nil],
-//                         [NSDictionary dictionaryWithObjectsAndKeys: @"127i", @"modelName", @"2013", @"year", @"bmw_s1_coupe.jpg", @"image", @"bmw_s1_coupe_large.jpg", @"largeImage", nil],
-//                         [NSDictionary dictionaryWithObjectsAndKeys: @"128i", @"modelName", @"2013", @"year", @"bmw_s1_convertible.jpg", @"image", @"bmw_s1_convertible_large.jpg", @"largeImage", nil],
-//                         [NSDictionary dictionaryWithObjectsAndKeys: @"129i", @"modelName", @"2013", @"year", @"bmw_s1_active_e.jpg", @"image", @"bmw_s1_active_e_large.jpg", @"largeImage", nil],
+//                         [NSDictionary dictionaryWithObjectsAndKeys: @"125i", @"subModelName", @"2013", @"year", @"bmw_s1_3_puertas.jpg", @"image", @"bmw_s1_3_puertas_large.jpg", @"largeImage", nil],
+//                         [NSDictionary dictionaryWithObjectsAndKeys: @"126i", @"subModelName", @"2013", @"year", @"bmw_s1_5_puertas.jpg", @"image", @"bmw_s1_5_puertas_large.jpg", @"largeImage", nil],
+//                         [NSDictionary dictionaryWithObjectsAndKeys: @"127i", @"subModelName", @"2013", @"year", @"bmw_s1_coupe.jpg", @"image", @"bmw_s1_coupe_large.jpg", @"largeImage", nil],
+//                         [NSDictionary dictionaryWithObjectsAndKeys: @"128i", @"subModelName", @"2013", @"year", @"bmw_s1_convertible.jpg", @"image", @"bmw_s1_convertible_large.jpg", @"largeImage", nil],
+//                         [NSDictionary dictionaryWithObjectsAndKeys: @"129i", @"subModelName", @"2013", @"year", @"bmw_s1_active_e.jpg", @"image", @"bmw_s1_active_e_large.jpg", @"largeImage", nil],
 //                         nil];
 //        
-//        for (NSString *lineName in lines) {
-//            Line *line = (Line *)[NSEntityDescription insertNewObjectForEntityForName: @"Line" inManagedObjectContext: context];
-//            [line setName:lineName];
+//        for (NSString *modelName in models) {
+//            Model *model = (Model *)[NSEntityDescription insertNewObjectForEntityForName: @"Model" inManagedObjectContext: context];
+//            [model setName:modelName];
 //            for (NSDictionary *dict in cars) {
 //                Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName: @"Car" inManagedObjectContext: context];
-//                NSString *modelName = [NSString stringWithFormat:@"%@ %@ %@",  @"Serie 1", [dict valueForKey:@"modelName"], lineName];
-//                [car setModelName:modelName];
+//                NSString *subModelName = [NSString stringWithFormat:@"%@ %@ %@",  @"Serie 1", [dict valueForKey:@"subModelName"], modelName];
+//                [car setSubModelName:subModelName];
 //                [car setYear:[NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]]];
 //                [car setImage:[dict valueForKey:@"image"]];
 //                [car setLargeImage:[dict valueForKey:@"largeImage"]];
-//                [line addCarsObject:car];
+//                [model addCarsObject:car];
 //            }
-//            [serie_1 addLinesObject: line];
+//            [serie_1 addModelsObject: model];
 //        }
 //        
         /* Loading cars for serie 3 */
         Serie *serie_3 = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext: context];
         [serie_3 setName: @"Serie 3"];
         [maker addSeriesObject:serie_3];
-        NSArray *lines = [NSArray arrayWithObjects:@"Sedan", @"Sedan Active Hybrid", @"Touring", @"Gran Turismo", @"Coupe", @"Convertible", nil];
+        NSArray *models = [NSArray arrayWithObjects:@"Sedan", @"Sedan Active Hybrid", @"Touring", @"Gran Turismo", @"Coupe", @"Convertible", nil];
         NSArray *cars = [NSArray arrayWithObjects:
-                [NSDictionary dictionaryWithObjectsAndKeys: @"323i", @"modelName", @"2013", @"year", @"bmw_s3_sedan.jpg", @"image", @"bmw_s3_sedan_large.jpg", @"largeImage", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys: @"324i", @"modelName", @"2013", @"year", @"bmw_s3_sedan_active_hybrid.jpg", @"image", @"bmw_s3_sedan_active_hybrid_large.jpg", @"largeImage", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys: @"325i", @"modelName", @"2013", @"year", @"bmw_s3_touring.jpg", @"image", @"bmw_s3_touring_large.jpg", @"largeImage", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys: @"326i", @"modelName", @"2013", @"year", @"bmw_s3_gran_turismo.jpg", @"image", @"bmw_s3_gran_turismo_large.jpg", @"largeImage", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys: @"327i", @"modelName", @"2013", @"year", @"bmw_s3_coupe.jpg", @"image", @"bmw_s3_coupe_large.jpg", @"largeImage", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys: @"328i", @"modelName", @"2013", @"year", @"bmw_s3_convertible.jpg", @"image", @"bmw_s3_convertible_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"323i", @"subModelName", @"2013", @"year", @"bmw_s3_sedan.jpg", @"image", @"bmw_s3_sedan_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"324i", @"subModelName", @"2013", @"year", @"bmw_s3_sedan_active_hybrid.jpg", @"image", @"bmw_s3_sedan_active_hybrid_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"325i", @"subModelName", @"2013", @"year", @"bmw_s3_touring.jpg", @"image", @"bmw_s3_touring_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"326i", @"subModelName", @"2013", @"year", @"bmw_s3_gran_turismo.jpg", @"image", @"bmw_s3_gran_turismo_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"327i", @"subModelName", @"2013", @"year", @"bmw_s3_coupe.jpg", @"image", @"bmw_s3_coupe_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"328i", @"subModelName", @"2013", @"year", @"bmw_s3_convertible.jpg", @"image", @"bmw_s3_convertible_large.jpg", @"largeImage", nil],
                 nil];
         
-        for (NSString *lineName in lines) {
-            Line *line = (Line *)[NSEntityDescription insertNewObjectForEntityForName: @"Line" inManagedObjectContext: context];
-            [line setName:lineName];
+        for (NSString *modelName in models) {
+            Model *model = (Model *)[NSEntityDescription insertNewObjectForEntityForName: @"Model" inManagedObjectContext: context];
+            [model setName:modelName];
             for (NSDictionary *dict in cars) {
                 Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName: @"Car" inManagedObjectContext: context];
-                NSString *modelName = [NSString stringWithFormat:@"%@ %@ %@",  @"Serie 3", [dict valueForKey:@"modelName"], lineName];
-                [car setModelName:modelName];
+                NSString *subModelName = [NSString stringWithFormat:@"%@ %@ %@",  @"Serie 3", [dict valueForKey:@"subModelName"], modelName];
+                [car setSubModelName:subModelName];
                 [car setYear:[NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]]];
                 [car setImage:[dict valueForKey:@"image"]];
                 [car setLargeImage:[dict valueForKey:@"largeImage"]];
-                [line addCarsObject:car];
+                [model addCarsObject:car];
             }
-            [serie_3 addLinesObject: line];
+            [serie_3 addModelsObject:model];
         }
         
         /* Loading cars for serie 5 */
         Serie *serie_5 = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext: context];
         [serie_5 setName: @"Serie 5"];
         [maker addSeriesObject:serie_5];
-        lines = [NSArray arrayWithObjects:@"Sedan", @"Gran turismo", nil];
+        models = [NSArray arrayWithObjects:@"Sedan", @"Gran turismo", nil];
         cars = [NSArray arrayWithObjects:
-                [NSDictionary dictionaryWithObjectsAndKeys: @"582i", @"modelName", @"2013", @"year", @"bmw_s5_sedan.jpg", @"image", @"bmw_s5_sedan_large.jpg", @"largeImage", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys: @"583i", @"modelName", @"2013", @"year", @"bmw_s5_gran_turismo.jpg", @"image", @"bmw_s5_gran_turismo_large.jpg", @"largeImage", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys: @"584i", @"modelName", @"2013", @"year", @"bmw_s5_sedan.jpg", @"image", @"bmw_s5_sedan_large.jpg", @"largeImage", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys: @"585i", @"modelName", @"2013", @"year", @"bmw_s5_gran_turismo.jpg", @"image", @"bmw_s5_gran_turismo_large.jpg", @"largeImage", nil],
-                [NSDictionary dictionaryWithObjectsAndKeys: @"586i", @"modelName", @"2013", @"year", @"bmw_s5_gran_turismo.jpg", @"image", @"bmw_s5_gran_turismo_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"582i", @"subModelName", @"2013", @"year", @"bmw_s5_sedan.jpg", @"image", @"bmw_s5_sedan_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"583i", @"subModelName", @"2013", @"year", @"bmw_s5_gran_turismo.jpg", @"image", @"bmw_s5_gran_turismo_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"584i", @"subModelName", @"2013", @"year", @"bmw_s5_sedan.jpg", @"image", @"bmw_s5_sedan_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"585i", @"subModelName", @"2013", @"year", @"bmw_s5_gran_turismo.jpg", @"image", @"bmw_s5_gran_turismo_large.jpg", @"largeImage", nil],
+                [NSDictionary dictionaryWithObjectsAndKeys: @"586i", @"subModelName", @"2013", @"year", @"bmw_s5_gran_turismo.jpg", @"image", @"bmw_s5_gran_turismo_large.jpg", @"largeImage", nil],
                 nil];
         
-        for (NSString *lineName in lines) {
-            Line *line = (Line *)[NSEntityDescription insertNewObjectForEntityForName: @"Line" inManagedObjectContext: context];
-            [line setName:lineName];
+        for (NSString *modelName in models) {
+            Model *model = (Model *)[NSEntityDescription insertNewObjectForEntityForName: @"Model" inManagedObjectContext: context];
+            [model setName:modelName];
             for (NSDictionary *dict in cars) {
                 Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName: @"Car" inManagedObjectContext: context];
-                NSString *modelName = [NSString stringWithFormat:@"%@ %@ %@", @"Serie 5", [dict valueForKey:@"modelName"], lineName];
-                [car setModelName:modelName];
+                NSString *subModelName = [NSString stringWithFormat:@"%@ %@ %@", @"Serie 5", [dict valueForKey:@"subModelName"], modelName];
+                [car setSubModelName:subModelName];
                 [car setYear:[NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]]];
                 [car setImage:[dict valueForKey:@"image"]];
                 [car setLargeImage:[dict valueForKey:@"largeImage"]];
-                [line addCarsObject:car];
+                [model addCarsObject:car];
             }
-            [serie_5 addLinesObject: line];
+            [serie_5 addModelsObject:model];
         }
         NSError *error = nil;
         if(![context save:&error]) {
