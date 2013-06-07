@@ -1,20 +1,22 @@
 //
-//  Serie.m
+//  ComparedCar.m
 //  CarSideBySide
 //
 //  Created by Alejandro Juarez on 6/7/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
-#import "Serie.h"
-#import "Line.h"
+#import "ComparedCar.h"
+#import "Comparative.h"
 #import "Maker.h"
 
 
-@implementation Serie
+@implementation ComparedCar
 
-@dynamic name;
-@dynamic lines;
+@dynamic image;
+@dynamic modelName;
+@dynamic year;
+@dynamic comparatives;
 @dynamic maker;
 
 @end
