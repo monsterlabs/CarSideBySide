@@ -16,7 +16,7 @@
 @dynamic additionalInfo;
 @dynamic descr;
 @dynamic name;
-@dynamic comparatives;
 @dynamic specification;
+@dynamic comparative;
 
 @end

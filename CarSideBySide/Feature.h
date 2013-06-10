@@ -16,15 +16,7 @@
 @property (nonatomic, retain) NSString * additionalInfo;
 @property (nonatomic, retain) NSString * descr;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *comparatives;
 @property (nonatomic, retain) Specification *specification;
-@end
-
-@interface Feature (CoreDataGeneratedAccessors)
-
-- (void)addComparativesObject:(Comparative *)value;
-- (void)removeComparativesObject:(Comparative *)value;
-- (void)addComparatives:(NSSet *)values;
-- (void)removeComparatives:(NSSet *)values;
+@property (nonatomic, retain) Comparative *comparative;
 
 @end

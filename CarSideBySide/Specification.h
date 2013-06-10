@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Car, Feature, SpecificationType;
+@class Car, Comparative, Feature, SpecificationType;
 
 @interface Specification : NSManagedObject
 
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) Car *car;
 @property (nonatomic, retain) NSSet *features;
 @property (nonatomic, retain) SpecificationType *specificationType;
+@property (nonatomic, retain) NSSet *comparatives;
 @end
 
 @interface Specification (CoreDataGeneratedAccessors)
@@ -27,5 +28,10 @@
 - (void)removeFeaturesObject:(Feature *)value;
 - (void)addFeatures:(NSSet *)values;
 - (void)removeFeatures:(NSSet *)values;
+
+- (void)addComparativesObject:(Comparative *)value;
+- (void)removeComparativesObject:(Comparative *)value;
+- (void)addComparatives:(NSSet *)values;
+- (void)removeComparatives:(NSSet *)values;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "Specification.h"
 #import "Car.h"
+#import "Comparative.h"
 #import "Feature.h"
 #import "SpecificationType.h"
 
@@ -20,5 +21,6 @@
 @dynamic car;
 @dynamic features;
 @dynamic specificationType;
+@dynamic comparatives;
 
 @end
