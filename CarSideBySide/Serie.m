@@ -7,14 +7,14 @@
 //
 
 #import "Serie.h"
+#import "CarModel.h"
 #import "Maker.h"
-#import "Model.h"
 
 
 @implementation Serie
 
 @dynamic name;
 @dynamic maker;
-@dynamic models;
+@dynamic carModels;
 
 @end

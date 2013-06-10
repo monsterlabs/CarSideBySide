@@ -15,8 +15,8 @@
 
 @property (nonatomic, retain) NSString * descr;
 @property (nonatomic, retain) ComparedCar *comparedCar;
-@property (nonatomic, retain) Specification *specification;
 @property (nonatomic, retain) NSSet *features;
+@property (nonatomic, retain) Specification *specification;
 @end
 
 @interface Comparative (CoreDataGeneratedAccessors)

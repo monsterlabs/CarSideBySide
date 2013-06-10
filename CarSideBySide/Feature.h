@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * additionalInfo;
 @property (nonatomic, retain) NSString * descr;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) Specification *specification;
 @property (nonatomic, retain) Comparative *comparative;
+@property (nonatomic, retain) Specification *specification;
 
 @end

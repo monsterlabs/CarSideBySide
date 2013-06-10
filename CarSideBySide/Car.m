@@ -7,8 +7,8 @@
 //
 
 #import "Car.h"
+#import "CarModel.h"
 #import "Line.h"
-#import "Model.h"
 #import "Specification.h"
 
 
@@ -16,7 +16,7 @@
 
 @dynamic image;
 @dynamic landscapeImage;
-@dynamic modelDescr;
+@dynamic highlights;
 @dynamic orderKey;
 @dynamic portraitImage;
 @dynamic priceList;
@@ -26,7 +26,7 @@
 @dynamic validUntil;
 @dynamic year;
 @dynamic lines;
-@dynamic model;
+@dynamic carModel;
 @dynamic specifications;
 
 @end
