@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FA02C69A17668EAE0023274D /* ComparedCar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02C69917668EAE0023274D /* ComparedCar.m */; };
-		FA02C69E17668EAE0023274D /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02C69D17668EAE0023274D /* Offer.m */; };
 		FA02C6A117668EAE0023274D /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02C6A017668EAE0023274D /* CarModel.m */; };
 		FA02C6A417668EAE0023274D /* Specification.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02C6A317668EAE0023274D /* Specification.m */; };
 		FA02C6A717668EAE0023274D /* SpecificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02C6A617668EAE0023274D /* SpecificationType.m */; };
@@ -59,6 +58,7 @@
 		FA5A9B121756FD0600B718C1 /* YISplashScreenAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5A9B051756FD0600B718C1 /* YISplashScreenAnimation.m */; };
 		FA5A9B131756FD0600B718C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9B061756FD0600B718C1 /* README.md */; };
 		FA5A9B141756FD0600B718C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9B071756FD0600B718C1 /* README.md */; };
+		FA64A3C317669068007DE391 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64A3C217669068007DE391 /* Offer.m */; };
 		FA6EAAF2175E3A5400502168 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6EAAEE175E3A5400502168 /* Icon-72.png */; };
 		FA6EAAF3175E3A5400502168 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6EAAEF175E3A5400502168 /* Icon-72@2x.png */; };
 		FA88C2BB1755B90400603295 /* CarSideBySide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */; };
@@ -120,8 +120,6 @@
 		966C47EF87414A41B6537359 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		FA02C69817668EAE0023274D /* ComparedCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparedCar.h; sourceTree = "<group>"; };
 		FA02C69917668EAE0023274D /* ComparedCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparedCar.m; sourceTree = "<group>"; };
-		FA02C69C17668EAE0023274D /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
-		FA02C69D17668EAE0023274D /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		FA02C69F17668EAE0023274D /* CarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
 		FA02C6A017668EAE0023274D /* CarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
 		FA02C6A217668EAE0023274D /* Specification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Specification.h; sourceTree = "<group>"; };
@@ -201,6 +199,8 @@
 		FA5A9B051756FD0600B718C1 /* YISplashScreenAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YISplashScreenAnimation.m; sourceTree = "<group>"; };
 		FA5A9B061756FD0600B718C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		FA5A9B071756FD0600B718C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		FA64A3C117669068007DE391 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
+		FA64A3C217669068007DE391 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		FA6EAAEE175E3A5400502168 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		FA6EAAEF175E3A5400502168 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		FA88C2BA1755B90400603295 /* CarSideBySide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarSideBySide.xcdatamodel; sourceTree = "<group>"; };
@@ -413,11 +413,11 @@
 				FA02C6A317668EAE0023274D /* Specification.m */,
 				FA02C69F17668EAE0023274D /* CarModel.h */,
 				FA02C6A017668EAE0023274D /* CarModel.m */,
-				FA02C69C17668EAE0023274D /* Offer.h */,
-				FA02C69D17668EAE0023274D /* Offer.m */,
 				FA02C69817668EAE0023274D /* ComparedCar.h */,
 				FA02C69917668EAE0023274D /* ComparedCar.m */,
 				FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */,
+				FA64A3C117669068007DE391 /* Offer.h */,
+				FA64A3C217669068007DE391 /* Offer.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -902,7 +902,6 @@
 				FA98C5A517610B1F00B64805 /* SerieListViewController.m in Sources */,
 				FA0D4045176148300025725F /* DummyViewController.m in Sources */,
 				FA02C69A17668EAE0023274D /* ComparedCar.m in Sources */,
-				FA02C69E17668EAE0023274D /* Offer.m in Sources */,
 				FA02C6A117668EAE0023274D /* CarModel.m in Sources */,
 				FA02C6A417668EAE0023274D /* Specification.m in Sources */,
 				FA02C6A717668EAE0023274D /* SpecificationType.m in Sources */,
@@ -912,6 +911,7 @@
 				FA02C6B317668EAE0023274D /* Maker.m in Sources */,
 				FA02C6B617668EAE0023274D /* Serie.m in Sources */,
 				FA02C6B917668EAE0023274D /* Car.m in Sources */,
+				FA64A3C317669068007DE391 /* Offer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

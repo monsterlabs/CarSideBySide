@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSDate * validUntil;
+@property (nonatomic, retain) NSNumber * valid;
 
 @end

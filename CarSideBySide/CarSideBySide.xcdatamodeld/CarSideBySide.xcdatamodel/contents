@@ -57,6 +57,7 @@
         <attribute name="largeImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valid" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="validUntil" attributeType="Date" indexed="YES" syncable="YES"/>
     </entity>
     <entity name="Serie" representedClassName="Serie" syncable="YES">
@@ -79,13 +80,13 @@
     </entity>
     <elements>
         <element name="Car" positionX="754" positionY="-495" width="128" height="253"/>
+        <element name="CarModel" positionX="763" positionY="-640" width="128" height="88"/>
         <element name="Comparative" positionX="927" positionY="-123" width="128" height="105"/>
         <element name="ComparedCar" positionX="1114" positionY="-487" width="128" height="118"/>
         <element name="Feature" positionX="747" positionY="-219" width="128" height="120"/>
         <element name="Line" positionX="585" positionY="-495" width="128" height="88"/>
         <element name="Maker" positionX="918" positionY="-702" width="128" height="90"/>
-        <element name="CarModel" positionX="763" positionY="-640" width="128" height="88"/>
-        <element name="Offer" positionX="594" positionY="-639" width="128" height="133"/>
+        <element name="Offer" positionX="585" positionY="-657" width="128" height="148"/>
         <element name="Serie" positionX="927" positionY="-574" width="128" height="88"/>
         <element name="Specification" positionX="918" positionY="-324" width="128" height="150"/>
         <element name="SpecificationType" positionX="925" positionY="-459" width="128" height="75"/>
