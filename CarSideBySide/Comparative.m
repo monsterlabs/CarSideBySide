@@ -8,12 +8,15 @@
 
 #import "Comparative.h"
 #import "ComparedCar.h"
+#import "Feature.h"
+#import "Specification.h"
 
 
 @implementation Comparative
 
 @dynamic descr;
 @dynamic comparedCar;
-@dynamic feature;
+@dynamic specification;
+@dynamic features;
 
 @end
