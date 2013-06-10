@@ -1,5 +1,5 @@
 //
-//  ComparedCar.h
+//  Feature.h
 //  CarSideBySide
 //
 //  Created by Alejandro Juarez on 6/10/13.
@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Comparative, Maker;
+@class Comparative, Specification;
 
-@interface ComparedCar : NSManagedObject
+@interface Feature : NSManagedObject
 
-@property (nonatomic, retain) NSString * image;
-@property (nonatomic, retain) NSString * modelName;
-@property (nonatomic, retain) NSNumber * year;
+@property (nonatomic, retain) NSString * additionalInfo;
+@property (nonatomic, retain) NSString * descr;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *comparatives;
-@property (nonatomic, retain) Maker *maker;
+@property (nonatomic, retain) Specification *specification;
 @end
 
-@interface ComparedCar (CoreDataGeneratedAccessors)
+@interface Feature (CoreDataGeneratedAccessors)
 
 - (void)addComparativesObject:(Comparative *)value;
 - (void)removeComparativesObject:(Comparative *)value;

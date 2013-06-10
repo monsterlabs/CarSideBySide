@@ -2,7 +2,7 @@
 //  Line.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 6/7/13.
+//  Created by Alejandro Juarez on 6/10/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -13,8 +13,8 @@
 
 @interface Line : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * descr;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) Car *car;
 
 @end

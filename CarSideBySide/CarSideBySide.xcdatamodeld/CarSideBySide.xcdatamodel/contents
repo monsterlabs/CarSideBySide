@@ -2,9 +2,10 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Car" representedClassName="Car" syncable="YES">
         <attribute name="image" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="largeImage" optional="YES" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
+        <attribute name="landscapeImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="modelDescr" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <attribute name="orderKey" optional="YES" attributeType="Integer 32" minValueString="0" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="portraitImage" optional="YES" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <attribute name="priceList" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" indexed="YES" syncable="YES"/>
         <attribute name="retailPrice" optional="YES" attributeType="Float" minValueString="0" defaultValueString="0.0" indexed="YES" syncable="YES"/>
         <attribute name="subModelName" attributeType="String" minValueString="1" indexed="YES" spotlightIndexingEnabled="YES" syncable="YES"/>
@@ -18,7 +19,7 @@
     <entity name="Comparative" representedClassName="Comparative" syncable="YES">
         <attribute name="descr" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="comparedCar" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ComparedCar" inverseName="comparatives" inverseEntity="ComparedCar" syncable="YES"/>
-        <relationship name="specification" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Specification" inverseName="comparatives" inverseEntity="Specification" syncable="YES"/>
+        <relationship name="feature" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Feature" inverseName="comparatives" inverseEntity="Feature" syncable="YES"/>
     </entity>
     <entity name="ComparedCar" representedClassName="ComparedCar" syncable="YES">
         <attribute name="image" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
@@ -26,6 +27,13 @@
         <attribute name="year" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <relationship name="comparatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comparative" inverseName="comparedCar" inverseEntity="Comparative" syncable="YES"/>
         <relationship name="maker" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Maker" inverseName="comparedCars" inverseEntity="Maker" syncable="YES"/>
+    </entity>
+    <entity name="Feature" representedClassName="Feature" syncable="YES">
+        <attribute name="additionalInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descr" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
+        <relationship name="comparatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comparative" inverseName="feature" inverseEntity="Comparative" syncable="YES"/>
+        <relationship name="specification" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Specification" inverseName="features" inverseEntity="Specification" syncable="YES"/>
     </entity>
     <entity name="Line" representedClassName="Line" syncable="YES">
         <attribute name="descr" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
@@ -45,6 +53,7 @@
     <entity name="Offer" representedClassName="Offer" syncable="YES">
         <attribute name="body" optional="YES" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="largeImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="validUntil" attributeType="Date" indexed="YES" syncable="YES"/>
@@ -55,11 +64,11 @@
         <relationship name="models" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Model" inverseName="serie" inverseEntity="Model" syncable="YES"/>
     </entity>
     <entity name="Specification" representedClassName="Specification" syncable="YES">
-        <attribute name="additionalInfo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="descr" attributeType="String" minValueString="1" syncable="YES"/>
-        <attribute name="name" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
+        <attribute name="landscapeImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="portraitImage" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="car" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="specifications" inverseEntity="Car" syncable="YES"/>
-        <relationship name="comparatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comparative" inverseName="specification" inverseEntity="Comparative" syncable="YES"/>
+        <relationship name="features" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feature" inverseName="specification" inverseEntity="Feature" syncable="YES"/>
         <relationship name="specificationType" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SpecificationType" inverseName="specifications" inverseEntity="SpecificationType" syncable="YES"/>
     </entity>
     <entity name="SpecificationType" representedClassName="SpecificationType" syncable="YES">
@@ -67,15 +76,16 @@
         <relationship name="specifications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Specification" inverseName="specificationType" inverseEntity="Specification" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Car" positionX="754" positionY="-495" width="128" height="240"/>
-        <element name="Comparative" positionX="909" positionY="-126" width="128" height="90"/>
-        <element name="ComparedCar" positionX="1096" positionY="-487" width="128" height="118"/>
-        <element name="Model" positionX="763" positionY="-640" width="128" height="88"/>
-        <element name="Maker" positionX="918" positionY="-702" width="128" height="90"/>
-        <element name="Offer" positionX="594" positionY="-639" width="128" height="120"/>
-        <element name="Serie" positionX="927" positionY="-574" width="128" height="88"/>
-        <element name="Specification" positionX="918" positionY="-324" width="128" height="135"/>
-        <element name="SpecificationType" positionX="925" positionY="-459" width="128" height="75"/>
+        <element name="Car" positionX="754" positionY="-495" width="128" height="253"/>
+        <element name="Comparative" positionX="952" positionY="-169" width="128" height="88"/>
+        <element name="ComparedCar" positionX="1114" positionY="-487" width="128" height="118"/>
+        <element name="Feature" positionX="747" positionY="-219" width="128" height="120"/>
         <element name="Line" positionX="585" positionY="-495" width="128" height="88"/>
+        <element name="Maker" positionX="918" positionY="-702" width="128" height="90"/>
+        <element name="Model" positionX="763" positionY="-640" width="128" height="88"/>
+        <element name="Offer" positionX="594" positionY="-639" width="128" height="133"/>
+        <element name="Serie" positionX="927" positionY="-574" width="128" height="88"/>
+        <element name="Specification" positionX="918" positionY="-324" width="128" height="133"/>
+        <element name="SpecificationType" positionX="925" positionY="-459" width="128" height="75"/>
     </elements>
 </model>
