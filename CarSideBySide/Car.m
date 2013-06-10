@@ -14,19 +14,19 @@
 
 @implementation Car
 
+@dynamic enabled;
+@dynamic highlights;
 @dynamic image;
 @dynamic landscapeImage;
-@dynamic highlights;
 @dynamic orderKey;
 @dynamic portraitImage;
 @dynamic priceList;
 @dynamic retailPrice;
 @dynamic subModelName;
-@dynamic valid;
 @dynamic validUntil;
 @dynamic year;
-@dynamic lines;
 @dynamic carModel;
+@dynamic lines;
 @dynamic specifications;
 
 @end

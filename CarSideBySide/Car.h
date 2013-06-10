@@ -13,19 +13,19 @@
 
 @interface Car : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * enabled;
+@property (nonatomic, retain) NSString * highlights;
 @property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) NSString * landscapeImage;
-@property (nonatomic, retain) NSString * highlights;
 @property (nonatomic, retain) NSNumber * orderKey;
 @property (nonatomic, retain) NSString * portraitImage;
 @property (nonatomic, retain) NSNumber * priceList;
 @property (nonatomic, retain) NSNumber * retailPrice;
 @property (nonatomic, retain) NSString * subModelName;
-@property (nonatomic, retain) NSNumber * valid;
 @property (nonatomic, retain) NSDate * validUntil;
 @property (nonatomic, retain) NSNumber * year;
-@property (nonatomic, retain) NSSet *lines;
 @property (nonatomic, retain) CarModel *carModel;
+@property (nonatomic, retain) NSSet *lines;
 @property (nonatomic, retain) NSSet *specifications;
 @end
 

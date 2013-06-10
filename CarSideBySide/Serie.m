@@ -13,8 +13,9 @@
 
 @implementation Serie
 
+@dynamic enabled;
 @dynamic name;
-@dynamic maker;
 @dynamic carModels;
+@dynamic maker;
 
 @end

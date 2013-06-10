@@ -12,12 +12,12 @@
 
 @interface Offer : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * enabled;
 @property (nonatomic, retain) NSString * body;
 @property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) NSString * largeImage;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSDate * validUntil;
-@property (nonatomic, retain) NSNumber * valid;
 
 @end
