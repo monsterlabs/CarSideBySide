@@ -11,12 +11,12 @@
 
 @implementation Offer
 
+@dynamic enabled;
 @dynamic body;
 @dynamic image;
 @dynamic largeImage;
 @dynamic title;
 @dynamic url;
 @dynamic validUntil;
-@dynamic valid;
 
 @end

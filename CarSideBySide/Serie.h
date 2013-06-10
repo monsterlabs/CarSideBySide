@@ -13,9 +13,10 @@
 
 @interface Serie : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * enabled;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) Maker *maker;
 @property (nonatomic, retain) NSSet *carModels;
+@property (nonatomic, retain) Maker *maker;
 @end
 
 @interface Serie (CoreDataGeneratedAccessors)

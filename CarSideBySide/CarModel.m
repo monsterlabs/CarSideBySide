@@ -13,6 +13,7 @@
 
 @implementation CarModel
 
+@dynamic enabled;
 @dynamic name;
 @dynamic cars;
 @dynamic serie;
