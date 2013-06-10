@@ -1,5 +1,5 @@
 //
-//  Model.h
+//  CarModel.h
 //  CarSideBySide
 //
 //  Created by Alejandro Juarez on 6/10/13.
@@ -11,14 +11,14 @@
 
 @class Car, Serie;
 
-@interface Model : NSManagedObject
+@interface CarModel : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *cars;
 @property (nonatomic, retain) Serie *serie;
 @end
 
-@interface Model (CoreDataGeneratedAccessors)
+@interface CarModel (CoreDataGeneratedAccessors)
 
 - (void)addCarsObject:(Car *)value;
 - (void)removeCarsObject:(Car *)value;

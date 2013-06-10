@@ -16,7 +16,7 @@
 
 @dynamic descr;
 @dynamic comparedCar;
-@dynamic specification;
 @dynamic features;
+@dynamic specification;
 
 @end

@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Line, Model, Specification;
+@class CarModel, Line, Specification;
 
 @interface Car : NSManagedObject
 
 @property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) NSString * landscapeImage;
-@property (nonatomic, retain) NSString * modelDescr;
+@property (nonatomic, retain) NSString * highlights;
 @property (nonatomic, retain) NSNumber * orderKey;
 @property (nonatomic, retain) NSString * portraitImage;
 @property (nonatomic, retain) NSNumber * priceList;
@@ -25,7 +25,7 @@
 @property (nonatomic, retain) NSDate * validUntil;
 @property (nonatomic, retain) NSNumber * year;
 @property (nonatomic, retain) NSSet *lines;
-@property (nonatomic, retain) Model *model;
+@property (nonatomic, retain) CarModel *carModel;
 @property (nonatomic, retain) NSSet *specifications;
 @end
 

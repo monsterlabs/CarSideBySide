@@ -19,8 +19,8 @@
 @dynamic landscapeImage;
 @dynamic portraitImage;
 @dynamic car;
+@dynamic comparatives;
 @dynamic features;
 @dynamic specificationType;
-@dynamic comparatives;
 
 @end

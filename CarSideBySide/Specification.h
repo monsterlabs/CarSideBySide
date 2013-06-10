@@ -17,21 +17,21 @@
 @property (nonatomic, retain) NSString * landscapeImage;
 @property (nonatomic, retain) NSString * portraitImage;
 @property (nonatomic, retain) Car *car;
+@property (nonatomic, retain) NSSet *comparatives;
 @property (nonatomic, retain) NSSet *features;
 @property (nonatomic, retain) SpecificationType *specificationType;
-@property (nonatomic, retain) NSSet *comparatives;
 @end
 
 @interface Specification (CoreDataGeneratedAccessors)
-
-- (void)addFeaturesObject:(Feature *)value;
-- (void)removeFeaturesObject:(Feature *)value;
-- (void)addFeatures:(NSSet *)values;
-- (void)removeFeatures:(NSSet *)values;
 
 - (void)addComparativesObject:(Comparative *)value;
 - (void)removeComparativesObject:(Comparative *)value;
 - (void)addComparatives:(NSSet *)values;
 - (void)removeComparatives:(NSSet *)values;
+
+- (void)addFeaturesObject:(Feature *)value;
+- (void)removeFeaturesObject:(Feature *)value;
+- (void)addFeatures:(NSSet *)values;
+- (void)removeFeatures:(NSSet *)values;
 
 @end
