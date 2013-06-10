@@ -17,5 +17,6 @@
 @dynamic title;
 @dynamic url;
 @dynamic validUntil;
+@dynamic valid;
 
 @end
