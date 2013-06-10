@@ -1,18 +1,22 @@
 //
-//  SpecificationType.m
+//  Feature.m
 //  CarSideBySide
 //
 //  Created by Alejandro Juarez on 6/10/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
-#import "SpecificationType.h"
+#import "Feature.h"
+#import "Comparative.h"
 #import "Specification.h"
 
 
-@implementation SpecificationType
+@implementation Feature
 
+@dynamic additionalInfo;
+@dynamic descr;
 @dynamic name;
-@dynamic specifications;
+@dynamic comparatives;
+@dynamic specification;
 
 @end
