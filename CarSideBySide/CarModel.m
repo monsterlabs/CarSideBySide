@@ -1,18 +1,21 @@
 //
-//  SpecificationType.m
+//  CarModel.m
 //  CarSideBySide
 //
 //  Created by Alejandro Juarez on 6/11/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
-#import "SpecificationType.h"
-#import "Specification.h"
+#import "CarModel.h"
+#import "Car.h"
+#import "Serie.h"
 
 
-@implementation SpecificationType
+@implementation CarModel
 
+@dynamic enabled;
 @dynamic name;
-@dynamic specifications;
+@dynamic cars;
+@dynamic serie;
 
 @end

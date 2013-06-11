@@ -7,17 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA0537061766F470008AECBC /* SpecificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0537051766F470008AECBC /* SpecificationType.m */; };
-		FA0537091766F470008AECBC /* Comparative.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0537081766F470008AECBC /* Comparative.m */; };
-		FA05370C1766F470008AECBC /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = FA05370B1766F470008AECBC /* Brand.m */; };
-		FA05370F1766F470008AECBC /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA05370E1766F470008AECBC /* Offer.m */; };
-		FA0537121766F470008AECBC /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0537111766F470008AECBC /* Car.m */; };
-		FA0537151766F470008AECBC /* Specification.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0537141766F470008AECBC /* Specification.m */; };
-		FA0537181766F470008AECBC /* Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0537171766F470008AECBC /* Feature.m */; };
-		FA05371B1766F470008AECBC /* Manufacturer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA05371A1766F470008AECBC /* Manufacturer.m */; };
-		FA05371E1766F471008AECBC /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FA05371D1766F471008AECBC /* Line.m */; };
-		FA0537211766F471008AECBC /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0537201766F471008AECBC /* Serie.m */; };
-		FA0537241766F471008AECBC /* ComparedCar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0537231766F471008AECBC /* ComparedCar.m */; };
 		FA0D403E176146E80025725F /* equipment.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0D4039176146E80025725F /* equipment.png */; };
 		FA0D403F176146E80025725F /* lines.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0D403A176146E80025725F /* lines.png */; };
 		FA0D4040176146E80025725F /* price.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0D403B176146E80025725F /* price.png */; };
@@ -97,6 +86,17 @@
 		FADABF661755CC490072E8C9 /* bmw_s5_gran_turismo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF4C1755CC490072E8C9 /* bmw_s5_gran_turismo.jpg */; };
 		FADABF671755CC490072E8C9 /* bmw_s5_sedan_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF4D1755CC490072E8C9 /* bmw_s5_sedan_large.jpg */; };
 		FADABF681755CC490072E8C9 /* bmw_s5_sedan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF4E1755CC490072E8C9 /* bmw_s5_sedan.jpg */; };
+		FAE6DF7D1767823F008F3512 /* ComparedCar.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF7C1767823F008F3512 /* ComparedCar.m */; };
+		FAE6DF811767823F008F3512 /* Comparative.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF801767823F008F3512 /* Comparative.m */; };
+		FAE6DF841767823F008F3512 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF831767823F008F3512 /* Line.m */; };
+		FAE6DF871767823F008F3512 /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF861767823F008F3512 /* Brand.m */; };
+		FAE6DF8A1767823F008F3512 /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF891767823F008F3512 /* Serie.m */; };
+		FAE6DF8D1767823F008F3512 /* Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF8C1767823F008F3512 /* Feature.m */; };
+		FAE6DF901767823F008F3512 /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF8F1767823F008F3512 /* CarModel.m */; };
+		FAE6DF931767823F008F3512 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF921767823F008F3512 /* Car.m */; };
+		FAE6DF961767823F008F3512 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF951767823F008F3512 /* Offer.m */; };
+		FAE6DF991767823F008F3512 /* Specification.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF981767823F008F3512 /* Specification.m */; };
+		FAE6DF9C1767823F008F3512 /* SpecificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE6DF9B1767823F008F3512 /* SpecificationType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,28 +118,6 @@
 
 /* Begin PBXFileReference section */
 		966C47EF87414A41B6537359 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		FA0537041766F470008AECBC /* SpecificationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificationType.h; sourceTree = "<group>"; };
-		FA0537051766F470008AECBC /* SpecificationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificationType.m; sourceTree = "<group>"; };
-		FA0537071766F470008AECBC /* Comparative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comparative.h; sourceTree = "<group>"; };
-		FA0537081766F470008AECBC /* Comparative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comparative.m; sourceTree = "<group>"; };
-		FA05370A1766F470008AECBC /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
-		FA05370B1766F470008AECBC /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
-		FA05370D1766F470008AECBC /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
-		FA05370E1766F470008AECBC /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
-		FA0537101766F470008AECBC /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
-		FA0537111766F470008AECBC /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
-		FA0537131766F470008AECBC /* Specification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Specification.h; sourceTree = "<group>"; };
-		FA0537141766F470008AECBC /* Specification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Specification.m; sourceTree = "<group>"; };
-		FA0537161766F470008AECBC /* Feature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
-		FA0537171766F470008AECBC /* Feature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feature.m; sourceTree = "<group>"; };
-		FA0537191766F470008AECBC /* Manufacturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manufacturer.h; sourceTree = "<group>"; };
-		FA05371A1766F470008AECBC /* Manufacturer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manufacturer.m; sourceTree = "<group>"; };
-		FA05371C1766F471008AECBC /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
-		FA05371D1766F471008AECBC /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
-		FA05371F1766F471008AECBC /* Serie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serie.h; sourceTree = "<group>"; };
-		FA0537201766F471008AECBC /* Serie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Serie.m; sourceTree = "<group>"; };
-		FA0537221766F471008AECBC /* ComparedCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparedCar.h; sourceTree = "<group>"; };
-		FA0537231766F471008AECBC /* ComparedCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparedCar.m; sourceTree = "<group>"; };
 		FA0D4039176146E80025725F /* equipment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = equipment.png; sourceTree = "<group>"; };
 		FA0D403A176146E80025725F /* lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lines.png; sourceTree = "<group>"; };
 		FA0D403B176146E80025725F /* price.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = price.png; sourceTree = "<group>"; };
@@ -246,6 +224,28 @@
 		FADABF4C1755CC490072E8C9 /* bmw_s5_gran_turismo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s5_gran_turismo.jpg; sourceTree = "<group>"; };
 		FADABF4D1755CC490072E8C9 /* bmw_s5_sedan_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s5_sedan_large.jpg; sourceTree = "<group>"; };
 		FADABF4E1755CC490072E8C9 /* bmw_s5_sedan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s5_sedan.jpg; sourceTree = "<group>"; };
+		FAE6DF7B1767823F008F3512 /* ComparedCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparedCar.h; sourceTree = "<group>"; };
+		FAE6DF7C1767823F008F3512 /* ComparedCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparedCar.m; sourceTree = "<group>"; };
+		FAE6DF7F1767823F008F3512 /* Comparative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comparative.h; sourceTree = "<group>"; };
+		FAE6DF801767823F008F3512 /* Comparative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comparative.m; sourceTree = "<group>"; };
+		FAE6DF821767823F008F3512 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		FAE6DF831767823F008F3512 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		FAE6DF851767823F008F3512 /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
+		FAE6DF861767823F008F3512 /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
+		FAE6DF881767823F008F3512 /* Serie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serie.h; sourceTree = "<group>"; };
+		FAE6DF891767823F008F3512 /* Serie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Serie.m; sourceTree = "<group>"; };
+		FAE6DF8B1767823F008F3512 /* Feature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
+		FAE6DF8C1767823F008F3512 /* Feature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feature.m; sourceTree = "<group>"; };
+		FAE6DF8E1767823F008F3512 /* CarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
+		FAE6DF8F1767823F008F3512 /* CarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
+		FAE6DF911767823F008F3512 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		FAE6DF921767823F008F3512 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		FAE6DF941767823F008F3512 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
+		FAE6DF951767823F008F3512 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
+		FAE6DF971767823F008F3512 /* Specification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Specification.h; sourceTree = "<group>"; };
+		FAE6DF981767823F008F3512 /* Specification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Specification.m; sourceTree = "<group>"; };
+		FAE6DF9A1767823F008F3512 /* SpecificationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificationType.h; sourceTree = "<group>"; };
+		FAE6DF9B1767823F008F3512 /* SpecificationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificationType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,29 +395,29 @@
 		FA2AF9A71755B41C001BA8ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAE6DF9A1767823F008F3512 /* SpecificationType.h */,
+				FAE6DF9B1767823F008F3512 /* SpecificationType.m */,
+				FAE6DF971767823F008F3512 /* Specification.h */,
+				FAE6DF981767823F008F3512 /* Specification.m */,
+				FAE6DF941767823F008F3512 /* Offer.h */,
+				FAE6DF951767823F008F3512 /* Offer.m */,
+				FAE6DF911767823F008F3512 /* Car.h */,
+				FAE6DF921767823F008F3512 /* Car.m */,
+				FAE6DF8E1767823F008F3512 /* CarModel.h */,
+				FAE6DF8F1767823F008F3512 /* CarModel.m */,
+				FAE6DF8B1767823F008F3512 /* Feature.h */,
+				FAE6DF8C1767823F008F3512 /* Feature.m */,
+				FAE6DF881767823F008F3512 /* Serie.h */,
+				FAE6DF891767823F008F3512 /* Serie.m */,
+				FAE6DF851767823F008F3512 /* Brand.h */,
+				FAE6DF861767823F008F3512 /* Brand.m */,
+				FAE6DF821767823F008F3512 /* Line.h */,
+				FAE6DF831767823F008F3512 /* Line.m */,
+				FAE6DF7F1767823F008F3512 /* Comparative.h */,
+				FAE6DF801767823F008F3512 /* Comparative.m */,
+				FAE6DF7B1767823F008F3512 /* ComparedCar.h */,
+				FAE6DF7C1767823F008F3512 /* ComparedCar.m */,
 				FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */,
-				FA0537041766F470008AECBC /* SpecificationType.h */,
-				FA0537051766F470008AECBC /* SpecificationType.m */,
-				FA0537071766F470008AECBC /* Comparative.h */,
-				FA0537081766F470008AECBC /* Comparative.m */,
-				FA05370D1766F470008AECBC /* Offer.h */,
-				FA05370E1766F470008AECBC /* Offer.m */,
-				FA0537101766F470008AECBC /* Car.h */,
-				FA0537111766F470008AECBC /* Car.m */,
-				FA0537131766F470008AECBC /* Specification.h */,
-				FA0537141766F470008AECBC /* Specification.m */,
-				FA0537161766F470008AECBC /* Feature.h */,
-				FA0537171766F470008AECBC /* Feature.m */,
-				FA05371C1766F471008AECBC /* Line.h */,
-				FA05371D1766F471008AECBC /* Line.m */,
-				FA05371F1766F471008AECBC /* Serie.h */,
-				FA0537201766F471008AECBC /* Serie.m */,
-				FA0537221766F471008AECBC /* ComparedCar.h */,
-				FA0537231766F471008AECBC /* ComparedCar.m */,
-				FA0537191766F470008AECBC /* Manufacturer.h */,
-				FA05371A1766F470008AECBC /* Manufacturer.m */,
-				FA05370A1766F470008AECBC /* Brand.h */,
-				FA05370B1766F470008AECBC /* Brand.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -901,17 +901,17 @@
 				FA98C5A11760FB4600B64805 /* CarListHeaderView.m in Sources */,
 				FA98C5A517610B1F00B64805 /* SerieListViewController.m in Sources */,
 				FA0D4045176148300025725F /* DummyViewController.m in Sources */,
-				FA0537061766F470008AECBC /* SpecificationType.m in Sources */,
-				FA0537091766F470008AECBC /* Comparative.m in Sources */,
-				FA05370C1766F470008AECBC /* Brand.m in Sources */,
-				FA05370F1766F470008AECBC /* Offer.m in Sources */,
-				FA0537121766F470008AECBC /* Car.m in Sources */,
-				FA0537151766F470008AECBC /* Specification.m in Sources */,
-				FA0537181766F470008AECBC /* Feature.m in Sources */,
-				FA05371B1766F470008AECBC /* Manufacturer.m in Sources */,
-				FA05371E1766F471008AECBC /* Line.m in Sources */,
-				FA0537211766F471008AECBC /* Serie.m in Sources */,
-				FA0537241766F471008AECBC /* ComparedCar.m in Sources */,
+				FAE6DF7D1767823F008F3512 /* ComparedCar.m in Sources */,
+				FAE6DF811767823F008F3512 /* Comparative.m in Sources */,
+				FAE6DF841767823F008F3512 /* Line.m in Sources */,
+				FAE6DF871767823F008F3512 /* Brand.m in Sources */,
+				FAE6DF8A1767823F008F3512 /* Serie.m in Sources */,
+				FAE6DF8D1767823F008F3512 /* Feature.m in Sources */,
+				FAE6DF901767823F008F3512 /* CarModel.m in Sources */,
+				FAE6DF931767823F008F3512 /* Car.m in Sources */,
+				FAE6DF961767823F008F3512 /* Offer.m in Sources */,
+				FAE6DF991767823F008F3512 /* Specification.m in Sources */,
+				FAE6DF9C1767823F008F3512 /* SpecificationType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
