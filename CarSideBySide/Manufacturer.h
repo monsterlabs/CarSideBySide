@@ -1,33 +1,27 @@
 //
-//  Maker.h
+//  Manufacturer.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 6/10/13.
+//  Created by Alejandro Juarez Robles on 6/11/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class ComparedCar, Serie;
+@class ComparedCar;
 
-@interface Maker : NSManagedObject
+@interface Manufacturer : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *comparedCars;
-@property (nonatomic, retain) NSSet *series;
 @end
 
-@interface Maker (CoreDataGeneratedAccessors)
+@interface Manufacturer (CoreDataGeneratedAccessors)
 
 - (void)addComparedCarsObject:(ComparedCar *)value;
 - (void)removeComparedCarsObject:(ComparedCar *)value;
 - (void)addComparedCars:(NSSet *)values;
 - (void)removeComparedCars:(NSSet *)values;
-
-- (void)addSeriesObject:(Serie *)value;
-- (void)removeSeriesObject:(Serie *)value;
-- (void)addSeries:(NSSet *)values;
-- (void)removeSeries:(NSSet *)values;
 
 @end

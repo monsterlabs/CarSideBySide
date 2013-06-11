@@ -1,20 +1,18 @@
 //
-//  Maker.m
+//  Manufacturer.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 6/10/13.
+//  Created by Alejandro Juarez Robles on 6/11/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
-#import "Maker.h"
+#import "Manufacturer.h"
 #import "ComparedCar.h"
-#import "Serie.h"
 
 
-@implementation Maker
+@implementation Manufacturer
 
 @dynamic name;
 @dynamic comparedCars;
-@dynamic series;
 
 @end
