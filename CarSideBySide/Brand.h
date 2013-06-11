@@ -2,27 +2,32 @@
 //  Brand.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez Robles on 6/11/13.
+//  Created by Alejandro Juarez on 6/11/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Car;
+@class ComparedCar, Serie;
 
 @interface Brand : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * enabled;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *cars;
+@property (nonatomic, retain) NSSet *series;
+@property (nonatomic, retain) NSSet *comparativeCars;
 @end
 
 @interface Brand (CoreDataGeneratedAccessors)
 
-- (void)addCarsObject:(Car *)value;
-- (void)removeCarsObject:(Car *)value;
-- (void)addCars:(NSSet *)values;
-- (void)removeCars:(NSSet *)values;
+- (void)addSeriesObject:(Serie *)value;
+- (void)removeSeriesObject:(Serie *)value;
+- (void)addSeries:(NSSet *)values;
+- (void)removeSeries:(NSSet *)values;
+
+- (void)addComparativeCarsObject:(ComparedCar *)value;
+- (void)removeComparativeCarsObject:(ComparedCar *)value;
+- (void)addComparativeCars:(NSSet *)values;
+- (void)removeComparativeCars:(NSSet *)values;
 
 @end
