@@ -15,7 +15,10 @@
 
 @dynamic enabled;
 @dynamic name;
-@dynamic carModels;
+@dynamic portraitImage;
+@dynamic landscapeImage;
+@dynamic descr;
 @dynamic brand;
+@dynamic carModels;
 
 @end

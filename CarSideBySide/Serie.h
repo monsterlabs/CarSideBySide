@@ -15,8 +15,11 @@
 
 @property (nonatomic, retain) NSNumber * enabled;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *carModels;
+@property (nonatomic, retain) NSString * portraitImage;
+@property (nonatomic, retain) NSString * landscapeImage;
+@property (nonatomic, retain) NSString * descr;
 @property (nonatomic, retain) Brand *brand;
+@property (nonatomic, retain) NSSet *carModels;
 @end
 
 @interface Serie (CoreDataGeneratedAccessors)

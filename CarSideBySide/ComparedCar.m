@@ -16,7 +16,7 @@
 @dynamic image;
 @dynamic modelName;
 @dynamic year;
-@dynamic comparatives;
 @dynamic brand;
+@dynamic comparatives;
 
 @end

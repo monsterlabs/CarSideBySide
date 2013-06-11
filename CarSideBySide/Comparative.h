@@ -14,6 +14,8 @@
 @interface Comparative : NSManagedObject
 
 @property (nonatomic, retain) NSString * descr;
+@property (nonatomic, retain) NSString * portraitImage;
+@property (nonatomic, retain) NSString * landscapeImage;
 @property (nonatomic, retain) ComparedCar *comparedCar;
 @property (nonatomic, retain) NSSet *features;
 @property (nonatomic, retain) Specification *specification;
