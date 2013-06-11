@@ -14,7 +14,7 @@
 @implementation Brand
 
 @dynamic name;
-@dynamic series;
 @dynamic comparativeCars;
+@dynamic series;
 
 @end

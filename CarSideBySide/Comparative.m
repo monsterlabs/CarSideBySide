@@ -15,6 +15,8 @@
 @implementation Comparative
 
 @dynamic descr;
+@dynamic portraitImage;
+@dynamic landscapeImage;
 @dynamic comparedCar;
 @dynamic features;
 @dynamic specification;

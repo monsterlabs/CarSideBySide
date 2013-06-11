@@ -17,15 +17,15 @@
 @dynamic highlights;
 @dynamic image;
 @dynamic landscapeImage;
+@dynamic modelName;
 @dynamic orderKey;
 @dynamic portraitImage;
 @dynamic priceList;
-@dynamic name;
 @dynamic retailPrice;
 @dynamic validUntil;
 @dynamic year;
+@dynamic carModel;
 @dynamic lines;
 @dynamic specifications;
-@dynamic carModel;
 
 @end

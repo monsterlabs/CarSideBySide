@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#define appDelegate (AppDelegate *) [[UIApplication sharedApplication] delegate]
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {

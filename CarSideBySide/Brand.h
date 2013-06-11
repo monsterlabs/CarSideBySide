@@ -14,20 +14,20 @@
 @interface Brand : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *series;
 @property (nonatomic, retain) NSSet *comparativeCars;
+@property (nonatomic, retain) NSSet *series;
 @end
 
 @interface Brand (CoreDataGeneratedAccessors)
-
-- (void)addSeriesObject:(Serie *)value;
-- (void)removeSeriesObject:(Serie *)value;
-- (void)addSeries:(NSSet *)values;
-- (void)removeSeries:(NSSet *)values;
 
 - (void)addComparativeCarsObject:(ComparedCar *)value;
 - (void)removeComparativeCarsObject:(ComparedCar *)value;
 - (void)addComparativeCars:(NSSet *)values;
 - (void)removeComparativeCars:(NSSet *)values;
+
+- (void)addSeriesObject:(Serie *)value;
+- (void)removeSeriesObject:(Serie *)value;
+- (void)addSeries:(NSSet *)values;
+- (void)removeSeries:(NSSet *)values;
 
 @end
