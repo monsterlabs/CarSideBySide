@@ -33,7 +33,8 @@
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXQ-LZ-Pse">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="316" id="0Sl-cD-hf0"/>
+                                                <constraint firstAttribute="height" constant="21" id="U15-G8-m7z"/>
+                                                <constraint firstAttribute="width" constant="445" id="eEz-mM-oc0"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -42,6 +43,7 @@
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwV-qV-fEj">
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="475" id="Tgn-Ta-c7E"/>
                                                 <constraint firstAttribute="height" constant="162" id="hfh-va-qds"/>
                                             </constraints>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -71,19 +73,17 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="hZD-a1-Q6r" secondAttribute="bottom" constant="20" type="default" id="7bw-sx-eWx"/>
                                     <constraint firstItem="HwV-qV-fEj" firstAttribute="top" secondItem="oXQ-LZ-Pse" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ayc-Ra-315"/>
+                                    <constraint firstItem="xH2-bR-E4H" firstAttribute="top" secondItem="vCr-3V-asL" secondAttribute="top" constant="20" type="default" id="F8y-MA-ldF"/>
+                                    <constraint firstAttribute="bottom" secondItem="hZD-a1-Q6r" secondAttribute="bottom" constant="20" type="default" id="Fhn-pf-qGk"/>
                                     <constraint firstItem="hZD-a1-Q6r" firstAttribute="leading" secondItem="vCr-3V-asL" secondAttribute="leading" constant="317" id="IbZ-Fb-eXV"/>
                                     <constraint firstItem="oXQ-LZ-Pse" firstAttribute="leading" secondItem="xH2-bR-E4H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="MDP-iB-O4x"/>
-                                    <constraint firstAttribute="bottom" secondItem="wbb-IE-xHU" secondAttribute="bottom" constant="20" type="default" id="SoC-qI-OyF"/>
-                                    <constraint firstItem="HwV-qV-fEj" firstAttribute="trailing" secondItem="vCr-3V-asL" secondAttribute="trailing" type="default" id="ZKx-By-WfG"/>
+                                    <constraint firstItem="xH2-bR-E4H" firstAttribute="leading" secondItem="vCr-3V-asL" secondAttribute="leading" constant="20" type="default" id="PJH-Mq-AkO"/>
+                                    <constraint firstAttribute="bottom" secondItem="xH2-bR-E4H" secondAttribute="bottom" constant="20" type="default" id="a1o-ij-IG0"/>
+                                    <constraint firstItem="oXQ-LZ-Pse" firstAttribute="top" secondItem="vCr-3V-asL" secondAttribute="top" constant="20" type="default" id="b3l-Tv-90C"/>
                                     <constraint firstItem="wbb-IE-xHU" firstAttribute="leading" secondItem="xH2-bR-E4H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="bXG-g5-MUH"/>
-                                    <constraint firstItem="oXQ-LZ-Pse" firstAttribute="top" secondItem="vCr-3V-asL" secondAttribute="top" constant="20" type="default" id="dC3-dC-BhF"/>
                                     <constraint firstItem="HwV-qV-fEj" firstAttribute="leading" secondItem="xH2-bR-E4H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="irw-L0-a0p"/>
-                                    <constraint firstItem="xH2-bR-E4H" firstAttribute="top" secondItem="vCr-3V-asL" secondAttribute="top" constant="20" type="default" id="miE-RH-5WR"/>
-                                    <constraint firstItem="xH2-bR-E4H" firstAttribute="leading" secondItem="vCr-3V-asL" secondAttribute="leading" constant="20" type="default" id="nGD-Ei-6t4"/>
-                                    <constraint firstAttribute="bottom" secondItem="xH2-bR-E4H" secondAttribute="bottom" constant="20" type="default" id="pBR-yk-khJ"/>
-                                    <constraint firstItem="HwV-qV-fEj" firstAttribute="top" secondItem="vCr-3V-asL" secondAttribute="top" constant="49" id="xOh-Md-xMS"/>
+                                    <constraint firstAttribute="bottom" secondItem="wbb-IE-xHU" secondAttribute="bottom" constant="20" type="default" id="q8Q-YE-aw8"/>
                                     <constraint firstItem="hZD-a1-Q6r" firstAttribute="top" secondItem="wbb-IE-xHU" secondAttribute="top" type="default" id="yDT-SZ-dFv"/>
                                 </constraints>
                                 <connections>
