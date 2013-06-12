@@ -13,6 +13,9 @@
 		FA0D4041176146E80025725F /* safety.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0D403C176146E80025725F /* safety.png */; };
 		FA0D4042176146E80025725F /* technical_details.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0D403D176146E80025725F /* technical_details.png */; };
 		FA0D4045176148300025725F /* DummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D4044176148300025725F /* DummyViewController.m */; };
+		FA144A0B1768D2CC00081738 /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA144A0A1768D2CC00081738 /* CarModel.m */; };
+		FA144A0F1768EF3900081738 /* Faker.m in Sources */ = {isa = PBXBuildFile; fileRef = FA144A0E1768EF3900081738 /* Faker.m */; };
+		FA144A121768F45C00081738 /* NSManagedObject+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = FA144A111768F45C00081738 /* NSManagedObject+Util.m */; };
 		FA2AF9601755A50A001BA8ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF95F1755A50A001BA8ED /* UIKit.framework */; };
 		FA2AF9621755A50A001BA8ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9611755A50A001BA8ED /* Foundation.framework */; };
 		FA2AF9641755A50A001BA8ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9631755A50A001BA8ED /* CoreGraphics.framework */; };
@@ -40,7 +43,6 @@
 		FA2D922E1767E80B00E8E716 /* Specification.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D922D1767E80B00E8E716 /* Specification.m */; };
 		FA2D92311767E80B00E8E716 /* SpecificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D92301767E80B00E8E716 /* SpecificationType.m */; };
 		FA2D92341767E80C00E8E716 /* Comparative.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D92331767E80C00E8E716 /* Comparative.m */; };
-		FA2D92371767E80C00E8E716 /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D92361767E80C00E8E716 /* CarModel.m */; };
 		FA2D923A1767E80C00E8E716 /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D92391767E80C00E8E716 /* Brand.m */; };
 		FA2D923D1767E80C00E8E716 /* ComparedCar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D923C1767E80C00E8E716 /* ComparedCar.m */; };
 		FA2D92401767E80C00E8E716 /* Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D923F1767E80C00E8E716 /* Feature.m */; };
@@ -127,6 +129,12 @@
 		FA0D403D176146E80025725F /* technical_details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = technical_details.png; sourceTree = "<group>"; };
 		FA0D4043176148300025725F /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
 		FA0D4044176148300025725F /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
+		FA144A091768D2CC00081738 /* CarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
+		FA144A0A1768D2CC00081738 /* CarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
+		FA144A0D1768EF3900081738 /* Faker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faker.h; sourceTree = "<group>"; };
+		FA144A0E1768EF3900081738 /* Faker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faker.m; sourceTree = "<group>"; };
+		FA144A101768F45C00081738 /* NSManagedObject+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Util.h"; sourceTree = "<group>"; };
+		FA144A111768F45C00081738 /* NSManagedObject+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Util.m"; sourceTree = "<group>"; };
 		FA2AF95C1755A50A001BA8ED /* CarSideBySide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSideBySide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2AF95F1755A50A001BA8ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA2AF9611755A50A001BA8ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -169,8 +177,6 @@
 		FA2D92301767E80B00E8E716 /* SpecificationType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificationType.m; sourceTree = "<group>"; };
 		FA2D92321767E80C00E8E716 /* Comparative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comparative.h; sourceTree = "<group>"; };
 		FA2D92331767E80C00E8E716 /* Comparative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comparative.m; sourceTree = "<group>"; };
-		FA2D92351767E80C00E8E716 /* CarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
-		FA2D92361767E80C00E8E716 /* CarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
 		FA2D92381767E80C00E8E716 /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
 		FA2D92391767E80C00E8E716 /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
 		FA2D923B1767E80C00E8E716 /* ComparedCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparedCar.h; sourceTree = "<group>"; };
@@ -362,6 +368,8 @@
 				FA2AF9661755A50A001BA8ED /* Supporting Files */,
 				FA2D91BA1767C65B00E8E716 /* NSManagedObject+Find.h */,
 				FA2D91BB1767C65B00E8E716 /* NSManagedObject+Find.m */,
+				FA144A101768F45C00081738 /* NSManagedObject+Util.h */,
+				FA144A111768F45C00081738 /* NSManagedObject+Util.m */,
 			);
 			path = CarSideBySide;
 			sourceTree = "<group>";
@@ -405,14 +413,14 @@
 			isa = PBXGroup;
 			children = (
 				FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */,
+				FA144A091768D2CC00081738 /* CarModel.h */,
+				FA144A0A1768D2CC00081738 /* CarModel.m */,
 				FA2D923E1767E80C00E8E716 /* Feature.h */,
 				FA2D923F1767E80C00E8E716 /* Feature.m */,
 				FA2D923B1767E80C00E8E716 /* ComparedCar.h */,
 				FA2D923C1767E80C00E8E716 /* ComparedCar.m */,
 				FA2D92381767E80C00E8E716 /* Brand.h */,
 				FA2D92391767E80C00E8E716 /* Brand.m */,
-				FA2D92351767E80C00E8E716 /* CarModel.h */,
-				FA2D92361767E80C00E8E716 /* CarModel.m */,
 				FA2D92321767E80C00E8E716 /* Comparative.h */,
 				FA2D92331767E80C00E8E716 /* Comparative.m */,
 				FA2D922F1767E80B00E8E716 /* SpecificationType.h */,
@@ -521,6 +529,8 @@
 			children = (
 				FACB2DE5176790A300AD3D64 /* CoreDataSeed.h */,
 				FACB2DE6176790A300AD3D64 /* CoreDataSeed.m */,
+				FA144A0D1768EF3900081738 /* Faker.h */,
+				FA144A0E1768EF3900081738 /* Faker.m */,
 			);
 			name = Migrate;
 			sourceTree = "<group>";
@@ -928,10 +938,12 @@
 				FA2D922E1767E80B00E8E716 /* Specification.m in Sources */,
 				FA2D92311767E80B00E8E716 /* SpecificationType.m in Sources */,
 				FA2D92341767E80C00E8E716 /* Comparative.m in Sources */,
-				FA2D92371767E80C00E8E716 /* CarModel.m in Sources */,
 				FA2D923A1767E80C00E8E716 /* Brand.m in Sources */,
 				FA2D923D1767E80C00E8E716 /* ComparedCar.m in Sources */,
 				FA2D92401767E80C00E8E716 /* Feature.m in Sources */,
+				FA144A0B1768D2CC00081738 /* CarModel.m in Sources */,
+				FA144A0F1768EF3900081738 /* Faker.m in Sources */,
+				FA144A121768F45C00081738 /* NSManagedObject+Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
