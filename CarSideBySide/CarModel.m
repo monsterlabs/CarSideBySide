@@ -2,7 +2,7 @@
 //  CarModel.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 6/12/13.
+//  Created by Alejandro Juarez on 6/13/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  Comparative.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 6/11/13.
+//  Created by Alejandro Juarez on 6/13/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -14,8 +14,8 @@
 @interface Comparative : NSManagedObject
 
 @property (nonatomic, retain) NSString * descr;
-@property (nonatomic, retain) NSString * portraitImage;
 @property (nonatomic, retain) NSString * landscapeImage;
+@property (nonatomic, retain) NSString * portraitImage;
 @property (nonatomic, retain) ComparedCar *comparedCar;
 @property (nonatomic, retain) NSSet *features;
 @property (nonatomic, retain) Specification *specification;
