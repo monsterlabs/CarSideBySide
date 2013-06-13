@@ -2,7 +2,7 @@
 //  Comparative.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 6/11/13.
+//  Created by Alejandro Juarez on 6/13/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -15,8 +15,8 @@
 @implementation Comparative
 
 @dynamic descr;
-@dynamic portraitImage;
 @dynamic landscapeImage;
+@dynamic portraitImage;
 @dynamic comparedCar;
 @dynamic features;
 @dynamic specification;

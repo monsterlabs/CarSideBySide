@@ -2,14 +2,14 @@
 //  Car.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 6/11/13.
+//  Created by Alejandro Juarez on 6/13/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class CarModel, Specification;
+@class CarModel, Line, Specification;
 
 @interface Car : NSManagedObject
 
@@ -22,8 +22,8 @@
 @property (nonatomic, retain) NSString * portraitImage;
 @property (nonatomic, retain) NSNumber * priceList;
 @property (nonatomic, retain) NSNumber * retailPrice;
-@property (nonatomic, retain) NSDate * validUntil;
 @property (nonatomic, retain) NSNumber * year;
+@property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) CarModel *carModel;
 @property (nonatomic, retain) NSSet *lines;
 @property (nonatomic, retain) NSSet *specifications;
@@ -31,8 +31,8 @@
 
 @interface Car (CoreDataGeneratedAccessors)
 
-- (void)addLinesObject:(CarModel *)value;
-- (void)removeLinesObject:(CarModel *)value;
+- (void)addLinesObject:(Line *)value;
+- (void)removeLinesObject:(Line *)value;
 - (void)addLines:(NSSet *)values;
 - (void)removeLines:(NSSet *)values;
 

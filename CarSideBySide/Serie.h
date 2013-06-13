@@ -2,7 +2,7 @@
 //  Serie.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 6/11/13.
+//  Created by Alejandro Juarez on 6/13/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -15,9 +15,6 @@
 
 @property (nonatomic, retain) NSNumber * enabled;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * portraitImage;
-@property (nonatomic, retain) NSString * landscapeImage;
-@property (nonatomic, retain) NSString * descr;
 @property (nonatomic, retain) Brand *brand;
 @property (nonatomic, retain) NSSet *carModels;
 @end
