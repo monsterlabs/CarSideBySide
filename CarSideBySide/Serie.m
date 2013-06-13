@@ -9,6 +9,7 @@
 #import "Serie.h"
 #import "Brand.h"
 #import "CarModel.h"
+#import "NSManagedObject+Util.h"
 
 
 @implementation Serie
@@ -18,4 +19,9 @@
 @dynamic brand;
 @dynamic carModels;
 
+- (void)setSerieFromDictionary:(NSDictionary*)dict;
+{
+    self.name = [dict valueForKey:@"name"];
+    self.enabled = [Serie boolFromString:[dict valueForKey:@"enabled"]];
+}
 @end

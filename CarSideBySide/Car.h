@@ -41,4 +41,6 @@
 - (void)addSpecifications:(NSSet *)values;
 - (void)removeSpecifications:(NSSet *)values;
 
+- (void)setCarFromDictionary:(NSDictionary*)dict;
+
 @end

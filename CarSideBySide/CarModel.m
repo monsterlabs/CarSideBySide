@@ -9,6 +9,7 @@
 #import "CarModel.h"
 #import "Car.h"
 #import "Serie.h"
+#import "NSManagedObject+Util.h"
 
 
 @implementation CarModel
@@ -17,5 +18,11 @@
 @dynamic name;
 @dynamic cars;
 @dynamic serie;
+
+- (void)setSerieFromDictionary:(NSDictionary*)dict;
+{
+    self.name = [dict valueForKey:@"name"];
+    self.enabled = [CarModel boolFromString:[dict valueForKey:@"enabled"]];
+}
 
 @end
