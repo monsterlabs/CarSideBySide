@@ -10,7 +10,7 @@
 #import "CarModel.h"
 #import "Line.h"
 #import "Specification.h"
-
+#import "NSManagedObject+Util.h"
 
 @implementation Car
 
@@ -28,5 +28,17 @@
 @dynamic carModel;
 @dynamic lines;
 @dynamic specifications;
+
+- (void)setCarFromDictionary:(NSDictionary*)dict
+{
+    self.modelName = [dict valueForKey:@"modelName"];
+    self.summary = [dict valueForKey:@"summary"];
+    self.year = [NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]];
+    self.highlights = [dict valueForKey:@"highligths"];
+    self.enabled = [Car boolFromString:[dict valueForKey:@"enabled"]];
+    self.image = [dict valueForKey:@"image"];
+    self.landscapeImage = [dict valueForKey:@"landscapeImage"];
+    self.portraitImage = [dict valueForKey:@"portraitImage"];
+}
 
 @end

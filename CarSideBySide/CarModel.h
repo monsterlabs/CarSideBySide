@@ -26,4 +26,5 @@
 - (void)addCars:(NSSet *)values;
 - (void)removeCars:(NSSet *)values;
 
+- (void)setCarModelFromDictionary:(NSDictionary*)dict;
 @end
