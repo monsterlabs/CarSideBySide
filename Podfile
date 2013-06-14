@@ -1,2 +1,5 @@
 platform :ios, '5.0'
+xcodeproj 'CarSideBySide'
+workspace 'CarSideBySide'
 pod 'YISplashScreen', '~> 1.0.0'
+pod 'MBFaker', :git => 'git@github.com:juarlex/MBFaker.git'
