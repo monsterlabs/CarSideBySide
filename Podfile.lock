@@ -1,10 +1,20 @@
 PODS:
+  - LibYAML (0.1.4)
+  - MBFaker (0.0.1):
+    - LibYAML (~> 0.1.4)
   - YISplashScreen (1.0.0)
 
 DEPENDENCIES:
+  - MBFaker (from `git@github.com:juarlex/MBFaker.git`)
   - YISplashScreen (~> 1.0.0)
 
+EXTERNAL SOURCES:
+  MBFaker:
+    :git: git@github.com:juarlex/MBFaker.git
+
 SPEC CHECKSUMS:
+  LibYAML: 49b77e5b3f4417fa512a8f1f4675a78480bf6b3d
+  MBFaker: da77c465bf2c2540e1e6c0546b2d34afd7e9cdf4
   YISplashScreen: c0d3f8d37e32baf8346d750c038f6e7b0dcbbb25
 
 COCOAPODS: 0.20.2
