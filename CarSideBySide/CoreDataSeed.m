@@ -9,64 +9,23 @@
 #import "CoreDataSeed.h"
 #import "AppDelegate.h"
 #import "NSManagedObject+Find.h"
-#import "Faker.h"
 #import "Offer.h"
-#import "Brand.h"
-#import "Serie.h"
-#import "CarModel.h"
-#import "Car.h"
-
+#import <MBFaker.h>
 @implementation CoreDataSeed
 @synthesize managedObjectContext;
 
+// Brand *brand = (Brand *)[NSEntityDescription insertNewObjectForEntityForName:@"Brand" inManagedObjectContext:[appDelegate managedObjectContext]];
+// Serie *serie = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext:[appDelegate managedObjectContext]];
+// CarModel *carModel = (CarModel *)[NSEntityDescription insertNewObjectForEntityForName:@"CarModel" inManagedObjectContext:[appDelegate managedObjectContext]];
+// Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:[appDelegate managedObjectContext]];
 
-//+ (Brand *)brandFromString:(NSString *)name
-//{
-//    Brand *brand = (Brand *)[NSEntityDescription insertNewObjectForEntityForName:@"Brand" inManagedObjectContext:[appDelegate managedObjectContext]];
-//    [brand setName:name];
-//
-//    return brand;
-//}
-//
-//+ (Serie *)serieFromDictionary:(NSDictionary *)dict;
-//{
-//    Serie *serie = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext:[appDelegate managedObjectContext]];
-//    [serie setName:[dict valueForKey:@"name"]];
-//    [serie setEnabled:[CoreDataSeed boolFromString:[dict valueForKey:@"enabled"]]];
-//    [serie setEnabled: [dict valueForKey:@"enabled"]];
-//    [serie setDescr:[ dict valueForKey:@"descr"]];
-//    [serie setPortraitImage:[dict valueForKey:@"portraitImage"]];
-//    [serie setLandscapeImage:[dict valueForKey:@"landscapeImage"]];
-//    return serie;
-//}
-//
-//+ (CarModel*)carModelFromDictionary:(NSDictionary *)dict;
-//{
-//    CarModel *carModel = (CarModel *)[NSEntityDescription insertNewObjectForEntityForName:@"CarModel" inManagedObjectContext:[appDelegate managedObjectContext]];
-//    [carModel setName:[dict valueForKey:@"name"]];
-//    [carModel setEnabled:[CoreDataSeed boolFromString:[dict valueForKey:@"enabled"]]];
-//    return carModel;
-//}
-//
-//+ (Car *)carFromDictionary:(NSDictionary *)dict;
-//{    
-//    Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:[appDelegate managedObjectContext]];
-//
-//    [car setModelName: [dict valueForKey:@"modelName"]];
-//    [car setEnabled:[CoreDataSeed boolFromString:[dict valueForKey:@"enabled"]]];
-//    [car setYear:[NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]]];
-//    [car setPortraitImage:[dict valueForKey:@"portraitImage"]];
-//    [car setLandscapeImage:[dict valueForKey:@"landscapeImage"]];
-//    [car setValidUntil: [CoreDataSeed dateFromString: [dict valueForKey:@"validUntil"]]];
-//    
-//    return car;
-//}
-//
 # pragma - Public methods
 
 - (id)init
 {
     NSLog(@"Initializing the database data loading...");
+    [MBFaker setLanguage:@"en"];
+
     return self;
 }
 
@@ -79,70 +38,21 @@
 # pragma - Database population methods
 - (void)insertOffers {
     if ([[Offer findAll] count] == 0 ) {
-        NSLog(@"Inserting data into the Offer model..");
-        NSArray *offers = [NSArray arrayWithObjects:
-                           [NSDictionary dictionaryWithObjectsAndKeys:
-                            [Faker fakeTitle], @"title",
-                            [Faker fakeParagrah], @"body",
-                            @"bmw_offer_test_1.jpg", @"image",
-                            @"bmw_offer_test_1_large.jpg", @"largeImage",
-                            @"http://bit.ly/146ObXC", @"url",
-                            @"2013-12-29", @"validUntil",
-                            @"true", @"enabled",
-                            nil],
-                            [NSDictionary dictionaryWithObjectsAndKeys:
-                             [Faker fakeTitle], @"title",
-                             [Faker fakeParagrah], @"body",
-                             @"bmw_offer_test_2.jpg", @"image",
-                             @"bmw_offer_test_2_large.jpg", @"largeImage",
-                             @"http://bit.ly/146ObXC", @"url",
-                             @"2013-11-29", @"validUntil",
-                             @"true", @"enabled",
-                             nil],
-                           [NSDictionary dictionaryWithObjectsAndKeys:
-                            [Faker fakeTitle], @"title",
-                            [Faker fakeParagrah], @"body",
-                            @"bmw_offer_test_3.jpg", @"image",
-                            @"bmw_offer_test_3_large.jpg", @"largeImage",
-                            @"http://bit.ly/146ObXC", @"url",
-                            @"2013-10-29", @"validUntil",
-                            @"true", @"enabled",
-                            nil],
-                           [NSDictionary dictionaryWithObjectsAndKeys:
-                            [Faker fakeTitle], @"title",
-                            [Faker fakeParagrah], @"body",
-                            @"bmw_offer_test_1.jpg", @"image",
-                            @"bmw_offer_test_1_large.jpg", @"largeImage",
-                            @"http://bit.ly/146ObXC", @"url",
-                            @"2013-09-29", @"validUntil",
-                            @"true", @"enabled",
-                            nil],
-                           [NSDictionary dictionaryWithObjectsAndKeys:
-                            [Faker fakeTitle], @"title",
-                            [Faker fakeParagrah], @"body",
-                            @"bmw_offer_test_2.jpg", @"image",
-                            @"bmw_offer_test_2_large.jpg", @"largeImage",
-                            @"http://bit.ly/146ObXC", @"url",
-                            @"2013-08-29", @"validUntil",
-                            @"true", @"enabled",
-                            nil],
-                           [NSDictionary dictionaryWithObjectsAndKeys:
-                            [Faker fakeTitle], @"title",
-                            [Faker fakeParagrah], @"body",
-                            @"bmw_offer_test_3.jpg", @"image",
-                            @"bmw_offer_test_3_large.jpg", @"largeImage",
-                            @"http://bit.ly/146ObXC", @"url",
-                            @"2013-07-29", @"validUntil",
-                            @"true", @"enabled",
-                            nil],
-                           nil];
-        
-        for (NSDictionary *dict in offers) {
+         for (int i = 1; i <= 6; i++) {
             Offer *offer = (Offer *)[NSEntityDescription insertNewObjectForEntityForName:@"Offer" inManagedObjectContext:[appDelegate managedObjectContext]];
-            [offer setOfferFromDictionary:dict];
+            offer.title = [MBFakerLorem words:7];
+            offer.body = [MBFakerLorem paragraphs:7];
+            offer.image = [NSString stringWithFormat:@"bmw_offer_test_%i.jpg", i];
+            offer.largeImage = [NSString stringWithFormat:@"bmw_offer_test_%i_large.jpg", i];
+            offer.url = [MBFakerInternet url];
+            offer.enabled = [NSNumber numberWithBool:YES];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-mm-dd"];
+            NSDate *date = [dateFormatter dateFromString: [NSString stringWithFormat:@"2012-0%i-01", i]];
+            offer.validUntil = date;
             [self saveContext];
         }
-    }
+   }
 }
 
 - (void)saveContext
