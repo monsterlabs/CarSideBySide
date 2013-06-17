@@ -7,6 +7,7 @@
 //
 
 #import "Offer.h"
+#import "AppDelegate.h"
 #import "NSManagedObject+Util.h"
 
 @implementation Offer
@@ -29,4 +30,38 @@
     self.enabled = [Offer boolFromString:[dict valueForKey:@"enabled"]];
     self.validUntil = [Offer dateFromString: [dict valueForKey:@"validUntil"]];
 }
+
++ (NSArray *)findEnabledOrValidUntil {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSString *className = NSStringFromClass([self class]);
+    NSEntityDescription *entity = [NSEntityDescription entityForName:className inManagedObjectContext:[appDelegate managedObjectContext]];
+    [request setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"enabled == 1 AND validUntil >= %@", [NSDate date]];
+    
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *fetchResults = [[[appDelegate managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
+    
+    return fetchResults;
+}
+
++ (NSArray *)findTitleLike:(NSString*)title
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSString *className = NSStringFromClass([self class]);
+    NSEntityDescription *entity = [NSEntityDescription entityForName:className inManagedObjectContext:[appDelegate managedObjectContext]];
+    [request setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"enabled == 1 AND validUntil >= %@ AND title CONTAINS[cd] %@", [NSDate date], title];
+    
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *fetchResults = [[[appDelegate managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
+    
+    return fetchResults;
+}
+
 @end

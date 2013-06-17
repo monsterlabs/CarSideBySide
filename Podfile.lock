@@ -2,10 +2,14 @@ PODS:
   - LibYAML (0.1.4)
   - MBFaker (0.0.1):
     - LibYAML (~> 0.1.4)
+  - NSDate+Helper (0.0.1)
+  - NSDate-Extensions (0.0.1)
   - YISplashScreen (1.0.0)
 
 DEPENDENCIES:
   - MBFaker (from `git@github.com:juarlex/MBFaker.git`)
+  - NSDate+Helper (~> 0.0.1)
+  - NSDate-Extensions (~> 0.0.1)
   - YISplashScreen (~> 1.0.0)
 
 EXTERNAL SOURCES:
@@ -15,6 +19,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   LibYAML: 49b77e5b3f4417fa512a8f1f4675a78480bf6b3d
   MBFaker: da77c465bf2c2540e1e6c0546b2d34afd7e9cdf4
+  NSDate+Helper: 3015cb57778256bce7c549fca172474308740059
+  NSDate-Extensions: b78c2b3f363acdcd7b5d2547a6bef6656cd8ff70
   YISplashScreen: c0d3f8d37e32baf8346d750c038f6e7b0dcbbb25
 
 COCOAPODS: 0.20.2

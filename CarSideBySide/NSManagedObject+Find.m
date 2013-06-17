@@ -8,10 +8,10 @@
 
 #import "NSManagedObject+Find.h"
 #import "AppDelegate.h"
-
+#import <NSDate+Helper.h>
 @implementation NSManagedObject (NSManagedObject_Find)
 
-+(NSArray *)findAll {
++ (NSArray *)findAll {
 
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSString *className = NSStringFromClass([self class]);

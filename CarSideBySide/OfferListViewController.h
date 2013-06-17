@@ -13,9 +13,4 @@
     UISearchBar *theSearchBar;
 }
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
-- (NSFetchedResultsController *)doSearch:(NSString*)text;
 @end

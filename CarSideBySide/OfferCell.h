@@ -18,4 +18,5 @@
 
 @property (strong, nonatomic) id offer;
 
+- (void)configureCell;
 @end

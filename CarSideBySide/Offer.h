@@ -21,5 +21,7 @@
 @property (nonatomic, retain) NSDate * validUntil;
 
 - (void)setOfferFromDictionary:(NSDictionary*)dict;
++ (NSArray *)findEnabledOrValidUntil;
++ (NSArray *)findTitleLike:(NSString*)title;
 
 @end
