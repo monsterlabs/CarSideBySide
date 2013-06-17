@@ -14,7 +14,9 @@
     IBOutlet UILabel *titleLabel;
     IBOutlet UITextView *bodyTextView;
     IBOutlet UILabel *validUntilLabel;
+    IBOutlet UILabel *validDateLabel;
     IBOutlet UILabel *urlLabel;
+    IBOutlet UILabel *moreInfoLabel;
 }
 
 @property (strong, nonatomic) id offer;

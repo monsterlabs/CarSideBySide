@@ -23,6 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"%@", [UIFont fontNamesForFamilyName:@"BMW Type Global Pro"]);
     
     [YISplashScreen show];
     
