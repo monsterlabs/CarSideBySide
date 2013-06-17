@@ -8,7 +8,7 @@
 
 #import "OfferDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "OfferWebViewController.h"
 @interface OfferDetailViewController ()
 
 @end
@@ -33,7 +33,7 @@
     bodyTextView.text = [self.offer valueForKey:@"body"];
     bodyTextView.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Regular" size:14.0];
 
-    offerImageView.image = [UIImage imageNamed:[self.offer valueForKey:@"image"]];
+    offerImageView.image = [UIImage imageNamed:[self.offer valueForKey:@"largeImage"]];
     offerImageView.layer.cornerRadius = 05.0f;
     offerImageView.layer.masksToBounds = YES;
     offerImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -45,11 +45,6 @@
     validUntilLabel.text = dateString;
     validUntilLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Light" size:11.0];
     validDateLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Bold" size:11.0];
-
-    urlLabel.text = [self.offer valueForKey:@"url"];
-    urlLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Light" size:11.0];
-    moreInfoLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Bold" size:11.0];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,8 +53,15 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)done:(id)sender {
+- (IBAction)done:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:^{}];
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    OfferWebViewController *offerWebViewController = segue.destinationViewController;
+    offerWebViewController.url = [self.offer valueForKey:@"url"];
+}
+
 
 @end

@@ -22,9 +22,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    NSLog(@"%@", [UIFont fontNamesForFamilyName:@"BMW Type Global Pro"]);
-    
+{    
     [YISplashScreen show];
     
 #if SHOWS_MIGRATION_ALERT
