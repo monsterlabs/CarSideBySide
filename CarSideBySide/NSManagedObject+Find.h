@@ -12,6 +12,6 @@
 
 @interface NSManagedObject (NSManagedObject_Find)
 
-+(NSArray *)findAll;
++ (NSArray *)findAll;
 
 @end

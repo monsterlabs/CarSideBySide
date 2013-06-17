@@ -10,7 +10,9 @@
 #import "AppDelegate.h"
 #import "NSManagedObject+Find.h"
 #import "Offer.h"
+#import "Brand.h"
 #import <MBFaker.h>
+
 @implementation CoreDataSeed
 @synthesize managedObjectContext;
 
@@ -48,11 +50,26 @@
             offer.enabled = [NSNumber numberWithBool:YES];
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-mm-dd"];
-            NSDate *date = [dateFormatter dateFromString: [NSString stringWithFormat:@"2012-0%i-01", i]];
-            offer.validUntil = date;
+            NSCalendar *calendar = [NSCalendar currentCalendar];
+            NSDate *currentDate = [NSDate date];
+            NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+            [dateComps setMonth: i];
+            NSDate *newDate =[calendar dateByAddingComponents:dateComps toDate:currentDate options:0];
+            offer.validUntil = newDate;
             [self saveContext];
         }
    }
+}
+- (void)insertBrands {
+    if ([[Brand findAll] count] == 0) {
+        NSLog(@"Inserting data into the Brand model..");
+        NSArray *brands = [NSArray arrayWithObjects:@"BMW", @"Audi", @"Volvo", @"Mercedes Benz", nil];
+        for (NSString *brandName in brands ) {
+            Brand *brand = (Brand *)[NSEntityDescription insertNewObjectForEntityForName:@"Brand" inManagedObjectContext:[appDelegate managedObjectContext]];
+            [brand setName:brandName];
+            [self saveContext];
+        }
+    }
 }
 
 - (void)saveContext
@@ -164,14 +181,4 @@
 //    }
 
 
-//-(void)insertBrands {
-//    if ([[Brand findAll] count] == 0) {
-//        NSLog(@"Inserting data into the Brand model..");
-//        NSArray *brands = [NSArray arrayWithObjects:@"BMW", @"Audi", @"Volvo", @"Mercedes Benz", nil];
-//        for (NSString *brandName in brands ) {
-//            Brand *brand = [CoreDataSeed brandFromString:brandName];
-//            [self saveContext];
-//        }
-//    }
-//}
 @end
