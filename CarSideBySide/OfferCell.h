@@ -13,6 +13,7 @@
     IBOutlet UIImageView *offerImageView;
     IBOutlet UILabel *titleLabel;
     IBOutlet UITextView *bodyTextView;
+    IBOutlet UILabel *validDateLabel;
     IBOutlet UILabel *validUntilLabel;
 }
 
