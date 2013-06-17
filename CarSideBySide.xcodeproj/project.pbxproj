@@ -37,6 +37,8 @@
 		FA2D91BC1767C65B00E8E716 /* NSManagedObject+Find.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D91BB1767C65B00E8E716 /* NSManagedObject+Find.m */; };
 		FA2D92251767E80A00E8E716 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D92241767E80A00E8E716 /* Offer.m */; };
 		FA327CFA176FA7B50062E845 /* OfferWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA327CF9176FA7B50062E845 /* OfferWebViewController.m */; };
+		FA58E0F6176FC88E007C9295 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA58E0F4176FC88E007C9295 /* Icon-72.png */; };
+		FA58E0F7176FC88E007C9295 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA58E0F5176FC88E007C9295 /* Icon-72@2x.png */; };
 		FA5A9B081756FD0600B718C1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AE61756FD0600B718C1 /* Podfile */; };
 		FA5A9B091756FD0600B718C1 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AE71756FD0600B718C1 /* Podfile.lock */; };
 		FA88C2BB1755B90400603295 /* CarSideBySide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */; };
@@ -58,8 +60,6 @@
 		FA969934176FC1AB004EAED2 /* bmw_offer_test_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA969928176FC1AB004EAED2 /* bmw_offer_test_5.jpg */; };
 		FA969935176FC1AB004EAED2 /* bmw_offer_test_6_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA969929176FC1AB004EAED2 /* bmw_offer_test_6_large.jpg */; };
 		FA969936176FC1AB004EAED2 /* bmw_offer_test_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA96992A176FC1AB004EAED2 /* bmw_offer_test_6.jpg */; };
-		FA96993D176FC28F004EAED2 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA96993B176FC28F004EAED2 /* Icon-72.png */; };
-		FA96993E176FC28F004EAED2 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA96993C176FC28F004EAED2 /* Icon-72@2x.png */; };
 		FA98C5A11760FB4600B64805 /* CarListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA98C5A01760FB4600B64805 /* CarListHeaderView.m */; };
 		FA98C5A517610B1F00B64805 /* SerieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA98C5A417610B1F00B64805 /* SerieListViewController.m */; };
 		FAA37F8117594483005DC530 /* CarDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA37F8017594483005DC530 /* CarDetailViewController.m */; };
@@ -159,6 +159,8 @@
 		FA2D92241767E80A00E8E716 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		FA327CF8176FA7B50062E845 /* OfferWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferWebViewController.h; sourceTree = "<group>"; };
 		FA327CF9176FA7B50062E845 /* OfferWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferWebViewController.m; sourceTree = "<group>"; };
+		FA58E0F4176FC88E007C9295 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		FA58E0F5176FC88E007C9295 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		FA5A9AE61756FD0600B718C1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FA5A9AE71756FD0600B718C1 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		FA88C2BA1755B90400603295 /* CarSideBySide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarSideBySide.xcdatamodel; sourceTree = "<group>"; };
@@ -183,8 +185,6 @@
 		FA969928176FC1AB004EAED2 /* bmw_offer_test_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_5.jpg; sourceTree = "<group>"; };
 		FA969929176FC1AB004EAED2 /* bmw_offer_test_6_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_6_large.jpg; sourceTree = "<group>"; };
 		FA96992A176FC1AB004EAED2 /* bmw_offer_test_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_6.jpg; sourceTree = "<group>"; };
-		FA96993B176FC28F004EAED2 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../../../../Desktop/bmw/Icon-72.png"; sourceTree = "<group>"; };
-		FA96993C176FC28F004EAED2 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "../../../../Desktop/bmw/Icon-72@2x.png"; sourceTree = "<group>"; };
 		FA98C59F1760FB4600B64805 /* CarListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarListHeaderView.h; sourceTree = "<group>"; };
 		FA98C5A01760FB4600B64805 /* CarListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarListHeaderView.m; sourceTree = "<group>"; };
 		FA98C5A317610B1F00B64805 /* SerieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerieListViewController.h; sourceTree = "<group>"; };
@@ -376,8 +376,8 @@
 		FA2AF9661755A50A001BA8ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FA96993B176FC28F004EAED2 /* Icon-72.png */,
-				FA96993C176FC28F004EAED2 /* Icon-72@2x.png */,
+				FA58E0F4176FC88E007C9295 /* Icon-72.png */,
+				FA58E0F5176FC88E007C9295 /* Icon-72@2x.png */,
 				FA8CB5A0176F867500267DF8 /* BMWGlobal_Pro_bold.ttf */,
 				FA8CB5A1176F867500267DF8 /* BMWGlobal_Pro_light.ttf */,
 				FA8CB5A2176F867500267DF8 /* BMWGlobal_Pro_reg.ttf */,
@@ -663,8 +663,8 @@
 				FA969934176FC1AB004EAED2 /* bmw_offer_test_5.jpg in Resources */,
 				FA969935176FC1AB004EAED2 /* bmw_offer_test_6_large.jpg in Resources */,
 				FA969936176FC1AB004EAED2 /* bmw_offer_test_6.jpg in Resources */,
-				FA96993D176FC28F004EAED2 /* Icon-72.png in Resources */,
-				FA96993E176FC28F004EAED2 /* Icon-72@2x.png in Resources */,
+				FA58E0F6176FC88E007C9295 /* Icon-72.png in Resources */,
+				FA58E0F7176FC88E007C9295 /* Icon-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
