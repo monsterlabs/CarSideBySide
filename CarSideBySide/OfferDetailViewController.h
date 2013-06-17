@@ -20,5 +20,6 @@
 }
 
 @property (strong, nonatomic) id offer;
--(IBAction)done:(id) sender;
+- (IBAction)done:(id) sender;
+
 @end

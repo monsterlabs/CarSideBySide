@@ -36,6 +36,7 @@
 		FA2B0584175905DD000EBAB1 /* CarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B0583175905DD000EBAB1 /* CarCell.m */; };
 		FA2D91BC1767C65B00E8E716 /* NSManagedObject+Find.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D91BB1767C65B00E8E716 /* NSManagedObject+Find.m */; };
 		FA2D92251767E80A00E8E716 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D92241767E80A00E8E716 /* Offer.m */; };
+		FA327CFA176FA7B50062E845 /* OfferWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA327CF9176FA7B50062E845 /* OfferWebViewController.m */; };
 		FA590727175674B8008F8B78 /* bmw_offer_test_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */; };
 		FA590728175674B8008F8B78 /* bmw_offer_test_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */; };
 		FA590729175674B8008F8B78 /* bmw_offer_test_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */; };
@@ -147,6 +148,8 @@
 		FA2D91BB1767C65B00E8E716 /* NSManagedObject+Find.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Find.m"; sourceTree = "<group>"; };
 		FA2D92231767E80A00E8E716 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		FA2D92241767E80A00E8E716 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
+		FA327CF8176FA7B50062E845 /* OfferWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferWebViewController.h; sourceTree = "<group>"; };
+		FA327CF9176FA7B50062E845 /* OfferWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferWebViewController.m; sourceTree = "<group>"; };
 		FA590724175674B8008F8B78 /* bmw_offer_test_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_1.jpg; sourceTree = "<group>"; };
 		FA590725175674B8008F8B78 /* bmw_offer_test_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_2.jpg; sourceTree = "<group>"; };
 		FA590726175674B8008F8B78 /* bmw_offer_test_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_offer_test_3.jpg; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 				FA8B0834175A321300C58E04 /* OfferListHeaderView.m */,
 				FA953D121757027D004F770D /* OfferCell.h */,
 				FA953D131757027D004F770D /* OfferCell.m */,
+				FA327CF8176FA7B50062E845 /* OfferWebViewController.h */,
+				FA327CF9176FA7B50062E845 /* OfferWebViewController.m */,
 			);
 			name = Offer;
 			sourceTree = "<group>";
@@ -965,6 +970,7 @@
 				FAE82274176A328B00B07A1E /* Line.m in Sources */,
 				FAE82277176A328B00B07A1E /* Serie.m in Sources */,
 				FAE8227A176A328B00B07A1E /* SpecificationType.m in Sources */,
+				FA327CFA176FA7B50062E845 /* OfferWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
