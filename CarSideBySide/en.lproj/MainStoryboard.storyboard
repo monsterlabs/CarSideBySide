@@ -243,6 +243,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bodyTextView" destination="MMx-6C-vmB" id="MQm-7x-hks"/>
                         <outlet property="offerImageView" destination="sNZ-OP-Q2c" id="Gxw-Nc-xXr"/>
                         <outlet property="titleLabel" destination="a3F-R0-4Pl" id="bzL-Mu-ogj"/>
                         <outlet property="validDateLabel" destination="gmu-ll-VR1" id="jeD-Ne-csU"/>
@@ -251,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvu-pI-xGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327" y="-728"/>
+            <point key="canvasLocation" x="1250" y="-729"/>
         </scene>
         <!--Offer Web View Controller-->
         <scene sceneID="N2r-vz-v9l">
@@ -270,6 +271,12 @@
                                     <barButtonItem systemItem="stop" id="5JX-Rl-UEf">
                                         <connections>
                                             <action selector="done:" destination="MHj-UM-rjc" id="gAq-fK-gHz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Wx5-2r-TFo"/>
+                                    <barButtonItem systemItem="refresh" id="jZa-sS-KjH">
+                                        <connections>
+                                            <action selector="reload:" destination="MHj-UM-rjc" id="3tv-9H-nsZ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

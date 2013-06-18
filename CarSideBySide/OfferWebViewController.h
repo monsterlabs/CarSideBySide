@@ -14,5 +14,5 @@
 @property (strong, nonatomic) NSString *url;
 
 - (IBAction)done:(id)sender;
-
+- (IBAction)reload:(id)sender;
 @end

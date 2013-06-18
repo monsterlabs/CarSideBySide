@@ -24,9 +24,16 @@
     return self;
 }
 
-- (void)viewDidLoad
+-(void)setOffer:(id)newOffer
 {
-    [super viewDidLoad];
+    if (_offer != newOffer) {
+        _offer = newOffer;
+    }
+    [self configureView];
+}
+
+- (void)configureView
+{
     titleLabel.text = [self.offer valueForKey:@"title"];
     titleLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Bold" size:18.0];
 
@@ -38,13 +45,19 @@
     offerImageView.layer.masksToBounds = YES;
     offerImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     offerImageView.layer.borderWidth = 1.0;
-    
+
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *dateString = [dateFormatter stringFromDate:[self.offer valueForKey:@"validUntil"]];
     validUntilLabel.text = dateString;
     validUntilLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Light" size:11.0];
     validDateLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Bold" size:11.0];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self configureView];
 }
 
 - (void)didReceiveMemoryWarning
