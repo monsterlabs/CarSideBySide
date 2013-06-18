@@ -35,6 +35,7 @@
 {
     NSLog(@"Database data loading in progress...");
     [self insertOffers];
+    [self insertBrands];
 }
 
 # pragma - Database population methods
