@@ -36,11 +36,8 @@
     validUntilLabel.text = dateString;
     validUntilLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Light" size:11.0];
     validDateLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Bold" size:11.0];
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 266, self.contentView.bounds.size.width, 1)];
-    lineView.backgroundColor = [UIColor lightGrayColor];
-    
-    [self addSubview: lineView];
-
+    self.layer.cornerRadius = 5;
+    self.layer.masksToBounds = YES;
 }
 
 - (id)initWithFrame:(CGRect)frame
