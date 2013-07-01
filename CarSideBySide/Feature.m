@@ -2,7 +2,7 @@
 //  Feature.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 6/13/13.
+//  Created by Alejandro Juarez Robles on 6/30/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -15,8 +15,9 @@
 
 @dynamic additionalInfo;
 @dynamic descr;
+@dynamic highlighted;
 @dynamic name;
-@dynamic comparative;
+@dynamic comparatives;
 @dynamic specification;
 
 @end

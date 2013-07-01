@@ -11,15 +11,19 @@
 #import "NSManagedObject+Find.h"
 #import "Offer.h"
 #import "Brand.h"
+#import "Serie.h"
+#import "CarModel.h"
+#import "Car.h"
+#import "SpecificationType.h"
+#import "Specification.h"
+#import "Feature.h"
+#import "ComparedCar.h"
+#import "Comparative.h"
 #import <MBFaker.h>
+#import <DVCoreDataFinders.h>
 
 @implementation CoreDataSeed
 @synthesize managedObjectContext;
-
-// Brand *brand = (Brand *)[NSEntityDescription insertNewObjectForEntityForName:@"Brand" inManagedObjectContext:[appDelegate managedObjectContext]];
-// Serie *serie = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext:[appDelegate managedObjectContext]];
-// CarModel *carModel = (CarModel *)[NSEntityDescription insertNewObjectForEntityForName:@"CarModel" inManagedObjectContext:[appDelegate managedObjectContext]];
-// Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:[appDelegate managedObjectContext]];
 
 # pragma - Public methods
 
@@ -27,7 +31,7 @@
 {
     NSLog(@"Initializing the database data loading...");
     [MBFaker setLanguage:@"en"];
-
+    
     return self;
 }
 
@@ -36,19 +40,26 @@
     NSLog(@"Database data loading in progress...");
     [self insertOffers];
     [self insertBrands];
+    [self insertSeries];
+    [self insertCarModels];
+    [self insertCars];
+    [self insertSpecTypes];
+    [self insertCarSpecifications];
+    [self insertSpecFeatures];
 }
 
 # pragma - Database population methods
-- (void)insertOffers {
+- (void)insertOffers
+{
     if ([[Offer findAll] count] == 0 ) {
-         for (int i = 1; i <= 6; i++) {
+        for (int i = 1; i <= 6; i++) {
             Offer *offer = (Offer *)[NSEntityDescription insertNewObjectForEntityForName:@"Offer" inManagedObjectContext:[appDelegate managedObjectContext]];
-            offer.title = [MBFakerLorem words:7];
-            offer.body = [MBFakerLorem paragraphs:7];
+            offer.title = [MBFakerLorem words:arc4random_uniform(7)];
+            offer.body = [MBFakerLorem paragraphs:arc4random_uniform(7)];
             offer.image = [NSString stringWithFormat:@"bmw_offer_test_%i.jpg", i];
             offer.largeImage = [NSString stringWithFormat:@"bmw_offer_test_%i_large.jpg", i];
             offer.url = [MBFakerInternet url];
-            offer.enabled = [NSNumber numberWithBool:YES];
+            offer.enabled = @YES;
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-mm-dd"];
             NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -59,9 +70,10 @@
             offer.validUntil = newDate;
             [self saveContext];
         }
-   }
+    }
 }
-- (void)insertBrands {
+- (void)insertBrands
+{
     if ([[Brand findAll] count] == 0) {
         NSLog(@"Inserting data into the Brand model..");
         NSArray *brands = [NSArray arrayWithObjects:@"BMW", @"Audi", @"Volvo", @"Mercedes Benz", nil];
@@ -69,6 +81,140 @@
             Brand *brand = (Brand *)[NSEntityDescription insertNewObjectForEntityForName:@"Brand" inManagedObjectContext:[appDelegate managedObjectContext]];
             [brand setName:brandName];
             [self saveContext];
+        }
+    }
+}
+- (void)insertSeries
+{
+    if ([[Serie findAll] count] == 0 ){
+        NSLog(@"Inserting data into the Serie model..");
+        Brand *bmw = [Brand findFirstWhereProperty:@"name" equals:@"BMW" inContext:[appDelegate managedObjectContext] error:nil];
+        NSArray *series = [NSArray arrayWithObjects:@"Serie 1", @"Serie 3", @"Serie 4", @"Serie 5", @"Serie 6", @"Serie 7", @"Serie X", @"Serie Z4", @"Serie M", nil];
+        for (NSString *serieName in series) {
+            Serie *serie = (Serie *)[NSEntityDescription insertNewObjectForEntityForName:@"Serie" inManagedObjectContext:[appDelegate managedObjectContext]];
+            serie.name = serieName;
+            serie.enabled = @YES;
+            serie.brand = bmw;
+            [self saveContext];
+        }
+    }
+}
+- (void)insertCarModels
+{
+    if ([[CarModel findAll] count] == 0) {
+        NSLog(@"Inserting data into the CarModel model..");
+        for (Serie *serie in [Serie findAll]) {
+            
+            int max = arc4random_uniform(8);
+            for(int i = 1; i <= max; i++)
+            {
+                CarModel *carModel = (CarModel *)[NSEntityDescription insertNewObjectForEntityForName:@"CarModel" inManagedObjectContext:[appDelegate managedObjectContext]];
+                carModel.name = [MBFakerLorem words:arc4random_uniform(3)];
+                carModel.enabled = @YES;
+                carModel.serie = serie;
+                [self saveContext];
+            }
+            
+        }
+    }
+}
+
+- (void)insertCars
+{
+    if ([[Car findAll] count])
+    {
+        NSLog(@"Inserting data into the Car model..");
+        for (CarModel *model in [CarModel findAll]) {
+            int max = arc4random_uniform(12);
+            for (int i = 1; i <= max; i++)
+            {
+                Car *car = (Car*)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:[appDelegate managedObjectContext]];
+                car.modelName = [MBFakerLorem words:arc4random_uniform(2)];
+                car.enabled = @YES;
+                car.highlights = [MBFakerLorem paragraphs:arc4random_uniform(2)];
+                car.image = @"bmw_s3_sedan.jpg";
+                car.year = [NSNumber numberWithInt:2013];
+                car.carModel = model;
+                [self saveContext];
+            }
+        }
+        
+    }
+}
+
+- (void)insertSpecTypes
+{
+    if([[SpecificationType findAll] count] == 0 )
+    {
+        NSLog(@"Inserting data into the SpecificationType model...");
+        NSArray *specificationTypes = [NSArray arrayWithObjects: @"Technical", @"Equipment", @"Safety", @"Lines", @"Price", nil];
+        for (NSString *specTypeName in specificationTypes) {
+            SpecificationType *specType = (SpecificationType*)[NSEntityDescription insertNewObjectForEntityForName:@"SpecificationType" inManagedObjectContext:[appDelegate managedObjectContext]];
+            specType.name = specTypeName;
+            [self saveContext];
+        }
+        
+    }
+}
+
+- (void)insertCarSpecifications
+{
+    if ([[Specification findAll] count] == 0)
+    {
+        NSLog(@"Inserting data into Specification model...");
+        for (Car *car in [Car findAll]) {
+            for (SpecificationType *specType in [SpecificationType findAll]) {
+                Specification *spec = (Specification *)[NSEntityDescription insertNewObjectForEntityForName:@"Specification" inManagedObjectContext:[appDelegate managedObjectContext]];
+                spec.specificationType = specType;
+                spec.car = car;
+                spec.image = @"bmw_s3_gran_turismo.jpg";
+                spec.descr = [MBFakerLorem paragraphs:arc4random_uniform(2)];
+                [self saveContext];
+            }
+        }
+    }
+}
+
+- (void)insertSpecFeatures
+{
+    if ([[Feature findAll] count] == 0 )
+    {
+        [self logMessageForModel:@"Feature" ];
+        for (Car *car in [Car findAll]){
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name != 'BMW'"];
+            NSError *error;
+            NSArray *brands = [Brand findAllWithPredicate:predicate inContext:[appDelegate managedObjectContext] error:&error];
+            int maxComparedCars = arc4random_uniform([brands count]);
+            NSMutableArray *comparedCars = [NSMutableArray array];
+            for (int i = 0; i < maxComparedCars; i++) {
+                ComparedCar *comparedCar = (ComparedCar *)[NSEntityDescription insertNewObjectForEntityForName:@"ComparedCar" inManagedObjectContext:[appDelegate managedObjectContext]];
+                comparedCar.modelName = [MBFakerLorem word];
+                comparedCar.brand = [brands objectAtIndex:i];
+                comparedCar.year = [NSNumber numberWithInt:2013];
+                [self saveContext];
+                [comparedCars addObject:comparedCar];
+            }
+            
+            for (Specification *spec in [car specifications]) {
+                int max = arc4random_uniform(20);
+                for (int i = 1; i <= max; i++) {
+                    Feature *feature = (Feature *)[NSEntityDescription insertNewObjectForEntityForName:@"Feature" inManagedObjectContext:[appDelegate managedObjectContext]];
+                    feature.name = [MBFakerLorem words:arc4random_uniform(3)];
+                    feature.descr = [MBFakerLorem word];
+                    feature.highlighted  = [NSNumber numberWithInt:arc4random_uniform(1)];
+                    feature.specification = spec;
+                    [self saveContext];
+                    
+                    for (ComparedCar *comparedCar in comparedCars) {
+                        Comparative *comparative = (Comparative *)[NSEntityDescription insertNewObjectForEntityForName:@"Comparative" inManagedObjectContext:[appDelegate managedObjectContext]];
+                        comparative.comparedCar = comparedCar;
+                        comparative.descr = [MBFakerLorem word];
+                        comparative.feature = feature;
+                        [self saveContext];
+                    }
+                    
+                }
+            }
         }
     }
 }
@@ -81,105 +227,14 @@
         NSLog(@"Managed Object Context has the following error: %@", error);
 }
 
+- (void)logMessageForModel:(NSString *)modelName
+{
+    NSLog(@"Inserting data into %@ model...", modelName);
+}
+
 - (void)dealloc
 {
     NSLog(@"Finishing the database data loading...");
 }
-
-
-// /* Loading cars for serie 1 */
-//        Serie *serie_1 = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext: context];
-//        [serie_1 setName: @"Serie 1"];
-//        [maker addSeriesObject:serie_1];
-//
-//        NSArray *models = [NSArray arrayWithObjects: @"3 puertas", @"5 puertas", @"Coupe", @"Convertible", @"Active E", nil];
-//        NSArray *cars = [NSArray arrayWithObjects:
-//                         [NSDictionary dictionaryWithObjectsAndKeys: @"125i", @"subModelName", @"2013", @"year", @"bmw_s1_3_puertas.jpg", @"image", @"bmw_s1_3_puertas_large.jpg", @"largeImage", nil],
-//                         [NSDictionary dictionaryWithObjectsAndKeys: @"126i", @"subModelName", @"2013", @"year", @"bmw_s1_5_puertas.jpg", @"image", @"bmw_s1_5_puertas_large.jpg", @"largeImage", nil],
-//                         [NSDictionary dictionaryWithObjectsAndKeys: @"127i", @"subModelName", @"2013", @"year", @"bmw_s1_coupe.jpg", @"image", @"bmw_s1_coupe_large.jpg", @"largeImage", nil],
-//                         [NSDictionary dictionaryWithObjectsAndKeys: @"128i", @"subModelName", @"2013", @"year", @"bmw_s1_convertible.jpg", @"image", @"bmw_s1_convertible_large.jpg", @"largeImage", nil],
-//                         [NSDictionary dictionaryWithObjectsAndKeys: @"129i", @"subModelName", @"2013", @"year", @"bmw_s1_active_e.jpg", @"image", @"bmw_s1_active_e_large.jpg", @"largeImage", nil],
-//                         nil];
-//
-//        for (NSString *modelName in models) {
-//            Model *model = (Model *)[NSEntityDescription insertNewObjectForEntityForName: @"Model" inManagedObjectContext: context];
-//            [model setName:modelName];
-//            for (NSDictionary *dict in cars) {
-//                Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName: @"Car" inManagedObjectContext: context];
-//                NSString *subModelName = [NSString stringWithFormat:@"%@ %@ %@",  @"Serie 1", [dict valueForKey:@"subModelName"], modelName];
-//                [car setSubModelName:subModelName];
-//                [car setYear:[NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]]];
-//                [car setImage:[dict valueForKey:@"image"]];
-//                [car setLargeImage:[dict valueForKey:@"largeImage"]];
-//                [model addCarsObject:car];
-//            }
-//            [serie_1 addModelsObject: model];
-//        }
-//
-/* Loading cars for serie 3 */
-//        Serie *serie_3 = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext: context];
-//        [serie_3 setName: @"Serie 3"];
-//        [maker addSeriesObject:serie_3];
-//        NSArray *models = [NSArray arrayWithObjects:@"Sedan", @"Sedan Active Hybrid", @"Touring", @"Gran Turismo", @"Coupe", @"Convertible", nil];
-//        NSArray *cars = [NSArray arrayWithObjects:
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"323i", @"subModelName", @"2013", @"year", @"bmw_s3_sedan.jpg", @"image", @"bmw_s3_sedan_large.jpg", @"largeImage", nil],
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"324i", @"subModelName", @"2013", @"year", @"bmw_s3_sedan_active_hybrid.jpg", @"image", @"bmw_s3_sedan_active_hybrid_large.jpg", @"largeImage", nil],
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"325i", @"subModelName", @"2013", @"year", @"bmw_s3_touring.jpg", @"image", @"bmw_s3_touring_large.jpg", @"largeImage", nil],
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"326i", @"subModelName", @"2013", @"year", @"bmw_s3_gran_turismo.jpg", @"image", @"bmw_s3_gran_turismo_large.jpg", @"largeImage", nil],
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"327i", @"subModelName", @"2013", @"year", @"bmw_s3_coupe.jpg", @"image", @"bmw_s3_coupe_large.jpg", @"largeImage", nil],
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"328i", @"subModelName", @"2013", @"year", @"bmw_s3_convertible.jpg", @"image", @"bmw_s3_convertible_large.jpg", @"largeImage", nil],
-//                nil];
-//
-//        for (NSString *modelName in models) {
-//            Model *model = (Model *)[NSEntityDescription insertNewObjectForEntityForName: @"Model" inManagedObjectContext: context];
-//            [model setName:modelName];
-//            for (NSDictionary *dict in cars) {
-//                Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName: @"Car" inManagedObjectContext: context];
-//                NSString *subModelName = [NSString stringWithFormat:@"%@ %@ %@",  @"Serie 3", [dict valueForKey:@"subModelName"], modelName];
-//                [car setSubModelName:subModelName];
-//                [car setYear:[NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]]];
-//                [car setImage:[dict valueForKey:@"image"]];
-//                [car setLargeImage:[dict valueForKey:@"largeImage"]];
-//                [model addCarsObject:car];
-//            }
-//            [serie_3 addModelsObject:model];
-//        }
-//
-//        /* Loading cars for serie 5 */
-//        Serie *serie_5 = (Serie *)[NSEntityDescription insertNewObjectForEntityForName: @"Serie" inManagedObjectContext: context];
-//        [serie_5 setName: @"Serie 5"];
-//        [maker addSeriesObject:serie_5];
-//        models = [NSArray arrayWithObjects:@"Sedan", @"Gran turismo", nil];
-//        cars = [NSArray arrayWithObjects:
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"582i", @"subModelName", @"2013", @"year", @"bmw_s5_sedan.jpg", @"image", @"bmw_s5_sedan_large.jpg", @"largeImage", nil],
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"583i", @"subModelName", @"2013", @"year", @"bmw_s5_gran_turismo.jpg", @"image", @"bmw_s5_gran_turismo_large.jpg", @"largeImage", nil],
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"584i", @"subModelName", @"2013", @"year", @"bmw_s5_sedan.jpg", @"image", @"bmw_s5_sedan_large.jpg", @"largeImage", nil],
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"585i", @"subModelName", @"2013", @"year", @"bmw_s5_gran_turismo.jpg", @"image", @"bmw_s5_gran_turismo_large.jpg", @"largeImage", nil],
-//                [NSDictionary dictionaryWithObjectsAndKeys: @"586i", @"subModelName", @"2013", @"year", @"bmw_s5_gran_turismo.jpg", @"image", @"bmw_s5_gran_turismo_large.jpg", @"largeImage", nil],
-//                nil];
-//
-//        for (NSString *modelName in models) {
-//            Model *model = (Model *)[NSEntityDescription insertNewObjectForEntityForName: @"Model" inManagedObjectContext: context];
-//            [model setName:modelName];
-//            for (NSDictionary *dict in cars) {
-//                Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName: @"Car" inManagedObjectContext: context];
-//                NSString *subModelName = [NSString stringWithFormat:@"%@ %@ %@", @"Serie 5", [dict valueForKey:@"subModelName"], modelName];
-//                [car setSubModelName:subModelName];
-//                [car setYear:[NSNumber numberWithInt:[[dict valueForKey:@"year"] intValue]]];
-//                [car setImage:[dict valueForKey:@"image"]];
-//                [car setLargeImage:[dict valueForKey:@"largeImage"]];
-//                [model addCarsObject:car];
-//            }
-//            [serie_5 addModelsObject:model];
-//        }
-//        NSError *error = nil;
-//        if(![context save:&error]) {
-//            // Replace this implementation with code to handle the error appropriately.
-//            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//            abort();
-//        }
-//    }
-
 
 @end
