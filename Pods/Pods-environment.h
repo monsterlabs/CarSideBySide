@@ -6,6 +6,12 @@
 // project.
 
 
+// DVCoreDataFinders
+#define COCOAPODS_POD_AVAILABLE_DVCoreDataFinders
+#define COCOAPODS_VERSION_MAJOR_DVCoreDataFinders 0
+#define COCOAPODS_VERSION_MINOR_DVCoreDataFinders 4
+#define COCOAPODS_VERSION_PATCH_DVCoreDataFinders 0
+
 // LibYAML
 #define COCOAPODS_POD_AVAILABLE_LibYAML
 #define COCOAPODS_VERSION_MAJOR_LibYAML 0

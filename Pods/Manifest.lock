@@ -1,4 +1,5 @@
 PODS:
+  - DVCoreDataFinders (0.4)
   - LibYAML (0.1.4)
   - MBFaker (0.0.1):
     - LibYAML (~> 0.1.4)
@@ -7,6 +8,7 @@ PODS:
   - YISplashScreen (1.0.0)
 
 DEPENDENCIES:
+  - DVCoreDataFinders (~> 0.4)
   - MBFaker (from `git@github.com:juarlex/MBFaker.git`)
   - NSDate+Helper (~> 0.0.1)
   - NSDate-Extensions (~> 0.0.1)
@@ -17,6 +19,7 @@ EXTERNAL SOURCES:
     :git: git@github.com:juarlex/MBFaker.git
 
 SPEC CHECKSUMS:
+  DVCoreDataFinders: 12a2a6f687cb4309b6d422a69694cf47616d038a
   LibYAML: 49b77e5b3f4417fa512a8f1f4675a78480bf6b3d
   MBFaker: da77c465bf2c2540e1e6c0546b2d34afd7e9cdf4
   NSDate+Helper: 3015cb57778256bce7c549fca172474308740059

@@ -2,7 +2,7 @@
 //  Feature.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 6/13/13.
+//  Created by Alejandro Juarez Robles on 6/30/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -15,8 +15,17 @@
 
 @property (nonatomic, retain) NSString * additionalInfo;
 @property (nonatomic, retain) NSString * descr;
+@property (nonatomic, retain) NSNumber * highlighted;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) Comparative *comparative;
+@property (nonatomic, retain) NSSet *comparatives;
 @property (nonatomic, retain) Specification *specification;
+@end
+
+@interface Feature (CoreDataGeneratedAccessors)
+
+- (void)addComparativesObject:(Comparative *)value;
+- (void)removeComparativesObject:(Comparative *)value;
+- (void)addComparatives:(NSSet *)values;
+- (void)removeComparatives:(NSSet *)values;
 
 @end
