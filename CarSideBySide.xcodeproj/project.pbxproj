@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E0E477B930004A02935EB2EC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE0AADDE4A84315B04CA138 /* libPods.a */; };
-		FA0D403E176146E80025725F /* equipment.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0D4039176146E80025725F /* equipment.png */; };
-		FA0D403F176146E80025725F /* lines.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0D403A176146E80025725F /* lines.png */; };
-		FA0D4040176146E80025725F /* price.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0D403B176146E80025725F /* price.png */; };
-		FA0D4041176146E80025725F /* safety.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0D403C176146E80025725F /* safety.png */; };
-		FA0D4042176146E80025725F /* technical_details.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0D403D176146E80025725F /* technical_details.png */; };
-		FA0D4045176148300025725F /* DummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D4044176148300025725F /* DummyViewController.m */; };
 		FA144A121768F45C00081738 /* NSManagedObject+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = FA144A111768F45C00081738 /* NSManagedObject+Util.m */; };
 		FA2AF9601755A50A001BA8ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF95F1755A50A001BA8ED /* UIKit.framework */; };
 		FA2AF9621755A50A001BA8ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9611755A50A001BA8ED /* Foundation.framework */; };
@@ -116,13 +110,6 @@
 /* Begin PBXFileReference section */
 		39047D878F3A497B970816ED /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		AFE0AADDE4A84315B04CA138 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA0D4039176146E80025725F /* equipment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = equipment.png; sourceTree = "<group>"; };
-		FA0D403A176146E80025725F /* lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lines.png; sourceTree = "<group>"; };
-		FA0D403B176146E80025725F /* price.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = price.png; sourceTree = "<group>"; };
-		FA0D403C176146E80025725F /* safety.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = safety.png; sourceTree = "<group>"; };
-		FA0D403D176146E80025725F /* technical_details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = technical_details.png; sourceTree = "<group>"; };
-		FA0D4043176148300025725F /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
-		FA0D4044176148300025725F /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
 		FA144A101768F45C00081738 /* NSManagedObject+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Util.h"; sourceTree = "<group>"; };
 		FA144A111768F45C00081738 /* NSManagedObject+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Util.m"; sourceTree = "<group>"; };
 		FA2AF95C1755A50A001BA8ED /* CarSideBySide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSideBySide.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,18 +255,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA0D4037176146C00025725F /* Dummy */ = {
-			isa = PBXGroup;
-			children = (
-				FA0D4039176146E80025725F /* equipment.png */,
-				FA0D403A176146E80025725F /* lines.png */,
-				FA0D403B176146E80025725F /* price.png */,
-				FA0D403C176146E80025725F /* safety.png */,
-				FA0D403D176146E80025725F /* technical_details.png */,
-			);
-			name = Dummy;
-			sourceTree = "<group>";
-		};
 		FA17DA86176CAEC4006D74DE /* Offer */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,8 +334,6 @@
 				FA2AF96E1755A50A001BA8ED /* AppDelegate.h */,
 				FA2AF96F1755A50A001BA8ED /* AppDelegate.m */,
 				FA2AF9771755A50A001BA8ED /* MainStoryboard.storyboard */,
-				FA0D4043176148300025725F /* DummyViewController.h */,
-				FA0D4044176148300025725F /* DummyViewController.m */,
 				FA2AF9661755A50A001BA8ED /* Supporting Files */,
 				FA2D91BA1767C65B00E8E716 /* NSManagedObject+Find.h */,
 				FA2D91BB1767C65B00E8E716 /* NSManagedObject+Find.m */,
@@ -505,7 +478,6 @@
 		FADABF341755CC1B0072E8C9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				FA0D4037176146C00025725F /* Dummy */,
 				FAD4A377175652F700CB039A /* Offers */,
 				FAD4A376175652D500CB039A /* Cars */,
 			);
@@ -639,11 +611,6 @@
 				FA5A9B091756FD0600B718C1 /* Podfile.lock in Resources */,
 				FACE6928175E75870009F595 /* Default-Landscape~ipad.png in Resources */,
 				FACE6929175E75870009F595 /* Default-Portrait~ipad.png in Resources */,
-				FA0D403E176146E80025725F /* equipment.png in Resources */,
-				FA0D403F176146E80025725F /* lines.png in Resources */,
-				FA0D4040176146E80025725F /* price.png in Resources */,
-				FA0D4041176146E80025725F /* safety.png in Resources */,
-				FA0D4042176146E80025725F /* technical_details.png in Resources */,
 				FA96992B176FC1AB004EAED2 /* bmw_offer_test_1_large.jpg in Resources */,
 				FA96992C176FC1AB004EAED2 /* bmw_offer_test_1.jpg in Resources */,
 				FA96992D176FC1AB004EAED2 /* bmw_offer_test_2_large.jpg in Resources */,
@@ -984,7 +951,6 @@
 				FA8B0839175A397700C58E04 /* OfferDetailViewController.m in Sources */,
 				FA98C5A11760FB4600B64805 /* CarListHeaderView.m in Sources */,
 				FA98C5A517610B1F00B64805 /* SerieListViewController.m in Sources */,
-				FA0D4045176148300025725F /* DummyViewController.m in Sources */,
 				FACB2DE7176790A300AD3D64 /* CoreDataSeed.m in Sources */,
 				FA2D91BC1767C65B00E8E716 /* NSManagedObject+Find.m in Sources */,
 				FA2D92251767E80A00E8E716 /* Offer.m in Sources */,
