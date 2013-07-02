@@ -149,7 +149,7 @@
     if([[SpecificationType findAll] count] == 0 )
     {
         [self logMessageForModel:@"SpecificationType"];
-        NSArray *specificationTypes = [NSArray arrayWithObjects: @"Technical", @"Equipment", @"Safety", @"Lines", @"Price", nil];
+        NSArray *specificationTypes = [NSArray arrayWithObjects: @"Technical Details", @"Equipment", @"Safety", @"Lines", @"Price", nil];
         for (NSString *specTypeName in specificationTypes) {
             SpecificationType *specType = (SpecificationType*)[NSEntityDescription insertNewObjectForEntityForName:@"SpecificationType" inManagedObjectContext:[appDelegate managedObjectContext]];
             specType.name = specTypeName;
