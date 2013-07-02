@@ -36,11 +36,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
-	<array>
-		<string>BMWGlobal_Pro_bold.ttf</string>
-		<string>BMWGlobal_Pro_light.ttf</string>
-		<string>BMWGlobal_Pro_reg.ttf</string>
-	</array>
+	<array/>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>

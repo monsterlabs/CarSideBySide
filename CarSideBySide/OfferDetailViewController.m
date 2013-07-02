@@ -35,10 +35,8 @@
 - (void)configureView
 {
     titleLabel.text = [self.offer valueForKey:@"title"];
-    titleLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Bold" size:18.0];
 
     bodyTextView.text = [self.offer valueForKey:@"body"];
-    bodyTextView.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Regular" size:14.0];
 
     offerImageView.image = [UIImage imageNamed:[self.offer valueForKey:@"largeImage"]];
     offerImageView.layer.cornerRadius = 05.0f;
@@ -50,8 +48,6 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *dateString = [dateFormatter stringFromDate:[self.offer valueForKey:@"validUntil"]];
     validUntilLabel.text = dateString;
-    validUntilLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Light" size:11.0];
-    validDateLabel.font = [UIFont fontWithName:@"BMWTypeGlobalPro-Bold" size:11.0];
 }
 
 - (void)viewDidLoad
