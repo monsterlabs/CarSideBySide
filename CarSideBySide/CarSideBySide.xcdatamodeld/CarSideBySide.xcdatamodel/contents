@@ -23,9 +23,9 @@
         <relationship name="serie" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Serie" inverseName="carModels" inverseEntity="Serie" syncable="YES"/>
     </entity>
     <entity name="Comparative" representedClassName="Comparative" syncable="YES">
-        <attribute name="descr" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="comparedCar" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ComparedCar" inverseName="comparatives" inverseEntity="ComparedCar" syncable="YES"/>
-        <relationship name="feature" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Feature" inverseName="comparatives" inverseEntity="Feature" syncable="YES"/>
+        <relationship name="comparedFeatures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ComparedFeature" inverseName="comparative" inverseEntity="ComparedFeature" syncable="YES"/>
+        <relationship name="specification" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Specification" inverseName="comparatives" inverseEntity="Specification" syncable="YES"/>
     </entity>
     <entity name="ComparedCar" representedClassName="ComparedCar" syncable="YES">
         <attribute name="image" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
@@ -34,12 +34,17 @@
         <relationship name="brand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="comparativeCars" inverseEntity="Brand" syncable="YES"/>
         <relationship name="comparatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comparative" inverseName="comparedCar" inverseEntity="Comparative" syncable="YES"/>
     </entity>
+    <entity name="ComparedFeature" representedClassName="ComparedFeature" syncable="YES">
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="comparative" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Comparative" inverseName="comparedFeatures" inverseEntity="Comparative" syncable="YES"/>
+        <relationship name="feature" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Feature" inverseName="comparedFeatures" inverseEntity="Feature" syncable="YES"/>
+    </entity>
     <entity name="Feature" representedClassName="Feature" syncable="YES">
         <attribute name="additionalInfo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="descr" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="highlighted" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
-        <relationship name="comparatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comparative" inverseName="feature" inverseEntity="Comparative" syncable="YES"/>
+        <relationship name="comparedFeatures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ComparedFeature" inverseName="feature" inverseEntity="ComparedFeature" syncable="YES"/>
         <relationship name="specification" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Specification" inverseName="features" inverseEntity="Specification" syncable="YES"/>
     </entity>
     <entity name="Line" representedClassName="Line" syncable="YES">
@@ -66,6 +71,7 @@
         <attribute name="descr" attributeType="String" minValueString="1" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="car" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="specifications" inverseEntity="Car" syncable="YES"/>
+        <relationship name="comparatives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comparative" inverseName="specification" inverseEntity="Comparative" syncable="YES"/>
         <relationship name="features" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feature" inverseName="specification" inverseEntity="Feature" syncable="YES"/>
         <relationship name="specificationType" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SpecificationType" inverseName="specifications" inverseEntity="SpecificationType" syncable="YES"/>
     </entity>
@@ -77,13 +83,14 @@
         <element name="Brand" positionX="934" positionY="-763" width="128" height="88"/>
         <element name="Car" positionX="754" positionY="-495" width="128" height="178"/>
         <element name="CarModel" positionX="756" positionY="-666" width="128" height="105"/>
-        <element name="Comparative" positionX="1116" positionY="-234" width="128" height="88"/>
+        <element name="Comparative" positionX="1132" positionY="-214" width="128" height="88"/>
         <element name="ComparedCar" positionX="1114" positionY="-487" width="128" height="118"/>
         <element name="Feature" positionX="738" positionY="-198" width="128" height="133"/>
         <element name="Line" positionX="585" positionY="-495" width="128" height="90"/>
         <element name="Offer" positionX="585" positionY="-657" width="128" height="148"/>
         <element name="Serie" positionX="927" positionY="-630" width="128" height="103"/>
-        <element name="Specification" positionX="927" positionY="-360" width="128" height="118"/>
+        <element name="Specification" positionX="927" positionY="-360" width="128" height="133"/>
         <element name="SpecificationType" positionX="918" positionY="-480" width="128" height="75"/>
+        <element name="ComparedFeature" positionX="936" positionY="-196" width="128" height="88"/>
     </elements>
 </model>
