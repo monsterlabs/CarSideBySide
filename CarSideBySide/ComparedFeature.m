@@ -1,20 +1,20 @@
 //
-//  Comparative.m
+//  ComparedFeature.m
 //  CarSideBySide
 //
 //  Created by Alejandro Juarez Robles on 7/2/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
+#import "ComparedFeature.h"
 #import "Comparative.h"
-#import "ComparedCar.h"
-#import "Specification.h"
+#import "Feature.h"
 
 
-@implementation Comparative
+@implementation ComparedFeature
 
-@dynamic comparedCar;
-@dynamic specification;
-@dynamic comparedFeatures;
+@dynamic descr;
+@dynamic feature;
+@dynamic comparative;
 
 @end

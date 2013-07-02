@@ -2,14 +2,14 @@
 //  Feature.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez Robles on 6/30/13.
+//  Created by Alejandro Juarez Robles on 7/2/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Comparative, Specification;
+@class ComparedFeature, Specification;
 
 @interface Feature : NSManagedObject
 
@@ -17,15 +17,15 @@
 @property (nonatomic, retain) NSString * descr;
 @property (nonatomic, retain) NSNumber * highlighted;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *comparatives;
 @property (nonatomic, retain) Specification *specification;
+@property (nonatomic, retain) NSSet *comparedFeatures;
 @end
 
 @interface Feature (CoreDataGeneratedAccessors)
 
-- (void)addComparativesObject:(Comparative *)value;
-- (void)removeComparativesObject:(Comparative *)value;
-- (void)addComparatives:(NSSet *)values;
-- (void)removeComparatives:(NSSet *)values;
+- (void)addComparedFeaturesObject:(ComparedFeature *)value;
+- (void)removeComparedFeaturesObject:(ComparedFeature *)value;
+- (void)addComparedFeatures:(NSSet *)values;
+- (void)removeComparedFeatures:(NSSet *)values;
 
 @end

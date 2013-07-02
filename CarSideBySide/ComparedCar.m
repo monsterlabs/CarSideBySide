@@ -2,7 +2,7 @@
 //  ComparedCar.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez Robles on 6/30/13.
+//  Created by Alejandro Juarez Robles on 7/2/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 

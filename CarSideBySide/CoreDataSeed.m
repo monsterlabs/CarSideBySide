@@ -19,6 +19,7 @@
 #import "Feature.h"
 #import "ComparedCar.h"
 #import "Comparative.h"
+#import "ComparedFeature.h"
 #import <MBFaker.h>
 #import <DVCoreDataFinders.h>
 
@@ -52,10 +53,11 @@
 - (void)insertOffers
 {
     if ([[Offer findAll] count] == 0 ) {
-        for (int i = 1; i <= 6; i++) {
+        [self logMessageForModel:@"Offer"];
+        for (int i = 1; i <= 9; i++) {
             Offer *offer = (Offer *)[NSEntityDescription insertNewObjectForEntityForName:@"Offer" inManagedObjectContext:[appDelegate managedObjectContext]];
-            offer.title = [MBFakerLorem words:arc4random_uniform(7)];
-            offer.body = [MBFakerLorem paragraphs:arc4random_uniform(7)];
+            offer.title = [MBFakerLorem words:[self random_max:7]];
+            offer.body = [MBFakerLorem paragraphs:[self random_max:5]];
             offer.image = [NSString stringWithFormat:@"bmw_offer_test_%i.jpg", i];
             offer.largeImage = [NSString stringWithFormat:@"bmw_offer_test_%i_large.jpg", i];
             offer.url = [MBFakerInternet url];
@@ -75,7 +77,7 @@
 - (void)insertBrands
 {
     if ([[Brand findAll] count] == 0) {
-        NSLog(@"Inserting data into the Brand model..");
+        [self logMessageForModel:@"Brand"];
         NSArray *brands = [NSArray arrayWithObjects:@"BMW", @"Audi", @"Volvo", @"Mercedes Benz", nil];
         for (NSString *brandName in brands ) {
             Brand *brand = (Brand *)[NSEntityDescription insertNewObjectForEntityForName:@"Brand" inManagedObjectContext:[appDelegate managedObjectContext]];
@@ -87,7 +89,7 @@
 - (void)insertSeries
 {
     if ([[Serie findAll] count] == 0 ){
-        NSLog(@"Inserting data into the Serie model..");
+        [self logMessageForModel:@"Serie"];
         Brand *bmw = [Brand findFirstWhereProperty:@"name" equals:@"BMW" inContext:[appDelegate managedObjectContext] error:nil];
         NSArray *series = [NSArray arrayWithObjects:@"Serie 1", @"Serie 3", @"Serie 4", @"Serie 5", @"Serie 6", @"Serie 7", @"Serie X", @"Serie Z4", @"Serie M", nil];
         for (NSString *serieName in series) {
@@ -102,14 +104,14 @@
 - (void)insertCarModels
 {
     if ([[CarModel findAll] count] == 0) {
-        NSLog(@"Inserting data into the CarModel model..");
+        [self logMessageForModel:@"CarModel"];
         for (Serie *serie in [Serie findAll]) {
             
-            int max = arc4random_uniform(8);
+            int max = [self random_max:8];
             for(int i = 1; i <= max; i++)
             {
                 CarModel *carModel = (CarModel *)[NSEntityDescription insertNewObjectForEntityForName:@"CarModel" inManagedObjectContext:[appDelegate managedObjectContext]];
-                carModel.name = [MBFakerLorem words:arc4random_uniform(3)];
+                carModel.name = [MBFakerLorem words:[self random_max:3]];
                 carModel.enabled = @YES;
                 carModel.serie = serie;
                 [self saveContext];
@@ -123,9 +125,9 @@
 {
     if ([[Car findAll] count])
     {
-        NSLog(@"Inserting data into the Car model..");
+        [self logMessageForModel:@"Car"];
         for (CarModel *model in [CarModel findAll]) {
-            int max = arc4random_uniform(12);
+            int max = [self random_max:12];
             for (int i = 1; i <= max; i++)
             {
                 Car *car = (Car*)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:[appDelegate managedObjectContext]];
@@ -146,7 +148,7 @@
 {
     if([[SpecificationType findAll] count] == 0 )
     {
-        NSLog(@"Inserting data into the SpecificationType model...");
+        [self logMessageForModel:@"SpecificationType"];
         NSArray *specificationTypes = [NSArray arrayWithObjects: @"Technical", @"Equipment", @"Safety", @"Lines", @"Price", nil];
         for (NSString *specTypeName in specificationTypes) {
             SpecificationType *specType = (SpecificationType*)[NSEntityDescription insertNewObjectForEntityForName:@"SpecificationType" inManagedObjectContext:[appDelegate managedObjectContext]];
@@ -161,14 +163,14 @@
 {
     if ([[Specification findAll] count] == 0)
     {
-        NSLog(@"Inserting data into Specification model...");
+        [self logMessageForModel:@"Specification"];
         for (Car *car in [Car findAll]) {
             for (SpecificationType *specType in [SpecificationType findAll]) {
                 Specification *spec = (Specification *)[NSEntityDescription insertNewObjectForEntityForName:@"Specification" inManagedObjectContext:[appDelegate managedObjectContext]];
                 spec.specificationType = specType;
                 spec.car = car;
                 spec.image = @"bmw_s3_gran_turismo.jpg";
-                spec.descr = [MBFakerLorem paragraphs:arc4random_uniform(2)];
+                spec.descr = [MBFakerLorem paragraphs:[self random_max:2]];
                 [self saveContext];
             }
         }
@@ -179,12 +181,12 @@
 {
     if ([[Feature findAll] count] == 0 )
     {
-        [self logMessageForModel:@"Feature" ];
+        [self logMessageForModel:@"Feature, ComparedCar, Comparative and ComparedFeature" ];
         for (Car *car in [Car findAll]){
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name != 'BMW'"];
             NSError *error;
             NSArray *brands = [Brand findAllWithPredicate:predicate inContext:[appDelegate managedObjectContext] error:&error];
-            int maxComparedCars = arc4random_uniform([brands count]);
+            int maxComparedCars = [self random_max:[brands count]];
             NSMutableArray *comparedCars = [NSMutableArray array];
             for (int i = 0; i < maxComparedCars; i++) {
                 ComparedCar *comparedCar = (ComparedCar *)[NSEntityDescription insertNewObjectForEntityForName:@"ComparedCar" inManagedObjectContext:[appDelegate managedObjectContext]];
@@ -196,23 +198,29 @@
             }
             
             for (Specification *spec in [car specifications]) {
+                
+                for (ComparedCar *comparedCar in comparedCars) {
+                    Comparative *comparative = (Comparative *)[NSEntityDescription insertNewObjectForEntityForName:@"Comparative" inManagedObjectContext:[appDelegate managedObjectContext]];
+                    comparative.comparedCar = comparedCar;
+                    comparative.specification = spec;
+                    [self saveContext];
+                }
+                
                 int max = arc4random_uniform(20);
                 for (int i = 1; i <= max; i++) {
                     Feature *feature = (Feature *)[NSEntityDescription insertNewObjectForEntityForName:@"Feature" inManagedObjectContext:[appDelegate managedObjectContext]];
-                    feature.name = [MBFakerLorem words:arc4random_uniform(3)];
+                    feature.name = [MBFakerLorem words:[self random_max:3]];
                     feature.descr = [MBFakerLorem word];
                     feature.highlighted  = [NSNumber numberWithInt:arc4random_uniform(1)];
                     feature.specification = spec;
                     [self saveContext];
-                    
-                    for (ComparedCar *comparedCar in comparedCars) {
-                        Comparative *comparative = (Comparative *)[NSEntityDescription insertNewObjectForEntityForName:@"Comparative" inManagedObjectContext:[appDelegate managedObjectContext]];
-                        comparative.comparedCar = comparedCar;
-                        comparative.descr = [MBFakerLorem word];
-                        comparative.feature = feature;
-                        [self saveContext];
-                    }
-                    
+                    for (Comparative *comparative in spec.comparatives)
+                    {
+                        ComparedFeature *compFeature = (ComparedFeature *)[NSEntityDescription insertNewObjectForEntityForName:@"ComparedFeature" inManagedObjectContext:[appDelegate managedObjectContext]];
+                        compFeature.descr = [MBFakerLorem word];
+                        compFeature.feature = feature;
+                        compFeature.comparative = comparative;
+                    }                    
                 }
             }
         }
@@ -229,12 +237,19 @@
 
 - (void)logMessageForModel:(NSString *)modelName
 {
-    NSLog(@"Inserting data into %@ model...", modelName);
+    NSLog(@"Inserting data into the %@ model(s)...", modelName);
+}
+
+- (int)random_max:(int)max
+{
+    int min = 1;
+    return (min + arc4random_uniform(max + 1));
 }
 
 - (void)dealloc
 {
     NSLog(@"Finishing the database data loading...");
 }
+
 
 @end
