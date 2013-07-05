@@ -2,7 +2,7 @@
 //  Car.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez Robles on 6/29/13.
+//  Created by Alejandro Juarez Robles on 7/2/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -15,10 +15,10 @@
 
 @property (nonatomic, retain) NSNumber * enabled;
 @property (nonatomic, retain) NSString * highlights;
+@property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) NSString * modelName;
 @property (nonatomic, retain) NSNumber * orderKey;
 @property (nonatomic, retain) NSNumber * year;
-@property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) CarModel *carModel;
 @property (nonatomic, retain) NSSet *lines;
 @property (nonatomic, retain) NSSet *specifications;
@@ -36,4 +36,5 @@
 - (void)addSpecifications:(NSSet *)values;
 - (void)removeSpecifications:(NSSet *)values;
 
+- (NSString *)model;
 @end

@@ -2,30 +2,39 @@
 //  CarListViewController.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 5/31/13.
+//  Created by Alejandro Juarez Robles on 7/2/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
 #import "CarListViewController.h"
 #import "AppDelegate.h"
+#import "CarModel.h"
+#import "Car.h"
+#import "NSManagedObject+Find.h"
 #import "CarCell.h"
-#import "CarListHeaderView.h"
-#import "CarDetailViewController.h"
+#import <DVCoreDataFinders.h>
 
-@interface CarListViewController ()
-- (void)configureCell:(CarCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+@interface CarListViewController () {
+
+    NSArray *carModels;
+    NSDictionary *tableOfContents;
+}
+
 @end
 
 @implementation CarListViewController
-@synthesize fetchedResultsController, managedObjectContext, persistentStoreCoordinator;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)setSerie:(Serie *)serie {
+    if (_serie != serie) {
+        _serie = serie;
+    }
+}
+
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
-        managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-        persistentStoreCoordinator = [(AppDelegate *)[[UIApplication sharedApplication] delegate] persistentStoreCoordinator];
-        [managedObjectContext setPersistentStoreCoordinator:self.persistentStoreCoordinator];
+        // Custom initialization
     }
     return self;
 }
@@ -33,122 +42,79 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.collectionView reloadData];
+    
+    self.title = self.serie.name;
+    carModels = [self.serie.carModels allObjects];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-# pragma - UICollectionViewDataSource
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return [[self.fetchedResultsController sections] count];
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    CarCell *cell =  [self.collectionView dequeueReusableCellWithReuseIdentifier:@"CarCell" forIndexPath:indexPath];
+    UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(0,200,300,244)];
+    tempView.backgroundColor=[UIColor viewFlipsideBackgroundColor];
     
-    [self configureCell:cell atIndexPath:indexPath];
+    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(5,0,300,32)];
+    tempLabel.backgroundColor=[UIColor viewFlipsideBackgroundColor];
+    tempLabel.shadowColor = [UIColor blackColor];
+    tempLabel.shadowOffset = CGSizeMake(0,2);
+    tempLabel.textColor = [UIColor whiteColor];
+    tempLabel.font = [UIFont boldSystemFontOfSize:16.0];
+    tempLabel.text= [[carModels objectAtIndex:section] name];
+    
+    [tempView addSubview:tempLabel];
+    return tempView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 32;
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [carModels count];
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    CarModel *carModel = [carModels objectAtIndex:section];
+    return [[carModel.cars allObjects] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"CarCell";
+    CarCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CarModel *carModel = [carModels objectAtIndex:indexPath.section];
+    cell.car = [[carModel.cars allObjects] objectAtIndex:indexPath.row];
     
     return cell;
 }
 
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
-    
-    //UICollectionViewCell *datasetCell = [collectionView cellForItemAtIndexPath:indexPath];
-    //    datasetCell.backgroundColor = [UIColor blueColor]; // highlight selection
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
-    CarDetailViewController *detail = (CarDetailViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"CarDetailViewController"];
-    detail.car = object;
-    detail.hidesBottomBarWhenPushed  = YES;
-
-    [self.navigationController pushViewController:detail animated:YES];
-
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [[carModels objectAtIndex:section] name];
 }
 
-//-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    UICollectionViewCell *datasetCell =[collectionView cellForItemAtIndexPath:indexPath];
-//    datasetCell.backgroundColor = [UIColor whiteColor]; // Default color
-//}
 
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YES;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return YES;
-}
-
-#pragma mark - Fetched results controller
-
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (fetchedResultsController != nil) {
-        return fetchedResultsController;
+    CarModel *carModel = [carModels objectAtIndex:indexPath.section];
+    Car *selectedCar = [[carModel.cars allObjects] objectAtIndex:indexPath.row];
+    if (_delegate) {
+        [_delegate selectedCar:selectedCar];
     }
-    managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Car" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    // Set the batch size to a suitable number.
-    [fetchRequest setFetchBatchSize:20];
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"validUntil" ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptor];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
-    
-    return fetchedResultsController;
 }
 
-- (void)configureCell:(CarCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.car = object;
-}
-
-# pragma mark - UICollectionReusableView
-- (UICollectionReusableView *)collectionView: (UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    CarListHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
-                                       UICollectionElementKindSectionHeader withReuseIdentifier:@"CarListHeaderView" forIndexPath:indexPath];
-    
-    //NSString *searchTerm = self.searches[indexPath.section]; [headerView setSearchText:searchTerm];
-    return headerView;
-}
 
 @end

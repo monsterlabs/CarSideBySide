@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "CarSelectionDelegate.h"
 
-@interface SerieListViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPopoverControllerDelegate>
+@interface SerieListViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, CarSelectionDelegate>
 
-
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, assign) id<CarSelectionDelegate> delegate;
 
 @end

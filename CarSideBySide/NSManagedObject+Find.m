@@ -24,4 +24,21 @@
     return fetchResults;
 }
 
++ (NSArray *)findAllEnabled {
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSString *className = NSStringFromClass([self class]);
+    NSEntityDescription *entity = [NSEntityDescription entityForName:className inManagedObjectContext:[appDelegate managedObjectContext]];
+    [request setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"enabled == 1"];
+    [request setPredicate:predicate];
+
+    NSError *error;
+    NSArray *fetchResults = [[[appDelegate managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
+    
+    return fetchResults;
+}
+
+
 @end

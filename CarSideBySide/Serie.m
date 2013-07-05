@@ -11,7 +11,6 @@
 #import "CarModel.h"
 #import "NSManagedObject+Util.h"
 
-
 @implementation Serie
 
 @dynamic enabled;

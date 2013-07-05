@@ -85,12 +85,12 @@
         <element name="CarModel" positionX="756" positionY="-666" width="128" height="105"/>
         <element name="Comparative" positionX="1132" positionY="-214" width="128" height="88"/>
         <element name="ComparedCar" positionX="1114" positionY="-487" width="128" height="118"/>
+        <element name="ComparedFeature" positionX="936" positionY="-187" width="128" height="88"/>
         <element name="Feature" positionX="738" positionY="-198" width="128" height="133"/>
         <element name="Line" positionX="585" positionY="-495" width="128" height="90"/>
         <element name="Offer" positionX="585" positionY="-657" width="128" height="148"/>
         <element name="Serie" positionX="927" positionY="-630" width="128" height="103"/>
         <element name="Specification" positionX="927" positionY="-360" width="128" height="133"/>
         <element name="SpecificationType" positionX="918" positionY="-480" width="128" height="75"/>
-        <element name="ComparedFeature" positionX="936" positionY="-196" width="128" height="88"/>
     </elements>
 </model>
