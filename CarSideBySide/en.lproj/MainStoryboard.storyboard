@@ -331,7 +331,6 @@
         <!--Car Detail View Controller-->
         <scene sceneID="LPx-Ee-HGJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wwX-8G-OR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="0yc-R0-Eeb" customClass="CarDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zHh-Xc-9yA">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
@@ -386,6 +385,7 @@
                         <outlet property="navBarItem" destination="Aqx-pX-OcU" id="AyX-5A-R2h"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wwX-8G-OR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1187" y="1862"/>
         </scene>
@@ -498,7 +498,7 @@
         <scene sceneID="LXx-tI-gju">
             <objects>
                 <splitViewController id="BeR-4J-MWD" customClass="CarSplitViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cars" id="Oh9-te-jRM"/>
+                    <tabBarItem key="tabBarItem" title="Cars" image="first" id="Oh9-te-jRM"/>
                     <toolbarItems/>
                     <connections>
                         <segue destination="myy-Ae-zaw" kind="relationship" relationship="masterViewController" id="3dy-IR-Ked"/>
@@ -512,6 +512,7 @@
     </scenes>
     <resources>
         <image name="DefaultCarDetailViewController.png" width="728" height="364"/>
+        <image name="first" width="16" height="16"/>
         <image name="first.png" width="30" height="30"/>
         <image name="second" width="16" height="16"/>
     </resources>

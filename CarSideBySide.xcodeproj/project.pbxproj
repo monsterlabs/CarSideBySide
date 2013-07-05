@@ -405,8 +405,8 @@
 		FACB2DE3176783D800AD3D64 /* Migrate */ = {
 			isa = PBXGroup;
 			children = (
-				FACB2DE5176790A300AD3D64 /* CoreDataSeed.h */,
 				FACB2DE6176790A300AD3D64 /* CoreDataSeed.m */,
+				FACB2DE5176790A300AD3D64 /* CoreDataSeed.h */,
 			);
 			name = Migrate;
 			sourceTree = "<group>";
