@@ -2,7 +2,7 @@
 //  Car.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez Robles on 6/29/13.
+//  Created by Alejandro Juarez Robles on 7/2/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
@@ -16,12 +16,17 @@
 
 @dynamic enabled;
 @dynamic highlights;
+@dynamic image;
 @dynamic modelName;
 @dynamic orderKey;
 @dynamic year;
-@dynamic image;
 @dynamic carModel;
 @dynamic lines;
 @dynamic specifications;
 
+
+- (NSString *)model {
+    NSString *model = [NSString stringWithFormat:@"%@ %@", self.modelName, self.year];
+    return model;
+}
 @end

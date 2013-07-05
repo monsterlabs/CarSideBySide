@@ -2,31 +2,54 @@
 //  CarDetailViewController.m
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 5/31/13.
+//  Created by Alejandro Juarez Robles on 7/3/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
 #import "CarDetailViewController.h"
-#import "Car.h"
 #import <QuartzCore/QuartzCore.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import "Car.h"
 @interface CarDetailViewController ()
+
+@property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonItem;
 
 @end
 
 @implementation CarDetailViewController
 
--(void)setCar:(id)newCar
+-(void)setCar:(Car *)newCar
 {
     if (_car != newCar) {
         _car = newCar;
     }
+    [self configureView];
+}
+
+- (void)configureView
+{
+    modelLabel.text = self.car.model;
+    self.navBarItem.title = self.car.model;
+    
+    highlighsTextView.text = self.car.highlights;
+    
+    carImageView.image = [UIImage imageNamed:self.car.image];
+
+    carImageView.layer.cornerRadius = 3.0f;
+    carImageView.layer.masksToBounds = YES;
+    carImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    carImageView.layer.borderWidth = 1.0;
+    carImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    carImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+                
+        
     }
     return self;
 }
@@ -34,21 +57,71 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    int year = [[self.car valueForKey: @"year"] integerValue];
+    if (self.car != nil) {
+        [self configureView];
+    }    
+}
 
-    modelNameLabel.text =  [NSString stringWithFormat: @"%@ %d", [self.car valueForKey: @"modelName"], year];
-    largeImageView.image = [UIImage imageNamed:[self.car valueForKey:@"largeImage"]];
-    largeImageView.layer.masksToBounds = YES;
-    largeImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    largeImageView.layer.borderWidth = 1.0;
+- (void)viewDidAppear:(BOOL)animated
+{
+    BOOL isLandscape = UIDeviceOrientationIsLandscape(self.interfaceOrientation);
+    if (isLandscape) {
+        [self resizeCarImageView];
+    }
+    if (self.car == nil) {
+        highlighsTextView.text = @"";        
+    }
+    [super viewDidAppear:TRUE];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    if (fromInterfaceOrientation == 1 || fromInterfaceOrientation == 2){
+        [self resizeCarImageView];
+    }
+}
+
+- (void)resizeCarImageView
+{
+    CGSize imageSize = carImageView.image.size;
+    CGPoint newCenter = {carImageView.center.x - 30, carImageView.center.y};
+    CGRect rect = CGRectMake(0, 0, imageSize.width - 65, imageSize.height - 50);
+    carImageView.frame = rect;
+    carImageView.center = newCenter;
+}
+
+#pragma mark - Car Selection Delegate
+- (void)selectedCar:(Car *)newCar
+{
+    [self setCar:newCar];
+    
+    if (_popover != nil) {
+      [_popover dismissPopoverAnimated:YES];
+    }
+}
+
+
+#pragma mark - UISplitViewDelegate methods
+-(void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
+{
+
+    self.popover = pc;
+    
+    barButtonItem.title = @"Select";
+    
+    [_navBarItem setLeftBarButtonItem:barButtonItem animated:YES];
+}
+
+-(void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    [_navBarItem setLeftBarButtonItem:barButtonItem animated:YES];
+    _popover = nil;
+}
 
 
 @end

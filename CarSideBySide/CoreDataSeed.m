@@ -44,9 +44,9 @@
     [self insertSeries];
     [self insertCarModels];
     [self insertCars];
-    [self insertSpecTypes];
-    [self insertCarSpecifications];
-    [self insertSpecFeatures];
+//    [self insertSpecTypes];
+//    [self insertCarSpecifications];
+//    [self insertSpecFeatures];
 }
 
 # pragma - Database population methods
@@ -123,18 +123,24 @@
 
 - (void)insertCars
 {
-    if ([[Car findAll] count])
+    if ([[Car findAll] count] == 0)
     {
         [self logMessageForModel:@"Car"];
+        NSString *bundleRoot = [[NSBundle mainBundle] bundlePath];
+        NSFileManager *fm = [NSFileManager defaultManager];
+        NSArray *dirContents = [fm contentsOfDirectoryAtPath:bundleRoot error:nil];
+        NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self BEGINSWITH 'bmw_s'"];
+        NSArray *carJPGs = [dirContents filteredArrayUsingPredicate:fltr];
+
         for (CarModel *model in [CarModel findAll]) {
             int max = [self random_max:12];
             for (int i = 1; i <= max; i++)
             {
                 Car *car = (Car*)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:[appDelegate managedObjectContext]];
-                car.modelName = [MBFakerLorem words:arc4random_uniform(2)];
+                car.modelName = [MBFakerLorem words:[self random_max:2]];
                 car.enabled = @YES;
-                car.highlights = [MBFakerLorem paragraphs:arc4random_uniform(2)];
-                car.image = @"bmw_s3_sedan.jpg";
+                car.highlights = [MBFakerLorem paragraphs:[self random_max:4]];
+                car.image = [carJPGs objectAtIndex:arc4random_uniform([carJPGs count])];
                 car.year = [NSNumber numberWithInt:2013];
                 car.carModel = model;
                 [self saveContext];
@@ -243,7 +249,7 @@
 - (int)random_max:(int)max
 {
     int min = 1;
-    return (min + arc4random_uniform(max + 1));
+    return (min + arc4random_uniform(max));
 }
 
 - (void)dealloc

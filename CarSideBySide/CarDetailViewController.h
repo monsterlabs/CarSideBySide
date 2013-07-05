@@ -2,23 +2,25 @@
 //  CarDetailViewController.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 5/31/13.
+//  Created by Alejandro Juarez Robles on 7/3/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+@class Car;
 
-@interface CarDetailViewController : UIViewController{
-    IBOutlet UIImageView *largeImageView;
-    IBOutlet UILabel *modelNameLabel;
-    IBOutlet UIBarButtonItem *technicalDetailButton;
+@interface CarDetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, UINavigationControllerDelegate, UINavigationBarDelegate>
+{
+    IBOutlet UIImageView *carImageView;
+    IBOutlet UILabel *modelLabel;
+    IBOutlet UITextView *highlighsTextView;
+
 }
 
-@property (strong, nonatomic) id car;
+@property (strong, nonatomic) Car *car;
+@property (nonatomic, weak) IBOutlet UINavigationItem *navBarItem;
+@property (nonatomic, weak) UIPopoverController *popover;
 
-- (IBAction)showEquipment:(id)sender;
-- (IBAction)showLines:(id)sender;
-- (IBAction)showPrice:(id)sender;
-- (IBAction)showSafety:(id)sender;
-- (IBAction)showTechnicalDetail:(id)sender;
+- (void)selectedCar:(Car *)newCar;
+
 @end

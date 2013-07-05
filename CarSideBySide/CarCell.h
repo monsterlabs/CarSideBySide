@@ -2,19 +2,18 @@
 //  CarCell.h
 //  CarSideBySide
 //
-//  Created by Alejandro Juarez on 5/31/13.
+//  Created by Alejandro Juarez Robles on 7/2/13.
 //  Copyright (c) 2013 Alejandro Juarez Robles. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface CarCell : UICollectionViewCell {
-    
-    IBOutlet UIImageView *carImageView;
-    IBOutlet UILabel *modelNameLabel;
-    IBOutlet UITextView *modelHighlightsTextView;
+#import "Car.h"
+@interface CarCell : UITableViewCell {
+    IBOutlet UILabel *title;
+    IBOutlet UILabel *subTitle;
 }
 
-@property (strong, nonatomic) id car;
+@property (strong, nonatomic) Car *car;
 
 @end
