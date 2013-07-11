@@ -19,4 +19,10 @@
 @dynamic brand;
 @dynamic comparatives;
 
+- (NSString *)model
+{
+    NSString *model = [NSString stringWithFormat:@"%@ %@", self.modelName, self.year];
+    return model;
+}
 @end
+

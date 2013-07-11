@@ -15,6 +15,14 @@
     IBOutlet UILabel *modelLabel;
     IBOutlet UITextView *highlighsTextView;
 
+    IBOutlet UIBarButtonItem *technicalDetailsButton;
+    IBOutlet UIBarButtonItem *equipmentButton;
+    IBOutlet UIBarButtonItem *safetyButton;
+    IBOutlet UIBarButtonItem *priceBarButton;
+    IBOutlet UIBarButtonItem *linesBarButton;
+    
+    UINavigationController *navController;
+
 }
 
 @property (strong, nonatomic) Car *car;
@@ -22,5 +30,7 @@
 @property (nonatomic, weak) UIPopoverController *popover;
 
 - (void)selectedCar:(Car *)newCar;
+
+- (IBAction)showSpecification:(id)sender;
 
 @end

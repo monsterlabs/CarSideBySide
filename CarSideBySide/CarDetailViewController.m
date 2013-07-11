@@ -10,14 +10,19 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import "Car.h"
+#import "ComparativeViewController.h"
 @interface CarDetailViewController ()
 
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buttonItem;
+@property (strong, nonatomic) NSString *segueIdentifier;
+@property (strong, nonatomic) NSString *prevSegueIdentifier;
+@property (strong, nonatomic) UIStoryboardPopoverSegue *popoverSegue;
 
 @end
 
 @implementation CarDetailViewController
+@synthesize segueIdentifier, prevSegueIdentifier, popoverSegue;
 
 -(void)setCar:(Car *)newCar
 {
@@ -25,6 +30,7 @@
         _car = newCar;
     }
     [self configureView];
+    self.prevSegueIdentifier = @"";
 }
 
 - (void)configureView
@@ -38,18 +44,20 @@
 
     carImageView.layer.cornerRadius = 3.0f;
     carImageView.layer.masksToBounds = YES;
-    carImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    carImageView.layer.borderColor = [UIColor underPageBackgroundColor].CGColor;
     carImageView.layer.borderWidth = 1.0;
     carImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     carImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [self.toolbar setHidden:NO];
+    [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-                
-        
+    navController  = [[UINavigationController alloc] initWithRootViewController:self];
+
+    if (self) {        
     }
     return self;
 }
@@ -59,7 +67,7 @@
     [super viewDidLoad];
     if (self.car != nil) {
         [self configureView];
-    }    
+    } 
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -69,7 +77,8 @@
         [self resizeCarImageView];
     }
     if (self.car == nil) {
-        highlighsTextView.text = @"";        
+        highlighsTextView.text = @"";
+        [self.toolbar setHidden:YES];
     }
     [super viewDidAppear:TRUE];
     
@@ -81,8 +90,10 @@
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    if (fromInterfaceOrientation == 1 || fromInterfaceOrientation == 2){
+    if (fromInterfaceOrientation == 1 || fromInterfaceOrientation == 2)
+    {
         [self resizeCarImageView];
+        [self.navBarItem setLeftBarButtonItem:nil animated:YES];
     }
 }
 
@@ -95,7 +106,7 @@
     carImageView.center = newCenter;
 }
 
-#pragma mark - Car Selection Delegate
+# pragma mark - Car Selection Delegate
 - (void)selectedCar:(Car *)newCar
 {
     [self setCar:newCar];
@@ -105,8 +116,7 @@
     }
 }
 
-
-#pragma mark - UISplitViewDelegate methods
+# pragma mark - UISplitViewDelegate methods
 -(void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
 {
 
@@ -117,11 +127,25 @@
     [_navBarItem setLeftBarButtonItem:barButtonItem animated:YES];
 }
 
--(void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [_navBarItem setLeftBarButtonItem:barButtonItem animated:YES];
-    _popover = nil;
+    UIBarButtonItem *button = (UIBarButtonItem *)sender;
+    self.segueIdentifier = button.title;
+    self.popoverSegue = (id)segue;
+    ComparativeViewController *comparativeViewController = segue.destinationViewController;
+    comparativeViewController.specification = [self.car specificationBySpecificationTypeName:button.title];
+    self.prevSegueIdentifier = self.segueIdentifier;
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([self.segueIdentifier isEqualToString:self.prevSegueIdentifier]) {
+        [self.popoverSegue.popoverController dismissPopoverAnimated:YES];
+        prevSegueIdentifier = @"";
+        return NO;
+    }
+    else
+        return YES;
+}
 
 @end

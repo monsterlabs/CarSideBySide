@@ -27,4 +27,6 @@
 - (void)addComparatives:(NSSet *)values;
 - (void)removeComparatives:(NSSet *)values;
 
+- (NSString *)model;
+
 @end

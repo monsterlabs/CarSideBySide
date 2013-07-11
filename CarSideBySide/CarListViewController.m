@@ -60,7 +60,7 @@
     
     UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(5,0,300,32)];
     tempLabel.backgroundColor=[UIColor viewFlipsideBackgroundColor];
-    tempLabel.shadowColor = [UIColor blackColor];
+    tempLabel.shadowColor = [UIColor darkGrayColor];
     tempLabel.shadowOffset = CGSizeMake(0,2);
     tempLabel.textColor = [UIColor whiteColor];
     tempLabel.font = [UIFont boldSystemFontOfSize:16.0];

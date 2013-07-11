@@ -10,7 +10,7 @@
 #import "CarModel.h"
 #import "Line.h"
 #import "Specification.h"
-
+#import "SpecificationType.h"
 
 @implementation Car
 
@@ -28,5 +28,17 @@
 - (NSString *)model {
     NSString *model = [NSString stringWithFormat:@"%@ %@", self.modelName, self.year];
     return model;
+}
+
+- (Specification *)specificationBySpecificationTypeName:(NSString *)name;
+{
+    Specification *spec = nil;
+    for (Specification *specification in self.specifications)
+    {
+        if ([specification.specificationType.name isEqualToString:name]) {
+            spec = specification;
+        }
+    }
+    return spec;
 }
 @end
