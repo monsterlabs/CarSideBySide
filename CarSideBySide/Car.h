@@ -37,4 +37,6 @@
 - (void)removeSpecifications:(NSSet *)values;
 
 - (NSString *)model;
+- (Specification *)specificationBySpecificationTypeName:(NSString *)name;
+
 @end

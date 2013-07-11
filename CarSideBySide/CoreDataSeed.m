@@ -44,9 +44,9 @@
     [self insertSeries];
     [self insertCarModels];
     [self insertCars];
-//    [self insertSpecTypes];
-//    [self insertCarSpecifications];
-//    [self insertSpecFeatures];
+    [self insertSpecTypes];
+    [self insertCarSpecifications];
+    [self insertSpecFeatures];
 }
 
 # pragma - Database population methods
@@ -155,7 +155,7 @@
     if([[SpecificationType findAll] count] == 0 )
     {
         [self logMessageForModel:@"SpecificationType"];
-        NSArray *specificationTypes = [NSArray arrayWithObjects: @"Technical Details", @"Equipment", @"Safety", @"Lines", @"Price", nil];
+        NSArray *specificationTypes = [NSArray arrayWithObjects: @"Technical details", @"Equipment", @"Safety", @"Lines", @"Price", nil];
         for (NSString *specTypeName in specificationTypes) {
             SpecificationType *specType = (SpecificationType*)[NSEntityDescription insertNewObjectForEntityForName:@"SpecificationType" inManagedObjectContext:[appDelegate managedObjectContext]];
             specType.name = specTypeName;
@@ -215,7 +215,8 @@
                 int max = arc4random_uniform(20);
                 for (int i = 1; i <= max; i++) {
                     Feature *feature = (Feature *)[NSEntityDescription insertNewObjectForEntityForName:@"Feature" inManagedObjectContext:[appDelegate managedObjectContext]];
-                    feature.name = [MBFakerLorem words:[self random_max:3]];
+                    feature.name = [NSString stringWithFormat:@"Feature %@",
+                                  [MBFakerLorem paragraphs:[self random_max:2]]];
                     feature.descr = [MBFakerLorem word];
                     feature.highlighted  = [NSNumber numberWithInt:arc4random_uniform(1)];
                     feature.specification = spec;

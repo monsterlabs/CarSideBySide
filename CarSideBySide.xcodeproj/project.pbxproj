@@ -16,10 +16,6 @@
 		FA2AF96C1755A50A001BA8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF96B1755A50A001BA8ED /* main.m */; };
 		FA2AF9701755A50A001BA8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AF96F1755A50A001BA8ED /* AppDelegate.m */; };
 		FA2AF9791755A50A001BA8ED /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9771755A50A001BA8ED /* MainStoryboard.storyboard */; };
-		FA2AF97E1755A50A001BA8ED /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF97D1755A50A001BA8ED /* first.png */; };
-		FA2AF9801755A50B001BA8ED /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF97F1755A50B001BA8ED /* first@2x.png */; };
-		FA2AF9851755A50B001BA8ED /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9841755A50B001BA8ED /* second.png */; };
-		FA2AF9871755A50B001BA8ED /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AF9861755A50B001BA8ED /* second@2x.png */; };
 		FA2AF98F1755A50B001BA8ED /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF98E1755A50B001BA8ED /* SenTestingKit.framework */; };
 		FA2AF9901755A50B001BA8ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF95F1755A50A001BA8ED /* UIKit.framework */; };
 		FA2AF9911755A50B001BA8ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9611755A50A001BA8ED /* Foundation.framework */; };
@@ -53,6 +49,16 @@
 		FA969936176FC1AB004EAED2 /* bmw_offer_test_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA96992A176FC1AB004EAED2 /* bmw_offer_test_6.jpg */; };
 		FA98C5A11760FB4600B64805 /* CarListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA98C5A01760FB4600B64805 /* CarListHeaderView.m */; };
 		FA98C5A517610B1F00B64805 /* SerieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA98C5A417610B1F00B64805 /* SerieListViewController.m */; };
+		FAA1E308178C990200D60C77 /* EWHeaderHighlightLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E2FC178C990200D60C77 /* EWHeaderHighlightLayer.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		FAA1E309178C990200D60C77 /* EWMultiColumnTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E2FE178C990200D60C77 /* EWMultiColumnTableView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		FAA1E30A178C990200D60C77 /* EWMultiColumnTableViewBGScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E300178C990200D60C77 /* EWMultiColumnTableViewBGScrollView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		FAA1E30B178C990200D60C77 /* EWMultiColumnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E302178C990200D60C77 /* EWMultiColumnTableViewCell.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		FAA1E30C178C990200D60C77 /* EWMultiColumnTableViewContentBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E304178C990200D60C77 /* EWMultiColumnTableViewContentBackgroundView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		FAA1E30D178C990200D60C77 /* UIView+AddLine.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E307178C990200D60C77 /* UIView+AddLine.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		FAA1E311178C9AC200D60C77 /* ComparativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E310178C9AC200D60C77 /* ComparativeViewController.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		FAA1E314178CA0B200D60C77 /* NSObject+DelayedBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E313178CA0B200D60C77 /* NSObject+DelayedBlock.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		FAA6ED4F17878EBE00D803EE /* offerList.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA6ED4D17878EBD00D803EE /* offerList.png */; };
+		FAA6ED51178791A400D803EE /* carList.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA6ED50178791A400D803EE /* carList.png */; };
 		FACB2DE7176790A300AD3D64 /* CoreDataSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB2DE6176790A300AD3D64 /* CoreDataSeed.m */; };
 		FACB56E217839F460087FA1F /* CarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB56E117839F460087FA1F /* CarListViewController.m */; };
 		FACB56E51783C09A0087FA1F /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB56E41783C09A0087FA1F /* Car.m */; };
@@ -113,10 +119,6 @@
 		FA2AF96E1755A50A001BA8ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA2AF96F1755A50A001BA8ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FA2AF9781755A50A001BA8ED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		FA2AF97D1755A50A001BA8ED /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		FA2AF97F1755A50B001BA8ED /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		FA2AF9841755A50B001BA8ED /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		FA2AF9861755A50B001BA8ED /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		FA2AF98D1755A50B001BA8ED /* CarSideBySideTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarSideBySideTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2AF98E1755A50B001BA8ED /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		FA2AF9961755A50B001BA8ED /* CarSideBySideTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CarSideBySideTests-Info.plist"; sourceTree = "<group>"; };
@@ -162,6 +164,25 @@
 		FA98C5A01760FB4600B64805 /* CarListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarListHeaderView.m; sourceTree = "<group>"; };
 		FA98C5A317610B1F00B64805 /* SerieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerieListViewController.h; sourceTree = "<group>"; };
 		FA98C5A417610B1F00B64805 /* SerieListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerieListViewController.m; sourceTree = "<group>"; };
+		FAA1E2FB178C990200D60C77 /* EWHeaderHighlightLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWHeaderHighlightLayer.h; sourceTree = "<group>"; };
+		FAA1E2FC178C990200D60C77 /* EWHeaderHighlightLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWHeaderHighlightLayer.m; sourceTree = "<group>"; };
+		FAA1E2FD178C990200D60C77 /* EWMultiColumnTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWMultiColumnTableView.h; sourceTree = "<group>"; };
+		FAA1E2FE178C990200D60C77 /* EWMultiColumnTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWMultiColumnTableView.m; sourceTree = "<group>"; };
+		FAA1E2FF178C990200D60C77 /* EWMultiColumnTableViewBGScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWMultiColumnTableViewBGScrollView.h; sourceTree = "<group>"; };
+		FAA1E300178C990200D60C77 /* EWMultiColumnTableViewBGScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWMultiColumnTableViewBGScrollView.m; sourceTree = "<group>"; };
+		FAA1E301178C990200D60C77 /* EWMultiColumnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWMultiColumnTableViewCell.h; sourceTree = "<group>"; };
+		FAA1E302178C990200D60C77 /* EWMultiColumnTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWMultiColumnTableViewCell.m; sourceTree = "<group>"; };
+		FAA1E303178C990200D60C77 /* EWMultiColumnTableViewContentBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWMultiColumnTableViewContentBackgroundView.h; sourceTree = "<group>"; };
+		FAA1E304178C990200D60C77 /* EWMultiColumnTableViewContentBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWMultiColumnTableViewContentBackgroundView.m; sourceTree = "<group>"; };
+		FAA1E305178C990200D60C77 /* EWMultiColumnTableViewDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWMultiColumnTableViewDefaults.h; sourceTree = "<group>"; };
+		FAA1E306178C990200D60C77 /* UIView+AddLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AddLine.h"; sourceTree = "<group>"; };
+		FAA1E307178C990200D60C77 /* UIView+AddLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AddLine.m"; sourceTree = "<group>"; };
+		FAA1E30F178C9AC200D60C77 /* ComparativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparativeViewController.h; sourceTree = "<group>"; };
+		FAA1E310178C9AC200D60C77 /* ComparativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparativeViewController.m; sourceTree = "<group>"; };
+		FAA1E312178CA0B200D60C77 /* NSObject+DelayedBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DelayedBlock.h"; sourceTree = "<group>"; };
+		FAA1E313178CA0B200D60C77 /* NSObject+DelayedBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DelayedBlock.m"; sourceTree = "<group>"; };
+		FAA6ED4D17878EBD00D803EE /* offerList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offerList.png; sourceTree = "<group>"; };
+		FAA6ED50178791A400D803EE /* carList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carList.png; sourceTree = "<group>"; };
 		FACB2DE5176790A300AD3D64 /* CoreDataSeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataSeed.h; sourceTree = "<group>"; };
 		FACB2DE6176790A300AD3D64 /* CoreDataSeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataSeed.m; sourceTree = "<group>"; };
 		FACB56E017839F460087FA1F /* CarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarListViewController.h; sourceTree = "<group>"; };
@@ -313,6 +334,8 @@
 		FA2AF9651755A50A001BA8ED /* CarSideBySide */ = {
 			isa = PBXGroup;
 			children = (
+				FAA1E30E178C991500D60C77 /* MultiColumnTableView */,
+				FA8E7C17178BAE3B006131CC /* Comparative */,
 				FAF07D8F178375E1009D8DFC /* Serie */,
 				FA17DA87176CAF2A006D74DE /* Car */,
 				FA17DA86176CAEC4006D74DE /* Offer */,
@@ -333,13 +356,11 @@
 		FA2AF9661755A50A001BA8ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FAA6ED50178791A400D803EE /* carList.png */,
+				FAA6ED4D17878EBD00D803EE /* offerList.png */,
 				FACB56F7178519ED0087FA1F /* DefaultCarDetailViewController.png */,
 				FA58E0F4176FC88E007C9295 /* Icon-72.png */,
 				FA58E0F5176FC88E007C9295 /* Icon-72@2x.png */,
-				FA2AF97D1755A50A001BA8ED /* first.png */,
-				FA2AF97F1755A50B001BA8ED /* first@2x.png */,
-				FA2AF9841755A50B001BA8ED /* second.png */,
-				FA2AF9861755A50B001BA8ED /* second@2x.png */,
 				FACE6926175E75870009F595 /* Default-Landscape~ipad.png */,
 				FACE6927175E75870009F595 /* Default-Portrait~ipad.png */,
 				FADABF341755CC1B0072E8C9 /* Images */,
@@ -400,6 +421,37 @@
 				FA2D92241767E80A00E8E716 /* Offer.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FA8E7C17178BAE3B006131CC /* Comparative */ = {
+			isa = PBXGroup;
+			children = (
+				FAA1E30F178C9AC200D60C77 /* ComparativeViewController.h */,
+				FAA1E310178C9AC200D60C77 /* ComparativeViewController.m */,
+			);
+			name = Comparative;
+			sourceTree = "<group>";
+		};
+		FAA1E30E178C991500D60C77 /* MultiColumnTableView */ = {
+			isa = PBXGroup;
+			children = (
+				FAA1E312178CA0B200D60C77 /* NSObject+DelayedBlock.h */,
+				FAA1E313178CA0B200D60C77 /* NSObject+DelayedBlock.m */,
+				FAA1E2FB178C990200D60C77 /* EWHeaderHighlightLayer.h */,
+				FAA1E2FC178C990200D60C77 /* EWHeaderHighlightLayer.m */,
+				FAA1E2FD178C990200D60C77 /* EWMultiColumnTableView.h */,
+				FAA1E2FE178C990200D60C77 /* EWMultiColumnTableView.m */,
+				FAA1E2FF178C990200D60C77 /* EWMultiColumnTableViewBGScrollView.h */,
+				FAA1E300178C990200D60C77 /* EWMultiColumnTableViewBGScrollView.m */,
+				FAA1E301178C990200D60C77 /* EWMultiColumnTableViewCell.h */,
+				FAA1E302178C990200D60C77 /* EWMultiColumnTableViewCell.m */,
+				FAA1E303178C990200D60C77 /* EWMultiColumnTableViewContentBackgroundView.h */,
+				FAA1E304178C990200D60C77 /* EWMultiColumnTableViewContentBackgroundView.m */,
+				FAA1E305178C990200D60C77 /* EWMultiColumnTableViewDefaults.h */,
+				FAA1E306178C990200D60C77 /* UIView+AddLine.h */,
+				FAA1E307178C990200D60C77 /* UIView+AddLine.m */,
+			);
+			name = MultiColumnTableView;
 			sourceTree = "<group>";
 		};
 		FACB2DE3176783D800AD3D64 /* Migrate */ = {
@@ -561,10 +613,6 @@
 			files = (
 				FA2AF96A1755A50A001BA8ED /* InfoPlist.strings in Resources */,
 				FA2AF9791755A50A001BA8ED /* MainStoryboard.storyboard in Resources */,
-				FA2AF97E1755A50A001BA8ED /* first.png in Resources */,
-				FA2AF9801755A50B001BA8ED /* first@2x.png in Resources */,
-				FA2AF9851755A50B001BA8ED /* second.png in Resources */,
-				FA2AF9871755A50B001BA8ED /* second@2x.png in Resources */,
 				FADABF501755CC490072E8C9 /* bmw_s1_3_puertas.jpg in Resources */,
 				FADABF521755CC490072E8C9 /* bmw_s1_5_puertas.jpg in Resources */,
 				FADABF541755CC490072E8C9 /* bmw_s1_active_e.jpg in Resources */,
@@ -597,6 +645,8 @@
 				FA58E0F6176FC88E007C9295 /* Icon-72.png in Resources */,
 				FA58E0F7176FC88E007C9295 /* Icon-72@2x.png in Resources */,
 				FACB56F8178519ED0087FA1F /* DefaultCarDetailViewController.png in Resources */,
+				FAA6ED4F17878EBE00D803EE /* offerList.png in Resources */,
+				FAA6ED51178791A400D803EE /* carList.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,6 +991,14 @@
 				FACB56F4178483950087FA1F /* CarDetailViewController.m in Sources */,
 				FA6D4CCE17868F8F0068EEE6 /* CarSplitViewController.m in Sources */,
 				FA6D4CD117871B860068EEE6 /* CarNavigationViewController.m in Sources */,
+				FAA1E308178C990200D60C77 /* EWHeaderHighlightLayer.m in Sources */,
+				FAA1E309178C990200D60C77 /* EWMultiColumnTableView.m in Sources */,
+				FAA1E30A178C990200D60C77 /* EWMultiColumnTableViewBGScrollView.m in Sources */,
+				FAA1E30B178C990200D60C77 /* EWMultiColumnTableViewCell.m in Sources */,
+				FAA1E30C178C990200D60C77 /* EWMultiColumnTableViewContentBackgroundView.m in Sources */,
+				FAA1E30D178C990200D60C77 /* UIView+AddLine.m in Sources */,
+				FAA1E311178C9AC200D60C77 /* ComparativeViewController.m in Sources */,
+				FAA1E314178CA0B200D60C77 /* NSObject+DelayedBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
