@@ -14,15 +14,15 @@
 #import "CarCell.h"
 #import <DVCoreDataFinders.h>
 
-@interface CarListViewController () {
+@interface CarListViewController ()
 
-    NSArray *carModels;
-    NSDictionary *tableOfContents;
-}
-
+@property (nonatomic) NSMutableArray *data;
+@property (nonatomic) NSMutableArray *filteredData;
 @end
 
 @implementation CarListViewController
+
+@synthesize data, filteredData;
 
 - (void)setSerie:(Serie *)serie {
     if (_serie != serie) {
@@ -44,7 +44,13 @@
     [super viewDidLoad];
     
     self.title = self.serie.name;
-    carModels = [self.serie.carModels allObjects];
+    self.data = [NSMutableArray array];
+    for (CarModel *carModel in self.serie.carModels)
+    {
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: carModel, @"carModel", [carModel.cars allObjects], @"cars", nil];
+        [data addObject:dict];
+    }
+    [self.filteredData removeAllObjects];
     [self.tableView reloadData];
 }
 
@@ -64,7 +70,8 @@
     tempLabel.shadowOffset = CGSizeMake(0,2);
     tempLabel.textColor = [UIColor whiteColor];
     tempLabel.font = [UIFont boldSystemFontOfSize:16.0];
-    tempLabel.text= [[carModels objectAtIndex:section] name];
+    CarModel *carModel = [self carModelWithTableView:tableView inSection:section];
+    tempLabel.text= carModel.name;
     
     [tempView addSubview:tempLabel];
     return tempView;
@@ -79,29 +86,36 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [carModels count];
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+        return [self.filteredData count];
+    else
+        return [self.data count];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    CarModel *carModel = [carModels objectAtIndex:section];
-    return [[carModel.cars allObjects] count];
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+        return [[[self.filteredData objectAtIndex:section] objectForKey:@"cars"] count];
+    else
+        return [[[self.data objectAtIndex:section] objectForKey:@"cars"] count];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CarCell";
-    CarCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    CarModel *carModel = [carModels objectAtIndex:indexPath.section];
-    cell.car = [[carModel.cars allObjects] objectAtIndex:indexPath.row];
+    CarCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.car = [self carWithTableView:tableView AtIndexPath:indexPath];
     
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+
 {
-    return [[carModels objectAtIndex:section] name];
+    CarModel *carModel = [self carModelWithTableView:tableView inSection:section];
+    return carModel.name;
 }
 
 
@@ -109,11 +123,65 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CarModel *carModel = [carModels objectAtIndex:indexPath.section];
-    Car *selectedCar = [[carModel.cars allObjects] objectAtIndex:indexPath.row];
+    Car *selectedCar = [self carWithTableView:tableView AtIndexPath:indexPath];
     if (_delegate) {
         [_delegate selectedCar:selectedCar];
     }
+    
+}
+
+# pragma mark - Filtering methods
+- (Car *)carWithTableView:(UITableView *)tableView AtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+        return (Car *)[[[self.filteredData objectAtIndex:indexPath.section] objectForKey:@"cars"] objectAtIndex:indexPath.row];
+    else
+        return (Car *)[[[self.data objectAtIndex:indexPath.section] objectForKey:@"cars"] objectAtIndex:indexPath.row];
+}
+
+- (CarModel *)carModelWithTableView:(UITableView *)tableView inSection:(NSInteger)section
+{
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+        return (CarModel*)[[self.filteredData objectAtIndex:section] objectForKey:@"carModel"];
+    else
+        return (CarModel*)[[self.data objectAtIndex:section] objectForKey:@"carModel"];
+}
+
+- (void)filterData:(NSString*)searchString;
+{
+    self.filteredData = [NSMutableArray array];
+    for (NSDictionary *dict in self.data){
+        NSMutableArray *cars = [NSMutableArray array];
+        for (Car *car in [dict objectForKey:@"cars"])
+        {
+            BOOL match = NO;
+            NSPredicate *containPred = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchString];
+            match = match | [containPred evaluateWithObject:car.model];
+            if (match) {
+                [cars addObject:car];
+            }
+        }
+        
+        NSDictionary *newDict = [NSDictionary dictionaryWithObjectsAndKeys:[dict objectForKey:@"carModel"], @"carModel", cars, @"cars", nil];
+        [self.filteredData addObject:newDict];
+    }
+}
+#pragma mark - UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    
+    [self filterData:searchString];
+    
+    return YES;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    NSString *searchString = [self.searchDisplayController.searchBar text];
+    
+    [self filterData:searchString];
+    return YES;
 }
 
 

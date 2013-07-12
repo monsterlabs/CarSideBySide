@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Serie.h"
 #import "CarSelectionDelegate.h"
-@interface CarListViewController : UITableViewController  <UITableViewDelegate, UITableViewDataSource>
+@interface CarListViewController : UITableViewController  <UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (strong, nonatomic) Serie *serie;
 @property (nonatomic, assign) id<CarSelectionDelegate> delegate;

@@ -133,7 +133,7 @@
         NSArray *carJPGs = [dirContents filteredArrayUsingPredicate:fltr];
 
         for (CarModel *model in [CarModel findAll]) {
-            int max = [self random_max:12];
+            int max = [self random_max:5];
             for (int i = 1; i <= max; i++)
             {
                 Car *car = (Car*)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:[appDelegate managedObjectContext]];
@@ -212,7 +212,7 @@
                     [self saveContext];
                 }
                 
-                int max = arc4random_uniform(20);
+                int max = [self random_max:5];
                 for (int i = 1; i <= max; i++) {
                     Feature *feature = (Feature *)[NSEntityDescription insertNewObjectForEntityForName:@"Feature" inManagedObjectContext:[appDelegate managedObjectContext]];
                     feature.name = [NSString stringWithFormat:@"Feature %@",
