@@ -212,13 +212,16 @@
                     [self saveContext];
                 }
                 
-                int max = [self random_max:5];
+                int max = [self random_max:20];
                 for (int i = 1; i <= max; i++) {
                     Feature *feature = (Feature *)[NSEntityDescription insertNewObjectForEntityForName:@"Feature" inManagedObjectContext:[appDelegate managedObjectContext]];
                     feature.name = [NSString stringWithFormat:@"Feature %@",
-                                  [MBFakerLorem paragraphs:[self random_max:2]]];
+                                  [MBFakerLorem words:[self random_max:2]]];
                     feature.descr = [MBFakerLorem word];
                     feature.highlighted  = [NSNumber numberWithInt:arc4random_uniform(1)];
+                    if (i == max) {
+                        feature.highlighted = @YES;
+                    }
                     feature.specification = spec;
                     [self saveContext];
                     for (Comparative *comparative in spec.comparatives)
