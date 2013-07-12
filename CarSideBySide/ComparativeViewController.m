@@ -38,8 +38,6 @@
         [self.myheaders addObject:comparative.comparedCar.model];
     }
     numberOfColumns = [self.specification.comparatives count] +1;
-    numberOfSections = 1;
-    colWidth = 240.0f;
     
     data = [[NSMutableArray alloc] initWithCapacity:numberOfSections * 5];
     self.columnNamesPerRow = [NSMutableArray arrayWithCapacity:numberOfSections * 5];
@@ -54,7 +52,8 @@
                 [rowArray addObject:comparedFeature.descr];
             }
             [sectionArray addObject:rowArray];
-            [rowNames addObject:feature.name];
+            NSArray *cellTitle = [NSArray arrayWithObjects:feature.name, feature.highlighted, nil];
+            [rowNames addObject:cellTitle];
             
         }
         [self.columnNamesPerRow addObject:rowNames];
@@ -94,9 +93,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    numberOfSections = 1;
+    colWidth = 200.0f;
     [self fillTable];
     tblView = [[EWMultiColumnTableView alloc] initWithFrame:CGRectInset(self.view.bounds, 5.0f, 5.0f)];
-    tblView.sectionHeaderEnabled = YES;
+    tblView.sectionHeaderEnabled = NO;
+    tblView.topHeaderBackgroundColor = [UIColor colorWithWhite:249.0f/255.0f alpha:1.0f];
     //    tblView.cellWidth = 100.0f;
     //    tblView.boldSeperatorLineColor = [UIColor blueColor];
     //    tblView.normalSeperatorLineColor = [UIColor blueColor];
@@ -138,7 +140,7 @@
 
 - (UIView *)tableView:(EWMultiColumnTableView *)tableView cellForIndexPath:(NSIndexPath *)indexPath column:(NSInteger)col
 {
-    UILabel *l = [[[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, colWidth, 40.0f)] autorelease];
+    UILabel *l = [[[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, (colWidth -10.0f), 40.0f)] autorelease];
     l.numberOfLines = 0;
     l.lineBreakMode = UILineBreakModeWordWrap;
     
@@ -149,6 +151,7 @@
 - (void)tableView:(EWMultiColumnTableView *)tableView setContentForCell:(UIView *)cell indexPath:(NSIndexPath *)indexPath column:(NSInteger)col{
     UILabel *l = (UILabel *)cell;
     l.text = [[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:col];
+    l.font = [UIFont systemFontOfSize:13.0];
     
     CGRect f = l.frame;
     f.size.width = [self tableView:tableView widthForColumn:col];
@@ -163,7 +166,7 @@
     CGSize s = [str sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
                constrainedToSize:CGSizeMake([self tableView:tableView widthForColumn:col], MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
     
-    return s.height + 20.0f;
+    return s.height + 10.0f;
 }
 
 - (CGFloat)tableView:(EWMultiColumnTableView *)tableView widthForColumn:(NSInteger)column
@@ -206,14 +209,21 @@
 
 - (UIView *)tableView:(EWMultiColumnTableView *)tableView headerCellForIndexPath:(NSIndexPath *)indexPath
 {
-    return [[[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 40.0f)] autorelease];
+    return [[[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, 200.0f, 40.0f)] autorelease];
 }
 
 - (void)tableView:(EWMultiColumnTableView *)tableView setContentForHeaderCell:(UIView *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     UILabel *l = (UILabel *)cell;
-    NSString *rowName = [[self.columnNamesPerRow objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    l.text = rowName;
+    NSString *cellTitle = [[[self.columnNamesPerRow objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:0];
+    BOOL is_highlighted = [[[[self.columnNamesPerRow objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:1] boolValue];
+
+    l.text = cellTitle;
+    l.font = [UIFont systemFontOfSize:13.0];
+    if (is_highlighted) {
+        l.textColor = [UIColor blueColor];
+    }
+    l.backgroundColor = [UIColor colorWithWhite:249.0f/255.0f alpha:1.0f];
     [l sizeToFit];
 }
 
@@ -229,7 +239,7 @@
 
 - (UIView *)tableView:(EWMultiColumnTableView *)tableView headerCellInSectionHeaderForSection:(NSInteger)section
 {
-    UILabel *l = [[[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [self widthForHeaderCellOfTableView:tableView], 0.0f)] autorelease];
+    UILabel *l = [[[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, [self widthForHeaderCellOfTableView:tableView], 0.0f)] autorelease];
     l.backgroundColor = [UIColor orangeColor];
     return l;
     
@@ -243,17 +253,19 @@
 
 - (CGFloat)widthForHeaderCellOfTableView:(EWMultiColumnTableView *)tableView
 {
-    return 200.0f;
+    return 250.0f;
 }
 
 
 - (UIView *)tableView:(EWMultiColumnTableView *)tableView headerCellForColumn:(NSInteger)col
 {
-    UILabel *l =  [[[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 250.0f, 200.0f)] autorelease];
+    UILabel *l =  [[[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, 240.0f, 50.0f)] autorelease];
     l.text = [self.myheaders objectAtIndex:col];
-
+    l.font = [UIFont boldSystemFontOfSize:16];
+    l.backgroundColor = [UIColor colorWithWhite:249.0f/255.0f alpha:1.0f];
     l.userInteractionEnabled = YES;    
     l.tag = col;
+    
     UITapGestureRecognizer *recognizer = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)] autorelease];
     recognizer.numberOfTapsRequired = 2;
     [l addGestureRecognizer:recognizer];
@@ -263,15 +275,17 @@
 
 - (UIView *)topleftHeaderCellOfTableView:(EWMultiColumnTableView *)tableView
 {
-    UILabel *l =  [[[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 250.0f, [self heightForHeaderCellOfTableView:tableView])] autorelease];
+    UILabel *l =  [[[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, 240.0f, [self heightForHeaderCellOfTableView:tableView])] autorelease];
     l.text = self.specification.specificationType.name;
-    
+    l.font = [UIFont boldSystemFontOfSize:16];
+    l.backgroundColor = [UIColor colorWithWhite:249.0f/255.0f alpha:1.0f];
+
     return l;
 }
 
 - (CGFloat)heightForHeaderCellOfTableView:(EWMultiColumnTableView *)tableView
 {
-    return 150.0f;
+    return 50.0f;
 }
 
 - (void)tableView:(EWMultiColumnTableView *)tableView swapDataOfColumn:(NSInteger)col1 andColumn:(NSInteger)col2
