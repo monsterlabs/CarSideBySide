@@ -510,12 +510,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="zLN-PP-zvk">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="vAN-eW-N83" id="qVy-dP-sBJ"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarCell" textLabel="JZ9-9p-qkn" detailTextLabel="Fz4-AW-b7a" style="IBUITableViewCellStyleSubtitle" id="K2R-xD-scS" customClass="CarCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="55"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="CarCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarCell" textLabel="JZ9-9p-qkn" detailTextLabel="Fz4-AW-b7a" style="IBUITableViewCellStyleSubtitle" id="K2R-xD-scS" customClass="CarCell">
+                                <rect key="frame" x="0.0" y="66" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZ9-9p-qkn">
@@ -543,8 +552,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="1P7-cO-ZHl"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="TBu-IQ-Y3p" id="ClH-Qa-x6m"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vUI-6k-GVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="TBu-IQ-Y3p">
+                    <connections>
+                        <outlet property="delegate" destination="vAN-eW-N83" id="9A9-vY-ZrX"/>
+                        <outlet property="searchBar" destination="zLN-PP-zvk" id="hQt-zh-0WQ"/>
+                        <outlet property="searchContentsController" destination="vAN-eW-N83" id="qdZ-3L-8t4"/>
+                        <outlet property="searchResultsDataSource" destination="vAN-eW-N83" id="R1C-Fd-dY5"/>
+                        <outlet property="searchResultsDelegate" destination="vAN-eW-N83" id="bku-Kl-eiW"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1421" y="880"/>
         </scene>
