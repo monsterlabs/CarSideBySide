@@ -74,6 +74,7 @@
         }
     }
 }
+
 - (void)insertBrands
 {
     if ([[Brand findAll] count] == 0) {
@@ -86,6 +87,7 @@
         }
     }
 }
+
 - (void)insertSeries
 {
     if ([[Serie findAll] count] == 0 ){
@@ -101,6 +103,7 @@
         }
     }
 }
+
 - (void)insertCarModels
 {
     if ([[CarModel findAll] count] == 0) {
@@ -212,7 +215,7 @@
                     [self saveContext];
                 }
                 
-                int max = [self random_max:20];
+                int max = [self random_max:10];
                 for (int i = 1; i <= max; i++) {
                     Feature *feature = (Feature *)[NSEntityDescription insertNewObjectForEntityForName:@"Feature" inManagedObjectContext:[appDelegate managedObjectContext]];
                     feature.name = [NSString stringWithFormat:@"Feature %@",

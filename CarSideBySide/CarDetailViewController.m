@@ -50,6 +50,16 @@
     carImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.toolbar setHidden:NO];
     [self.navigationController setToolbarHidden:NO animated:YES];
+    
+    
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight)
+    {
+        [self resizeCarImageView];
+        [carImageView setNeedsDisplay];
+                [self.view setNeedsDisplay];
+    }
+        
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -81,7 +91,11 @@
         [self.toolbar setHidden:YES];
     }
     [super viewDidAppear:TRUE];
-    
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:TRUE];
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -64,7 +64,7 @@ static inline CATransform3D CATransform3DMakePerspective(CGFloat z)
         CATransform3D transform2 = CATransform3DRotate(transform, -M_PI_2, 0, 1, 0);
         
         CAKeyframeAnimation* keyframeAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
-        keyframeAnimation.duration = 2;
+        keyframeAnimation.duration = 5;
         keyframeAnimation.values = [NSArray arrayWithObjects:
                                     [NSValue valueWithCATransform3D:transform],
                                     [NSValue valueWithCATransform3D:transform1], 
