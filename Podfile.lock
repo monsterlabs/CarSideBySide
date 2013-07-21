@@ -9,6 +9,7 @@ PODS:
   - LibYAML (0.1.4)
   - MBFaker (0.0.1):
     - LibYAML (~> 0.1.4)
+  - MBProgressHUD (0.7)
   - NSDate+Helper (0.0.1)
   - NSDate-Extensions (0.0.1)
   - TransformerKit (0.2.4)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - AFIncrementalStore (~> 0.5.1)
   - DVCoreDataFinders (~> 0.4)
   - MBFaker (from `git@github.com:juarlex/MBFaker.git`)
+  - MBProgressHUD (~> 0.7)
   - NSDate+Helper (~> 0.0.1)
   - NSDate-Extensions (~> 0.0.1)
   - YISplashScreen (~> 1.0.0)
@@ -33,6 +35,7 @@ SPEC CHECKSUMS:
   InflectorKit: 9dccab02f95541093995adac639342c9eb9e6c12
   LibYAML: 49b77e5b3f4417fa512a8f1f4675a78480bf6b3d
   MBFaker: da77c465bf2c2540e1e6c0546b2d34afd7e9cdf4
+  MBProgressHUD: 1fd8591a2216d5dec6de24e09187bb03bcbe9946
   NSDate+Helper: 3015cb57778256bce7c549fca172474308740059
   NSDate-Extensions: b78c2b3f363acdcd7b5d2547a6bef6656cd8ff70
   TransformerKit: 3c60759694b70d41b833dfe4005b031762d54e7f

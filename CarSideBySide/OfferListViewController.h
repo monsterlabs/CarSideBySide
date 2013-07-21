@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <MBProgressHUD.h>
 
-@interface OfferListViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UISearchBarDelegate> {
+@interface OfferListViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UISearchBarDelegate, MBProgressHUDDelegate> {
     UISearchBar *theSearchBar;
+    MBProgressHUD *HUD;
+
 }
 - (IBAction)reload:(id)sender;
 @end
