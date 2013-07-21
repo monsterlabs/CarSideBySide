@@ -122,7 +122,13 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Offers" image="offerList.png" id="Q9G-QF-jVa"/>
-                    <navigationItem key="navigationItem" title="Offers" id="a72-so-HRP"/>
+                    <navigationItem key="navigationItem" title="Offers" id="a72-so-HRP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="RUk-m5-OJE">
+                            <connections>
+                                <action selector="reload:" destination="jy0-5g-B2G" id="VC9-77-jPt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="PQU-6P-Dfa" id="rig-8P-yjG"/>
@@ -676,6 +682,9 @@
         </class>
         <class className="OfferListViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="reload:"/>
+            </relationships>
         </class>
         <class className="OfferWebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferWebViewController.h"/>
