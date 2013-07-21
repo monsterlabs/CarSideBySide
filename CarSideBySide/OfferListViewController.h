@@ -12,5 +12,5 @@
 @interface OfferListViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, UISearchBarDelegate> {
     UISearchBar *theSearchBar;
 }
-
+- (IBAction)reload:(id)sender;
 @end

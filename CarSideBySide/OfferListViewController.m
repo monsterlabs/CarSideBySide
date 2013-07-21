@@ -21,6 +21,13 @@
 
 @implementation OfferListViewController
 
+- (IBAction)reload:(id)sender
+{
+    [results removeAllObjects];
+    results = [NSMutableArray arrayWithArray:[[Offer findEnabledOrValidUntil] mutableCopy]];
+    [self.collectionView reloadData];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
