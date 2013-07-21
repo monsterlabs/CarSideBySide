@@ -21,17 +21,33 @@
 
 @implementation OfferListViewController
 
-- (IBAction)reload:(id)sender
+
+- (void)reloadData
 {
     [results removeAllObjects];
     results = [NSMutableArray arrayWithArray:[[Offer findEnabledOrValidUntil] mutableCopy]];
     [self.collectionView reloadData];
 }
 
+- (IBAction)reload:(id)sender
+{
+
+    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD.labelText = @"Loading...";
+    HUD.mode = MBProgressHUDModeAnnularDeterminate;
+
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.05 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self reloadData];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
+
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    results = [[Offer findEnabledOrValidUntil] mutableCopy];
+    [self reloadData];
 }
 
 - (void)didReceiveMemoryWarning
