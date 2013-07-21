@@ -4,6 +4,56 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFIncrementalStore.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-DVCoreDataFinders.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-InflectorKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-LibYAML.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-MBFaker.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>Pods-NSDate+Helper.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Pods-NSDate-Extensions.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>Pods-TransformerKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>Pods-YISplashScreen.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,7 +62,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>035D7E619B234346A153C02D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0A679E9D0E664798B524F5FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0E2DA34879BB443D8D427D7B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2FA33FEBF0794265B28E9099</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -22,7 +87,47 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3DC1A440B282405DA44533B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4E2F4FC229C747A98603D137</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>692612A64C4147868647DE58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B66473E7F6B49888B9FD9B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B85B664BDC4431F9ED6F2A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BAEA8FA379864A63BDFADB7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E167B43AD7924447BEF68954</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4EB46A7A3B346DFAFF54C5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E645C047730842DAA39A973B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

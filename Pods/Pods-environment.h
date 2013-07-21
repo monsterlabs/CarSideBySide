@@ -6,11 +6,29 @@
 // project.
 
 
+// AFIncrementalStore
+#define COCOAPODS_POD_AVAILABLE_AFIncrementalStore
+#define COCOAPODS_VERSION_MAJOR_AFIncrementalStore 0
+#define COCOAPODS_VERSION_MINOR_AFIncrementalStore 5
+#define COCOAPODS_VERSION_PATCH_AFIncrementalStore 1
+
+// AFNetworking
+#define COCOAPODS_POD_AVAILABLE_AFNetworking
+#define COCOAPODS_VERSION_MAJOR_AFNetworking 1
+#define COCOAPODS_VERSION_MINOR_AFNetworking 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking 1
+
 // DVCoreDataFinders
 #define COCOAPODS_POD_AVAILABLE_DVCoreDataFinders
 #define COCOAPODS_VERSION_MAJOR_DVCoreDataFinders 0
 #define COCOAPODS_VERSION_MINOR_DVCoreDataFinders 4
 #define COCOAPODS_VERSION_PATCH_DVCoreDataFinders 0
+
+// InflectorKit
+#define COCOAPODS_POD_AVAILABLE_InflectorKit
+#define COCOAPODS_VERSION_MAJOR_InflectorKit 0
+#define COCOAPODS_VERSION_MINOR_InflectorKit 0
+#define COCOAPODS_VERSION_PATCH_InflectorKit 1
 
 // LibYAML
 #define COCOAPODS_POD_AVAILABLE_LibYAML
@@ -35,6 +53,12 @@
 #define COCOAPODS_VERSION_MAJOR_NSDate_Extensions 0
 #define COCOAPODS_VERSION_MINOR_NSDate_Extensions 0
 #define COCOAPODS_VERSION_PATCH_NSDate_Extensions 1
+
+// TransformerKit
+#define COCOAPODS_POD_AVAILABLE_TransformerKit
+#define COCOAPODS_VERSION_MAJOR_TransformerKit 0
+#define COCOAPODS_VERSION_MINOR_TransformerKit 2
+#define COCOAPODS_VERSION_PATCH_TransformerKit 4
 
 // YISplashScreen
 #define COCOAPODS_POD_AVAILABLE_YISplashScreen

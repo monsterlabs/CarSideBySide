@@ -28,8 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:  [NSURL URLWithString:@"http://www.bmw.com.mx"]];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [webView loadRequest:requestObj];
 }
 
