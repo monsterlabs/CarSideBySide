@@ -12,7 +12,7 @@
 #import <YISplashScreenAnimation.h>
 #import "CoreDataSeed.h"
 #define SHOWS_MIGRATION_ALERT 1
-#define USES_PRESET_ANIMATION 0
+#define USES_PRESET_ANIMATION 1
 
 
 @implementation AppDelegate
@@ -42,7 +42,7 @@
         if (orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown)
             [YISplashScreen hideWithAnimation:[YISplashScreenAnimation cubeAnimation]];
         else
-            [YISplashScreen hideWithAnimation:[YISplashScreenAnimation fadeOutAnimation]];
+            [YISplashScreen hideWithAnimation:[YISplashScreenAnimation pageCurlAnimation]];
         
     }];
     
