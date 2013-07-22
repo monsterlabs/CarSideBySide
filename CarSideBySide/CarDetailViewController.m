@@ -100,7 +100,7 @@
 - (void)resizeCarImageView
 {
     CGSize imageSize = carImageView.image.size;
-    CGPoint newCenter = {carImageView.center.x - 30, carImageView.center.y};
+    CGPoint newCenter = {354.000000, carImageView.center.y};
     CGRect rect = CGRectMake(0, 0, imageSize.width - 65, imageSize.height - 50);
     carImageView.frame = rect;
     carImageView.center = newCenter;
