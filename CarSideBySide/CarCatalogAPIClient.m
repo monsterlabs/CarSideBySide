@@ -8,8 +8,8 @@
 
 #import "CarCatalogAPIClient.h"
 
-static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http://catalog.bmwapps.mx/api/v1";
-
+//static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http://catalog.bmwapps.mx/api/v1";
+static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http://localhost:3000/api/v1";
 @implementation CarCatalogAPIClient
 
 + (CarCatalogAPIClient *)sharedClient {
@@ -46,6 +46,7 @@ static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http:/
         NSString *imageUrl = [representation valueForKey:@"imageUrl"];
         NSString *fileImage = [representation valueForKey:@"image"];
         [self saveImage:imageUrl fileImage:fileImage];
+        //[mutablePropertyValues setValue:imagePath forKey:@"image"];
         
         NSString *largeImageUrl = [representation valueForKey:@"largeImageUrl"];
         NSString *fileLargeImage = [representation valueForKey:@"largeImage"];
@@ -59,11 +60,9 @@ static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http:/
 
 - (void)saveImage:(NSString *)imageURL fileImage:(NSString *)fileImage
 {
-    
-    NSData *imageData =
-    [NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]];
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]];
     NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:fileImage];
-    [imageData writeToFile:imagePath atomically:YES];    
+    [imageData writeToFile:imagePath atomically:YES];
 }
 
 @end

@@ -12,7 +12,7 @@
 #import <YISplashScreenAnimation.h>
 #import "CarSideBySideIncrementalStore.h"
 #import "CoreDataSeed.h"
-#define SHOWS_MIGRATION_ALERT 0
+#define SHOWS_MIGRATION_ALERT 1
 #define USES_PRESET_ANIMATION 1
 
 
