@@ -21,8 +21,9 @@
 - (void)configureCell {
     titleLabel.text = [self.offer valueForKey:@"title"];
     bodyTextView.text = [self.offer valueForKey:@"body"];
-    
-    offerImageView.image = [UIImage imageNamed:[self.offer valueForKey:@"image"]];
+    NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[self.offer valueForKey:@"image"]];
+    NSData *data = [NSData dataWithContentsOfFile:imagePath];
+    offerImageView.image = [UIImage imageWithData:data];
     offerImageView.layer.cornerRadius = 05.0f;
     offerImageView.layer.masksToBounds = YES;
     offerImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
