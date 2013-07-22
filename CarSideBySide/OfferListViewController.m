@@ -36,7 +36,7 @@
     HUD.labelText = @"Loading...";
     HUD.mode = MBProgressHUDModeAnnularDeterminate;
 
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.05 * NSEC_PER_SEC);
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
