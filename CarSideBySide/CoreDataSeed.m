@@ -40,6 +40,9 @@
 {
     NSLog(@"Database data loading in progress...");
     [self loadOffers];
+    [self loadBrands];
+    [self loadSeries];
+    [self loadCarModels];
 //    [self insertOffers];
 //    [self insertBrands];
 //    [self insertSeries];
@@ -57,6 +60,31 @@
         [self logMessageForModel:@"Offer"];
         [Offer findAll];
     }
+}
+
+-  (void)loadBrands
+{
+    if ([[Brand findAll] count] == 0 ) {
+        [self logMessageForModel:@"Brand"];
+        [Brand findAll];
+    }
+}
+
+- (void)loadSeries
+{
+    if ([[Serie findAll] count] == 0 ){
+        [self logMessageForModel:@"Serie"];
+        [Serie findAll];
+    }
+}
+
+- (void)loadCarModels
+{
+    if ([[CarModel findAll] count] == 0) {
+        [self logMessageForModel:@"CarModel"];
+        [CarModel findAll];
+    }
+    
 }
 - (void)insertOffers
 {
