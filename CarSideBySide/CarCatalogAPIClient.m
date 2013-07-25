@@ -31,7 +31,7 @@ static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http:/
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
     [self setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        self.operationQueue.suspended = (status ==AFNetworkReachabilityStatusNotReachable);
+        self.operationQueue.suspended = (status == AFNetworkReachabilityStatusNotReachable);
     }];
     
     return self;

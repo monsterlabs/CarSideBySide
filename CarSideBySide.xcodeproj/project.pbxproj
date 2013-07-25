@@ -49,6 +49,7 @@
 		FAA1E314178CA0B200D60C77 /* NSObject+DelayedBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E313178CA0B200D60C77 /* NSObject+DelayedBlock.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		FAA6ED4F17878EBE00D803EE /* offerList.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA6ED4D17878EBD00D803EE /* offerList.png */; };
 		FAA6ED51178791A400D803EE /* carList.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA6ED50178791A400D803EE /* carList.png */; };
+		FAB8630817A1D53C00B815CD /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8630717A1D53C00B815CD /* Line.m */; };
 		FACB2DE7176790A300AD3D64 /* CoreDataSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB2DE6176790A300AD3D64 /* CoreDataSeed.m */; };
 		FACB56E217839F460087FA1F /* CarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB56E117839F460087FA1F /* CarListViewController.m */; };
 		FACB56E51783C09A0087FA1F /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB56E41783C09A0087FA1F /* Car.m */; };
@@ -71,9 +72,7 @@
 		FADABF641755CC490072E8C9 /* bmw_s3_touring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF4A1755CC490072E8C9 /* bmw_s3_touring.jpg */; };
 		FADABF661755CC490072E8C9 /* bmw_s5_gran_turismo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF4C1755CC490072E8C9 /* bmw_s5_gran_turismo.jpg */; };
 		FADABF681755CC490072E8C9 /* bmw_s5_sedan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF4E1755CC490072E8C9 /* bmw_s5_sedan.jpg */; };
-		FAE82262176A328B00B07A1E /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE82261176A328B00B07A1E /* CarModel.m */; };
 		FAE82268176A328B00B07A1E /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE82267176A328B00B07A1E /* Brand.m */; };
-		FAE82274176A328B00B07A1E /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE82273176A328B00B07A1E /* Line.m */; };
 		FAE82277176A328B00B07A1E /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE82276176A328B00B07A1E /* Serie.m */; };
 		FAE8227A176A328B00B07A1E /* SpecificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE82279176A328B00B07A1E /* SpecificationType.m */; };
 		FAEDCC811783259B004B5D3C /* Comparative.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEDCC801783259B004B5D3C /* Comparative.m */; };
@@ -165,6 +164,8 @@
 		FAA1E313178CA0B200D60C77 /* NSObject+DelayedBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DelayedBlock.m"; sourceTree = "<group>"; };
 		FAA6ED4D17878EBD00D803EE /* offerList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offerList.png; sourceTree = "<group>"; };
 		FAA6ED50178791A400D803EE /* carList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carList.png; sourceTree = "<group>"; };
+		FAB8630617A1D53C00B815CD /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		FAB8630717A1D53C00B815CD /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		FACB2DE5176790A300AD3D64 /* CoreDataSeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataSeed.h; sourceTree = "<group>"; };
 		FACB2DE6176790A300AD3D64 /* CoreDataSeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataSeed.m; sourceTree = "<group>"; };
 		FACB56E017839F460087FA1F /* CarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarListViewController.h; sourceTree = "<group>"; };
@@ -193,12 +194,8 @@
 		FADABF4A1755CC490072E8C9 /* bmw_s3_touring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s3_touring.jpg; sourceTree = "<group>"; };
 		FADABF4C1755CC490072E8C9 /* bmw_s5_gran_turismo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s5_gran_turismo.jpg; sourceTree = "<group>"; };
 		FADABF4E1755CC490072E8C9 /* bmw_s5_sedan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s5_sedan.jpg; sourceTree = "<group>"; };
-		FAE82260176A328B00B07A1E /* CarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
-		FAE82261176A328B00B07A1E /* CarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
 		FAE82266176A328B00B07A1E /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
 		FAE82267176A328B00B07A1E /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
-		FAE82272176A328B00B07A1E /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
-		FAE82273176A328B00B07A1E /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		FAE82275176A328B00B07A1E /* Serie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serie.h; sourceTree = "<group>"; };
 		FAE82276176A328B00B07A1E /* Serie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Serie.m; sourceTree = "<group>"; };
 		FAE82278176A328B00B07A1E /* SpecificationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificationType.h; sourceTree = "<group>"; };
@@ -377,6 +374,8 @@
 		FA2AF9A71755B41C001BA8ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAB8630617A1D53C00B815CD /* Line.h */,
+				FAB8630717A1D53C00B815CD /* Line.m */,
 				FA88C2B91755B90400603295 /* CarSideBySide.xcdatamodeld */,
 				FACB56E31783C09A0087FA1F /* Car.h */,
 				FACB56E41783C09A0087FA1F /* Car.m */,
@@ -394,12 +393,8 @@
 				FAE82279176A328B00B07A1E /* SpecificationType.m */,
 				FAE82275176A328B00B07A1E /* Serie.h */,
 				FAE82276176A328B00B07A1E /* Serie.m */,
-				FAE82272176A328B00B07A1E /* Line.h */,
-				FAE82273176A328B00B07A1E /* Line.m */,
 				FAE82266176A328B00B07A1E /* Brand.h */,
 				FAE82267176A328B00B07A1E /* Brand.m */,
-				FAE82260176A328B00B07A1E /* CarModel.h */,
-				FAE82261176A328B00B07A1E /* CarModel.m */,
 				FA2D92231767E80A00E8E716 /* Offer.h */,
 				FA2D92241767E80A00E8E716 /* Offer.m */,
 			);
@@ -936,9 +931,7 @@
 				FA2D91BC1767C65B00E8E716 /* NSManagedObject+Find.m in Sources */,
 				FA2D92251767E80A00E8E716 /* Offer.m in Sources */,
 				FA144A121768F45C00081738 /* NSManagedObject+Util.m in Sources */,
-				FAE82262176A328B00B07A1E /* CarModel.m in Sources */,
 				FAE82268176A328B00B07A1E /* Brand.m in Sources */,
-				FAE82274176A328B00B07A1E /* Line.m in Sources */,
 				FAE82277176A328B00B07A1E /* Serie.m in Sources */,
 				FAE8227A176A328B00B07A1E /* SpecificationType.m in Sources */,
 				FA327CFA176FA7B50062E845 /* OfferWebViewController.m in Sources */,
@@ -963,6 +956,7 @@
 				FAA1E314178CA0B200D60C77 /* NSObject+DelayedBlock.m in Sources */,
 				FA2F5D5C179B896A00E0F159 /* CarCatalogAPIClient.m in Sources */,
 				FA2F5D60179B8FB300E0F159 /* CarSideBySideIncrementalStore.m in Sources */,
+				FAB8630817A1D53C00B815CD /* Line.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
