@@ -8,7 +8,7 @@
 
 #import "CarListViewController.h"
 #import "AppDelegate.h"
-#import "CarModel.h"
+#import "Line.h"
 #import "Car.h"
 #import "NSManagedObject+Find.h"
 #import "CarCell.h"
@@ -45,9 +45,9 @@
     
     self.title = self.serie.name;
     self.data = [NSMutableArray array];
-    for (CarModel *carModel in self.serie.carModels)
+    for (Line *line in self.serie.lines)
     {
-        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: carModel, @"carModel", [carModel.cars allObjects], @"cars", nil];
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: line, @"line", [line.cars allObjects], @"cars", nil];
         [data addObject:dict];
     }
     [self.filteredData removeAllObjects];
@@ -70,8 +70,8 @@
     tempLabel.shadowOffset = CGSizeMake(0,2);
     tempLabel.textColor = [UIColor whiteColor];
     tempLabel.font = [UIFont boldSystemFontOfSize:16.0];
-    CarModel *carModel = [self carModelWithTableView:tableView inSection:section];
-    tempLabel.text= carModel.name;
+    Line *line = [self lineWithTableView:tableView inSection:section];
+    tempLabel.text= line.name;
     
     [tempView addSubview:tempLabel];
     return tempView;
@@ -114,8 +114,8 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 
 {
-    CarModel *carModel = [self carModelWithTableView:tableView inSection:section];
-    return carModel.name;
+    Line *line = [self lineWithTableView:tableView inSection:section];
+    return line.name;
 }
 
 
@@ -139,12 +139,12 @@
         return (Car *)[[[self.data objectAtIndex:indexPath.section] objectForKey:@"cars"] objectAtIndex:indexPath.row];
 }
 
-- (CarModel *)carModelWithTableView:(UITableView *)tableView inSection:(NSInteger)section
+- (Line *)lineWithTableView:(UITableView *)tableView inSection:(NSInteger)section
 {
     if (tableView == self.searchDisplayController.searchResultsTableView)
-        return (CarModel*)[[self.filteredData objectAtIndex:section] objectForKey:@"carModel"];
+        return (Line*)[[self.filteredData objectAtIndex:section] objectForKey:@"line"];
     else
-        return (CarModel*)[[self.data objectAtIndex:section] objectForKey:@"carModel"];
+        return (Line*)[[self.data objectAtIndex:section] objectForKey:@"line"];
 }
 
 - (void)filterData:(NSString*)searchString;

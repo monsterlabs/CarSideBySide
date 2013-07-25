@@ -9,22 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Brand, CarModel;
+@class Brand, Line;
 
 @interface Serie : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * enabled;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) Brand *brand;
-@property (nonatomic, retain) NSSet *carModels;
+@property (nonatomic, retain) NSSet *lines;
 @end
 
 @interface Serie (CoreDataGeneratedAccessors)
 
-- (void)addCarModelsObject:(CarModel *)value;
-- (void)removeCarModelsObject:(CarModel *)value;
-- (void)addCarModels:(NSSet *)values;
-- (void)removeCarModels:(NSSet *)values;
+- (void)addLinesObject:(Line *)value;
+- (void)removeLinesObject:(Line *)value;
+- (void)addLines:(NSSet *)values;
+- (void)removeLines:(NSSet *)values;
 - (void)setSerieFromDictionary:(NSDictionary*)dict;
 
 

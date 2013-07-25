@@ -7,7 +7,6 @@
 //
 
 #import "Car.h"
-#import "CarModel.h"
 #import "Line.h"
 #import "Specification.h"
 #import "SpecificationType.h"
@@ -20,8 +19,7 @@
 @dynamic modelName;
 @dynamic orderKey;
 @dynamic year;
-@dynamic carModel;
-@dynamic lines;
+@dynamic line;
 @dynamic specifications;
 
 

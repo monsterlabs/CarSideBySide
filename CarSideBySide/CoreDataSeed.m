@@ -12,7 +12,7 @@
 #import "Offer.h"
 #import "Brand.h"
 #import "Serie.h"
-#import "CarModel.h"
+#import "Line.h"
 #import "Car.h"
 #import "SpecificationType.h"
 #import "Specification.h"
@@ -39,18 +39,18 @@
 - (void)loadInitialData
 {
     NSLog(@"Database data loading in progress...");
-    [self loadOffers];
-    [self loadBrands];
-    [self loadSeries];
-    [self loadCarModels];
-//    [self insertOffers];
-//    [self insertBrands];
-//    [self insertSeries];
-//    [self insertCarModels];
-//    [self insertCars];
-//    [self insertSpecTypes];
-//    [self insertCarSpecifications];
-//    [self insertSpecFeatures];
+//    [self loadOffers];
+//    [self loadBrands];
+//    [self loadSeries];
+//    [self loadLines];
+    [self insertOffers];
+    [self insertBrands];
+    [self insertSeries];
+    [self insertLines];
+    [self insertCars];
+    [self insertSpecTypes];
+    [self insertCarSpecifications];
+    [self insertSpecFeatures];
 }
 
 # pragma - Database population methods
@@ -78,11 +78,11 @@
     }
 }
 
-- (void)loadCarModels
+- (void)loadLines
 {
-    if ([[CarModel findAll] count] == 0) {
-        [self logMessageForModel:@"CarModel"];
-        [CarModel findAll];
+    if ([[Line findAll] count] == 0) {
+        [self logMessageForModel:@"Line"];
+        [Line findAll];
     }
     
 }
@@ -140,19 +140,19 @@
     }
 }
 
-- (void)insertCarModels
+- (void)insertLines
 {
-    if ([[CarModel findAll] count] == 0) {
-        [self logMessageForModel:@"CarModel"];
+    if ([[Line findAll] count] == 0) {
+        [self logMessageForModel:@"Line"];
         for (Serie *serie in [Serie findAll]) {
             
             int max = [self random_max:8];
             for(int i = 1; i <= max; i++)
             {
-                CarModel *carModel = (CarModel *)[NSEntityDescription insertNewObjectForEntityForName:@"CarModel" inManagedObjectContext:[appDelegate managedObjectContext]];
-                carModel.name = [MBFakerLorem words:[self random_max:3]];
-                carModel.enabled = @YES;
-                carModel.serie = serie;
+                Line *line = (Line *)[NSEntityDescription insertNewObjectForEntityForName:@"Line" inManagedObjectContext:[appDelegate managedObjectContext]];
+                line.name = [MBFakerLorem words:[self random_max:3]];
+                line.enabled = @YES;
+                line.serie = serie;
                 [self saveContext];
             }
             
@@ -171,7 +171,7 @@
         NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self BEGINSWITH 'bmw_s'"];
         NSArray *carJPGs = [dirContents filteredArrayUsingPredicate:fltr];
 
-        for (CarModel *model in [CarModel findAll]) {
+        for (Line *line in [Line findAll]) {
             int max = [self random_max:5];
             for (int i = 1; i <= max; i++)
             {
@@ -181,7 +181,7 @@
                 car.highlights = [MBFakerLorem paragraphs:[self random_max:4]];
                 car.image = [carJPGs objectAtIndex:arc4random_uniform([carJPGs count])];
                 car.year = [NSNumber numberWithInt:2013];
-                car.carModel = model;
+                car.line = line;
                 [self saveContext];
             }
         }

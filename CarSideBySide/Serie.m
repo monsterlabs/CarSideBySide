@@ -8,7 +8,7 @@
 
 #import "Serie.h"
 #import "Brand.h"
-#import "CarModel.h"
+#import "Line.h"
 #import "NSManagedObject+Util.h"
 
 @implementation Serie
@@ -16,7 +16,7 @@
 @dynamic enabled;
 @dynamic name;
 @dynamic brand;
-@dynamic carModels;
+@dynamic lines;
 
 - (void)setSerieFromDictionary:(NSDictionary*)dict;
 {
