@@ -39,18 +39,20 @@
 - (void)loadInitialData
 {
     NSLog(@"Database data loading in progress...");
-//    [self loadOffers];
-//    [self loadBrands];
-//    [self loadSeries];
-//    [self loadLines];
-    [self insertOffers];
-    [self insertBrands];
-    [self insertSeries];
-    [self insertLines];
-    [self insertCars];
-    [self insertSpecTypes];
-    [self insertCarSpecifications];
-    [self insertSpecFeatures];
+    [self loadOffers];
+    [self loadBrands];
+    [self loadSeries];
+    [self loadLines];
+    [self loadCars];
+
+//    [self insertOffers];
+//    [self insertBrands];
+//    [self insertSeries];
+//    [self insertLines];
+//    [self insertCars];
+//    [self insertSpecTypes];
+//    [self insertCarSpecifications];
+//    [self insertSpecFeatures];
 }
 
 # pragma - Database population methods
@@ -84,8 +86,17 @@
         [self logMessageForModel:@"Line"];
         [Line findAll];
     }
+}
+
+- (void)loadCars
+{
+    if ([[Car findAll] count] == 0) {
+        [self logMessageForModel:@"Car"];
+        [Car findAll];
+    }
     
 }
+
 - (void)insertOffers
 {
     if ([[Offer findAll] count] == 0 ) {
