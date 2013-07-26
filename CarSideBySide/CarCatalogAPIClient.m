@@ -52,8 +52,12 @@ static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http:/
         NSString *fileLargeImage = [representation valueForKey:@"largeImage"];
         [self saveImage:largeImageUrl fileImage:fileLargeImage];
 
+    } else if ([entity.name isEqualToString:@"Car"]) {
+        NSString *imageUrl = [representation valueForKey:@"imageUrl"];
+        NSString *fileImage = [representation valueForKey:@"image"];
+        [self saveImage:imageUrl fileImage:fileImage];
+        
     }
-    
     return mutablePropertyValues;
 }
 

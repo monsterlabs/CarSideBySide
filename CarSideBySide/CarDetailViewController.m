@@ -40,7 +40,11 @@
     
     highlighsTextView.text = self.car.highlights;
     
-    carImageView.image = [UIImage imageNamed:self.car.image];
+    
+    NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[self.car valueForKey:@"image"]];
+    NSData *data = [NSData dataWithContentsOfFile:imagePath];
+
+    carImageView.image = [UIImage imageWithData:data];
 
     carImageView.layer.cornerRadius = 3.0f;
     carImageView.layer.masksToBounds = YES;

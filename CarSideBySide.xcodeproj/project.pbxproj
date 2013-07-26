@@ -59,19 +59,6 @@
 		FACE6928175E75870009F595 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FACE6926175E75870009F595 /* Default-Landscape~ipad.png */; };
 		FACE6929175E75870009F595 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = FACE6927175E75870009F595 /* Default-Portrait~ipad.png */; };
 		FAD9DA781756B54500293DA4 /* OfferListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD9DA771756B54500293DA4 /* OfferListViewController.m */; };
-		FADABF501755CC490072E8C9 /* bmw_s1_3_puertas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF361755CC490072E8C9 /* bmw_s1_3_puertas.jpg */; };
-		FADABF521755CC490072E8C9 /* bmw_s1_5_puertas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF381755CC490072E8C9 /* bmw_s1_5_puertas.jpg */; };
-		FADABF541755CC490072E8C9 /* bmw_s1_active_e.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF3A1755CC490072E8C9 /* bmw_s1_active_e.jpg */; };
-		FADABF561755CC490072E8C9 /* bmw_s1_convertible.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF3C1755CC490072E8C9 /* bmw_s1_convertible.jpg */; };
-		FADABF581755CC490072E8C9 /* bmw_s1_coupe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF3E1755CC490072E8C9 /* bmw_s1_coupe.jpg */; };
-		FADABF5A1755CC490072E8C9 /* bmw_s3_convertible.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF401755CC490072E8C9 /* bmw_s3_convertible.jpg */; };
-		FADABF5B1755CC490072E8C9 /* bmw_s3_coupe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF411755CC490072E8C9 /* bmw_s3_coupe.jpg */; };
-		FADABF5E1755CC490072E8C9 /* bmw_s3_gran_turismo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF441755CC490072E8C9 /* bmw_s3_gran_turismo.jpg */; };
-		FADABF601755CC490072E8C9 /* bmw_s3_sedan_active_hybrid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF461755CC490072E8C9 /* bmw_s3_sedan_active_hybrid.jpg */; };
-		FADABF621755CC490072E8C9 /* bmw_s3_sedan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF481755CC490072E8C9 /* bmw_s3_sedan.jpg */; };
-		FADABF641755CC490072E8C9 /* bmw_s3_touring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF4A1755CC490072E8C9 /* bmw_s3_touring.jpg */; };
-		FADABF661755CC490072E8C9 /* bmw_s5_gran_turismo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF4C1755CC490072E8C9 /* bmw_s5_gran_turismo.jpg */; };
-		FADABF681755CC490072E8C9 /* bmw_s5_sedan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADABF4E1755CC490072E8C9 /* bmw_s5_sedan.jpg */; };
 		FAE82268176A328B00B07A1E /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE82267176A328B00B07A1E /* Brand.m */; };
 		FAE82277176A328B00B07A1E /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE82276176A328B00B07A1E /* Serie.m */; };
 		FAE8227A176A328B00B07A1E /* SpecificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE82279176A328B00B07A1E /* SpecificationType.m */; };
@@ -181,19 +168,6 @@
 		FACE6927175E75870009F595 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		FAD9DA761756B54500293DA4 /* OfferListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferListViewController.h; sourceTree = "<group>"; };
 		FAD9DA771756B54500293DA4 /* OfferListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferListViewController.m; sourceTree = "<group>"; };
-		FADABF361755CC490072E8C9 /* bmw_s1_3_puertas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_3_puertas.jpg; sourceTree = "<group>"; };
-		FADABF381755CC490072E8C9 /* bmw_s1_5_puertas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_5_puertas.jpg; sourceTree = "<group>"; };
-		FADABF3A1755CC490072E8C9 /* bmw_s1_active_e.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_active_e.jpg; sourceTree = "<group>"; };
-		FADABF3C1755CC490072E8C9 /* bmw_s1_convertible.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_convertible.jpg; sourceTree = "<group>"; };
-		FADABF3E1755CC490072E8C9 /* bmw_s1_coupe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s1_coupe.jpg; sourceTree = "<group>"; };
-		FADABF401755CC490072E8C9 /* bmw_s3_convertible.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s3_convertible.jpg; sourceTree = "<group>"; };
-		FADABF411755CC490072E8C9 /* bmw_s3_coupe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s3_coupe.jpg; sourceTree = "<group>"; };
-		FADABF441755CC490072E8C9 /* bmw_s3_gran_turismo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s3_gran_turismo.jpg; sourceTree = "<group>"; };
-		FADABF461755CC490072E8C9 /* bmw_s3_sedan_active_hybrid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s3_sedan_active_hybrid.jpg; sourceTree = "<group>"; };
-		FADABF481755CC490072E8C9 /* bmw_s3_sedan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s3_sedan.jpg; sourceTree = "<group>"; };
-		FADABF4A1755CC490072E8C9 /* bmw_s3_touring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s3_touring.jpg; sourceTree = "<group>"; };
-		FADABF4C1755CC490072E8C9 /* bmw_s5_gran_turismo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s5_gran_turismo.jpg; sourceTree = "<group>"; };
-		FADABF4E1755CC490072E8C9 /* bmw_s5_sedan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bmw_s5_sedan.jpg; sourceTree = "<group>"; };
 		FAE82266176A328B00B07A1E /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
 		FAE82267176A328B00B07A1E /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
 		FAE82275176A328B00B07A1E /* Serie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serie.h; sourceTree = "<group>"; };
@@ -343,7 +317,6 @@
 				FA58E0F5176FC88E007C9295 /* Icon-72@2x.png */,
 				FACE6926175E75870009F595 /* Default-Landscape~ipad.png */,
 				FACE6927175E75870009F595 /* Default-Portrait~ipad.png */,
-				FADABF341755CC1B0072E8C9 /* Images */,
 				FA2AF9671755A50A001BA8ED /* CarSideBySide-Info.plist */,
 				FA2AF9681755A50A001BA8ED /* InfoPlist.strings */,
 				FA2AF96B1755A50A001BA8ED /* main.m */,
@@ -452,34 +425,6 @@
 			name = Migrate;
 			sourceTree = "<group>";
 		};
-		FAD4A376175652D500CB039A /* Cars */ = {
-			isa = PBXGroup;
-			children = (
-				FADABF361755CC490072E8C9 /* bmw_s1_3_puertas.jpg */,
-				FADABF381755CC490072E8C9 /* bmw_s1_5_puertas.jpg */,
-				FADABF3A1755CC490072E8C9 /* bmw_s1_active_e.jpg */,
-				FADABF3C1755CC490072E8C9 /* bmw_s1_convertible.jpg */,
-				FADABF3E1755CC490072E8C9 /* bmw_s1_coupe.jpg */,
-				FADABF401755CC490072E8C9 /* bmw_s3_convertible.jpg */,
-				FADABF411755CC490072E8C9 /* bmw_s3_coupe.jpg */,
-				FADABF441755CC490072E8C9 /* bmw_s3_gran_turismo.jpg */,
-				FADABF461755CC490072E8C9 /* bmw_s3_sedan_active_hybrid.jpg */,
-				FADABF481755CC490072E8C9 /* bmw_s3_sedan.jpg */,
-				FADABF4A1755CC490072E8C9 /* bmw_s3_touring.jpg */,
-				FADABF4C1755CC490072E8C9 /* bmw_s5_gran_turismo.jpg */,
-				FADABF4E1755CC490072E8C9 /* bmw_s5_sedan.jpg */,
-			);
-			name = Cars;
-			sourceTree = "<group>";
-		};
-		FADABF341755CC1B0072E8C9 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				FAD4A376175652D500CB039A /* Cars */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		FAF07D8F178375E1009D8DFC /* Serie */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,19 +527,6 @@
 			files = (
 				FA2AF96A1755A50A001BA8ED /* InfoPlist.strings in Resources */,
 				FA2AF9791755A50A001BA8ED /* MainStoryboard.storyboard in Resources */,
-				FADABF501755CC490072E8C9 /* bmw_s1_3_puertas.jpg in Resources */,
-				FADABF521755CC490072E8C9 /* bmw_s1_5_puertas.jpg in Resources */,
-				FADABF541755CC490072E8C9 /* bmw_s1_active_e.jpg in Resources */,
-				FADABF561755CC490072E8C9 /* bmw_s1_convertible.jpg in Resources */,
-				FADABF581755CC490072E8C9 /* bmw_s1_coupe.jpg in Resources */,
-				FADABF5A1755CC490072E8C9 /* bmw_s3_convertible.jpg in Resources */,
-				FADABF5B1755CC490072E8C9 /* bmw_s3_coupe.jpg in Resources */,
-				FADABF5E1755CC490072E8C9 /* bmw_s3_gran_turismo.jpg in Resources */,
-				FADABF601755CC490072E8C9 /* bmw_s3_sedan_active_hybrid.jpg in Resources */,
-				FADABF621755CC490072E8C9 /* bmw_s3_sedan.jpg in Resources */,
-				FADABF641755CC490072E8C9 /* bmw_s3_touring.jpg in Resources */,
-				FADABF661755CC490072E8C9 /* bmw_s5_gran_turismo.jpg in Resources */,
-				FADABF681755CC490072E8C9 /* bmw_s5_sedan.jpg in Resources */,
 				FA5A9B081756FD0600B718C1 /* Podfile in Resources */,
 				FA5A9B091756FD0600B718C1 /* Podfile.lock in Resources */,
 				FACE6928175E75870009F595 /* Default-Landscape~ipad.png in Resources */,
