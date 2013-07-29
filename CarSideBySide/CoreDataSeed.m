@@ -43,6 +43,7 @@
     [self loadBrands];
     [self loadSeries];
     [self loadLines];
+    [self loadSpecificationTypes];
     [self loadCars];
 
 //    [self insertOffers];
@@ -95,6 +96,15 @@
         [Car findAll];
     }
     
+}
+
+- (void)loadSpecificationTypes
+{
+    if ([[SpecificationType findAll] count] == 0 )
+    {
+        [self logMessageForModel:@"SpecificationType"];
+        [SpecificationType findAll];
+    }
 }
 
 - (void)insertOffers

@@ -9,7 +9,6 @@
 #import "SerieListViewController.h"
 #import "AppDelegate.h"
 #import "Serie.h"
-#import "NSManagedObject+Find.h"
 #import "CarListViewController.h"
 
 @interface SerieListViewController ()

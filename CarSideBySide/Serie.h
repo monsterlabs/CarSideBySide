@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "AppDelegate.h"
+#import "NSManagedObject+Util.h"
 
 @class Brand, Line;
 
@@ -26,6 +28,8 @@
 - (void)addLines:(NSSet *)values;
 - (void)removeLines:(NSSet *)values;
 - (void)setSerieFromDictionary:(NSDictionary*)dict;
+
++ (NSArray *)findAllEnabled;
 
 
 @end
