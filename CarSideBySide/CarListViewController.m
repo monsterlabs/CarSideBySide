@@ -42,12 +42,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.title = self.serie.name;
     self.data = [NSMutableArray array];
-    for (Line *line in self.serie.lines)
+
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+
+    NSSortDescriptor *sortLineDescriptor = [[NSSortDescriptor alloc] initWithKey:@"modelName" ascending:YES];
+    NSArray *sortLines = [[NSArray alloc] initWithObjects:sortLineDescriptor, nil];
+
+    for (Line *line in [self.serie.lines sortedArrayUsingDescriptors:sortDescriptors])
     {
-        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: line, @"line", [line.cars allObjects], @"cars", nil];
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: line, @"line", [line.cars sortedArrayUsingDescriptors:sortLines], @"cars", nil];
         [data addObject:dict];
     }
     [self.filteredData removeAllObjects];
