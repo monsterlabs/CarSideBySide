@@ -18,6 +18,7 @@ static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http:/
     dispatch_once(&onceToken, ^{
         _sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:kAFIncrementalStoreCarCatalogAPIBaseURLString]];
     });
+    _sharedClient.allowsInvalidSSLCertificate = YES;
     
     return _sharedClient;
 }
