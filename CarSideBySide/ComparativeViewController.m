@@ -52,7 +52,7 @@
                 [rowArray addObject:comparedFeature.descr];
             }
             [sectionArray addObject:rowArray];
-            NSArray *cellTitle = [NSArray arrayWithObjects:feature.name, feature.highlighted, nil];
+            NSArray *cellTitle = [NSArray arrayWithObjects:feature.nameORAdditionalInfo, feature.highlighted, nil];
             [rowNames addObject:cellTitle];
             
         }

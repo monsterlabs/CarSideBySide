@@ -27,5 +27,6 @@
 - (void)removeComparedFeaturesObject:(ComparedFeature *)value;
 - (void)addComparedFeatures:(NSSet *)values;
 - (void)removeComparedFeatures:(NSSet *)values;
+- (NSString *) nameORAdditionalInfo;
 
 @end
