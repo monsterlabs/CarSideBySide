@@ -38,7 +38,7 @@
 
 -(void)loadInitialData
 {
-    dispatch_queue_t queue = dispatch_queue_create("com.example.MyQueue", NULL);
+    dispatch_queue_t queue = dispatch_queue_create("mx.com.monsterlabs.carsidebyside.MyQueue", NULL);
     dispatch_async(queue, ^{
         [self loadOffers];
         dispatch_async(dispatch_get_main_queue(), ^{
