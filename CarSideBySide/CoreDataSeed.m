@@ -51,14 +51,8 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self loadLines];
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self loadCars];
-                        
+                        [self loadCars];                        
                     });
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self loadSpecifications];
-                        
-                    });
-
                 });
                 
             });
