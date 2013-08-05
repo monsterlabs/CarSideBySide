@@ -36,29 +36,42 @@
     return self;
 }
 
-- (void)loadInitialData
+-(void)loadInitialData
 {
-    NSLog(@"Database data loading in progress...");
-    [self loadOffers];
-    [self loadBrands];
-    [self loadSeries];
-    [self loadLines];
-    [self loadSpecificationTypes];
-    [self loadCars];
+    dispatch_queue_t queue = dispatch_queue_create("com.example.MyQueue", NULL);
+    dispatch_async(queue, ^{
+        [self loadOffers];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self loadBrands];
+            [self loadSpecificationTypes];
+            [self loadComparedCars];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self loadSeries];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self loadLines];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self loadCars];
+                        
+                    });
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self loadSpecifications];
+                        
+                    });
 
-//    [self insertOffers];
-//    [self insertBrands];
-//    [self insertSeries];
-//    [self insertLines];
-//    [self insertCars];
-//    [self insertSpecTypes];
-//    [self insertCarSpecifications];
-//    [self insertSpecFeatures];
+                });
+                
+            });
+        });
+    });
+
 }
 
 # pragma - Database population methods
 - (void)loadOffers
+
 {
+    
     if ([[Offer findAll] count] == 0 ) {
         [self logMessageForModel:@"Offer"];
         [Offer findAll];
@@ -72,6 +85,7 @@
         [Brand findAll];
     }
 }
+
 
 - (void)loadSeries
 {
@@ -89,6 +103,16 @@
     }
 }
 
+
+- (void)loadComparedCars
+{
+    if ([[ComparedCar findAll] count] == 0) {
+        [self logMessageForModel:@"ComparedCar"];
+        [ComparedCar findAll];
+   }
+}
+
+
 - (void)loadCars
 {
     if ([[Car findAll] count] == 0) {
@@ -104,6 +128,39 @@
     {
         [self logMessageForModel:@"SpecificationType"];
         [SpecificationType findAll];
+    }
+}
+
+- (void)loadSpecifications
+{
+    if ([[Specification findAll] count] == 0) {
+        [self logMessageForModel:@"Car"];
+        [Specification findAll];
+    }
+    
+}
+
+- (void)loadComparatives
+{
+    if ([[Comparative findAll] count] == 0) {
+        [self logMessageForModel:@"ComparedCar"];
+        [Comparative findAll];
+    }
+}
+
+- (void)loadFeatures
+{
+    if ([[Feature findAll] count] == 0) {
+        [self logMessageForModel:@"ComparedCar"];
+        [Feature findAll];
+    }
+}
+
+- (void)loadComparedFeatures
+{
+    if ([[ComparedFeature findAll] count] == 0) {
+        [self logMessageForModel:@"ComparedCar"];
+        [ComparedFeature  findAll];
     }
 }
 
