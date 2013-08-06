@@ -38,6 +38,16 @@
 
 -(void)loadInitialData
 {
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Database Migrating...", nil) message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+    
+    //UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(125, 80, 30, 30)];
+    UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(125, 50, 30, 30)];
+    indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    [alert addSubview:indicator];
+    [indicator startAnimating];
+    
+    [alert show];
+
     dispatch_queue_t queue = dispatch_queue_create("mx.com.monsterlabs.carsidebyside.MyQueue", NULL);
     dispatch_async(queue, ^{
         [self loadOffers];
@@ -56,8 +66,12 @@
                 });
                 
             });
+
+
         });
     });
+    [alert dismissWithClickedButtonIndex:0 animated:YES];
+
 
 }
 
