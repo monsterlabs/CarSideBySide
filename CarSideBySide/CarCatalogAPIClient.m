@@ -8,8 +8,8 @@
 
 #import "CarCatalogAPIClient.h"
 
-//static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"https://catalog.bmwapps.mx/api/v1";
-static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http://localhost:3000/api/v1";
+static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"https://catalog.bmwapps.mx/api/v1";
+//static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http://192.168.2.6:3000/api/v1";
 
 @implementation CarCatalogAPIClient
 
@@ -55,6 +55,10 @@ static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http:/
         [self saveImage:largeImageUrl fileImage:fileLargeImage];
 
     } else if ([entity.name isEqualToString:@"Car"]) {
+        NSString *imageUrl = [representation valueForKey:@"imageUrl"];
+        NSString *fileImage = [representation valueForKey:@"image"];
+        [self saveImage:imageUrl fileImage:fileImage];
+    } else if ([entity.name isEqualToString:@"ComparedCar"]) {
         NSString *imageUrl = [representation valueForKey:@"imageUrl"];
         NSString *fileImage = [representation valueForKey:@"image"];
         [self saveImage:imageUrl fileImage:fileImage];

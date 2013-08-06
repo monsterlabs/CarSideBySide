@@ -30,6 +30,7 @@
     void (^migrationBlock)(void) = ^{
         CoreDataSeed *seed = [[CoreDataSeed alloc] init];
         [seed loadInitialData];
+        return ;
     };
 #else
     void (^migrationBlock)(void) = nil;

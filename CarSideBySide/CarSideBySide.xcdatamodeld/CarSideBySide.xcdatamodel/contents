@@ -21,7 +21,7 @@
         <relationship name="specification" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Specification" inverseName="comparatives" inverseEntity="Specification" syncable="YES"/>
     </entity>
     <entity name="ComparedCar" representedClassName="ComparedCar" syncable="YES">
-        <attribute name="image" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="modelName" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <attribute name="year" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <relationship name="brand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="comparativeCars" inverseEntity="Brand" syncable="YES"/>
@@ -76,11 +76,11 @@
     <elements>
         <element name="Brand" positionX="934" positionY="-763" width="128" height="88"/>
         <element name="Car" positionX="754" positionY="-495" width="128" height="165"/>
-        <element name="Line" positionX="756" positionY="-666" width="128" height="105"/>
         <element name="Comparative" positionX="1132" positionY="-214" width="128" height="88"/>
-        <element name="ComparedCar" positionX="1114" positionY="-487" width="128" height="118"/>
+        <element name="ComparedCar" positionX="1114" positionY="-487" width="128" height="120"/>
         <element name="ComparedFeature" positionX="936" positionY="-187" width="128" height="88"/>
         <element name="Feature" positionX="738" positionY="-198" width="128" height="133"/>
+        <element name="Line" positionX="756" positionY="-666" width="128" height="105"/>
         <element name="Offer" positionX="585" positionY="-657" width="128" height="148"/>
         <element name="Serie" positionX="927" positionY="-630" width="128" height="105"/>
         <element name="Specification" positionX="927" positionY="-360" width="128" height="133"/>
