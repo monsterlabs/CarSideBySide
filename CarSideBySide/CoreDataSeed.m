@@ -54,14 +54,13 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self loadBrands];
             [self loadSpecificationTypes];
-            [self loadComparedCars];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self loadSeries];
-                
+                [self loadComparedCars];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self loadLines];
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self loadCars];                        
+                      [self loadCars];
                     });
                 });
                 
