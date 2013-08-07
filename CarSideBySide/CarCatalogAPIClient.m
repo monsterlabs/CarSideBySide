@@ -8,8 +8,8 @@
 
 #import "CarCatalogAPIClient.h"
 
-static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"https://catalog.bmwapps.mx/api/v1";
-//static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http://192.168.2.6:3000/api/v1";
+//static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"https://catalog.bmwapps.mx/api/v1";
+static NSString * const kAFIncrementalStoreCarCatalogAPIBaseURLString = @"http://localhost:3000/api/v1";
 
 @implementation CarCatalogAPIClient
 
