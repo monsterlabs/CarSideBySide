@@ -19,7 +19,9 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSDate * validUntil;
-
+@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSString * imageUrl;
+@property (nonatomic, retain) NSString * largeImageUrl;
 - (void)setOfferFromDictionary:(NSDictionary*)dict;
 + (NSArray *)findEnabledOrValidUntil;
 + (NSArray *)findTitleLike:(NSString*)title;

@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "CarSelectionDelegate.h"
+#import <MBProgressHUD.h>
 
-@interface SerieListViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, CarSelectionDelegate>
+@interface SerieListViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, CarSelectionDelegate, MBProgressHUDDelegate>
+{
+    MBProgressHUD *HUD;
+}
 
 @property (nonatomic, assign) id<CarSelectionDelegate> delegate;
 

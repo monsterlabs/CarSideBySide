@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) Brand *brand;
 @property (nonatomic, retain) NSSet *lines;
+@property (nonatomic, retain) NSNumber * id;
 @end
 
 @interface Serie (CoreDataGeneratedAccessors)

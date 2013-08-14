@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "Serie.h"
 #import "CarListViewController.h"
-
+#import "CoreDataSeed.h"
 @interface SerieListViewController ()
 {
     NSMutableArray *results;
@@ -19,15 +19,57 @@
 
 @implementation SerieListViewController
 
+- (void) reloadData
+{
+    results = [NSMutableArray arrayWithArray:[Serie findAllEnabled]];
+    [self.tableView reloadData];
+}
+
+- (IBAction)reload:(id)sender
+{
+    
+    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD.labelText = [NSString localizedStringWithFormat:@"Loading...", nil];
+    HUD.mode = MBProgressHUDModeAnnularDeterminate;
+    
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.02 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        CoreDataSeed *seed = [[CoreDataSeed alloc] init];
+        [seed migrateBrandsOrFail:^(NSError* error){
+            if (error != nil)
+                HUD.labelText = [error localizedDescription];
+        }];
+        
+        [seed migrateSeriesOrFail:^(NSError* error){
+            if (error != nil)
+                HUD.labelText = [error localizedDescription];
+        }];
+        
+        [seed migrateLinesOrFail:^(NSError* error){
+            if (error != nil)
+                HUD.labelText = [error localizedDescription];
+        }];
+        
+        [seed migrateCarsOrFail:^(NSError* error){
+            if (error != nil)
+                HUD.labelText = [error localizedDescription];
+        }];
+
+        [self reloadData];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    results = [NSMutableArray arrayWithArray:[Serie findAllEnabled]];
-
-    [self.tableView reloadData];
-    //self.clearsSelectionOnViewWillAppear = NO;
-     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if ([[Serie findAllEnabled] count] == 0 ) {
+        [self performSelector:@selector(reload:)  withObject:nil afterDelay:1.0];
+    }
+    else {
+        [self reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning

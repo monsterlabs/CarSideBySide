@@ -10,13 +10,12 @@
 #import "Car.h"
 #import "Serie.h"
 
-
 @implementation Line
 
 @dynamic enabled;
+@dynamic id;
 @dynamic name;
 @dynamic serie;
 @dynamic cars;
-
 
 @end

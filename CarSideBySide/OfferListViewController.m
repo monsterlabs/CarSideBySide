@@ -37,27 +37,17 @@
     HUD.labelText = [NSString localizedStringWithFormat:@"Loading...", nil];
     HUD.mode = MBProgressHUDModeAnnularDeterminate;
 
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.02 * NSEC_PER_SEC);
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.10 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         CoreDataSeed *seed = [[CoreDataSeed alloc] init];
         [seed migrateOffersOrFail:^(NSError* error){
             if (error != nil)
                 HUD.labelText = [error localizedDescription];
         }];
-        [seed migrateBrandsOrFail:^(NSError* error){
-            if (error != nil)
-                HUD.labelText = [error localizedDescription];
-        }];
-
-        [seed migrateSeriesOrFail:^(NSError* error){
-            if (error != nil)
-                HUD.labelText = [error localizedDescription];
-        }];
-
+      
         [self reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
-
 }
 
 - (void)viewDidLoad
