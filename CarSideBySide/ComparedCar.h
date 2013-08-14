@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString * image;
 @property (nonatomic, retain) NSString * modelName;
 @property (nonatomic, retain) NSNumber * year;
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) Brand *brand;
 @property (nonatomic, retain) NSSet *comparatives;
 @end

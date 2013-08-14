@@ -185,20 +185,65 @@
     }
 }
 
-- (void)insertSpecTypes
-{
-    if([[SpecificationType findAll] count] == 0 )
-    {
-        [self logMessageForModel:@"SpecificationType"];
-        NSArray *specificationTypes = [NSArray arrayWithObjects: @"Technical details", @"Equipment", @"Safety", @"Lines", @"Price", nil];
-        for (NSString *specTypeName in specificationTypes) {
-            SpecificationType *specType = (SpecificationType*)[NSEntityDescription insertNewObjectForEntityForName:@"SpecificationType" inManagedObjectContext:[appDelegate managedObjectContext]];
-            specType.name = specTypeName;
 
+- (void)migrateSpecificationTypesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    [self logMessageForModel:@"SpecificationTypes"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"specification_types.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"SpecificationType" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"specificationtypes"])
+        {
+            NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
+            SpecificationType *specType = (SpecificationType *)[NSEntityDescription insertNewObjectForEntityForName:@"SpecificationType" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [specType setValuesForKeysWithDictionary:mutableDict];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
         }
-        
     }
 }
+
+- (void)migrateComparedCarsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    [self logMessageForModel:@"ComparedCar"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"compared_cars.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"ComparedCar" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"comparedcars"])
+        {
+            ComparedCar *comparedCar = (ComparedCar *)[NSEntityDescription insertNewObjectForEntityForName:@"ComparedCar" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [comparedCar setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
+            NSNumber *belongsToId = [[dict valueForKey:@"brand"] valueForKey:@"id"];
+            Brand *brand = [Brand findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", belongsToId]
+                                               inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                   error:&error];
+            [comparedCar setBrand:brand];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
+}
+
 
 - (void)insertCarSpecifications
 {
@@ -320,31 +365,6 @@
     }];
     
     return mutableAttributes;
-}
-
-- (NSDictionary *)representationsForRelationshipsFromRepresentation:(NSDictionary *)representation
-                                                           ofEntity:(NSEntityDescription *)entity
-{
-    NSMutableDictionary *mutableRelationshipRepresentations = [NSMutableDictionary dictionaryWithCapacity:[entity.relationshipsByName count]];
-    [entity.relationshipsByName enumerateKeysAndObjectsUsingBlock:^(id name, id relationship, BOOL *stop) {
-        id value = [representation valueForKey:name];
-        if (value) {
-            if ([relationship isToMany]) {
-                NSArray *arrayOfRelationshipRepresentations = nil;
-                if ([value isKindOfClass:[NSArray class]]) {
-                    arrayOfRelationshipRepresentations = value;
-                } else {
-                    arrayOfRelationshipRepresentations = [NSArray arrayWithObject:value];
-                }
-                
-                [mutableRelationshipRepresentations setValue:arrayOfRelationshipRepresentations forKey:name];
-            } else {
-                [mutableRelationshipRepresentations setValue:value forKey:name];
-            }
-        }
-    }];
-    
-    return mutableRelationshipRepresentations;
 }
 
 
