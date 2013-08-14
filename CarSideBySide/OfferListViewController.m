@@ -12,6 +12,7 @@
 #import "OfferListHeaderView.h"
 #import "OfferDetailViewController.h"
 #import "Offer.h"
+#import "CoreDataSeed.h"
 
 @interface OfferListViewController () {
     NSMutableArray *results;
@@ -33,11 +34,16 @@
 {
 
     HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    HUD.labelText = @"Loading...";
+    HUD.labelText = [NSString localizedStringWithFormat:@"Loading...", nil];
     HUD.mode = MBProgressHUDModeAnnularDeterminate;
 
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.02 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        CoreDataSeed *seed = [[CoreDataSeed alloc] init];
+        [seed migrateOffersOrFail:^(NSError* error){
+            if (error != nil)
+                HUD.labelText = [error localizedDescription];
+        }];
         [self reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
@@ -47,7 +53,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self reloadData];
+    if ([[Offer findEnabledOrValidUntil] count] == 0 ) {
+        [self performSelector:@selector(reload:)  withObject:nil afterDelay:1.0];
+    } else {
+        [self reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning

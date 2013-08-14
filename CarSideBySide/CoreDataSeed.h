@@ -22,7 +22,9 @@
 
 @property (readonly, nonatomic, strong) TTTStringInflector *inflector;
 @property (readwrite, nonatomic, strong) CoreDataStack *coreDataStack;
--(id)init;
--(void)loadInitialData;
+
+- (id)init;
+- (void)migrateOffersOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+
 @end
 
