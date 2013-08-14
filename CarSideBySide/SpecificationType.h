@@ -14,6 +14,8 @@
 @interface SpecificationType : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * id;
+
 @property (nonatomic, retain) NSSet *specifications;
 @end
 

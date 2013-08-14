@@ -13,6 +13,7 @@
 @implementation SpecificationType
 
 @dynamic name;
+@dynamic id;
 @dynamic specifications;
 
 @end

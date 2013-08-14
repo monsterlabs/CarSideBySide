@@ -29,5 +29,8 @@
 - (void)migrateSeriesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
 - (void)migrateLinesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
 - (void)migrateCarsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateSpecificationTypesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateComparedCarsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+
 @end
 

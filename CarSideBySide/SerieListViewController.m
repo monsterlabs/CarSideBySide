@@ -55,6 +55,16 @@
                 HUD.labelText = [error localizedDescription];
         }];
 
+        [seed migrateSpecificationTypesOrFail:^(NSError* error){
+            if (error != nil)
+                HUD.labelText = [error localizedDescription];
+        }];
+
+        [seed migrateComparedCarsOrFail:^(NSError* error){
+            if (error != nil)
+                HUD.labelText = [error localizedDescription];
+        }];
+
         [self reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });

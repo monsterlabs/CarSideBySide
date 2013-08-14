@@ -24,6 +24,7 @@
         <relationship name="specification" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Specification" inverseName="comparatives" inverseEntity="Specification" syncable="YES"/>
     </entity>
     <entity name="ComparedCar" representedClassName="ComparedCar" syncable="YES">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="modelName" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <attribute name="year" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
@@ -78,6 +79,7 @@
         <relationship name="specificationType" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SpecificationType" inverseName="specifications" inverseEntity="SpecificationType" syncable="YES"/>
     </entity>
     <entity name="SpecificationType" representedClassName="SpecificationType" syncable="YES">
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="specifications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Specification" inverseName="specificationType" inverseEntity="Specification" syncable="YES"/>
     </entity>
@@ -85,13 +87,13 @@
         <element name="Brand" positionX="934" positionY="-763" width="128" height="105"/>
         <element name="Car" positionX="754" positionY="-495" width="128" height="195"/>
         <element name="Comparative" positionX="1132" positionY="-214" width="128" height="88"/>
-        <element name="ComparedCar" positionX="1114" positionY="-487" width="128" height="120"/>
+        <element name="ComparedCar" positionX="1114" positionY="-487" width="128" height="135"/>
         <element name="ComparedFeature" positionX="936" positionY="-187" width="128" height="88"/>
         <element name="Feature" positionX="738" positionY="-198" width="128" height="135"/>
         <element name="Line" positionX="756" positionY="-666" width="128" height="120"/>
         <element name="Offer" positionX="585" positionY="-657" width="128" height="195"/>
         <element name="Serie" positionX="927" positionY="-630" width="128" height="120"/>
         <element name="Specification" positionX="927" positionY="-360" width="128" height="133"/>
-        <element name="SpecificationType" positionX="918" positionY="-480" width="128" height="75"/>
+        <element name="SpecificationType" positionX="918" positionY="-480" width="128" height="90"/>
     </elements>
 </model>
