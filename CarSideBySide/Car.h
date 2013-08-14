@@ -19,6 +19,9 @@
 @property (nonatomic, retain) NSString * modelName;
 @property (nonatomic, retain) NSNumber * orderKey;
 @property (nonatomic, retain) NSNumber * year;
+@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSString * imageUrl;
+
 @property (nonatomic, retain) Line *line;
 @property (nonatomic, retain) NSSet *specifications;
 @end

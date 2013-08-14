@@ -19,9 +19,11 @@
 @dynamic modelName;
 @dynamic orderKey;
 @dynamic year;
+@dynamic id;
+@dynamic imageUrl;
+
 @dynamic line;
 @dynamic specifications;
-
 
 - (NSString *)model {
     NSString *model = [NSString stringWithFormat:@"%@ %@", self.modelName, self.year];

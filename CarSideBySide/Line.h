@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSNumber * enabled;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) Serie *serie;
 @property (nonatomic, retain) NSSet *cars;
 @end

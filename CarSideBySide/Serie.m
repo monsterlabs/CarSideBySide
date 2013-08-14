@@ -17,6 +17,7 @@
 @dynamic name;
 @dynamic brand;
 @dynamic lines;
+@dynamic id;
 
 - (void)setSerieFromDictionary:(NSDictionary*)dict;
 {

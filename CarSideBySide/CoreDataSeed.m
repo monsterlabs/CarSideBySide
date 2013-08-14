@@ -107,87 +107,83 @@
     } else {
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Serie" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
-        NSEntityDescription *brandEntity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
-
         for (NSDictionary *dict in [arr valueForKey:@"series"])
         {
-            NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
             Serie *serie = (Serie *)[NSEntityDescription insertNewObjectForEntityForName:@"Serie" inManagedObjectContext:self.coreDataStack.managedObjectContext];
-            [serie setValuesForKeysWithDictionary:mutableDict];
-            NSMutableDictionary *brandMutableDict =[[self representationsForRelationshipsFromRepresentation:dict ofEntity:brandEntity] mutableCopy];
-            Brand *brand = [Brand findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id = %@", [brandMutableDict valueForKey:@"id"]]
-                                             inContext:[[appDelegate coreDataStack] managedObjectContext]
-                                                 error:&error];
+            [serie setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
+            NSNumber *belongsToId = [[dict valueForKey:@"brand"] valueForKey:@"id"];
+            Brand *brand = [Brand findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", belongsToId]
+                                               inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                   error:&error];
+            [serie setBrand:brand];
             [self.coreDataStack saveOrFail:^(NSError* error) {
                 blockFailedToSave(error);
             }];
-            
         }
     }
 }
 
-- (void)insertLines
+- (void)migrateLinesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
 {
-    
     [self logMessageForModel:@"Line"];
-    [[CarCatalogApiClient sharedInstance] getPath:@"lines.json" parameters:nil
-                                          success:^(AFHTTPRequestOperation *operation, id response) {
-                                              NSEntityDescription *entity = [NSEntityDescription entityForName:@"Line" inManagedObjectContext:[appDelegate managedObjectContext]];
-                                              
-                                              for (NSDictionary *dict in [response valueForKey:@"lines"])
-                                              {
-                                                  NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
-                                                  Line *line = (Line *)[NSEntityDescription insertNewObjectForEntityForName:@"Line" inManagedObjectContext:[appDelegate managedObjectContext]];
-                                                  [line setValuesForKeysWithDictionary:mutableDict];
-                                                  id offer_id = [[dict valueForKey:@"serie"] valueForKey:@"id"];
-                                                  NSError *error = nil;
-                                                  Serie *serie  = [Serie findFirstWhereProperty:@"id" equals:@(1) inContext:[appDelegate managedObjectContext] error:&error];
-                                                  NSLog(@"Offer id %@", serie);
-                                                  //                                                  JournalEntry findFirstWhereProperty:@"id" equals:@(8) inContext:self.managedObjectContext error:nil]
-                                                  //                                                  NSDictionary *relationshipRepresentations  = [self representationsForRelationshipsFromRepresentation:dict ofEntity:entity];
-                                                  //                                                  for (NSString *relationshipName in relationshipRepresentations) {
-                                                  //                                                      NSRelationshipDescription *relationship = [[entity relationshipsByName] valueForKey:relationshipName];
-                                                  //                                                      id relationshipRepresentation = [relationshipRepresentations objectForKey:relationshipName];
-                                                  //
-                                                  //                                                      NSEntityDescription *entity = [NSEntityDescription entityForName:[relationshipName capitalizedString] inManagedObjectContext:[appDelegate managedObjectContext]];
-                                                  //
-                                                  //                                                      NSLog(@"Relationship Name %@", [relationshipName capitalizedString]);
-                                                  //
-                                                  //                                                      NSLog(@"Relationship Representation %@", relationshipRepresentation);
-                                                  ////                                                      [line insertOrUpdateObjectsFromRepresentations:relationshipRepresentation ofEntity:relationship.destinationEntity fromResponse:response withContext:context error:error completionBlock:^(NSArray *managedObjects, NSArray *backingObjects) {
-                                                  //
-                                                  //                                                  }
-
-                                              }
-                                          }
-                                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                              NSLog(@"Error fetching lines!");
-                                              NSLog(@"%@", error);
-                                          }];
-}
-
-- (void)insertCars
-{
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"lines.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
     
-    [self logMessageForModel:@"Car"];
-    [[CarCatalogApiClient sharedInstance] getPath:@"cars.json" parameters:nil
-                                          success:^(AFHTTPRequestOperation *operation, id response) {
-                                              NSEntityDescription *entity = [NSEntityDescription entityForName:@"Car" inManagedObjectContext:[appDelegate managedObjectContext]];
-                                              
-                                              for (NSDictionary *dict in [response valueForKey:@"cars"])
-                                              {
-                                                  NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
-                                                  Car *line = (Car *)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:[appDelegate managedObjectContext]];
-                                                  [line setValuesForKeysWithDictionary:mutableDict];
-
-                                              }
-                                          }
-                                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                              NSLog(@"Error fetching cars!");
-                                              NSLog(@"%@", error);
-                                          }];
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Line" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"lines"])
+        {
+            Line *line = (Line *)[NSEntityDescription insertNewObjectForEntityForName:@"Line" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [line setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
+            NSNumber *belongsToId = [[dict valueForKey:@"serie"] valueForKey:@"id"];
+            Serie *serie = [Serie findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", belongsToId]
+                                               inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                   error:&error];
+            [line setSerie:serie];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
 }
 
+- (void)migrateCarsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    [self logMessageForModel:@"Car"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"cars.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Car" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"cars"])
+        {
+            Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [car setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
+            NSNumber *belongsToId = [[dict valueForKey:@"line"] valueForKey:@"id"];
+            Line *line = [Line findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", belongsToId]
+                                               inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                   error:&error];
+            [car setLine:line];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
+}
 
 - (void)insertSpecTypes
 {

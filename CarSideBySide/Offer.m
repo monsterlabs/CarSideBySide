@@ -23,6 +23,9 @@
 @dynamic title;
 @dynamic url;
 @dynamic validUntil;
+@dynamic id;
+@dynamic imageUrl;
+@dynamic largeImageUrl;
 
 - (void)setOfferFromDictionary:(NSDictionary*)dict
 {
@@ -33,6 +36,9 @@
     self.url = [dict valueForKey:@"url"];
     self.enabled = [Offer boolFromString:[dict valueForKey:@"enabled"]];
     self.validUntil = [Offer dateFromString: [dict valueForKey:@"validUntil"]];
+    self.id = [dict valueForKey:@"id"];
+    self.imageUrl = [dict valueForKey:@"imageUrl"];
+    self.largeImageUrl = [dict valueForKey:@"largeImageUrl"];
 }
 
 + (NSArray *)findEnabledOrValidUntil {

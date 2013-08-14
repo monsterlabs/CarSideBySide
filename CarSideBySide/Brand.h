@@ -14,6 +14,7 @@
 @interface Brand : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSSet *comparativeCars;
 @property (nonatomic, retain) NSSet *series;
 @end
