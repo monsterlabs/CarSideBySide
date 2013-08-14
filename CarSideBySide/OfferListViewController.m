@@ -44,6 +44,16 @@
             if (error != nil)
                 HUD.labelText = [error localizedDescription];
         }];
+        [seed migrateBrandsOrFail:^(NSError* error){
+            if (error != nil)
+                HUD.labelText = [error localizedDescription];
+        }];
+
+        [seed migrateSeriesOrFail:^(NSError* error){
+            if (error != nil)
+                HUD.labelText = [error localizedDescription];
+        }];
+
         [self reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
