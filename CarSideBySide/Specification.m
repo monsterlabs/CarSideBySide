@@ -17,6 +17,7 @@
 
 @dynamic descr;
 @dynamic image;
+@dynamic id;
 @dynamic car;
 @dynamic features;
 @dynamic specificationType;

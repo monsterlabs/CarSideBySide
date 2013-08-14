@@ -35,36 +35,10 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.02 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         CoreDataSeed *seed = [[CoreDataSeed alloc] init];
-        [seed migrateBrandsOrFail:^(NSError* error){
+        [seed migrateCarComparativesOrFail:^(NSError* error){
             if (error != nil)
                 HUD.labelText = [error localizedDescription];
-        }];
-        
-        [seed migrateSeriesOrFail:^(NSError* error){
-            if (error != nil)
-                HUD.labelText = [error localizedDescription];
-        }];
-        
-        [seed migrateLinesOrFail:^(NSError* error){
-            if (error != nil)
-                HUD.labelText = [error localizedDescription];
-        }];
-        
-        [seed migrateCarsOrFail:^(NSError* error){
-            if (error != nil)
-                HUD.labelText = [error localizedDescription];
-        }];
-
-        [seed migrateSpecificationTypesOrFail:^(NSError* error){
-            if (error != nil)
-                HUD.labelText = [error localizedDescription];
-        }];
-
-        [seed migrateComparedCarsOrFail:^(NSError* error){
-            if (error != nil)
-                HUD.labelText = [error localizedDescription];
-        }];
-
+        }];        
         [self reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });

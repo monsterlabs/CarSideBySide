@@ -31,6 +31,12 @@
 - (void)migrateCarsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
 - (void)migrateSpecificationTypesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
 - (void)migrateComparedCarsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateSpecificationsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateFeaturesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateComparativesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateComparedFeaturesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateCarComparativesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)dealloc;
 
 @end
 

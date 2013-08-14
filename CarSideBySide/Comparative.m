@@ -13,6 +13,7 @@
 
 @implementation Comparative
 
+@dynamic id;
 @dynamic comparedCar;
 @dynamic specification;
 @dynamic comparedFeatures;
