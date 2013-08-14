@@ -1,9 +1,5 @@
 PODS:
-  - AFIncrementalStore (0.5.1):
-    - AFNetworking (>= 1.0)
-    - InflectorKit
-    - TransformerKit
-  - AFNetworking (1.3.1)
+  - AFNetworking (1.3.2)
   - DVCoreDataFinders (0.4)
   - InflectorKit (0.0.1)
   - LibYAML (0.1.4)
@@ -16,12 +12,14 @@ PODS:
   - YISplashScreen (1.0.0)
 
 DEPENDENCIES:
-  - AFIncrementalStore (~> 0.5.1)
+  - AFNetworking (~> 1.3.2)
   - DVCoreDataFinders (~> 0.4)
+  - InflectorKit (~> 0.0.1)
   - MBFaker (from `git@github.com:juarlex/MBFaker.git`)
   - MBProgressHUD (~> 0.7)
   - NSDate+Helper (~> 0.0.1)
   - NSDate-Extensions (~> 0.0.1)
+  - TransformerKit (~> 0.2.4)
   - YISplashScreen (~> 1.0.0)
 
 EXTERNAL SOURCES:
@@ -29,9 +27,8 @@ EXTERNAL SOURCES:
     :git: git@github.com:juarlex/MBFaker.git
 
 SPEC CHECKSUMS:
-  AFIncrementalStore: 70c96af226a90291b86c5141a212ab340f2434e2
-  AFNetworking: 9ec8aafb9269236a7630bd8d9838ce2ba30fa2a0
-  DVCoreDataFinders: 12a2a6f687cb4309b6d422a69694cf47616d038a
+  AFNetworking: 7f9bcd7c287a75476cd5c61e82fd3380e93e4c54
+  DVCoreDataFinders: 9049f24f1bdccc11af4ff6b2bc2e098994827a0f
   InflectorKit: 9dccab02f95541093995adac639342c9eb9e6c12
   LibYAML: 49b77e5b3f4417fa512a8f1f4675a78480bf6b3d
   MBFaker: da77c465bf2c2540e1e6c0546b2d34afd7e9cdf4
@@ -41,4 +38,4 @@ SPEC CHECKSUMS:
   TransformerKit: 3c60759694b70d41b833dfe4005b031762d54e7f
   YISplashScreen: c0d3f8d37e32baf8346d750c038f6e7b0dcbbb25
 
-COCOAPODS: 0.22.2
+COCOAPODS: 0.23.0
