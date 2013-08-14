@@ -65,63 +65,65 @@
     }
 }
 
-- (void)insertBrands
+- (void)migrateBrandsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
 {
     [self logMessageForModel:@"Brand"];
-    [[CarCatalogApiClient sharedInstance] getPath:@"brands.json" parameters:nil
-                                          success:^(AFHTTPRequestOperation *operation, id response) {
-                                              NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
-                                              
-                                              for (NSDictionary *dict in [response valueForKey:@"brands"])
-                                              {
-                                                  NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
-                                                  Brand *brand = (Brand *)[NSEntityDescription insertNewObjectForEntityForName:@"Brand" inManagedObjectContext:self.coreDataStack.managedObjectContext];
-                                                  [brand setValuesForKeysWithDictionary:mutableDict];
-                                                  NSError *error = nil;
-                                                  [self.coreDataStack saveOrFail:^(NSError* error) {
-                                                      NSLog(@"There was an error %@", error);
-                                                      NSLog(@"Failed to save to data store: %@", [error localizedDescription]);
-                                                  }];
-                                              }
-                                              
-                                          }
-                                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                              NSLog(@"Error fetching brands!");
-                                              NSLog(@"%@", error);
-                                          }];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"brands.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
     
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"brands"])
+        {
+            NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
+            Brand *brand = (Brand *)[NSEntityDescription insertNewObjectForEntityForName:@"Brand" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [brand setValuesForKeysWithDictionary:mutableDict];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
 }
 
-- (void)insertSeries
+- (void)migrateSeriesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
 {
+    [self logMessageForModel:@"Serie"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"series.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
     
+    NSURLResponse *response = nil;
     NSError *error = nil;
-    for (Offer *serie in [Offer findAllInContext:self.coreDataStack.managedObjectContext error:&error]) {
-        NSLog(@"Serie %@", serie.title);
-        NSLog(@"Error %@", error);
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Serie" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        NSEntityDescription *brandEntity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+
+        for (NSDictionary *dict in [arr valueForKey:@"series"])
+        {
+            NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
+            Serie *serie = (Serie *)[NSEntityDescription insertNewObjectForEntityForName:@"Serie" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [serie setValuesForKeysWithDictionary:mutableDict];
+            NSMutableDictionary *brandMutableDict =[[self representationsForRelationshipsFromRepresentation:dict ofEntity:brandEntity] mutableCopy];
+            Brand *brand = [Brand findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id = %@", [brandMutableDict valueForKey:@"id"]]
+                                             inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                 error:&error];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+            
+        }
     }
-    //    [self logMessageForModel:@"Serie"];
-    //    [[CarCatalogApiClient sharedInstance] getPath:@"series.json" parameters:nil
-    //                                          success:^(AFHTTPRequestOperation *operation, id response) {
-    //                                              NSEntityDescription *entity = [NSEntityDescription entityForName:@"Serie" inManagedObjectContext:[appDelegate managedObjectContext]];
-    //
-    //                                              for (NSDictionary *dict in [response valueForKey:@"series"])
-    //                                              {
-    //                                                  NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
-    //                                                  Serie *serie = (Serie *)[NSEntityDescription insertNewObjectForEntityForName:@"Serie" inManagedObjectContext:[appDelegate managedObjectContext]];
-    //                                                  [serie setValuesForKeysWithDictionary:mutableDict];
-    //                                                  id brand_id = [[dict valueForKey:@"brand"] valueForKey:@"id"];
-    //                                                  NSError *error = nil;
-    //                                                  Brand *brand  = [Brand findFirstWhereProperty:@"id" equals:brand_id inContext:[appDelegate managedObjectContext] error:&error];
-    //                                                  NSLog(@"Brand %@", brand);
-    //
-    //                                                  [self saveContext];
-    //                                              }
-    //                                          }
-    //                                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    //                                              NSLog(@"Error fetching series!");
-    //                                              NSLog(@"%@", error);
-    //                                          }];
 }
 
 - (void)insertLines

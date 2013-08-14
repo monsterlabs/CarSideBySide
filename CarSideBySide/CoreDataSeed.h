@@ -25,6 +25,8 @@
 
 - (id)init;
 - (void)migrateOffersOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateBrandsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateSeriesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
 
 @end
 
