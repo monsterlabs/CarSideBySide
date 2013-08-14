@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString * descr;
 @property (nonatomic, retain) NSString * image;
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) Car *car;
 @property (nonatomic, retain) NSSet *features;
 @property (nonatomic, retain) SpecificationType *specificationType;

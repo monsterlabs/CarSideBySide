@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * descr;
 @property (nonatomic, retain) NSNumber * highlighted;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) Specification *specification;
 @property (nonatomic, retain) NSSet *comparedFeatures;
 @end

@@ -17,12 +17,13 @@
 @dynamic descr;
 @dynamic highlighted;
 @dynamic name;
+@dynamic id;
 @dynamic specification;
 @dynamic comparedFeatures;
 
 - (NSString *) nameORAdditionalInfo
 {
-    return [self.specification.specificationType.name isEqualToString:@"Líneas"] ? ([NSString stringWithFormat:@"%@ %@",self.name, (self.additionalInfo ? self.additionalInfo : @"")]) : self.name;
+    return [self.specification.specificationType.name isEqualToString:@"Opcionales"] ? ([NSString stringWithFormat:@"%@ %@",self.name, (self.additionalInfo ? self.additionalInfo : @"")]) : self.name;
 }
 
 @end
