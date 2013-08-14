@@ -51,6 +51,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (Offer *offer in [Offer findAll]) { [self.coreDataStack.managedObjectContext deleteObject:offer]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Offer" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"offers"])
@@ -78,6 +79,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (Brand *record in [Brand findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"brands"])
@@ -105,6 +107,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (Serie *record in [Serie findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Serie" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"series"])
@@ -136,6 +139,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (Line *record in [Line findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Line" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"lines"])
@@ -167,6 +171,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (Car *record in [Car findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Car" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"cars"])
@@ -198,6 +203,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (SpecificationType *record in [SpecificationType findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"SpecificationType" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"specificationtypes"])
@@ -225,6 +231,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (ComparedCar *record in [ComparedCar findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"ComparedCar" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"comparedcars"])
@@ -256,6 +263,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (Specification *record in [Specification findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Specification" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"specifications"])
@@ -295,6 +303,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (Feature *record in [Feature findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Feature" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"features"])
@@ -326,6 +335,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (Comparative *record in [Comparative findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Comparative" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"comparatives"])
@@ -365,6 +375,7 @@
     if(error) {
         blockFailedToSave(error);
     } else {
+        for (ComparedFeature *record in [ComparedFeature findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"ComparedFeature" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
         for (NSDictionary *dict in [arr valueForKey:@"comparedfeatures"])
@@ -390,6 +401,7 @@
         }
     }
 }
+
 
 - (void)migrateCarComparativesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
 {
