@@ -15,7 +15,7 @@
 
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSString *className = NSStringFromClass([self class]);
-    NSEntityDescription *entity = [NSEntityDescription entityForName:className inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:className inManagedObjectContext:[appDelegate managedObjectContext]];
     [request setEntity:entity];
     
     NSError *error;

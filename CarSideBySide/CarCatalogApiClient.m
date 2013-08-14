@@ -14,14 +14,14 @@ static NSString * const kCarCatalogAPIToken;
 @implementation CarCatalogApiClient
 
 + (id)sharedInstance {
-    static CarCatalogApiClient *__sharedInstance;
+    static CarCatalogApiClient *_sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        __sharedInstance = [[CarCatalogApiClient alloc] initWithBaseURL:
+        _sharedInstance = [[CarCatalogApiClient alloc] initWithBaseURL:
                             [NSURL URLWithString:kCarCatalogAPIBaseURLString]];
     });
-    
-    return __sharedInstance;
+    _sharedInstance.allowsInvalidSSLCertificate = YES;
+    return _sharedInstance;
 }
 
 - (id)initWithBaseURL:(NSURL *)url {
