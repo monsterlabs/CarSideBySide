@@ -30,7 +30,7 @@
 
 - (id)init
 {
-    NSLog(@"Initializing the database data loading...");
+    NSLog(@"The database migration has started");
     [MBFaker setLanguage:@"en"];
     inflector = [TTTStringInflector defaultInflector];
     coreDataStack = [appDelegate coreDataStack];
@@ -274,7 +274,7 @@
 
 - (void)logMessageForModel:(NSString *)modelName
 {
-    NSLog(@"Inserting data into the %@ model(s)...", modelName);
+    NSLog(@"Inserting and updating data into the %@ model...", modelName);
 }
 
 - (int)random_max:(int)max
@@ -285,7 +285,7 @@
 
 - (void)dealloc
 {
-    NSLog(@"Finishing the database data loading...");
+    NSLog(@"The database migration has finished");
 }
 
 - (NSString *)pathForEntity:(NSEntityDescription *)entity {
