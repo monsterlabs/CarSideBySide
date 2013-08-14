@@ -6,17 +6,11 @@
 // project.
 
 
-// AFIncrementalStore
-#define COCOAPODS_POD_AVAILABLE_AFIncrementalStore
-#define COCOAPODS_VERSION_MAJOR_AFIncrementalStore 0
-#define COCOAPODS_VERSION_MINOR_AFIncrementalStore 5
-#define COCOAPODS_VERSION_PATCH_AFIncrementalStore 1
-
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 1
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
-#define COCOAPODS_VERSION_PATCH_AFNetworking 1
+#define COCOAPODS_VERSION_PATCH_AFNetworking 2
 
 // DVCoreDataFinders
 #define COCOAPODS_POD_AVAILABLE_DVCoreDataFinders

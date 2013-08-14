@@ -8,11 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <MBFaker.h>
+#import <DVCoreDataFinders.h>
+#import <AFNetworking.h>
+#import <TTTDateTransformers.h>
+#import <TTTStringInflector.h>
+#import <objc/objc.h>
+#import <AFJSONRequestOperation.h>
+#import "CoreDataStack.h"
 
 @interface CoreDataSeed : NSObject
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (readonly, nonatomic, strong) TTTStringInflector *inflector;
+@property (readwrite, nonatomic, strong) CoreDataStack *coreDataStack;
 -(id)init;
 -(void)loadInitialData;
 @end

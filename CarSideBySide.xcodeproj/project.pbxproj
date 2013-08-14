@@ -24,9 +24,9 @@
 		FA2AF9A61755B3B9001BA8ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9A51755B3B9001BA8ED /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FA2D91BC1767C65B00E8E716 /* NSManagedObject+Find.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D91BB1767C65B00E8E716 /* NSManagedObject+Find.m */; };
 		FA2D92251767E80A00E8E716 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D92241767E80A00E8E716 /* Offer.m */; };
-		FA2F5D5C179B896A00E0F159 /* CarCatalogAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F5D5B179B896A00E0F159 /* CarCatalogAPIClient.m */; };
-		FA2F5D60179B8FB300E0F159 /* CarSideBySideIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2F5D5F179B8FB300E0F159 /* CarSideBySideIncrementalStore.m */; };
 		FA327CFA176FA7B50062E845 /* OfferWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA327CF9176FA7B50062E845 /* OfferWebViewController.m */; };
+		FA3655F717BA9A830085A186 /* CarCatalogApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3655F617BA9A830085A186 /* CarCatalogApiClient.m */; };
+		FA4F88F717BA89BA00DF6552 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F88F617BA89BA00DF6552 /* CoreDataStack.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA58E0F6176FC88E007C9295 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA58E0F4176FC88E007C9295 /* Icon-72.png */; };
 		FA58E0F7176FC88E007C9295 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA58E0F5176FC88E007C9295 /* Icon-72@2x.png */; };
 		FA5A9B081756FD0600B718C1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FA5A9AE61756FD0600B718C1 /* Podfile */; };
@@ -105,12 +105,12 @@
 		FA2D91BB1767C65B00E8E716 /* NSManagedObject+Find.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Find.m"; sourceTree = "<group>"; };
 		FA2D92231767E80A00E8E716 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		FA2D92241767E80A00E8E716 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
-		FA2F5D5A179B896A00E0F159 /* CarCatalogAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarCatalogAPIClient.h; sourceTree = "<group>"; };
-		FA2F5D5B179B896A00E0F159 /* CarCatalogAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarCatalogAPIClient.m; sourceTree = "<group>"; };
-		FA2F5D5E179B8FB300E0F159 /* CarSideBySideIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarSideBySideIncrementalStore.h; sourceTree = "<group>"; };
-		FA2F5D5F179B8FB300E0F159 /* CarSideBySideIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarSideBySideIncrementalStore.m; sourceTree = "<group>"; };
 		FA327CF8176FA7B50062E845 /* OfferWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferWebViewController.h; sourceTree = "<group>"; };
 		FA327CF9176FA7B50062E845 /* OfferWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferWebViewController.m; sourceTree = "<group>"; };
+		FA3655F517BA9A830085A186 /* CarCatalogApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarCatalogApiClient.h; sourceTree = "<group>"; };
+		FA3655F617BA9A830085A186 /* CarCatalogApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarCatalogApiClient.m; sourceTree = "<group>"; };
+		FA4F88F517BA89BA00DF6552 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		FA4F88F617BA89BA00DF6552 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		FA58E0F4176FC88E007C9295 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		FA58E0F5176FC88E007C9295 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		FA5A9AE61756FD0600B718C1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -301,6 +301,8 @@
 				FA2AF9A71755B41C001BA8ED /* Models */,
 				FA2AF96E1755A50A001BA8ED /* AppDelegate.h */,
 				FA2AF96F1755A50A001BA8ED /* AppDelegate.m */,
+				FA4F88F517BA89BA00DF6552 /* CoreDataStack.h */,
+				FA4F88F617BA89BA00DF6552 /* CoreDataStack.m */,
 				FA2AF9771755A50A001BA8ED /* MainStoryboard.storyboard */,
 				FA2AF9661755A50A001BA8ED /* Supporting Files */,
 				FA2D91BA1767C65B00E8E716 /* NSManagedObject+Find.h */,
@@ -381,10 +383,8 @@
 		FA2F5D5D179B8F5D00E0F159 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				FA2F5D5A179B896A00E0F159 /* CarCatalogAPIClient.h */,
-				FA2F5D5B179B896A00E0F159 /* CarCatalogAPIClient.m */,
-				FA2F5D5E179B8FB300E0F159 /* CarSideBySideIncrementalStore.h */,
-				FA2F5D5F179B8FB300E0F159 /* CarSideBySideIncrementalStore.m */,
+				FA3655F517BA9A830085A186 /* CarCatalogApiClient.h */,
+				FA3655F617BA9A830085A186 /* CarCatalogApiClient.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -892,9 +892,9 @@
 				FAA1E30D178C990200D60C77 /* UIView+AddLine.m in Sources */,
 				FAA1E311178C9AC200D60C77 /* ComparativeViewController.m in Sources */,
 				FAA1E314178CA0B200D60C77 /* NSObject+DelayedBlock.m in Sources */,
-				FA2F5D5C179B896A00E0F159 /* CarCatalogAPIClient.m in Sources */,
-				FA2F5D60179B8FB300E0F159 /* CarSideBySideIncrementalStore.m in Sources */,
 				FAB8630817A1D53C00B815CD /* Line.m in Sources */,
+				FA4F88F717BA89BA00DF6552 /* CoreDataStack.m in Sources */,
+				FA3655F717BA9A830085A186 /* CarCatalogApiClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
