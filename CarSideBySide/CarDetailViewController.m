@@ -40,8 +40,12 @@
     
     highlighsTextView.text = self.car.highlights;
     
-    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[self.car valueForKey:@"image"]];
+    if(![fileManager fileExistsAtPath:imagePath])
+    {
+         imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"../CarSideBySide.app/car_dummy.jpg"];
+    }
     NSData *data = [NSData dataWithContentsOfFile:imagePath];
 
     carImageView.image = [UIImage imageWithData:data];
@@ -61,7 +65,7 @@
     {
         [self resizeCarImageView];
         [carImageView setNeedsDisplay];
-                [self.view setNeedsDisplay];
+        [self.view setNeedsDisplay];
     }
         
 }
@@ -81,25 +85,30 @@
     [super viewDidLoad];
     if (self.car != nil) {
         [self configureView];
-    } 
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    BOOL isLandscape = UIDeviceOrientationIsLandscape(self.interfaceOrientation);
-    if (isLandscape) {
-        [self resizeCarImageView];
-    }
-    if (self.car == nil) {
+     if (self.car == nil) {
         highlighsTextView.text = @"";
         [self.toolbar setHidden:YES];
     }
     [super viewDidAppear:TRUE];
 }
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:TRUE];
+}
 
+- (void)viewDidLayoutSubviews
+{
+    BOOL isLandscape = UIDeviceOrientationIsLandscape(self.interfaceOrientation);
+    if (isLandscape) {
+        [self resizeCarImageView];
+    }
+    [super viewDidLayoutSubviews];
 }
 
 - (void)didReceiveMemoryWarning
