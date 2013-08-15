@@ -37,8 +37,15 @@
     titleLabel.text = [self.offer valueForKey:@"title"];
 
     bodyTextView.text = [self.offer valueForKey:@"body"];
-    
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[self.offer valueForKey:@"largeImage"]];
+
+    if (![fileManager fileExistsAtPath:imagePath])
+    {
+        imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"../CarSideBySide.app/offer_dummy_large.jpg"];
+    }
+
     NSData *data = [NSData dataWithContentsOfFile:imagePath];
     offerImageView.image = [UIImage imageWithData:data];
     offerImageView.layer.cornerRadius = 03.0f;

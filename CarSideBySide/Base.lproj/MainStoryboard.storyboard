@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="747" height="267"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xH2-bR-E4H">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="offer_dummy.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xH2-bR-E4H">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="237" id="2IK-hR-hP5"/>
                                             </constraints>
@@ -80,7 +80,6 @@
                                     <constraint firstItem="wbb-IE-xHU" firstAttribute="top" secondItem="HwV-qV-fEj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HlZ-3u-OlW"/>
                                     <constraint firstItem="oXQ-LZ-Pse" firstAttribute="leading" secondItem="xH2-bR-E4H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="MDP-iB-O4x"/>
                                     <constraint firstItem="hZD-a1-Q6r" firstAttribute="centerX" secondItem="vCr-3V-asL" secondAttribute="centerX" type="default" id="Ni4-fK-Hf9"/>
-                                    <constraint firstAttribute="bottom" secondItem="xH2-bR-E4H" secondAttribute="bottom" constant="20" type="default" id="Vb4-Xc-Es5"/>
                                     <constraint firstItem="wbb-IE-xHU" firstAttribute="leading" secondItem="xH2-bR-E4H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="bXG-g5-MUH"/>
                                     <constraint firstItem="HwV-qV-fEj" firstAttribute="leading" secondItem="xH2-bR-E4H" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="irw-L0-a0p"/>
                                     <constraint firstItem="xH2-bR-E4H" firstAttribute="top" secondItem="vCr-3V-asL" secondAttribute="top" constant="20" type="default" id="ocw-Pb-1R4"/>
@@ -155,7 +154,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNZ-OP-Q2c">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="offer_dummy_large.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sNZ-OP-Q2c">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="251" id="65k-2T-c6P"/>
                                 </constraints>
@@ -619,6 +618,8 @@
         <image name="DefaultCarDetailViewController.png" width="728" height="364"/>
         <image name="carList.png" width="30" height="30"/>
         <image name="offerList.png" width="30" height="30"/>
+        <image name="offer_dummy.jpg" width="237" height="227"/>
+        <image name="offer_dummy_large.jpg" width="758" height="320"/>
     </resources>
     <classes>
         <class className="CarCell" superclassName="UITableViewCell">
@@ -714,6 +715,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
