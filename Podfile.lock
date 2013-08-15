@@ -8,6 +8,7 @@ PODS:
   - MBProgressHUD (0.7)
   - NSDate+Helper (0.0.1)
   - NSDate-Extensions (0.0.1)
+  - Reachability (3.1.1)
   - TransformerKit (0.2.4)
   - YISplashScreen (1.0.0)
 
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.7)
   - NSDate+Helper (~> 0.0.1)
   - NSDate-Extensions (~> 0.0.1)
+  - Reachability (~> 3.1.1)
   - TransformerKit (~> 0.2.4)
   - YISplashScreen (~> 1.0.0)
 
@@ -35,6 +37,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1fd8591a2216d5dec6de24e09187bb03bcbe9946
   NSDate+Helper: 3015cb57778256bce7c549fca172474308740059
   NSDate-Extensions: b78c2b3f363acdcd7b5d2547a6bef6656cd8ff70
+  Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
   TransformerKit: 3c60759694b70d41b833dfe4005b031762d54e7f
   YISplashScreen: c0d3f8d37e32baf8346d750c038f6e7b0dcbbb25
 

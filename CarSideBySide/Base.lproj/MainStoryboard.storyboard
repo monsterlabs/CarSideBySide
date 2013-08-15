@@ -123,7 +123,7 @@
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Offers" image="offerList.png" id="Q9G-QF-jVa"/>
                     <navigationItem key="navigationItem" title="Offers" id="a72-so-HRP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="RUk-m5-OJE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="RUk-m5-OJE">
                             <connections>
                                 <action selector="reload:" destination="jy0-5g-B2G" id="VC9-77-jPt"/>
                             </connections>
@@ -502,7 +502,13 @@
                             <outlet property="delegate" destination="VZt-bw-jqI" id="BKr-it-9xf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Series" id="gWi-rO-pjx"/>
+                    <navigationItem key="navigationItem" title="Series" id="gWi-rO-pjx">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="MKa-vO-gzG">
+                            <connections>
+                                <action selector="reload:" destination="VZt-bw-jqI" id="CEJ-gE-F4J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJf-Tc-73i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -614,6 +620,102 @@
         <image name="carList.png" width="30" height="30"/>
         <image name="offerList.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="CarCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="subTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CarDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showSpecification:"/>
+                <relationship kind="outlet" name="buttonItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="carImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="equipmentButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="highlighsTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="linesBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="modelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navBarItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="priceBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="safetyButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="technicalDetailsButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="CarListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarListViewController.h"/>
+        </class>
+        <class className="CarNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarNavigationViewController.h"/>
+        </class>
+        <class className="CarSplitViewController" superclassName="UISplitViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarSplitViewController.h"/>
+        </class>
+        <class className="ComparativeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ComparativeViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OfferCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bodyTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="offerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="validDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="validUntilLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OfferDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="bodyTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="moreInfoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="offerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="urlLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="validDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="validUntilLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OfferListHeaderView" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferListHeaderView.h"/>
+        </class>
+        <class className="OfferListViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="reload:"/>
+            </relationships>
+        </class>
+        <class className="OfferWebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfferWebViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="reload:"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="SerieListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SerieListViewController.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
