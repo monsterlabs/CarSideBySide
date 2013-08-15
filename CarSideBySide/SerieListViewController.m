@@ -11,6 +11,8 @@
 #import "Serie.h"
 #import "CarListViewController.h"
 #import "CoreDataSeed.h"
+#import "NetworkReachability.h"
+
 @interface SerieListViewController ()
 {
     NSMutableArray *results;
@@ -27,21 +29,27 @@
 
 - (IBAction)reload:(id)sender
 {
-    
+    NetworkReachability *networkReachability = [[NetworkReachability alloc] init];
+
     HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     HUD.labelText = [NSString localizedStringWithFormat:@"Loading...", nil];
     HUD.mode = MBProgressHUDModeAnnularDeterminate;
-    
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.02 * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        CoreDataSeed *seed = [[CoreDataSeed alloc] init];
-        [seed migrateCarComparativesOrFail:^(NSError* error){
-            if (error != nil)
-                HUD.labelText = [error localizedDescription];
-        }];        
-        [self reloadData];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    });
+    if ([networkReachability isReachable])
+    {
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.02 * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            CoreDataSeed *seed = [[CoreDataSeed alloc] init];
+            [seed migrateCarComparativesOrFail:^(NSError* error){
+                if (error != nil)
+                    HUD.labelText = [error localizedDescription];
+            }];
+            [self reloadData];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    } else {
+        HUD.labelText = [networkReachability currentReachabilityString];
+        [HUD hide:YES afterDelay:2];
+    }
 }
 
 

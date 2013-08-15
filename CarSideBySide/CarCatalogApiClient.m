@@ -7,15 +7,19 @@
 //
 
 #import "CarCatalogApiClient.h"
+#import "AppDelegate.h"
 
-static NSString * const kCarCatalogAPIBaseURLString = @"http://localhost:3000/api/v1";
-static NSString * const kCarCatalogAPIToken;
+#define cProtocol @"https"
+#define cPort @"443"
+#define cApiPath @"api/v1"
+#define kApiToken @"hKfxHddtln1XPWw1bIwVefodA2p9MROequn/oEG"
 
 @implementation CarCatalogApiClient
 
 + (id)sharedInstance {
     static CarCatalogApiClient *_sharedInstance;
     static dispatch_once_t onceToken;
+    NSString *kCarCatalogAPIBaseURLString = [NSString stringWithFormat:@"%@://%@:%@/%@",cProtocol, cHost, cPort, cApiPath];
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[CarCatalogApiClient alloc] initWithBaseURL:
                             [NSURL URLWithString:kCarCatalogAPIBaseURLString]];
@@ -28,7 +32,7 @@ static NSString * const kCarCatalogAPIToken;
     self = [super initWithBaseURL:url];
     if (self) {
         //custom settings
-        [self setDefaultHeader:@"x-api-token" value:kCarCatalogAPIToken];
+        [self setDefaultHeader:@"x-api-token" value:kApiToken];
         
         
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];

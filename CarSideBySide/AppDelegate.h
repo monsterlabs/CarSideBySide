@@ -11,6 +11,7 @@
 #import "CoreDataStack.h"
 
 #define appDelegate (AppDelegate *) [[UIApplication sharedApplication] delegate]
+#define cHost @"catalog.bmwapps.mx"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
@@ -20,5 +21,4 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) CoreDataStack *coreDataStack;
-
 @end

@@ -67,6 +67,7 @@
 		FAEDCC871783259B004B5D3C /* ComparedCar.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEDCC861783259B004B5D3C /* ComparedCar.m */; };
 		FAEDCC8A1783259B004B5D3C /* ComparedFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEDCC891783259B004B5D3C /* ComparedFeature.m */; };
 		FAEDCC8D1783259B004B5D3C /* Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEDCC8C1783259B004B5D3C /* Feature.m */; };
+		FAF9581917BD3D81009F04F9 /* NetworkReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF9581817BD3D81009F04F9 /* NetworkReachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +189,8 @@
 		FAEDCC891783259B004B5D3C /* ComparedFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparedFeature.m; sourceTree = "<group>"; };
 		FAEDCC8B1783259B004B5D3C /* Feature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
 		FAEDCC8C1783259B004B5D3C /* Feature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feature.m; sourceTree = "<group>"; };
+		FAF9581717BD3D81009F04F9 /* NetworkReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkReachability.h; sourceTree = "<group>"; };
+		FAF9581817BD3D81009F04F9 /* NetworkReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkReachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +312,8 @@
 				FA2D91BB1767C65B00E8E716 /* NSManagedObject+Find.m */,
 				FA144A101768F45C00081738 /* NSManagedObject+Util.h */,
 				FA144A111768F45C00081738 /* NSManagedObject+Util.m */,
+				FAF9581717BD3D81009F04F9 /* NetworkReachability.h */,
+				FAF9581817BD3D81009F04F9 /* NetworkReachability.m */,
 			);
 			path = CarSideBySide;
 			sourceTree = "<group>";
@@ -895,6 +900,7 @@
 				FAB8630817A1D53C00B815CD /* Line.m in Sources */,
 				FA4F88F717BA89BA00DF6552 /* CoreDataStack.m in Sources */,
 				FA3655F717BA9A830085A186 /* CarCatalogApiClient.m in Sources */,
+				FAF9581917BD3D81009F04F9 /* NetworkReachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
