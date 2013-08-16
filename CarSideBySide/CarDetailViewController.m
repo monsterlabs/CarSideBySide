@@ -54,10 +54,12 @@
         NetworkReachability *networkReachability = [appDelegate networkReachability];
         if ([networkReachability isReachable])
         {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible =  YES;
             [AFImageDownloader imageDownloaderWithURLString:[self.car valueForKey:@"imageUrl"] autoStart:YES completion:^(UIImage *decompressedImage) {
                 NSData *binaryImage = UIImageJPEGRepresentation(decompressedImage, 0.8);
                 [binaryImage writeToFile:imagePath atomically:YES];
                 carImageView.image = decompressedImage;
+                [UIApplication sharedApplication].networkActivityIndicatorVisible =  NO;
             }];
         }
     } else {
@@ -164,7 +166,7 @@
 
     self.popover = pc;
     
-    barButtonItem.title = @"Select";
+    barButtonItem.title = NSLocalizedString(@"Seleccionar", nil);
     
     [_navBarItem setLeftBarButtonItem:barButtonItem animated:YES];
 }

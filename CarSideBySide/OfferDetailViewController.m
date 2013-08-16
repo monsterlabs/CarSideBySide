@@ -52,10 +52,12 @@
         NetworkReachability *networkReachability = [appDelegate networkReachability];
         if ([networkReachability isReachable])
         {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible =  YES;
             [AFImageDownloader imageDownloaderWithURLString:[self.offer valueForKey:@"largeImageUrl"] autoStart:YES completion:^(UIImage *decompressedImage) {
                 NSData *binaryImage = UIImageJPEGRepresentation(decompressedImage, 0.8);
                 [binaryImage writeToFile:imagePath atomically:YES];
                 offerImageView.image = decompressedImage;
+                [UIApplication sharedApplication].networkActivityIndicatorVisible =  NO;
             }];
         }
     } else {
