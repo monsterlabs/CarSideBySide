@@ -1,0 +1,87 @@
+
+/* Class = "IBUITabBarItem"; title = "Offers"; ObjectID = "0bS-lh-7wT"; */
+"0bS-lh-7wT.title" = "Promociones";
+
+/* Class = "IBUIBarButtonItem"; title = "Safety"; ObjectID = "1Oc-am-lHt"; */
+"1Oc-am-lHt.title" = "Seguridad";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "3oA-AH-0G6"; */
+"3oA-AH-0G6.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUIBarButtonItem"; title = "Lines"; ObjectID = "7n0-nx-yIj"; */
+"7n0-nx-yIj.title" = "Opcionales";
+
+/* Class = "IBUILabel"; text = "Select a serie and a model"; ObjectID = "9so-la-dhO"; */
+"9so-la-dhO.text" = "Selecciona una serie y un modelo";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "CBj-xW-10j"; */
+"CBj-xW-10j.text" = "Título 1";
+
+/* Class = "IBUILabel"; text = "Date"; ObjectID = "DAh-1h-zEK"; */
+"DAh-1h-zEK.text" = "Fecha";
+
+/* Class = "IBUISearchBar"; placeholder = "Search"; ObjectID = "DET-9h-lGS"; */
+"DET-9h-lGS.placeholder" = "Buscar";
+
+/* Class = "IBUISearchBar"; DET-9h-lGS.scopeButtonTitles[0] = "Title"; ObjectID = "DET-9h-lGS"; */
+"DET-9h-lGS.scopeButtonTitles[0]" = "Título 2";
+
+/* Class = "IBUISearchBar"; DET-9h-lGS.scopeButtonTitles[1] = "Title"; ObjectID = "DET-9h-lGS"; */
+"DET-9h-lGS.scopeButtonTitles[1]" = "Título 3";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "Fz4-AW-b7a"; */
+"Fz4-AW-b7a.text" = "Subtítulo";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "HwV-qV-fEj"; */
+"HwV-qV-fEj.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "JZ9-9p-qkn"; */
+"JZ9-9p-qkn.text" = "Título 4";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "MMx-6C-vmB"; */
+"MMx-6C-vmB.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUITabBarItem"; title = "Cars"; ObjectID = "Oh9-te-jRM"; */
+"Oh9-te-jRM.title" = "Tablas comparativas";
+
+/* Class = "IBUITabBarItem"; title = "Offers"; ObjectID = "Q9G-QF-jVa"; */
+"Q9G-QF-jVa.title" = "Promociones";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "a3F-R0-4Pl"; */
+"a3F-R0-4Pl.text" = "Portada";
+
+/* Class = "IBUINavigationItem"; title = "Offers"; ObjectID = "a72-so-HRP"; */
+"a72-so-HRP.title" = "Promociones";
+
+/* Class = "IBUINavigationItem"; title = "Series"; ObjectID = "gWi-rO-pjx"; */
+"gWi-rO-pjx.title" = "Series";
+
+/* Class = "IBUILabel"; text = "Valid until:"; ObjectID = "gmu-ll-VR1"; */
+"gmu-ll-VR1.text" = "Vigencia:";
+
+/* Class = "IBUILabel"; text = "Date"; ObjectID = "hZD-a1-Q6r"; */
+"hZD-a1-Q6r.text" = "Fecha";
+
+/* Class = "IBUICollectionViewController"; title = "Offers"; ObjectID = "jy0-5g-B2G"; */
+"jy0-5g-B2G.title" = "Promociones";
+
+/* Class = "IBUIBarButtonItem"; title = "Equipment"; ObjectID = "key-Xx-nIX"; */
+"key-Xx-nIX.title" = "Equipamiento";
+
+/* Class = "IBUINavigationItem"; title = "Title"; ObjectID = "len-K3-L71"; */
+"len-K3-L71.title" = "Tablas comparativas";
+
+/* Class = "IBUIBarButtonItem"; title = "Price"; ObjectID = "n0D-bm-Q2V"; */
+"n0D-bm-Q2V.title" = "Precio";
+
+/* Class = "IBUIBarButtonItem"; title = "Technical details"; ObjectID = "o0g-T6-C3u"; */
+"o0g-T6-C3u.title" = "Técnica";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "oXQ-LZ-Pse"; */
+"oXQ-LZ-Pse.text" = "Título 6";
+
+/* Class = "IBUILabel"; text = "Valid until:"; ObjectID = "wbb-IE-xHU"; */
+"wbb-IE-xHU.text" = "Vigencia:";
+
+/* Class = "IBUIViewController"; title = "Offer Detail"; ObjectID = "xpd-0N-Go1"; */
+"xpd-0N-Go1.title" = "Detalles de la promoción";

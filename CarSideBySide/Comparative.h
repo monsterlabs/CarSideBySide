@@ -13,6 +13,7 @@
 
 @interface Comparative : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) ComparedCar *comparedCar;
 @property (nonatomic, retain) Specification *specification;
 @property (nonatomic, retain) NSSet *comparedFeatures;

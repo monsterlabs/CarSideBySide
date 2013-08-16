@@ -20,7 +20,8 @@
     
     NSError *error;
     NSArray *fetchResults = [[[appDelegate managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
-    
+    if (error != nil)
+        NSLog(@"Managed Object Context has the following error in the findAll Method: %@", error);
     return fetchResults;
 }
 
@@ -36,6 +37,8 @@
 
     NSError *error;
     NSArray *fetchResults = [[[appDelegate managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
+    if (error != nil)
+        NSLog(@"Managed Object Context has the following error in the findAllEnabled Method: %@", error);
     
     return fetchResults;
 }

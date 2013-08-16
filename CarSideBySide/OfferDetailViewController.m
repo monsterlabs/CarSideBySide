@@ -9,6 +9,8 @@
 #import "OfferDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "OfferWebViewController.h"
+#import "AppDelegate.h"
+#import <AFImageDownloader.h>
 @interface OfferDetailViewController ()
 
 @end
@@ -38,8 +40,30 @@
 
     bodyTextView.text = [self.offer valueForKey:@"body"];
 
-    offerImageView.image = [UIImage imageNamed:[self.offer valueForKey:@"largeImage"]];
-    offerImageView.layer.cornerRadius = 05.0f;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[self.offer valueForKey:@"largeImage"]];
+
+    if(![fileManager fileExistsAtPath:imagePath])
+    {
+        NSString *dummyImagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"../CarSideBySide.app/offer_dummy_large.jpg"];
+        NSData *data = [NSData dataWithContentsOfFile:dummyImagePath];
+        offerImageView.image = [UIImage imageWithData:data];
+        
+        NetworkReachability *networkReachability = [appDelegate networkReachability];
+        if ([networkReachability isReachable])
+        {
+            [AFImageDownloader imageDownloaderWithURLString:[self.offer valueForKey:@"largeImageUrl"] autoStart:YES completion:^(UIImage *decompressedImage) {
+                NSData *binaryImage = UIImageJPEGRepresentation(decompressedImage, 0.8);
+                [binaryImage writeToFile:imagePath atomically:YES];
+                offerImageView.image = decompressedImage;
+            }];
+        }
+    } else {
+        NSData *data = [NSData dataWithContentsOfFile:imagePath];
+        offerImageView.image = [UIImage imageWithData:data];
+    }
+    
+    offerImageView.layer.cornerRadius = 03.0f;
     offerImageView.layer.masksToBounds = YES;
     offerImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     offerImageView.layer.borderWidth = 1.0;

@@ -9,6 +9,10 @@
 #import "Offer.h"
 #import "AppDelegate.h"
 #import "NSManagedObject+Util.h"
+@interface Offer () <NSFetchedResultsControllerDelegate> {
+    NSFetchedResultsController *_fetchedResultsController;    
+}
+@end
 
 @implementation Offer
 
@@ -19,6 +23,9 @@
 @dynamic title;
 @dynamic url;
 @dynamic validUntil;
+@dynamic id;
+@dynamic imageUrl;
+@dynamic largeImageUrl;
 
 - (void)setOfferFromDictionary:(NSDictionary*)dict
 {
@@ -29,6 +36,9 @@
     self.url = [dict valueForKey:@"url"];
     self.enabled = [Offer boolFromString:[dict valueForKey:@"enabled"]];
     self.validUntil = [Offer dateFromString: [dict valueForKey:@"validUntil"]];
+    self.id = [dict valueForKey:@"id"];
+    self.imageUrl = [dict valueForKey:@"imageUrl"];
+    self.largeImageUrl = [dict valueForKey:@"largeImageUrl"];
 }
 
 + (NSArray *)findEnabledOrValidUntil {
@@ -36,15 +46,19 @@
     NSString *className = NSStringFromClass([self class]);
     NSEntityDescription *entity = [NSEntityDescription entityForName:className inManagedObjectContext:[appDelegate managedObjectContext]];
     [request setEntity:entity];
-    
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"enabled == 1 AND validUntil >= %@", [NSDate date]];
-    
     [request setPredicate:predicate];
-    
+    NSSortDescriptor *sortDescriptors = [NSSortDescriptor sortDescriptorWithKey:@"validUntil" ascending:NO];
+    [request setSortDescriptors: [NSArray arrayWithObject:sortDescriptors]];
     NSError *error;
-    NSArray *fetchResults = [[[appDelegate managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
+    NSFetchedResultsController *fetchResults = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:(id)[appDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:@"CarCataloStream"];
     
-    return fetchResults;
+
+    [fetchResults performSelectorOnMainThread:@selector(performFetch:) withObject:nil waitUntilDone:YES modes:@[ NSRunLoopCommonModes ]] ;
+
+    NSArray *fetchResult = [[[appDelegate managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
+
+    return fetchResult ;
 }
 
 + (NSArray *)findTitleLike:(NSString*)title

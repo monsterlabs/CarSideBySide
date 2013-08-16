@@ -8,12 +8,35 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <MBFaker.h>
+#import <DVCoreDataFinders.h>
+#import <AFNetworking.h>
+#import <TTTDateTransformers.h>
+#import <TTTStringInflector.h>
+#import <objc/objc.h>
+#import <AFJSONRequestOperation.h>
+#import "CoreDataStack.h"
 
 @interface CoreDataSeed : NSObject
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
--(id)init;
--(void)loadInitialData;
+@property (readonly, nonatomic, strong) TTTStringInflector *inflector;
+@property (readwrite, nonatomic, strong) CoreDataStack *coreDataStack;
+
+- (id)init;
+- (void)migrateOffersOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateBrandsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateSeriesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateLinesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateCarsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateSpecificationTypesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateComparedCarsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateSpecificationsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateFeaturesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateComparativesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateComparedFeaturesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)migrateCarComparativesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)dealloc;
+
 @end
 

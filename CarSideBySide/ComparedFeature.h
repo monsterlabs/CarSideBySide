@@ -14,6 +14,7 @@
 @interface ComparedFeature : NSManagedObject
 
 @property (nonatomic, retain) NSString * descr;
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) Feature *feature;
 @property (nonatomic, retain) Comparative *comparative;
 

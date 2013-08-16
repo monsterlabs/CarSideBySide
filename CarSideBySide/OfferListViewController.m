@@ -12,6 +12,8 @@
 #import "OfferListHeaderView.h"
 #import "OfferDetailViewController.h"
 #import "Offer.h"
+#import "CoreDataSeed.h"
+#import "NetworkReachability.h"
 
 @interface OfferListViewController () {
     NSMutableArray *results;
@@ -21,10 +23,48 @@
 
 @implementation OfferListViewController
 
+
+- (void)reloadData
+{
+    [results removeAllObjects];
+    results = [NSMutableArray arrayWithArray:[[Offer findEnabledOrValidUntil] mutableCopy]];
+    [self.collectionView reloadData];
+}
+
+- (IBAction)reload:(id)sender
+{
+    NetworkReachability *networkReachability = [appDelegate networkReachability];
+    
+    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD.labelText = [NSString localizedStringWithFormat:@"Loading...", nil];
+    HUD.mode = MBProgressHUDModeAnnularDeterminate;
+    if ([networkReachability isReachable])
+    {
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.10 * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            CoreDataSeed *seed = [[CoreDataSeed alloc] init];
+            [seed migrateOffersOrFail:^(NSError* error){
+                if (error != nil) {
+                    HUD.labelText = [error localizedDescription];
+                }
+            }];
+            [self reloadData];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    } else {
+        HUD.labelText = [networkReachability currentReachabilityString];
+        [HUD hide:YES afterDelay:2];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    results = [[Offer findEnabledOrValidUntil] mutableCopy];
+    if ([[Offer findEnabledOrValidUntil] count] == 0 ) {
+        [self performSelector:@selector(reload:)  withObject:nil afterDelay:1.0];
+    } else {
+        [self reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning

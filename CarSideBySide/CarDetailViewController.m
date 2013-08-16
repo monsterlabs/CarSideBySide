@@ -11,6 +11,8 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "Car.h"
 #import "ComparativeViewController.h"
+#import "AppDelegate.h"
+#import <AFImageDownloader.h>
 @interface CarDetailViewController ()
 
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
@@ -40,7 +42,28 @@
     
     highlighsTextView.text = self.car.highlights;
     
-    carImageView.image = [UIImage imageNamed:self.car.image];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[self.car valueForKey:@"image"]];
+    
+    if(![fileManager fileExistsAtPath:imagePath])
+    {
+        NSString *dummyImagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"../CarSideBySide.app/car_dummy.jpg"];
+        NSData *data = [NSData dataWithContentsOfFile:dummyImagePath];
+        carImageView.image = [UIImage imageWithData:data];
+        
+        NetworkReachability *networkReachability = [appDelegate networkReachability];
+        if ([networkReachability isReachable])
+        {
+            [AFImageDownloader imageDownloaderWithURLString:[self.car valueForKey:@"imageUrl"] autoStart:YES completion:^(UIImage *decompressedImage) {
+                NSData *binaryImage = UIImageJPEGRepresentation(decompressedImage, 0.8);
+                [binaryImage writeToFile:imagePath atomically:YES];
+                carImageView.image = decompressedImage;
+            }];
+        }
+    } else {
+        NSData *data = [NSData dataWithContentsOfFile:imagePath];
+        carImageView.image = [UIImage imageWithData:data];
+    }
 
     carImageView.layer.cornerRadius = 3.0f;
     carImageView.layer.masksToBounds = YES;
@@ -57,7 +80,7 @@
     {
         [self resizeCarImageView];
         [carImageView setNeedsDisplay];
-                [self.view setNeedsDisplay];
+        [self.view setNeedsDisplay];
     }
         
 }
@@ -77,25 +100,30 @@
     [super viewDidLoad];
     if (self.car != nil) {
         [self configureView];
-    } 
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    BOOL isLandscape = UIDeviceOrientationIsLandscape(self.interfaceOrientation);
-    if (isLandscape) {
-        [self resizeCarImageView];
-    }
-    if (self.car == nil) {
+     if (self.car == nil) {
         highlighsTextView.text = @"";
         [self.toolbar setHidden:YES];
     }
     [super viewDidAppear:TRUE];
 }
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:TRUE];
+}
 
+- (void)viewDidLayoutSubviews
+{
+    BOOL isLandscape = UIDeviceOrientationIsLandscape(self.interfaceOrientation);
+    if (isLandscape) {
+        [self resizeCarImageView];
+    }
+    [super viewDidLayoutSubviews];
 }
 
 - (void)didReceiveMemoryWarning
