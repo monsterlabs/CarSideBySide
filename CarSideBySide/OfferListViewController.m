@@ -40,6 +40,7 @@
     HUD.mode = MBProgressHUDModeAnnularDeterminate;
     if ([networkReachability isReachable])
     {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible =  YES;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.10 * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             CoreDataSeed *seed = [[CoreDataSeed alloc] init];
@@ -50,10 +51,12 @@
             }];
             [self reloadData];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible =  NO;
         });
     } else {
         HUD.labelText = [networkReachability currentReachabilityString];
         [HUD hide:YES afterDelay:2];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible =  NO;
     }
 }
 
