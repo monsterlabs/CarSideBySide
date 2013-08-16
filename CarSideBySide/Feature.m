@@ -9,7 +9,7 @@
 #import "Feature.h"
 #import "ComparedFeature.h"
 #import "Specification.h"
-
+#import "SpecificationType.h"
 
 @implementation Feature
 
@@ -17,7 +17,13 @@
 @dynamic descr;
 @dynamic highlighted;
 @dynamic name;
+@dynamic id;
 @dynamic specification;
 @dynamic comparedFeatures;
+
+- (NSString *) nameORAdditionalInfo
+{
+    return [self.specification.specificationType.name isEqualToString:@"Opcionales"] ? ([NSString stringWithFormat:@"%@ %@",self.name, (self.additionalInfo ? self.additionalInfo : @"")]) : self.name;
+}
 
 @end

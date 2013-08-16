@@ -8,7 +8,7 @@
 
 #import "CarListViewController.h"
 #import "AppDelegate.h"
-#import "CarModel.h"
+#import "Line.h"
 #import "Car.h"
 #import "NSManagedObject+Find.h"
 #import "CarCell.h"
@@ -42,12 +42,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.title = self.serie.name;
     self.data = [NSMutableArray array];
-    for (CarModel *carModel in self.serie.carModels)
+
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+
+    NSSortDescriptor *sortLineDescriptor = [[NSSortDescriptor alloc] initWithKey:@"modelName" ascending:YES];
+    NSArray *sortLines = [[NSArray alloc] initWithObjects:sortLineDescriptor, nil];
+
+    for (Line *line in [self.serie.lines sortedArrayUsingDescriptors:sortDescriptors])
     {
-        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: carModel, @"carModel", [carModel.cars allObjects], @"cars", nil];
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: line, @"line", [line.cars sortedArrayUsingDescriptors:sortLines], @"cars", nil];
         [data addObject:dict];
     }
     [self.filteredData removeAllObjects];
@@ -70,8 +77,8 @@
     tempLabel.shadowOffset = CGSizeMake(0,2);
     tempLabel.textColor = [UIColor whiteColor];
     tempLabel.font = [UIFont boldSystemFontOfSize:16.0];
-    CarModel *carModel = [self carModelWithTableView:tableView inSection:section];
-    tempLabel.text= carModel.name;
+    Line *line = [self lineWithTableView:tableView inSection:section];
+    tempLabel.text= line.name;
     
     [tempView addSubview:tempLabel];
     return tempView;
@@ -114,8 +121,8 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 
 {
-    CarModel *carModel = [self carModelWithTableView:tableView inSection:section];
-    return carModel.name;
+    Line *line = [self lineWithTableView:tableView inSection:section];
+    return line.name;
 }
 
 
@@ -139,12 +146,12 @@
         return (Car *)[[[self.data objectAtIndex:indexPath.section] objectForKey:@"cars"] objectAtIndex:indexPath.row];
 }
 
-- (CarModel *)carModelWithTableView:(UITableView *)tableView inSection:(NSInteger)section
+- (Line *)lineWithTableView:(UITableView *)tableView inSection:(NSInteger)section
 {
     if (tableView == self.searchDisplayController.searchResultsTableView)
-        return (CarModel*)[[self.filteredData objectAtIndex:section] objectForKey:@"carModel"];
+        return (Line*)[[self.filteredData objectAtIndex:section] objectForKey:@"line"];
     else
-        return (CarModel*)[[self.data objectAtIndex:section] objectForKey:@"carModel"];
+        return (Line*)[[self.data objectAtIndex:section] objectForKey:@"line"];
 }
 
 - (void)filterData:(NSString*)searchString;
@@ -156,30 +163,27 @@
         {
             BOOL match = NO;
             NSPredicate *containPred = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchString];
-            match = match | [containPred evaluateWithObject:car.model];
+            match = match | [containPred evaluateWithObject:car.modelName];
             if (match) {
                 [cars addObject:car];
             }
         }
         
-        NSDictionary *newDict = [NSDictionary dictionaryWithObjectsAndKeys:[dict objectForKey:@"carModel"], @"carModel", cars, @"cars", nil];
+        NSDictionary *newDict = [NSDictionary dictionaryWithObjectsAndKeys:[dict objectForKey:@"line"], @"line", cars, @"cars", nil];
         [self.filteredData addObject:newDict];
     }
 }
-#pragma mark - UISearchDisplayController Delegate Methods
 
+#pragma mark - UISearchDisplayController Delegate Methods
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    
-    [self filterData:searchString];
-    
+    [self filterData:searchString];    
     return YES;
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
 {
     NSString *searchString = [self.searchDisplayController.searchBar text];
-    
     [self filterData:searchString];
     return YES;
 }

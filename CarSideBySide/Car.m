@@ -7,7 +7,6 @@
 //
 
 #import "Car.h"
-#import "CarModel.h"
 #import "Line.h"
 #import "Specification.h"
 #import "SpecificationType.h"
@@ -20,10 +19,11 @@
 @dynamic modelName;
 @dynamic orderKey;
 @dynamic year;
-@dynamic carModel;
-@dynamic lines;
-@dynamic specifications;
+@dynamic id;
+@dynamic imageUrl;
 
+@dynamic line;
+@dynamic specifications;
 
 - (NSString *)model {
     NSString *model = [NSString stringWithFormat:@"%@ %@", self.modelName, self.year];

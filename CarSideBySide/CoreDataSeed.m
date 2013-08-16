@@ -12,7 +12,7 @@
 #import "Offer.h"
 #import "Brand.h"
 #import "Serie.h"
-#import "CarModel.h"
+#import "Line.h"
 #import "Car.h"
 #import "SpecificationType.h"
 #import "Specification.h"
@@ -20,248 +20,481 @@
 #import "ComparedCar.h"
 #import "Comparative.h"
 #import "ComparedFeature.h"
-#import <MBFaker.h>
-#import <DVCoreDataFinders.h>
+#import "CarCatalogApiClient.h"
+#import "Brand.h"
 
 @implementation CoreDataSeed
-@synthesize managedObjectContext;
+@synthesize inflector, coreDataStack;
 
 # pragma - Public methods
 
 - (id)init
 {
-    NSLog(@"Initializing the database data loading...");
+    NSLog(@"The database migration has started");
     [MBFaker setLanguage:@"en"];
+    inflector = [TTTStringInflector defaultInflector];
+    coreDataStack = [appDelegate coreDataStack];
     
     return self;
 }
 
-- (void)loadInitialData
+- (void)migrateOffersOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
 {
-    NSLog(@"Database data loading in progress...");
-    [self insertOffers];
-    [self insertBrands];
-    [self insertSeries];
-    [self insertCarModels];
-    [self insertCars];
-    [self insertSpecTypes];
-    [self insertCarSpecifications];
-    [self insertSpecFeatures];
-}
-
-# pragma - Database population methods
-- (void)insertOffers
-{
-    if ([[Offer findAll] count] == 0 ) {
-        [self logMessageForModel:@"Offer"];
-        for (int i = 1; i <= 9; i++) {
-            Offer *offer = (Offer *)[NSEntityDescription insertNewObjectForEntityForName:@"Offer" inManagedObjectContext:[appDelegate managedObjectContext]];
-            offer.title = [MBFakerLorem words:[self random_max:7]];
-            offer.body = [MBFakerLorem paragraphs:[self random_max:5]];
-            offer.image = [NSString stringWithFormat:@"bmw_offer_test_%i.jpg", i];
-            offer.largeImage = [NSString stringWithFormat:@"bmw_offer_test_%i_large.jpg", i];
-            offer.url = [MBFakerInternet url];
-            offer.enabled = @YES;
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy-mm-dd"];
-            NSCalendar *calendar = [NSCalendar currentCalendar];
-            NSDate *currentDate = [NSDate date];
-            NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-            [dateComps setMonth: i];
-            NSDate *newDate =[calendar dateByAddingComponents:dateComps toDate:currentDate options:0];
-            offer.validUntil = newDate;
-            [self saveContext];
+    [self logMessageForModel:@"Offer"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"offers.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (Offer *offer in [Offer findAll]) { [self.coreDataStack.managedObjectContext deleteObject:offer]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Offer" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"offers"])
+        {
+            NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
+            Offer *offer = (Offer *)[NSEntityDescription insertNewObjectForEntityForName:@"Offer" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [offer setValuesForKeysWithDictionary:mutableDict];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
         }
     }
 }
 
-- (void)insertBrands
+- (void)migrateBrandsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
 {
-    if ([[Brand findAll] count] == 0) {
-        [self logMessageForModel:@"Brand"];
-        NSArray *brands = [NSArray arrayWithObjects:@"BMW", @"Audi", @"Volvo", @"Mercedes Benz", nil];
-        for (NSString *brandName in brands ) {
-            Brand *brand = (Brand *)[NSEntityDescription insertNewObjectForEntityForName:@"Brand" inManagedObjectContext:[appDelegate managedObjectContext]];
-            [brand setName:brandName];
-            [self saveContext];
+    [self logMessageForModel:@"Brand"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"brands.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (Brand *record in [Brand findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"brands"])
+        {
+            NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
+            Brand *brand = (Brand *)[NSEntityDescription insertNewObjectForEntityForName:@"Brand" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [brand setValuesForKeysWithDictionary:mutableDict];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
         }
     }
 }
 
-- (void)insertSeries
+- (void)migrateSeriesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
 {
-    if ([[Serie findAll] count] == 0 ){
-        [self logMessageForModel:@"Serie"];
-        Brand *bmw = [Brand findFirstWhereProperty:@"name" equals:@"BMW" inContext:[appDelegate managedObjectContext] error:nil];
-        NSArray *series = [NSArray arrayWithObjects:@"Serie 1", @"Serie 3", @"Serie 4", @"Serie 5", @"Serie 6", @"Serie 7", @"Serie X", @"Serie Z4", @"Serie M", nil];
-        for (NSString *serieName in series) {
-            Serie *serie = (Serie *)[NSEntityDescription insertNewObjectForEntityForName:@"Serie" inManagedObjectContext:[appDelegate managedObjectContext]];
-            serie.name = serieName;
-            serie.enabled = @YES;
-            serie.brand = bmw;
-            [self saveContext];
+    [self logMessageForModel:@"Serie"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"series.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (Serie *record in [Serie findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Serie" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"series"])
+        {
+            Serie *serie = (Serie *)[NSEntityDescription insertNewObjectForEntityForName:@"Serie" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [serie setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
+            NSNumber *belongsToId = [[dict valueForKey:@"brand"] valueForKey:@"id"];
+            Brand *brand = [Brand findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", belongsToId]
+                                               inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                   error:&error];
+            [serie setBrand:brand];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
         }
     }
 }
 
-- (void)insertCarModels
+- (void)migrateLinesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
 {
-    if ([[CarModel findAll] count] == 0) {
-        [self logMessageForModel:@"CarModel"];
-        for (Serie *serie in [Serie findAll]) {
+    [self logMessageForModel:@"Line"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"lines.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (Line *record in [Line findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Line" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"lines"])
+        {
+            Line *line = (Line *)[NSEntityDescription insertNewObjectForEntityForName:@"Line" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [line setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
+            NSNumber *belongsToId = [[dict valueForKey:@"serie"] valueForKey:@"id"];
+            Serie *serie = [Serie findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", belongsToId]
+                                               inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                   error:&error];
+            [line setSerie:serie];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
+}
+
+- (void)migrateCarsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    [self logMessageForModel:@"Car"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"cars.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (Car *record in [Car findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Car" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"cars"])
+        {
+            Car *car = (Car *)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [car setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
+            NSNumber *belongsToId = [[dict valueForKey:@"line"] valueForKey:@"id"];
+            Line *line = [Line findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", belongsToId]
+                                               inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                   error:&error];
+            [car setLine:line];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
+}
+
+- (void)migrateSpecificationTypesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    [self logMessageForModel:@"SpecificationTypes"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"specification_types.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (SpecificationType *record in [SpecificationType findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"SpecificationType" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"specificationtypes"])
+        {
+            NSMutableDictionary *mutableDict = [[self attributesForRepresentation:dict ofEntity:entity] mutableCopy];
+            SpecificationType *specType = (SpecificationType *)[NSEntityDescription insertNewObjectForEntityForName:@"SpecificationType" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [specType setValuesForKeysWithDictionary:mutableDict];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
+}
+
+- (void)migrateComparedCarsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    [self logMessageForModel:@"ComparedCar"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"compared_cars.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (ComparedCar *record in [ComparedCar findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"ComparedCar" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"comparedcars"])
+        {
+            ComparedCar *comparedCar = (ComparedCar *)[NSEntityDescription insertNewObjectForEntityForName:@"ComparedCar" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [comparedCar setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
+            NSNumber *belongsToId = [[dict valueForKey:@"brand"] valueForKey:@"id"];
+            Brand *brand = [Brand findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", belongsToId]
+                                               inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                   error:&error];
+            [comparedCar setBrand:brand];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
+}
+
+- (void)migrateSpecificationsOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    [self logMessageForModel:@"Specification"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"specifications.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (Specification *record in [Specification findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Specification" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"specifications"])
+        {
+            Specification *spec = (Specification *)[NSEntityDescription insertNewObjectForEntityForName:@"Specification" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [spec setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
             
-            int max = [self random_max:8];
-            for(int i = 1; i <= max; i++)
-            {
-                CarModel *carModel = (CarModel *)[NSEntityDescription insertNewObjectForEntityForName:@"CarModel" inManagedObjectContext:[appDelegate managedObjectContext]];
-                carModel.name = [MBFakerLorem words:[self random_max:3]];
-                carModel.enabled = @YES;
-                carModel.serie = serie;
-                [self saveContext];
-            }
+            NSNumber *carId = [[dict valueForKey:@"car"] valueForKey:@"id"];
+            Car *car = [Car findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", carId]
+                                               inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                   error:&error];
+            [spec setCar:car];
+
+            NSNumber *specTypeId = [[dict valueForKey:@"specificationType"] valueForKey:@"id"];
+            SpecificationType *specType = [SpecificationType findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", specTypeId]
+                                         inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                             error:&error];
+            [spec setSpecificationType:specType];
+
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
+}
+
+- (void)migrateFeaturesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    [self logMessageForModel:@"Feature"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"features.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (Feature *record in [Feature findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Feature" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"features"])
+        {
+            Feature *feature = (Feature *)[NSEntityDescription insertNewObjectForEntityForName:@"Feature" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [feature setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
+            NSNumber *belongsToId = [[dict valueForKey:@"specification"] valueForKey:@"id"];
+            Specification *spec = [Specification findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", belongsToId]
+                                               inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                   error:&error];
+            [feature setSpecification:spec];
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
+}
+
+- (void)migrateComparativesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    [self logMessageForModel:@"Comparative"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"comparatives.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (Comparative *record in [Comparative findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Comparative" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"comparatives"])
+        {
+            Comparative *comparative = (Comparative *)[NSEntityDescription insertNewObjectForEntityForName:@"Comparative" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [comparative setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
             
-        }
-    }
-}
-
-- (void)insertCars
-{
-    if ([[Car findAll] count] == 0)
-    {
-        [self logMessageForModel:@"Car"];
-        NSString *bundleRoot = [[NSBundle mainBundle] bundlePath];
-        NSFileManager *fm = [NSFileManager defaultManager];
-        NSArray *dirContents = [fm contentsOfDirectoryAtPath:bundleRoot error:nil];
-        NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self BEGINSWITH 'bmw_s'"];
-        NSArray *carJPGs = [dirContents filteredArrayUsingPredicate:fltr];
-
-        for (CarModel *model in [CarModel findAll]) {
-            int max = [self random_max:5];
-            for (int i = 1; i <= max; i++)
-            {
-                Car *car = (Car*)[NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:[appDelegate managedObjectContext]];
-                car.modelName = [MBFakerLorem words:[self random_max:2]];
-                car.enabled = @YES;
-                car.highlights = [MBFakerLorem paragraphs:[self random_max:4]];
-                car.image = [carJPGs objectAtIndex:arc4random_uniform([carJPGs count])];
-                car.year = [NSNumber numberWithInt:2013];
-                car.carModel = model;
-                [self saveContext];
-            }
-        }
-        
-    }
-}
-
-- (void)insertSpecTypes
-{
-    if([[SpecificationType findAll] count] == 0 )
-    {
-        [self logMessageForModel:@"SpecificationType"];
-        NSArray *specificationTypes = [NSArray arrayWithObjects: @"Technical details", @"Equipment", @"Safety", @"Lines", @"Price", nil];
-        for (NSString *specTypeName in specificationTypes) {
-            SpecificationType *specType = (SpecificationType*)[NSEntityDescription insertNewObjectForEntityForName:@"SpecificationType" inManagedObjectContext:[appDelegate managedObjectContext]];
-            specType.name = specTypeName;
-            [self saveContext];
-        }
-        
-    }
-}
-
-- (void)insertCarSpecifications
-{
-    if ([[Specification findAll] count] == 0)
-    {
-        [self logMessageForModel:@"Specification"];
-        for (Car *car in [Car findAll]) {
-            for (SpecificationType *specType in [SpecificationType findAll]) {
-                Specification *spec = (Specification *)[NSEntityDescription insertNewObjectForEntityForName:@"Specification" inManagedObjectContext:[appDelegate managedObjectContext]];
-                spec.specificationType = specType;
-                spec.car = car;
-                spec.image = @"bmw_s3_gran_turismo.jpg";
-                spec.descr = [MBFakerLorem paragraphs:[self random_max:2]];
-                [self saveContext];
-            }
-        }
-    }
-}
-
-- (void)insertSpecFeatures
-{
-    if ([[Feature findAll] count] == 0 )
-    {
-        [self logMessageForModel:@"Feature, ComparedCar, Comparative and ComparedFeature" ];
-        for (Car *car in [Car findAll]){
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name != 'BMW'"];
-            NSError *error;
-            NSArray *brands = [Brand findAllWithPredicate:predicate inContext:[appDelegate managedObjectContext] error:&error];
-            int maxComparedCars = [self random_max:[brands count]];
-            NSMutableArray *comparedCars = [NSMutableArray array];
-            for (int i = 0; i < maxComparedCars; i++) {
-                ComparedCar *comparedCar = (ComparedCar *)[NSEntityDescription insertNewObjectForEntityForName:@"ComparedCar" inManagedObjectContext:[appDelegate managedObjectContext]];
-                comparedCar.modelName = [MBFakerLorem word];
-                comparedCar.brand = [brands objectAtIndex:i];
-                comparedCar.year = [NSNumber numberWithInt:2013];
-                [self saveContext];
-                [comparedCars addObject:comparedCar];
-            }
+            NSNumber *comparedCarId = [[dict valueForKey:@"comparedCar"] valueForKey:@"id"];
+            ComparedCar *comparedCar = [ComparedCar findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", comparedCarId]
+                                         inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                             error:&error];
+            [comparative setComparedCar:comparedCar];
             
-            for (Specification *spec in [car specifications]) {
-                
-                for (ComparedCar *comparedCar in comparedCars) {
-                    Comparative *comparative = (Comparative *)[NSEntityDescription insertNewObjectForEntityForName:@"Comparative" inManagedObjectContext:[appDelegate managedObjectContext]];
-                    comparative.comparedCar = comparedCar;
-                    comparative.specification = spec;
-                    [self saveContext];
-                }
-                
-                int max = [self random_max:10];
-                for (int i = 1; i <= max; i++) {
-                    Feature *feature = (Feature *)[NSEntityDescription insertNewObjectForEntityForName:@"Feature" inManagedObjectContext:[appDelegate managedObjectContext]];
-                    feature.name = [NSString stringWithFormat:@"Feature %@",
-                                  [MBFakerLorem words:[self random_max:2]]];
-                    feature.descr = [MBFakerLorem word];
-                    feature.highlighted  = [NSNumber numberWithInt:arc4random_uniform(1)];
-                    if (i == max) {
-                        feature.highlighted = @YES;
-                    }
-                    feature.specification = spec;
-                    [self saveContext];
-                    for (Comparative *comparative in spec.comparatives)
-                    {
-                        ComparedFeature *compFeature = (ComparedFeature *)[NSEntityDescription insertNewObjectForEntityForName:@"ComparedFeature" inManagedObjectContext:[appDelegate managedObjectContext]];
-                        compFeature.descr = [MBFakerLorem word];
-                        compFeature.feature = feature;
-                        compFeature.comparative = comparative;
-                    }                    
-                }
-            }
+            NSNumber *specId = [[dict valueForKey:@"specification"] valueForKey:@"id"];
+            Specification *spec = [Specification findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", specId]
+                                                                          inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                                              error:&error];
+            [comparative setSpecification:spec];
+            
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
         }
     }
 }
 
-- (void)saveContext
+- (void)migrateComparedFeaturesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
 {
-    NSError *error;
-    [[appDelegate managedObjectContext] save:&error];
-    if (error != nil)
-        NSLog(@"Managed Object Context has the following error: %@", error);
+    [self logMessageForModel:@"ComparedFeature"];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"compared_features.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:[url path] parameters:nil];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if(error) {
+        blockFailedToSave(error);
+    } else {
+        for (ComparedFeature *record in [ComparedFeature findAll]) { [self.coreDataStack.managedObjectContext deleteObject:record]; }
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"ComparedFeature" inManagedObjectContext:[[appDelegate coreDataStack] managedObjectContext]];
+        for (NSDictionary *dict in [arr valueForKey:@"comparedfeatures"])
+        {
+            ComparedFeature *comparedFeature = (ComparedFeature *)[NSEntityDescription insertNewObjectForEntityForName:@"ComparedFeature" inManagedObjectContext:self.coreDataStack.managedObjectContext];
+            [comparedFeature setValuesForKeysWithDictionary:[[self attributesForRepresentation:dict ofEntity:entity] mutableCopy]];
+            
+            NSNumber *featureId = [[dict valueForKey:@"feature"] valueForKey:@"id"];
+            Feature *feature = [Feature findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", featureId]
+                                                                 inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                                     error:&error];
+            [comparedFeature setFeature:feature];
+            
+            NSNumber *comparativeId = [[dict valueForKey:@"comparative"] valueForKey:@"id"];
+            Comparative *comparative = [Comparative findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@", comparativeId]
+                                                              inContext:[[appDelegate coreDataStack] managedObjectContext]
+                                                                  error:&error];
+            [comparedFeature setComparative:comparative];
+            
+            [self.coreDataStack saveOrFail:^(NSError* error) {
+                blockFailedToSave(error);
+            }];
+        }
+    }
+}
+
+
+- (void)migrateCarComparativesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    [self migrateBrandsOrFail:^(NSError* error){
+        if (error != nil)
+            blockFailedToSave(error);
+    }];
+    
+    [self migrateSeriesOrFail:^(NSError* error){
+        if (error != nil)
+            blockFailedToSave(error);
+    }];
+    
+    [self migrateLinesOrFail:^(NSError* error){
+        if (error != nil)
+            blockFailedToSave(error);
+    }];
+    
+    [self migrateCarsOrFail:^(NSError* error){
+        if (error != nil)
+            blockFailedToSave(error);
+    }];
+    
+    [self migrateSpecificationTypesOrFail:^(NSError* error){
+        if (error != nil)
+            blockFailedToSave(error);
+    }];
+    
+    [self migrateComparedCarsOrFail:^(NSError* error){
+        if (error != nil)
+            blockFailedToSave(error);
+    }];
+    
+    [self migrateSpecificationsOrFail:^(NSError* error){
+        if (error != nil)
+            blockFailedToSave(error);
+    }];
+    
+    [self migrateFeaturesOrFail:^(NSError* error){
+        if (error != nil)
+            blockFailedToSave(error);
+    }];
+    
+    [self migrateComparativesOrFail:^(NSError* error){
+        if (error != nil)
+            blockFailedToSave(error);
+    }];
+    
+    [self migrateComparedFeaturesOrFail:^(NSError* error){
+        if (error != nil)
+            blockFailedToSave(error);
+    }];
 }
 
 - (void)logMessageForModel:(NSString *)modelName
 {
-    NSLog(@"Inserting data into the %@ model(s)...", modelName);
-}
-
-- (int)random_max:(int)max
-{
-    int min = 1;
-    return (min + arc4random_uniform(max));
+    NSLog(@"Inserting and updating data into the %@ model...", modelName);
 }
 
 - (void)dealloc
 {
-    NSLog(@"Finishing the database data loading...");
+    NSLog(@"The database migration has finished");
+}
+
+- (NSDictionary *)attributesForRepresentation:(NSDictionary *)representation
+                                     ofEntity:(NSEntityDescription *)entity
+{
+    if ([representation isEqual:[NSNull null]]) {
+        return nil;
+    }
+    
+    NSMutableDictionary *mutableAttributes = [representation mutableCopy];
+    @autoreleasepool {
+        NSMutableSet *mutableKeys = [NSMutableSet setWithArray:[representation allKeys]];
+        [mutableKeys minusSet:[NSSet setWithArray:[entity.attributesByName allKeys]]];
+        [mutableAttributes removeObjectsForKeys:[mutableKeys allObjects]];
+        
+        NSSet *keysWithNestedValues = [mutableAttributes keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
+            return [obj isKindOfClass:[NSArray class]] || [obj isKindOfClass:[NSDictionary class]];
+        }];
+        [mutableAttributes removeObjectsForKeys:[keysWithNestedValues allObjects]];
+    }
+    
+    [entity.attributesByName enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if ([(NSAttributeDescription *)obj attributeType] == NSDateAttributeType) {
+            id value = [mutableAttributes valueForKey:key];
+            if (value && ![value isEqual:[NSNull null]] && [value isKindOfClass:[NSString class]]) {
+                [mutableAttributes setValue:[[NSValueTransformer valueTransformerForName:TTTISO8601DateTransformerName] reverseTransformedValue:value] forKey:key];
+            }
+        }
+    }];
+    
+    return mutableAttributes;
 }
 
 

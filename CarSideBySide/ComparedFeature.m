@@ -14,6 +14,7 @@
 @implementation ComparedFeature
 
 @dynamic descr;
+@dynamic id;
 @dynamic feature;
 @dynamic comparative;
 
