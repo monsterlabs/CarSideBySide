@@ -163,30 +163,27 @@
         {
             BOOL match = NO;
             NSPredicate *containPred = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchString];
-            match = match | [containPred evaluateWithObject:car.model];
+            match = match | [containPred evaluateWithObject:car.modelName];
             if (match) {
                 [cars addObject:car];
             }
         }
         
-        NSDictionary *newDict = [NSDictionary dictionaryWithObjectsAndKeys:[dict objectForKey:@"carModel"], @"carModel", cars, @"cars", nil];
+        NSDictionary *newDict = [NSDictionary dictionaryWithObjectsAndKeys:[dict objectForKey:@"line"], @"line", cars, @"cars", nil];
         [self.filteredData addObject:newDict];
     }
 }
-#pragma mark - UISearchDisplayController Delegate Methods
 
+#pragma mark - UISearchDisplayController Delegate Methods
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    
-    [self filterData:searchString];
-    
+    [self filterData:searchString];    
     return YES;
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
 {
     NSString *searchString = [self.searchDisplayController.searchBar text];
-    
     [self filterData:searchString];
     return YES;
 }
