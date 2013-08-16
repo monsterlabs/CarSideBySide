@@ -12,12 +12,11 @@
 #import <YISplashScreenAnimation.h>
 #import "CoreDataStack.h"
 
-
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize coreDataStack = _coreDataStack;
-
+@synthesize networkReachability = _networkReachability;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [YISplashScreen show];
@@ -25,6 +24,7 @@
     _coreDataStack = [CoreDataStack coreDataStackWithModelName:@"CarSideBySide"];
     _coreDataStack.coreDataStoreType = CDSStoreTypeSQL;
     _managedObjectContext = _coreDataStack.managedObjectContext;
+    _networkReachability = [[NetworkReachability alloc] init];
     
     [YISplashScreen waitForMigration:nil completion:^{
         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];

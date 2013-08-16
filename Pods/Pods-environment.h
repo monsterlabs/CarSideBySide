@@ -6,6 +6,12 @@
 // project.
 
 
+// AFImageDownloader
+#define COCOAPODS_POD_AVAILABLE_AFImageDownloader
+#define COCOAPODS_VERSION_MAJOR_AFImageDownloader 1
+#define COCOAPODS_VERSION_MINOR_AFImageDownloader 0
+#define COCOAPODS_VERSION_PATCH_AFImageDownloader 0
+
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 1
@@ -23,6 +29,12 @@
 #define COCOAPODS_VERSION_MAJOR_InflectorKit 0
 #define COCOAPODS_VERSION_MINOR_InflectorKit 0
 #define COCOAPODS_VERSION_PATCH_InflectorKit 1
+
+// Kiwi
+#define COCOAPODS_POD_AVAILABLE_Kiwi
+#define COCOAPODS_VERSION_MAJOR_Kiwi 1
+#define COCOAPODS_VERSION_MINOR_Kiwi 1
+#define COCOAPODS_VERSION_PATCH_Kiwi 1
 
 // LibYAML
 #define COCOAPODS_POD_AVAILABLE_LibYAML

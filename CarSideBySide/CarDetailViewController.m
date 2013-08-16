@@ -11,6 +11,8 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "Car.h"
 #import "ComparativeViewController.h"
+#import "AppDelegate.h"
+#import <AFImageDownloader.h>
 @interface CarDetailViewController ()
 
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
@@ -42,13 +44,26 @@
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[self.car valueForKey:@"image"]];
+    
     if(![fileManager fileExistsAtPath:imagePath])
     {
-         imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"../CarSideBySide.app/car_dummy.jpg"];
+        NSString *dummyImagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"../CarSideBySide.app/car_dummy.jpg"];
+        NSData *data = [NSData dataWithContentsOfFile:dummyImagePath];
+        carImageView.image = [UIImage imageWithData:data];
+        
+        NetworkReachability *networkReachability = [appDelegate networkReachability];
+        if ([networkReachability isReachable])
+        {
+            [AFImageDownloader imageDownloaderWithURLString:[self.car valueForKey:@"imageUrl"] autoStart:YES completion:^(UIImage *decompressedImage) {
+                NSData *binaryImage = UIImageJPEGRepresentation(decompressedImage, 0.8);
+                [binaryImage writeToFile:imagePath atomically:YES];
+                carImageView.image = decompressedImage;
+            }];
+        }
+    } else {
+        NSData *data = [NSData dataWithContentsOfFile:imagePath];
+        carImageView.image = [UIImage imageWithData:data];
     }
-    NSData *data = [NSData dataWithContentsOfFile:imagePath];
-
-    carImageView.image = [UIImage imageWithData:data];
 
     carImageView.layer.cornerRadius = 3.0f;
     carImageView.layer.masksToBounds = YES;

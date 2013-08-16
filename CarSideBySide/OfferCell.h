@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFImageDownloader.h>
 
 @interface OfferCell : UICollectionViewCell
 {
