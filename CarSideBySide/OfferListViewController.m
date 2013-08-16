@@ -33,7 +33,7 @@
 
 - (IBAction)reload:(id)sender
 {
-    NetworkReachability *networkReachability = [[NetworkReachability alloc] init];
+    NetworkReachability *networkReachability = [appDelegate networkReachability];
     
     HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     HUD.labelText = [NSString localizedStringWithFormat:@"Loading...", nil];
