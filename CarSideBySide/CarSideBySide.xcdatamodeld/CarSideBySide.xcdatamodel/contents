@@ -44,6 +44,7 @@
         <attribute name="highlighted" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="id" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sequence" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <relationship name="comparedFeatures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ComparedFeature" inverseName="feature" inverseEntity="ComparedFeature" syncable="YES"/>
         <relationship name="specification" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Specification" inverseName="features" inverseEntity="Specification" syncable="YES"/>
     </entity>
@@ -93,7 +94,7 @@
         <element name="Comparative" positionX="1132" positionY="-214" width="128" height="105"/>
         <element name="ComparedCar" positionX="1114" positionY="-487" width="128" height="135"/>
         <element name="ComparedFeature" positionX="936" positionY="-187" width="128" height="105"/>
-        <element name="Feature" positionX="738" positionY="-198" width="128" height="150"/>
+        <element name="Feature" positionX="738" positionY="-198" width="128" height="165"/>
         <element name="Line" positionX="756" positionY="-666" width="128" height="120"/>
         <element name="Offer" positionX="585" positionY="-657" width="128" height="195"/>
         <element name="Serie" positionX="927" positionY="-630" width="128" height="120"/>

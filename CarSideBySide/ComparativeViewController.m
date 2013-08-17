@@ -45,7 +45,10 @@
     for (int i = 0; i < numberOfSections; i++) {
         NSMutableArray *sectionArray = [NSMutableArray arrayWithCapacity:1];
         NSMutableArray *rowNames = [NSMutableArray array];
-        for (Feature *feature in self.specification.features) {
+        NSSortDescriptor *sequenceSort = [NSSortDescriptor sortDescriptorWithKey:@"sequence" ascending:YES];
+        NSArray *features = [[self.specification.features allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sequenceSort]];
+        for (Feature *feature in features) {
+
             NSMutableArray *rowArray = [NSMutableArray arrayWithCapacity:numberOfColumns];
             [rowArray addObject:feature.descr];
             for (ComparedFeature *comparedFeature in feature.comparedFeatures) {
@@ -303,25 +306,5 @@
     }
 }
 
-- (void)handleDoubleTap:(UITapGestureRecognizer *)recognizer
-{
-    int col = [recognizer.view tag];
-    for (NSMutableArray *array in sectionHeaderData) {
-        [array removeObjectAtIndex:col];
-        //        [array addObject:@""];
-    }
-    
-    for (NSMutableArray *section in data) {
-        for (NSMutableArray *row in section) {
-            [row removeObjectAtIndex:col];
-            //            [row addObject:@""];
-        }
-    }
-    
-    numberOfColumns--;
-    
-    [tblView reloadData];
-    
-}
 
 @end
