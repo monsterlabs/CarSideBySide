@@ -22,7 +22,7 @@
 
 - (NSString *)model
 {
-    NSString *model = [NSString stringWithFormat:@"%@ %@", self.modelName, self.year];
+    NSString *model = [NSString stringWithFormat:@"%@ %@ %@", self.brand.name, self.modelName, self.year];
     return model;
 }
 @end
