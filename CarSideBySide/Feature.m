@@ -18,6 +18,7 @@
 @dynamic highlighted;
 @dynamic name;
 @dynamic id;
+@dynamic sequence;
 @dynamic specification;
 @dynamic comparedFeatures;
 
