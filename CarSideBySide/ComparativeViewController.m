@@ -34,7 +34,9 @@
 {
     self.myheaders = [NSMutableArray array];
     [self.myheaders addObject:self.specification.car.model];
-    for (Comparative *comparative in self.specification.comparatives) {
+    NSSortDescriptor *idSorter = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:YES];
+    NSArray *comparatives = [[self.specification.comparatives allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:idSorter]];
+    for (Comparative *comparative in comparatives) {
         [self.myheaders addObject:comparative.comparedCar.model];
     }
     numberOfColumns = [self.specification.comparatives count] +1;
@@ -42,16 +44,19 @@
     data = [[NSMutableArray alloc] initWithCapacity:numberOfSections * 5];
     self.columnNamesPerRow = [NSMutableArray arrayWithCapacity:numberOfSections * 5];
     sectionHeaderData = [[NSMutableArray alloc] initWithCapacity:numberOfSections];
+    NSSortDescriptor *comparativeIdSorter = [NSSortDescriptor sortDescriptorWithKey:@"comparative.id" ascending:YES];
     for (int i = 0; i < numberOfSections; i++) {
         NSMutableArray *sectionArray = [NSMutableArray arrayWithCapacity:1];
         NSMutableArray *rowNames = [NSMutableArray array];
-        NSSortDescriptor *sequenceSort = [NSSortDescriptor sortDescriptorWithKey:@"sequence" ascending:YES];
-        NSArray *features = [[self.specification.features allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sequenceSort]];
+        NSSortDescriptor *sequenceSorter = [NSSortDescriptor sortDescriptorWithKey:@"sequence" ascending:YES];
+        NSArray *features = [[self.specification.features allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sequenceSorter]];
         for (Feature *feature in features) {
 
             NSMutableArray *rowArray = [NSMutableArray arrayWithCapacity:numberOfColumns];
             [rowArray addObject:feature.descr];
-            for (ComparedFeature *comparedFeature in feature.comparedFeatures) {
+            
+            NSArray *comparedFeatures = [[feature.comparedFeatures allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:comparativeIdSorter]];
+            for (ComparedFeature *comparedFeature in comparedFeatures) {
                 [rowArray addObject:comparedFeature.descr];
             }
             [sectionArray addObject:rowArray];
