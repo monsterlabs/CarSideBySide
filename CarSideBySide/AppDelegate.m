@@ -11,6 +11,7 @@
 #import <YISplashScreen+Migration.h>
 #import <YISplashScreenAnimation.h>
 #import "CoreDataStack.h"
+#import "TestFlight.h"
 
 @implementation AppDelegate
 
@@ -19,6 +20,7 @@
 @synthesize networkReachability = _networkReachability;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TestFlight takeOff:@"f3572086-e23b-4000-9b2d-0588b47d30b3"];
     [YISplashScreen show];
     
     _coreDataStack = [CoreDataStack coreDataStackWithModelName:@"CarSideBySide"];

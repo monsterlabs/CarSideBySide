@@ -42,6 +42,13 @@
 		FA953D141757027D004F770D /* OfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA953D131757027D004F770D /* OfferCell.m */; };
 		FA98C5A11760FB4600B64805 /* CarListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA98C5A01760FB4600B64805 /* CarListHeaderView.m */; };
 		FA98C5A517610B1F00B64805 /* SerieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA98C5A417610B1F00B64805 /* SerieListViewController.m */; };
+		FA9E09C017C27AEB008E4F7E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA9E09BA17C27AEB008E4F7E /* README.md */; };
+		FA9E09C117C27AEB008E4F7E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E09BE17C27AEB008E4F7E /* libTestFlight.a */; };
+		FA9E09C217C27AEB008E4F7E /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = FA9E09BF17C27AEB008E4F7E /* release_notes.md */; };
+		FA9E09C617C27BA4008E4F7E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E09C517C27BA4008E4F7E /* AdSupport.framework */; };
+		FA9E09C817C27BC7008E4F7E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E09C717C27BC7008E4F7E /* SystemConfiguration.framework */; };
+		FA9E09CA17C27BD8008E4F7E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E09C917C27BD8008E4F7E /* MobileCoreServices.framework */; };
+		FA9E09CC17C27BE0008E4F7E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9E09CB17C27BE0008E4F7E /* libz.dylib */; };
 		FAA1E308178C990200D60C77 /* EWHeaderHighlightLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E2FC178C990200D60C77 /* EWHeaderHighlightLayer.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		FAA1E309178C990200D60C77 /* EWMultiColumnTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E2FE178C990200D60C77 /* EWMultiColumnTableView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		FAA1E30A178C990200D60C77 /* EWMultiColumnTableViewBGScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E300178C990200D60C77 /* EWMultiColumnTableViewBGScrollView.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
@@ -138,6 +145,16 @@
 		FA98C5A01760FB4600B64805 /* CarListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarListHeaderView.m; sourceTree = "<group>"; };
 		FA98C5A317610B1F00B64805 /* SerieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerieListViewController.h; sourceTree = "<group>"; };
 		FA98C5A417610B1F00B64805 /* SerieListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerieListViewController.m; sourceTree = "<group>"; };
+		FA9E09BA17C27AEB008E4F7E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		FA9E09BB17C27AEB008E4F7E /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		FA9E09BC17C27AEB008E4F7E /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		FA9E09BD17C27AEB008E4F7E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		FA9E09BE17C27AEB008E4F7E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		FA9E09BF17C27AEB008E4F7E /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		FA9E09C517C27BA4008E4F7E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		FA9E09C717C27BC7008E4F7E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FA9E09C917C27BD8008E4F7E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FA9E09CB17C27BE0008E4F7E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FAA1E2FB178C990200D60C77 /* EWHeaderHighlightLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWHeaderHighlightLayer.h; sourceTree = "<group>"; };
 		FAA1E2FC178C990200D60C77 /* EWHeaderHighlightLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWHeaderHighlightLayer.m; sourceTree = "<group>"; };
 		FAA1E2FD178C990200D60C77 /* EWMultiColumnTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWMultiColumnTableView.h; sourceTree = "<group>"; };
@@ -204,11 +221,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9E09CC17C27BE0008E4F7E /* libz.dylib in Frameworks */,
+				FA9E09CA17C27BD8008E4F7E /* MobileCoreServices.framework in Frameworks */,
+				FA9E09C817C27BC7008E4F7E /* SystemConfiguration.framework in Frameworks */,
+				FA9E09C617C27BA4008E4F7E /* AdSupport.framework in Frameworks */,
 				FA2AF9A61755B3B9001BA8ED /* CoreData.framework in Frameworks */,
 				FA2AF9601755A50A001BA8ED /* UIKit.framework in Frameworks */,
 				FA2AF9621755A50A001BA8ED /* Foundation.framework in Frameworks */,
 				FA2AF9641755A50A001BA8ED /* CoreGraphics.framework in Frameworks */,
 				E0E477B930004A02935EB2EC /* libPods.a in Frameworks */,
+				FA9E09C117C27AEB008E4F7E /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +309,10 @@
 		FA2AF95E1755A50A001BA8ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA9E09CB17C27BE0008E4F7E /* libz.dylib */,
+				FA9E09C917C27BD8008E4F7E /* MobileCoreServices.framework */,
+				FA9E09C717C27BC7008E4F7E /* SystemConfiguration.framework */,
+				FA9E09C517C27BA4008E4F7E /* AdSupport.framework */,
 				FA2AF9A51755B3B9001BA8ED /* CoreData.framework */,
 				FA2AF95F1755A50A001BA8ED /* UIKit.framework */,
 				FA2AF9611755A50A001BA8ED /* Foundation.framework */,
@@ -300,6 +326,7 @@
 		FA2AF9651755A50A001BA8ED /* CarSideBySide */ = {
 			isa = PBXGroup;
 			children = (
+				FA9E09B917C27AEB008E4F7E /* TestFlightSDK */,
 				FA2F5D5D179B8F5D00E0F159 /* API */,
 				FAA1E30E178C991500D60C77 /* MultiColumnTableView */,
 				FA8E7C17178BAE3B006131CC /* Comparative */,
@@ -410,6 +437,19 @@
 				FAA1E310178C9AC200D60C77 /* ComparativeViewController.m */,
 			);
 			name = Comparative;
+			sourceTree = "<group>";
+		};
+		FA9E09B917C27AEB008E4F7E /* TestFlightSDK */ = {
+			isa = PBXGroup;
+			children = (
+				FA9E09BA17C27AEB008E4F7E /* README.md */,
+				FA9E09BB17C27AEB008E4F7E /* TestFlight+AsyncLogging.h */,
+				FA9E09BC17C27AEB008E4F7E /* TestFlight+ManualSessions.h */,
+				FA9E09BD17C27AEB008E4F7E /* TestFlight.h */,
+				FA9E09BE17C27AEB008E4F7E /* libTestFlight.a */,
+				FA9E09BF17C27AEB008E4F7E /* release_notes.md */,
+			);
+			path = TestFlightSDK;
 			sourceTree = "<group>";
 		};
 		FAA1E30E178C991500D60C77 /* MultiColumnTableView */ = {
@@ -559,6 +599,8 @@
 				FA728D6117BD6F2800C525B5 /* car_dummy.jpg in Resources */,
 				FA728D6217BD6F2800C525B5 /* offer_dummy_large.jpg in Resources */,
 				FA728D6317BD6F2800C525B5 /* offer_dummy.jpg in Resources */,
+				FA9E09C017C27AEB008E4F7E /* README.md in Resources */,
+				FA9E09C217C27AEB008E4F7E /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1036,6 +1078,10 @@
 				GCC_PREFIX_HEADER = "CarSideBySide/CarSideBySide-Prefix.pch";
 				INFOPLIST_FILE = "CarSideBySide/CarSideBySide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CarSideBySide/TestFlightSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1049,6 +1095,10 @@
 				GCC_PREFIX_HEADER = "CarSideBySide/CarSideBySide-Prefix.pch";
 				INFOPLIST_FILE = "CarSideBySide/CarSideBySide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CarSideBySide/TestFlightSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
