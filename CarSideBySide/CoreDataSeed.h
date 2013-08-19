@@ -15,6 +15,7 @@
 #import <TTTStringInflector.h>
 #import <objc/objc.h>
 #import <AFJSONRequestOperation.h>
+#import <AFImageDownloader.h>
 #import "CoreDataStack.h"
 
 @interface CoreDataSeed : NSObject
@@ -36,6 +37,7 @@
 - (void)migrateComparativesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
 - (void)migrateComparedFeaturesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
 - (void)migrateCarComparativesOrFail:(void(^)(NSError* errorOrNil))blockFailedToSave;
+- (void)downloadCarImages:(void(^)(NSError* errorOrNil))blockFailedToSave;
 - (void)dealloc;
 
 @end

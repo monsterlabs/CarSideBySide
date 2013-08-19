@@ -22,6 +22,7 @@
 #import "ComparedFeature.h"
 #import "CarCatalogApiClient.h"
 #import "Brand.h"
+#import "NetworkReachability.h"
 
 @implementation CoreDataSeed
 @synthesize inflector, coreDataStack;
@@ -454,6 +455,28 @@
         if (error != nil)
             blockFailedToSave(error);
     }];
+}
+
+- (void)downloadCarImages:(void(^)(NSError* errorOrNil))blockFailedToSave
+{
+    for (Car *car in [Car findAll])
+    {        
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:car.image];
+        if(![fileManager fileExistsAtPath:imagePath])
+        {
+            NetworkReachability *networkReachability = [appDelegate networkReachability];
+            if ([networkReachability isReachable])
+            {
+                [UIApplication sharedApplication].networkActivityIndicatorVisible =  YES;
+                [AFImageDownloader imageDownloaderWithURLString:car.imageUrl autoStart:YES completion:^(UIImage *decompressedImage) {
+                    NSData *binaryImage = UIImageJPEGRepresentation(decompressedImage, 0.8);
+                    [binaryImage writeToFile:imagePath atomically:YES];
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible =  NO;
+                }];
+            }
+        }
+    }
 }
 
 - (void)logMessageForModel:(NSString *)modelName
