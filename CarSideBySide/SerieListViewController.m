@@ -47,8 +47,15 @@
             [self reloadData];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [UIApplication sharedApplication].networkActivityIndicatorVisible =  NO;
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                CoreDataSeed *seed = [[CoreDataSeed alloc] init];
+                [seed downloadCarImages:^(NSError* error){
+                    if (error != nil)
+                        NSLog(@"Image downloader error %@", [error localizedDescription]);
+                }];
+            });
         });
-
     } else {
         HUD.labelText = [networkReachability currentReachabilityString];
         [HUD hide:YES afterDelay:2];
