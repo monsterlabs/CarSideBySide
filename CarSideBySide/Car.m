@@ -8,6 +8,8 @@
 
 #import "Car.h"
 #import "Line.h"
+#import "Serie.h"
+#import "Brand.h"
 #import "Specification.h"
 #import "SpecificationType.h"
 
@@ -27,6 +29,11 @@
 
 - (NSString *)model {
     NSString *model = [NSString stringWithFormat:@"%@ %@", self.modelName, self.year];
+    return model;
+}
+
+- (NSString *)modelWithBrand {
+    NSString *model = [NSString stringWithFormat:@"%@ %@ %@", self.line.serie.brand.name, self.modelName, self.year];
     return model;
 }
 
