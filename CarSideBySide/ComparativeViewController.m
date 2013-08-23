@@ -102,7 +102,7 @@
 {
     [super viewDidLoad];
     numberOfSections = 1;
-    colWidth = 200.0f;
+    colWidth = 250.0f;
     [self fillTable];
     tblView = [[EWMultiColumnTableView alloc] initWithFrame:CGRectInset(self.view.bounds, 5.0f, 5.0f)];
     tblView.sectionHeaderEnabled = NO;
@@ -161,10 +161,9 @@
     l.text = [[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:col];
     l.font = [UIFont systemFontOfSize:13.0];
     
-    CGRect f = l.frame;
-    f.size.width = [self tableView:tableView widthForColumn:col];
+    CGRect f = CGRectMake(l.frame.origin.x, l.frame.origin.y, l.frame.size.width, l.frame.size.height);
+    f.size.width = [self tableView:tableView widthForColumn:col] - 10;
     l.frame = f;
-    
     [l sizeToFit];
 }
 
@@ -264,7 +263,6 @@
     return 250.0f;
 }
 
-
 - (UIView *)tableView:(EWMultiColumnTableView *)tableView headerCellForColumn:(NSInteger)col
 {
     UILabel *l =  [[[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, 240.0f, 50.0f)] autorelease];
@@ -273,10 +271,6 @@
     l.backgroundColor = [UIColor colorWithWhite:249.0f/255.0f alpha:1.0f];
     l.userInteractionEnabled = YES;    
     l.tag = col;
-    
-    UITapGestureRecognizer *recognizer = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)] autorelease];
-    recognizer.numberOfTapsRequired = 2;
-    [l addGestureRecognizer:recognizer];
     
     return l;
 }
