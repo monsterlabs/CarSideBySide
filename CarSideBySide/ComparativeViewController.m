@@ -150,7 +150,7 @@
 {
     UILabel *l = [[[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, (colWidth -10.0f), 40.0f)] autorelease];
     l.numberOfLines = 0;
-    l.lineBreakMode = UILineBreakModeWordWrap;
+    l.lineBreakMode = NSLineBreakByWordWrapping;
     
     return l;
 }
@@ -170,8 +170,10 @@
 - (CGFloat)tableView:(EWMultiColumnTableView *)tableView heightForCellAtIndexPath:(NSIndexPath *)indexPath column:(NSInteger)col
 {
     NSString *str = [[[data objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectAtIndex:col];
+    if (str.length == 0)
+        str = @"-";
     CGSize s = [str sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
-               constrainedToSize:CGSizeMake([self tableView:tableView widthForColumn:col], MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
+               constrainedToSize:CGSizeMake([self tableView:tableView widthForColumn:col], MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     
     return s.height + 10.0f;
 }
@@ -305,8 +307,4 @@
     }
 }
 
-- (void)handleDoubleTap:(UITapGestureRecognizer *)recognizer
-{
-    NSLog(@"Double tap does nothing");
-}
 @end
