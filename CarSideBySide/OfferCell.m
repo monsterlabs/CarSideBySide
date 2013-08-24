@@ -9,7 +9,7 @@
 #import "OfferCell.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
-#import "NetworkReachability.h";
+#import "NetworkReachability.h"
 @implementation OfferCell
 
 -(void)setOffer:(id)newOffer
