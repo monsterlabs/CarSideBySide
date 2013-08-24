@@ -31,6 +31,4 @@
 
 - (void)selectedCar:(Car *)newCar;
 
-- (IBAction)showSpecification:(id)sender;
-
 @end
