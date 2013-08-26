@@ -17,6 +17,7 @@
 
 @interface OfferListViewController () {
     NSMutableArray *results;
+    NSString *errors;
 }
 - (void)configureCell:(OfferCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -31,28 +32,37 @@
     [self.collectionView reloadData];
 }
 
+- (void)reloadDB
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible =  YES;
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        CoreDataSeed *seed = [[CoreDataSeed alloc] init];
+        [seed migrateOffersOrFail:^(NSError* error){
+            if (error != nil) {
+                errors = [error localizedDescription];
+            } else {
+
+            }
+
+        }];
+        [self reloadData];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible =  NO;
+    });
+}
+
 - (IBAction)reload:(id)sender
 {
     NetworkReachability *networkReachability = [appDelegate networkReachability];
     
-    HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
     HUD.labelText = [NSString localizedStringWithFormat:@"Loading...", nil];
-    HUD.mode = MBProgressHUDModeAnnularDeterminate;
+    HUD.mode = MBProgressHUDModeIndeterminate;
+    HUD.userInteractionEnabled = NO;
+    HUD.delegate = self;
     if ([networkReachability isReachable])
     {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible =  YES;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.10 * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            CoreDataSeed *seed = [[CoreDataSeed alloc] init];
-            [seed migrateOffersOrFail:^(NSError* error){
-                if (error != nil) {
-                    HUD.labelText = [error localizedDescription];
-                }
-            }];
-            [self reloadData];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [UIApplication sharedApplication].networkActivityIndicatorVisible =  NO;
-        });
+        [HUD showWhileExecuting:@selector(reloadDB) onTarget:self withObject:nil animated:YES];
     } else {
         HUD.labelText = [networkReachability currentReachabilityString];
         [HUD hide:YES afterDelay:2];
