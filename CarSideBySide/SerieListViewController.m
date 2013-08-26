@@ -33,7 +33,7 @@
 
     HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     HUD.labelText = [NSString localizedStringWithFormat:@"Loading...", nil];
-    HUD.mode = MBProgressHUDModeAnnularDeterminate;
+    HUD.mode = MBProgressHUDModeIndeterminate;
     if ([networkReachability isReachable])
     {
         [UIApplication sharedApplication].networkActivityIndicatorVisible =  YES;
