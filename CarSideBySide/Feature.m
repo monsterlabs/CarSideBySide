@@ -24,7 +24,7 @@
 
 - (NSString *) nameORAdditionalInfo
 {
-    return [self.specification.specificationType.name isEqualToString:@"Opcionales"] ? ([NSString stringWithFormat:@"%@ %@",self.name, (self.additionalInfo ? self.additionalInfo : @"")]) : self.name;
+    return [NSString stringWithFormat:@"%@\n%@", self.name, (self.additionalInfo ? self.additionalInfo : @"")];
 }
 
 @end
