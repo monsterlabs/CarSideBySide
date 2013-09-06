@@ -175,7 +175,7 @@
     CGSize s = [str sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]
                constrainedToSize:CGSizeMake([self tableView:tableView widthForColumn:col], MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     
-    return s.height + 10.0f;
+    return s.height + 20.0f;
 }
 
 - (CGFloat)tableView:(EWMultiColumnTableView *)tableView widthForColumn:(NSInteger)column
@@ -233,7 +233,8 @@
         l.textColor = [UIColor blueColor];
     }
     l.backgroundColor = [UIColor colorWithWhite:249.0f/255.0f alpha:1.0f];
-    [l sizeToFit];
+    l.numberOfLines = 0;
+    l.lineBreakMode = NSLineBreakByWordWrapping;
 }
 
 - (CGFloat)tableView:(EWMultiColumnTableView *)tableView heightForHeaderCellAtIndexPath:(NSIndexPath *)indexPath
@@ -273,7 +274,6 @@
     l.backgroundColor = [UIColor colorWithWhite:249.0f/255.0f alpha:1.0f];
     l.userInteractionEnabled = YES;    
     l.tag = col;
-    
     return l;
 }
 
