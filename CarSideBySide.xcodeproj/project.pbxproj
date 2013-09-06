@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E0E477B930004A02935EB2EC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE0AADDE4A84315B04CA138 /* libPods.a */; };
 		FA144A121768F45C00081738 /* NSManagedObject+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = FA144A111768F45C00081738 /* NSManagedObject+Util.m */; };
 		FA2AF9601755A50A001BA8ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF95F1755A50A001BA8ED /* UIKit.framework */; };
 		FA2AF9621755A50A001BA8ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF9611755A50A001BA8ED /* Foundation.framework */; };
@@ -26,6 +25,7 @@
 		FA2D92251767E80A00E8E716 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2D92241767E80A00E8E716 /* Offer.m */; };
 		FA327CFA176FA7B50062E845 /* OfferWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA327CF9176FA7B50062E845 /* OfferWebViewController.m */; };
 		FA3655F717BA9A830085A186 /* CarCatalogApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3655F617BA9A830085A186 /* CarCatalogApiClient.m */; };
+		FA45683517D6F61E0005527D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AF98E1755A50B001BA8ED /* SenTestingKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA4F88F717BA89BA00DF6552 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4F88F617BA89BA00DF6552 /* CoreDataStack.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA58E0F6176FC88E007C9295 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA58E0F4176FC88E007C9295 /* Icon-72.png */; };
 		FA58E0F7176FC88E007C9295 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA58E0F5176FC88E007C9295 /* Icon-72@2x.png */; };
@@ -60,6 +60,7 @@
 		FAA6ED4F17878EBE00D803EE /* offerList.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA6ED4D17878EBD00D803EE /* offerList.png */; };
 		FAA6ED51178791A400D803EE /* carList.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA6ED50178791A400D803EE /* carList.png */; };
 		FAB8630817A1D53C00B815CD /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8630717A1D53C00B815CD /* Line.m */; };
+		FAC16E2017D6F74C000CF760 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC16E1F17D6F74C000CF760 /* libPods.a */; };
 		FACB2DE7176790A300AD3D64 /* CoreDataSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB2DE6176790A300AD3D64 /* CoreDataSeed.m */; };
 		FACB56E217839F460087FA1F /* CarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB56E117839F460087FA1F /* CarListViewController.m */; };
 		FACB56E51783C09A0087FA1F /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB56E41783C09A0087FA1F /* Car.m */; };
@@ -92,7 +93,6 @@
 
 /* Begin PBXFileReference section */
 		39047D878F3A497B970816ED /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		AFE0AADDE4A84315B04CA138 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA144A101768F45C00081738 /* NSManagedObject+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Util.h"; sourceTree = "<group>"; };
 		FA144A111768F45C00081738 /* NSManagedObject+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Util.m"; sourceTree = "<group>"; };
 		FA2AF95C1755A50A001BA8ED /* CarSideBySide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSideBySide.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +176,7 @@
 		FAA6ED50178791A400D803EE /* carList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carList.png; sourceTree = "<group>"; };
 		FAB8630617A1D53C00B815CD /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		FAB8630717A1D53C00B815CD /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		FAC16E1F17D6F74C000CF760 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		FACB2DE5176790A300AD3D64 /* CoreDataSeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataSeed.h; sourceTree = "<group>"; };
 		FACB2DE6176790A300AD3D64 /* CoreDataSeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataSeed.m; sourceTree = "<group>"; };
 		FACB56E017839F460087FA1F /* CarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarListViewController.h; sourceTree = "<group>"; };
@@ -221,6 +222,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC16E2017D6F74C000CF760 /* libPods.a in Frameworks */,
+				FA45683517D6F61E0005527D /* SenTestingKit.framework in Frameworks */,
 				FA9E09CC17C27BE0008E4F7E /* libz.dylib in Frameworks */,
 				FA9E09CA17C27BD8008E4F7E /* MobileCoreServices.framework in Frameworks */,
 				FA9E09C817C27BC7008E4F7E /* SystemConfiguration.framework in Frameworks */,
@@ -229,7 +232,6 @@
 				FA2AF9601755A50A001BA8ED /* UIKit.framework in Frameworks */,
 				FA2AF9621755A50A001BA8ED /* Foundation.framework in Frameworks */,
 				FA2AF9641755A50A001BA8ED /* CoreGraphics.framework in Frameworks */,
-				E0E477B930004A02935EB2EC /* libPods.a in Frameworks */,
 				FA9E09C117C27AEB008E4F7E /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +289,7 @@
 		FA2AF9531755A50A001BA8ED = {
 			isa = PBXGroup;
 			children = (
+				FAC16E1F17D6F74C000CF760 /* libPods.a */,
 				FA2AF9651755A50A001BA8ED /* CarSideBySide */,
 				FA2AF9941755A50B001BA8ED /* CarSideBySideTests */,
 				FA5A9AE61756FD0600B718C1 /* Podfile */,
@@ -318,7 +321,6 @@
 				FA2AF9611755A50A001BA8ED /* Foundation.framework */,
 				FA2AF9631755A50A001BA8ED /* CoreGraphics.framework */,
 				FA2AF98E1755A50B001BA8ED /* SenTestingKit.framework */,
-				AFE0AADDE4A84315B04CA138 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1020,7 +1022,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alejandro Juarez (5D787F7GNM)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1036,7 +1038,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2EFF2E3A-9C3C-486B-AAFA-A97D05D6D2F3";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1074,6 +1076,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39047D878F3A497B970816ED /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alejandro Juarez (5D787F7GNM)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarSideBySide/CarSideBySide-Prefix.pch";
 				INFOPLIST_FILE = "CarSideBySide/CarSideBySide-Info.plist";
@@ -1083,6 +1090,7 @@
 					"\"$(SRCROOT)/CarSideBySide/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C57B232F-9E17-4ECC-81A1-C6CBB91E3F22";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1091,6 +1099,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39047D878F3A497B970816ED /* Pods.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarSideBySide/CarSideBySide-Prefix.pch";
 				INFOPLIST_FILE = "CarSideBySide/CarSideBySide-Info.plist";
