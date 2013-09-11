@@ -176,7 +176,7 @@
 		FAA6ED50178791A400D803EE /* carList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carList.png; sourceTree = "<group>"; };
 		FAB8630617A1D53C00B815CD /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		FAB8630717A1D53C00B815CD /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
-		FAC16E1F17D6F74C000CF760 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		FAC16E1F17D6F74C000CF760 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		FACB2DE5176790A300AD3D64 /* CoreDataSeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataSeed.h; sourceTree = "<group>"; };
 		FACB2DE6176790A300AD3D64 /* CoreDataSeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataSeed.m; sourceTree = "<group>"; };
 		FACB56E017839F460087FA1F /* CarListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarListViewController.h; sourceTree = "<group>"; };

@@ -1,6 +1,6 @@
 
 /* Class = "IBUITabBarItem"; title = "Offers"; ObjectID = "0bS-lh-7wT"; */
-"0bS-lh-7wT.title" = "Promociones";
+"0bS-lh-7wT.title" = "Información BMW";
 
 /* Class = "IBUIBarButtonItem"; title = "Safety"; ObjectID = "1Oc-am-lHt"; */
 "1Oc-am-lHt.title" = "Seguridad";
@@ -45,13 +45,13 @@
 "Oh9-te-jRM.title" = "Tablas comparativas";
 
 /* Class = "IBUITabBarItem"; title = "Offers"; ObjectID = "Q9G-QF-jVa"; */
-"Q9G-QF-jVa.title" = "Promociones";
+"Q9G-QF-jVa.title" = "Información BMW";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "a3F-R0-4Pl"; */
 "a3F-R0-4Pl.text" = "Portada";
 
 /* Class = "IBUINavigationItem"; title = "Offers"; ObjectID = "a72-so-HRP"; */
-"a72-so-HRP.title" = "Promociones";
+"a72-so-HRP.title" = "Información BMW";
 
 /* Class = "IBUINavigationItem"; title = "Series"; ObjectID = "gWi-rO-pjx"; */
 "gWi-rO-pjx.title" = "Series";
@@ -63,7 +63,7 @@
 "hZD-a1-Q6r.text" = "Fecha";
 
 /* Class = "IBUICollectionViewController"; title = "Offers"; ObjectID = "jy0-5g-B2G"; */
-"jy0-5g-B2G.title" = "Promociones";
+"jy0-5g-B2G.title" = "Información BMW";
 
 /* Class = "IBUIBarButtonItem"; title = "Equipment"; ObjectID = "key-Xx-nIX"; */
 "key-Xx-nIX.title" = "Equipamiento";
