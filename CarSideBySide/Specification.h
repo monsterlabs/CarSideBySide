@@ -34,4 +34,12 @@
 - (void)addComparatives:(NSSet *)values;
 - (void)removeComparatives:(NSSet *)values;
 
+- (NSString *)specificationTypeName;
+- (NSString *)carModelName;
+- (NSArray *)featuresArray;
+- (NSDictionary *)specificationDictionary;
+- (NSArray *)comparativeHeaders;
+- (NSArray *)comparativeRows;
+- (NSDictionary *)comparativesDictionary;
+
 @end
