@@ -32,7 +32,6 @@
 #define AddHeightTo(v, h) { CGRect f = v.frame; f.size.height += h; v.frame = f; }
 
 @interface EWMultiColumnTableView()
-
 - (void)adjustWidth;
 - (void)setupHeaderTblView;
 - (void)rebuildIndexPathTable;
@@ -117,7 +116,7 @@
         
         selectedColumn = -1;
         sectionFoldingStatus = [[NSMutableArray alloc] initWithCapacity:10];
-        
+
         scrlView = [[EWMultiColumnTableViewBGScrollView alloc] initWithFrame:self.bounds];
         scrlView.parent = self;
         scrlView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
@@ -126,7 +125,7 @@
         tblView = [[EWMultiColumnTableViewContentBackgroundView alloc] initWithFrame:scrlView.bounds];
         tblView.dataSource = self;
         tblView.delegate = self;
-        tblView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        tblView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         tblView.separatorStyle = UITableViewCellSeparatorStyleNone;
         tblView.backgroundColor = [UIColor clearColor];
         [scrlView addSubview:tblView];
@@ -135,7 +134,7 @@
                                                      initWithTarget:self action:@selector(columnLongPressed:)] autorelease];
         recognizer.minimumPressDuration = 1.0;
         [tblView addGestureRecognizer:recognizer];
-        
+
         NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
         [center addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
     }
@@ -325,17 +324,17 @@
     
     if (columnsDiff > 0) {
         // Add the grid cells - call the delegate method to init the grid cells
-        CGFloat x = 0.0f;
+        CGFloat x = -250.0f;
         UIView *lastCol = [[cell columnCells] lastObject];
         if (lastCol) x = lastCol.frame.origin.x + lastCol.frame.size.width;
         
         for (int i = 0; i < columnsDiff; i++) {
+
             UIView *gridCell = [dataSource tableView:self cellForIndexPath:multiColIndexPath column:i];
             CGRect f = gridCell.frame;
             f.origin.x += x;
             gridCell.frame = f;
             [cell.contentView addSubview:gridCell];
-            
             CGFloat colWidth = [self widthForColumn:i];
             
             x += colWidth + normalSeperatorLineWidth;
@@ -352,7 +351,7 @@
     
     // call delegate method to set the cells of the other columns
     
-    for (int i = 0; i < numOfCols; i++) {
+    for (int i = 1; i < numOfCols; i++) {
         [dataSource tableView:self setContentForCell:[[cell columnCells] objectAtIndex:i] 
                     indexPath:multiColIndexPath column:i];
     }
@@ -386,9 +385,8 @@
         UIView *lastCol = [[cell columnCells] lastObject];
         if (lastCol) x = lastCol.frame.origin.x + lastCol.frame.size.width;
         
-        for (int i = 0; i < columnsDiff; i++) {
+        for (int i = 1; i < columnsDiff; i++) {
             UIView *gridCell = [dataSource tableView:self sectionHeaderCellForSection:section column:i];
-            
             CGRect f = gridCell.frame;
             f.origin.x += x;
             gridCell.frame = f;
@@ -401,7 +399,7 @@
         }
     } else if (columnsDiff < 0) {
         columnsDiff = -columnsDiff;
-        for (int i = 0; i < columnsDiff; i++) {
+        for (int i = 1; i < columnsDiff; i++) {
             [[[cell columnCells] lastObject] removeFromSuperview];
             [[cell columnCells] removeLastObject];
         }
@@ -410,7 +408,7 @@
     
     // call delegate method to set the cells of the other columns
     
-    for (int i = 0; i < numOfCols; i++) {
+    for (int i = 1; i < numOfCols; i++) {
         [dataSource tableView:self setContentForSectionHeaderCell:[[cell columnCells] objectAtIndex:i] 
                       section:section column:i];
     }
@@ -473,7 +471,7 @@
         
         // calculate the height of the cells in this row
         NSInteger numOfCols = [dataSource numberOfColumnsInTableView:self];
-        for (int i = 0; i < numOfCols; i++) {
+        for (int i = 1; i < numOfCols; i++) {
             //      call delegate method to calculate the individual cell
             CGFloat h = [self heightForSectionHeaderCellAtSection:section column:i];
             
@@ -490,7 +488,7 @@
         
         // calculate the height of the cells in this row
         NSInteger numOfCols = [dataSource numberOfColumnsInTableView:self];
-        for (int i = 0; i < numOfCols; i++) {
+        for (int i = 1; i < numOfCols; i++) {
             //      call delegate method to calculate the individual cell
             CGFloat h = [self heightForCellAtIndexPath:multiColIndexPath column:i];
             
@@ -513,7 +511,7 @@
         NSInteger cols = [dataSource numberOfColumnsInTableView:self];
         CGFloat x = 0.0f, height = 0.0f;
         
-        for (int i = 0; i < cols; i++) {
+        for (int i = 1; i < cols; i++) {
             UIView *headerCell = [dataSource tableView:self headerCellForColumn:i];
             CGRect f = headerCell.frame;
             f.origin.x = x;

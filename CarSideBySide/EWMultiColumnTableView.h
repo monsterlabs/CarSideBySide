@@ -57,6 +57,8 @@ typedef enum __EWMultiColumnTableViewColumnPosition {
     NSInteger selectedColumn;
     
     EWMultiColumnTableViewBGScrollView *scrlView;
+    EWMultiColumnTableViewBGScrollView *scrollView;
+
     UITableView *headerTblView;
     EWMultiColumnTableViewContentBackgroundView *tblView;
     
@@ -65,7 +67,7 @@ typedef enum __EWMultiColumnTableViewColumnPosition {
     NSMutableArray *indexPathTable;
     
     UIView *tblViewHeader;
-    
+    UIView *firstCol;
     CALayer *highlightColumnLayer;
 }
 
