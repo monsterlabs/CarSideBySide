@@ -60,6 +60,10 @@
     validUntilLabel.text = dateString;
     self.layer.cornerRadius = 03.0f;
     self.layer.masksToBounds = YES;
+    
+    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.layer.borderWidth = 1.0;
+
 }
 
 - (id)initWithFrame:(CGRect)frame
