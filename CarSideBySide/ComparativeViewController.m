@@ -148,7 +148,6 @@
 
 - (UIView *)tableView:(EWMultiColumnTableView *)tableView cellForIndexPath:(NSIndexPath *)indexPath column:(NSInteger)col
 {
-    
     UILabel *l = [[[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, (colWidth -10.0f), 40.0f)] autorelease];
     l.numberOfLines = 0;
     l.lineBreakMode = NSLineBreakByWordWrapping;
@@ -293,5 +292,19 @@
     return 50.0f;
 }
 
+- (void)tableView:(EWMultiColumnTableView *)tableView swapDataOfColumn:(NSInteger)col1 andColumn:(NSInteger)col2
+{
+    for (int i = 0; i < [self numberOfSectionsInTableView:tableView]; i++) {
+        NSMutableArray *section = [data objectAtIndex:i];
+        for (int j = 0; j < [self tableView:tableView numberOfRowsInSection:i]; j++) {
+            NSMutableArray *a = [section objectAtIndex:j];
+            id tmp = [[a objectAtIndex:col2] retain];
+            
+            [a replaceObjectAtIndex:col2 withObject:[a objectAtIndex:col1]];
+            [a replaceObjectAtIndex:col1 withObject:tmp];
+            [tmp release];
+        }
+    }
+}
 
 @end
