@@ -561,6 +561,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Alejandro Juarez Robles";
+				TargetAttributes = {
+					FA2AF95B1755A50A001BA8ED = {
+						DevelopmentTeam = P9YUHA5G3Z;
+					};
+				};
 			};
 			buildConfigurationList = FA2AF9571755A50A001BA8ED /* Build configuration list for PBXProject "CarSideBySide" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1076,7 +1081,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39047D878F3A497B970816ED /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alejandro Juarez (5D787F7GNM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1090,7 +1096,7 @@
 					"\"$(SRCROOT)/CarSideBySide/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C57B232F-9E17-4ECC-81A1-C6CBB91E3F22";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1099,6 +1105,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39047D878F3A497B970816ED /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1112,6 +1120,7 @@
 					"\"$(SRCROOT)/CarSideBySide/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
