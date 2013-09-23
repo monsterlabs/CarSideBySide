@@ -11,6 +11,7 @@
 
 @interface CarDetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, UINavigationControllerDelegate, UINavigationBarDelegate>
 {
+    
     IBOutlet UIImageView *carImageView;
     IBOutlet UILabel *modelLabel;
     IBOutlet UITextView *highlighsTextView;
