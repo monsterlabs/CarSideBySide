@@ -57,9 +57,13 @@ typedef enum __EWMultiColumnTableViewColumnPosition {
     NSInteger selectedColumn;
     
     EWMultiColumnTableViewBGScrollView *scrlView;
-    UITableView *headerTblView;
-    EWMultiColumnTableViewContentBackgroundView *tblView;
+    EWMultiColumnTableViewBGScrollView *scrlView1;
     
+    UITableView *headerTblView;
+    UITableView *headerTblView1;
+    
+    EWMultiColumnTableViewContentBackgroundView *tblView;
+    EWMultiColumnTableViewContentBackgroundView *tblView1;
     // Keep if or not each section is folded. YES for folded, NO for expanded.
     NSMutableArray *sectionFoldingStatus;
     NSMutableArray *indexPathTable;

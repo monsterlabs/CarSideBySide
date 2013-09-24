@@ -116,10 +116,10 @@
     tblView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:tblView];
     
-    [self performBlock:^{
-        
-        [tblView scrollToColumn:0 position:EWMultiColumnTableViewColumnPositionMiddle animated:YES];
-    } afterDelay:0.5];
+    //    [self performBlock:^{
+    //
+    //        [tblView scrollToColumn:0 position:EWMultiColumnTableViewColumnPositionMiddle animated:YES];
+    //    } afterDelay:0.5];
 }
 
 

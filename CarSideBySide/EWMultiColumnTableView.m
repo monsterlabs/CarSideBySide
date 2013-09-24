@@ -118,12 +118,28 @@
         selectedColumn = -1;
         sectionFoldingStatus = [[NSMutableArray alloc] initWithCapacity:10];
         
-        scrlView = [[EWMultiColumnTableViewBGScrollView alloc] initWithFrame:self.bounds];
+        scrlView1 = [[EWMultiColumnTableViewBGScrollView alloc] initWithFrame:CGRectMake(251, 0, 250, self.bounds.size.height)];
+        scrlView1.parent = self;
+        scrlView1.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        scrlView1.layer.borderWidth = 1.0f;
+        scrlView1.layer.borderColor = [[UIColor colorWithWhite:EWMultiColumnTable_BorderColorGray alpha:1.0f] CGColor];
+        [scrlView1 setShowsVerticalScrollIndicator:NO];
+        [self addSubview:scrlView1];
+
+        tblView1 = [[EWMultiColumnTableViewContentBackgroundView alloc] initWithFrame:CGRectMake(500, 0, 250, self.bounds.size.height)];
+        tblView1.dataSource = self;
+        tblView1.delegate = self;
+        tblView1.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        tblView1.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [tblView1 setShowsVerticalScrollIndicator:NO];
+        [scrlView1 addSubview:tblView1];
+        
+        scrlView = [[EWMultiColumnTableViewBGScrollView alloc] initWithFrame:CGRectMake(501, 0, 250, self.bounds.size.height)];
         scrlView.parent = self;
         scrlView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self addSubview:scrlView];
-        
-        tblView = [[EWMultiColumnTableViewContentBackgroundView alloc] initWithFrame:scrlView.bounds];
+
+        tblView = [[EWMultiColumnTableViewContentBackgroundView alloc] initWithFrame:CGRectMake(-251, 0, 500, self.bounds.size.height)];
         tblView.dataSource = self;
         tblView.delegate = self;
         tblView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
@@ -131,11 +147,11 @@
         tblView.backgroundColor = [UIColor clearColor];
         [scrlView addSubview:tblView];
         
-        UILongPressGestureRecognizer *recognizer = [[[UILongPressGestureRecognizer alloc] 
+        UILongPressGestureRecognizer *recognizer = [[[UILongPressGestureRecognizer alloc]
                                                      initWithTarget:self action:@selector(columnLongPressed:)] autorelease];
         recognizer.minimumPressDuration = 1.0;
         [tblView addGestureRecognizer:recognizer];
-        
+        [tblView1 addGestureRecognizer:recognizer];
         NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
         [center addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
     }
@@ -147,8 +163,10 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [tblView release];
+    [tblView1 release];
     [headerTblView release];
     [scrlView release];
+    [scrlView1 release];
     [sectionFoldingStatus release];
     [indexPathTable release];
     [highlightColumnLayer release];
@@ -191,6 +209,7 @@
     
     [headerTblView reloadData];
     [tblView reloadData];
+    [tblView1 reloadData];
     [self adjustWidth];
 }
 
@@ -209,10 +228,12 @@
     
     switch (pos) {
         case EWMultiColumnTableViewColumnPositionMiddle:
+          x -= (scrlView1.bounds.size.width - (2 * normalSeperatorLineWidth + [self widthForColumn:col])) / 2;
             x -= (scrlView.bounds.size.width - (2 * normalSeperatorLineWidth + [self widthForColumn:col])) / 2;
             if (x < 0.0f) x = 0.0f;
             break;
         case EWMultiColumnTableViewColumnPositionRight:
+            x -= scrlView1.bounds.size.width - (2 * normalSeperatorLineWidth + [self widthForColumn:col]);
             x -= scrlView.bounds.size.width - (2 * normalSeperatorLineWidth + [self widthForColumn:col]);
             if (x < 0.0f) x = 0.0f;
             break;
@@ -222,6 +243,7 @@
     }
         
     [scrlView setContentOffset:CGPointMake(x, 0) animated:animated];
+    [scrlView1 setContentOffset:CGPointMake(x, 0) animated:animated];
 }
 
 #pragma mark - Properties
@@ -285,7 +307,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == tblView) {
+    if (tableView == tblView || tableView == tblView1) {
         return [self tblView:tableView cellForRowAtIndexPath:indexPath];
     } else {
         return [self headerTblView:tableView cellForRowAtIndexPath:indexPath];
@@ -504,7 +526,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (tableView == tblView) {
+    if (tableView == tblView || tableView == tblView1) {
         [tblViewHeader release];
         tblViewHeader = [[UIView alloc] initWithFrame:CGRectZero];
         tblViewHeader.clipsToBounds = YES;
@@ -574,12 +596,17 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     UIScrollView *target;
-    if (scrollView == tblView)
+    UIScrollView *target2;
+    if (scrollView == tblView ||scrollView == tblView1) {
         target = headerTblView;
-    else
+        target2 = headerTblView;
+    } else {
         target = tblView;
-    
+        target2 = tblView1;
+    }
+
     target.contentOffset = scrollView.contentOffset;
+    target2.contentOffset = target.contentOffset;
 }
 
 
@@ -601,7 +628,7 @@
     indexPathTable = [[NSMutableArray alloc] initWithCapacity:numOfSec * 5];
     [self rebuildIndexPathTable];
     [scrlView redraw];
-    
+    [scrlView1 redraw];
 }
 
 - (void)adjustWidth
@@ -613,11 +640,13 @@
     }
     
     width -= normalSeperatorLineWidth;
-    scrlView.contentSize = CGSizeMake(width, 0.0f);
-    
+    scrlView.contentSize = CGSizeMake(width - 250.0f, 0.0f);
+    scrlView1.contentSize = CGSizeMake(250.0f, 0.0f);
+
     CGRect f = tblView.frame;
     f.size.width = MAX(self.frame.size.width - [self widthForLeftHeaderCell], width);
     tblView.frame = f;
+    tblView1.frame = CGRectMake(0, 0,  250.0f, scrlView1.bounds.size.height);
 }
 
 - (void)setupHeaderTblView
@@ -635,8 +664,8 @@
     headerTblView.backgroundColor = leftHeaderBackgroundColor;
     [self addSubview:headerTblView];
     
-    scrlView.frame = CGRectMake(headerCellWidth + boldSeperatorLineWidth, 0.0f, 
-                                self.frame.size.width - headerCellWidth - boldSeperatorLineWidth, self.frame.size.height);
+//    scrlView.frame = CGRectMake(headerCellWidth + boldSeperatorLineWidth, 0.0f, 
+//                                self.frame.size.width - headerCellWidth - boldSeperatorLineWidth, self.frame.size.height);
 }
 
 - (void)rebuildIndexPathTable
