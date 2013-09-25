@@ -538,7 +538,7 @@
         for (int i = 0; i < cols; i++) {
             UIView *headerCell = [dataSource tableView:self headerCellForColumn:i];
             CGRect f = headerCell.frame;
-            f.origin.x = x;
+            f.origin.x = x + 10.f;
             headerCell.frame = f;
             [tblViewHeader addSubview:headerCell];
             height = MAX(height, f.size.height);
