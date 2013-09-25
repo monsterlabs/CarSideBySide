@@ -373,8 +373,8 @@
     
     
     // call delegate method to set the cells of the other columns
-    
-    for (int i = 0; i < numOfCols; i++) {
+    int p = (tableView == tblView) ? 1 : 0;
+    for (int i = p; i < numOfCols; i++) {
         [dataSource tableView:self setContentForCell:[[cell columnCells] objectAtIndex:i] 
                     indexPath:multiColIndexPath column:i];
     }
