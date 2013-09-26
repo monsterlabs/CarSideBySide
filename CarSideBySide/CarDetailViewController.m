@@ -110,13 +110,7 @@
         [self.toolbar setHidden:YES];
     }
 
-    BOOL isLandscape = UIDeviceOrientationIsLandscape(self.interfaceOrientation);
-    if (isLandscape) {
-        [self.toolbar setFrame:CGRectMake(0, 655, 768, 44)];
-    } else {
-        [self.toolbar setFrame:CGRectMake(0, 910, 768, 44)];
-    }
-
+    [self resizeItemsForInterfaceOrientation];
     [super viewDidAppear:TRUE];
 }
 
@@ -127,14 +121,7 @@
 
 - (void)viewDidLayoutSubviews
 {
-    BOOL isLandscape = UIDeviceOrientationIsLandscape(self.interfaceOrientation);
-    if (isLandscape) {
-        [self resizeCarImageView];
-        [self.toolbar setFrame:CGRectMake(0, 655, 768, 44)];
-    } else {
-        [self.toolbar setFrame:CGRectMake(0, 910, 768, 44)];
-    }
-    
+    [self resizeItemsForInterfaceOrientation];
     [super viewDidLayoutSubviews];
 }
 
@@ -148,6 +135,19 @@
     {
         [self resizeCarImageView];
         [self.navBarItem setLeftBarButtonItem:nil animated:YES];
+    }
+}
+
+- (void)resizeItemsForInterfaceOrientation
+{
+    BOOL isLandscape = UIDeviceOrientationIsLandscape(self.interfaceOrientation);
+    if (isLandscape) {
+        [self resizeCarImageView];
+        [highlighsTextView setFrame:CGRectMake(10, 488, 680, 152)];
+        [self.toolbar setFrame:CGRectMake(0, 655, 768, 44)];
+    } else {
+        [self.toolbar setFrame:CGRectMake(0, 910, 768, 44)];
+        [highlighsTextView setFrame:CGRectMake(20, 488, 728, 400)];
     }
 }
 
@@ -188,18 +188,19 @@
     self.popoverSegue = (id)segue;
     ComparativeViewController *comparativeViewController = segue.destinationViewController;
     comparativeViewController.specification = [self.car specificationBySpecificationTypeName:button.title];
-    self.prevSegueIdentifier = self.segueIdentifier;
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
+    [self.popoverSegue.popoverController dismissPopoverAnimated:YES];
     if ([self.segueIdentifier isEqualToString:self.prevSegueIdentifier]) {
-        [self.popoverSegue.popoverController dismissPopoverAnimated:YES];
-        prevSegueIdentifier = @"";
+        self.prevSegueIdentifier = @"";
         return NO;
-    }
-    else
+    } else {
+        self.prevSegueIdentifier = self.segueIdentifier;
         return YES;
+    }
+
 }
 
 @end
