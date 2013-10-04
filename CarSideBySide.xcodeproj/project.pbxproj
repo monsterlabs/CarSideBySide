@@ -563,7 +563,7 @@
 				ORGANIZATIONNAME = "Alejandro Juarez Robles";
 				TargetAttributes = {
 					FA2AF95B1755A50A001BA8ED = {
-						DevelopmentTeam = P9YUHA5G3Z;
+						DevelopmentTeam = J4CZQGRL78;
 					};
 				};
 			};
@@ -1027,7 +1027,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alejandro Juarez (5D787F7GNM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Fernando Rueda V (J9HZ3EW6C8)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1043,7 +1043,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2EFF2E3A-9C3C-486B-AAFA-A97D05D6D2F3";
+				PROVISIONING_PROFILE = "3FDA3719-1026-4F23-87B9-53FB0810C067";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1081,8 +1081,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39047D878F3A497B970816ED /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Fernando Rueda V (J9HZ3EW6C8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fernando Rueda V (J9HZ3EW6C8)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -1105,8 +1105,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39047D878F3A497B970816ED /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fernando Rueda Valdes (J4CZQGRL78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fernando Rueda Valdes (J4CZQGRL78)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",

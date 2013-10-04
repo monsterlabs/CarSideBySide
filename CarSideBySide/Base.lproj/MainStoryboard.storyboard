@@ -573,7 +573,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="JZ9-9p-qkn">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" id="JZ9-9p-qkn">
                                             <rect key="frame" x="15" y="10" width="30" height="18"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -651,7 +651,6 @@
     <resources>
         <image name="DefaultCarDetailViewController.png" width="728" height="364"/>
         <image name="carList.png" width="30" height="30"/>
-        <image name="offerList.png" width="30" height="30"/>
         <image name="offerList.png" width="30" height="30"/>
         <image name="offer_dummy.jpg" width="237" height="227"/>
         <image name="offer_dummy_large.jpg" width="758" height="320"/>
