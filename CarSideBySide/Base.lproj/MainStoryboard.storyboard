@@ -372,12 +372,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="DefaultCarDetailViewController.png" translatesAutoresizingMaskIntoConstraints="NO" id="hff-R3-4ej">
                                 <rect key="frame" x="20" y="61" width="728" height="364"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Select a serie and a model" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9so-la-dhO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Select a serie and a model" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9so-la-dhO">
                                 <rect key="frame" x="20" y="433" width="728" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="3Zo-fs-Fvu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -651,6 +651,7 @@
     <resources>
         <image name="DefaultCarDetailViewController.png" width="728" height="364"/>
         <image name="carList.png" width="30" height="30"/>
+        <image name="offerList.png" width="30" height="30"/>
         <image name="offerList.png" width="30" height="30"/>
         <image name="offer_dummy.jpg" width="237" height="227"/>
         <image name="offer_dummy_large.jpg" width="758" height="320"/>
