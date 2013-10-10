@@ -10,8 +10,12 @@
 #import <YISplashScreen.h>
 #import <YISplashScreen+Migration.h>
 #import <YISplashScreenAnimation.h>
+#import <MBHUDView.h>
 #import "CoreDataStack.h"
 #import "TestFlight.h"
+#import "CoreDataSeed.h"
+#import "NetworkReachability.h"
+#import "CarCatalogApiClient.h"
 
 @implementation AppDelegate
 
@@ -20,7 +24,11 @@
 @synthesize networkReachability = _networkReachability;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     [TestFlight takeOff:@"f3572086-e23b-4000-9b2d-0588b47d30b3"];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
     [YISplashScreen show];
     
     _coreDataStack = [CoreDataStack coreDataStackWithModelName:@"CarSideBySide"];
@@ -38,6 +46,16 @@
             [YISplashScreen hideWithAnimation:[YISplashScreenAnimation pageCurlAnimation]];
         
     }];
+    
+    if (launchOptions != nil)
+	{
+		NSDictionary *dictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+		if (dictionary != nil)
+		{
+			NSLog(@"Launched from push notification: %@", dictionary);
+			[self addMessageFromRemoteNotification:dictionary updateUI:NO];
+		}
+	}
     
     return YES;
 }
@@ -67,6 +85,111 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSDictionary *params = [self paramsWithDeviceToken:deviceToken];
+    AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+    NSURL *url = [NSURL URLWithString:@"push_notification_devices.json"];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:[url path] parameters:params];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NetworkReachability *networkReachability = [appDelegate networkReachability];
+    if ([networkReachability isReachable])
+    {
+        [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if(error) {
+            NSLog(@"Error %@", error);
+        } else {
+            NSLog(@"The token was registered in the remote server: %@", cHost);
+        }
+    }
+}
+
+- (NSDictionary *)paramsWithDeviceToken:(NSData*)deviceToken
+{
+    NSNumber *badge = [NSNumber numberWithInt:[UIApplication sharedApplication].applicationIconBadgeNumber];
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            [NSDictionary dictionaryWithObjectsAndKeys:
+                             deviceToken, @"token",
+                             [NSTimeZone localTimeZone], @"timezone",
+                             badge, @"badge",
+                             nil ], @"push_notification_device",
+                            nil ];
+    return params;
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
+}
+
+- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
+{
+	NSLog(@"Received notification: %@", userInfo);
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+        // do stuff when app is active
+        [self addMessageFromRemoteNotification:userInfo updateUI:YES];
+        [self updateRemoteDeviceInfo:userInfo];
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:userInfo forKey:@"userInfo"];
+        
+    }else{
+        // do stuff when app is in background
+        NSString *badgeNumber = [[userInfo valueForKey:@"aps"] valueForKey:@"badge"];
+        [UIApplication sharedApplication].applicationIconBadgeNumber = [badgeNumber integerValue];
+    }
+    
+}
+
+- (void)addMessageFromRemoteNotification:(NSDictionary*)userInfo updateUI:(BOOL)updateUI
+{
+    
+	NSString *alertValue = @"The database was updated";
+    NSString *alertMessage = [NSString stringWithFormat:@"%@. Would you like to upgrade this?", alertValue];
+    
+    __block MBAlertView *alert = [MBAlertView alertWithBody:alertMessage cancelTitle:@"Cancel" cancelBlock:nil];
+    alert.title = alertValue;
+    alert.size = CGSizeMake(380, 280);
+    [alert addButtonWithText:@"OK" type:MBAlertViewItemTypePositive block:^{
+        [alert dismiss];
+        if ([[userInfo valueForKey:@"updated_section"] isEqualToString:@"offer"])
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadOffers" object:nil];
+        else
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadComparatives" object:nil];
+    }];
+    [alert addToDisplayQueue];
+    
+}
+
+- (void)updateRemoteDeviceInfo:(NSDictionary*)userInfo
+{
+    if (userInfo != nil) {
+        NSDictionary *params = [ NSDictionary dictionaryWithObjectsAndKeys:
+                                [ NSDictionary dictionaryWithObjectsAndKeys:
+                                 0, @"badge",
+                                 nil ], @"push_notification_device",
+                                nil ];
+        
+        AFHTTPClient *httpClient = [CarCatalogApiClient sharedInstance];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:
+                                           @"push_notification_devices/%@.json", [userInfo valueForKey:@"device_id"]]];
+        
+        [httpClient putPath:[url path]
+                 parameters: params
+                    success:^(AFHTTPRequestOperation *operation, id responseObject){
+                        NSLog(@"RESPonsee %@",responseObject);
+                    }
+                    failure:^(AFHTTPRequestOperation *operation, NSError *error){
+                        NSLog(@"ERROR %@",[error localizedDescription]);
+                        
+                    }
+         ];
+    }
 }
 
 @end

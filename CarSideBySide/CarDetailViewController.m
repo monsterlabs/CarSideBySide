@@ -37,8 +37,8 @@
 
 - (void)configureView
 {
-    modelLabel.text = self.car.model;
-    self.navBarItem.title = self.car.model;
+    modelLabel.text = self.car.modelName;
+    self.navBarItem.title = self.car.modelName;
     
     highlighsTextView.text = self.car.highlights;
     

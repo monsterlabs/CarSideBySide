@@ -6,6 +6,7 @@ PODS:
   - InflectorKit (0.0.1)
   - Kiwi (1.1.1)
   - LibYAML (0.1.4)
+  - MBAlertView (1.1.0)
   - MBFaker (0.0.1):
     - LibYAML (~> 0.1.4)
   - MBProgressHUD (0.7)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - AFNetworking (~> 1.3.2)
   - DVCoreDataFinders (~> 0.4)
   - InflectorKit (~> 0.0.1)
+  - MBAlertView (~> 1.1.0)
   - MBFaker (from `git@github.com:juarlex/MBFaker.git`)
   - MBProgressHUD (~> 0.7)
   - NSDate+Helper (~> 0.0.1)
@@ -39,6 +41,7 @@ SPEC CHECKSUMS:
   InflectorKit: 9dccab02f95541093995adac639342c9eb9e6c12
   Kiwi: ab0fa8d13b97dca05915e31df9b2d888d74ab717
   LibYAML: 49b77e5b3f4417fa512a8f1f4675a78480bf6b3d
+  MBAlertView: b966a77a32f2c366e1285ad95998c5187c1dc2ae
   MBFaker: da77c465bf2c2540e1e6c0546b2d34afd7e9cdf4
   MBProgressHUD: 1fd8591a2216d5dec6de24e09187bb03bcbe9946
   NSDate+Helper: 3015cb57778256bce7c549fca172474308740059

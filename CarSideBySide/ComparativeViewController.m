@@ -33,7 +33,7 @@
 - (void)fillTable
 {
     self.myheaders = [NSMutableArray array];
-    [self.myheaders addObject:self.specification.car.modelWithBrand];
+    [self.myheaders addObject:self.specification.car.modelName];
     NSSortDescriptor *idSorter = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:YES];
     NSArray *comparatives = [[self.specification.comparatives allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:idSorter]];
     for (Comparative *comparative in comparatives) {
