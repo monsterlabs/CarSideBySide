@@ -173,11 +173,8 @@
 # pragma mark - UISplitViewDelegate methods
 -(void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
 {
-
     self.popover = pc;
-    
-    barButtonItem.title = NSLocalizedString(@"Seleccionar", nil);
-    
+    barButtonItem.title = NSLocalizedString(@"Menú", nil);
     [_navBarItem setLeftBarButtonItem:barButtonItem animated:YES];
 }
 
@@ -200,7 +197,6 @@
         self.prevSegueIdentifier = self.segueIdentifier;
         return YES;
     }
-
 }
 
 @end
