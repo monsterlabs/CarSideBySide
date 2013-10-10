@@ -59,6 +59,14 @@
 		FAA1E314178CA0B200D60C77 /* NSObject+DelayedBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA1E313178CA0B200D60C77 /* NSObject+DelayedBlock.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FAA6ED4F17878EBE00D803EE /* offerList.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA6ED4D17878EBD00D803EE /* offerList.png */; };
 		FAA6ED51178791A400D803EE /* carList.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA6ED50178791A400D803EE /* carList.png */; };
+		FAACED8A180728A900E4F813 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FAACED82180728A900E4F813 /* Icon-Small-50.png */; };
+		FAACED8B180728A900E4F813 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAACED83180728A900E4F813 /* Icon-Small-50@2x.png */; };
+		FAACED8C180728A900E4F813 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = FAACED84180728A900E4F813 /* Icon-Small.png */; };
+		FAACED8D180728A900E4F813 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAACED85180728A900E4F813 /* Icon-Small@2x.png */; };
+		FAACED8E180728A900E4F813 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FAACED86180728A900E4F813 /* Icon.png */; };
+		FAACED8F180728A900E4F813 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAACED87180728A900E4F813 /* Icon@2x.png */; };
+		FAACED90180728A900E4F813 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = FAACED88180728A900E4F813 /* iTunesArtwork.png */; };
+		FAACED91180728A900E4F813 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAACED89180728A900E4F813 /* iTunesArtwork@2x.png */; };
 		FAB8630817A1D53C00B815CD /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8630717A1D53C00B815CD /* Line.m */; };
 		FAC16E2017D6F74C000CF760 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC16E1F17D6F74C000CF760 /* libPods.a */; };
 		FACB2DE7176790A300AD3D64 /* CoreDataSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB2DE6176790A300AD3D64 /* CoreDataSeed.m */; };
@@ -174,6 +182,14 @@
 		FAA1E313178CA0B200D60C77 /* NSObject+DelayedBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DelayedBlock.m"; sourceTree = "<group>"; };
 		FAA6ED4D17878EBD00D803EE /* offerList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offerList.png; sourceTree = "<group>"; };
 		FAA6ED50178791A400D803EE /* carList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carList.png; sourceTree = "<group>"; };
+		FAACED82180728A900E4F813 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		FAACED83180728A900E4F813 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		FAACED84180728A900E4F813 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		FAACED85180728A900E4F813 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		FAACED86180728A900E4F813 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		FAACED87180728A900E4F813 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		FAACED88180728A900E4F813 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		FAACED89180728A900E4F813 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		FAB8630617A1D53C00B815CD /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		FAB8630717A1D53C00B815CD /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		FAC16E1F17D6F74C000CF760 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
@@ -356,6 +372,14 @@
 		FA2AF9661755A50A001BA8ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FAACED82180728A900E4F813 /* Icon-Small-50.png */,
+				FAACED83180728A900E4F813 /* Icon-Small-50@2x.png */,
+				FAACED84180728A900E4F813 /* Icon-Small.png */,
+				FAACED85180728A900E4F813 /* Icon-Small@2x.png */,
+				FAACED86180728A900E4F813 /* Icon.png */,
+				FAACED87180728A900E4F813 /* Icon@2x.png */,
+				FAACED88180728A900E4F813 /* iTunesArtwork.png */,
+				FAACED89180728A900E4F813 /* iTunesArtwork@2x.png */,
 				FA728D5E17BD6F2800C525B5 /* car_dummy.jpg */,
 				FA728D5F17BD6F2800C525B5 /* offer_dummy_large.jpg */,
 				FA728D6017BD6F2800C525B5 /* offer_dummy.jpg */,
@@ -592,18 +616,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAACED8B180728A900E4F813 /* Icon-Small-50@2x.png in Resources */,
 				FA2AF96A1755A50A001BA8ED /* InfoPlist.strings in Resources */,
 				FA2AF9791755A50A001BA8ED /* MainStoryboard.storyboard in Resources */,
 				FA5A9B081756FD0600B718C1 /* Podfile in Resources */,
 				FA5A9B091756FD0600B718C1 /* Podfile.lock in Resources */,
+				FAACED8F180728A900E4F813 /* Icon@2x.png in Resources */,
 				FACE6928175E75870009F595 /* Default-Landscape~ipad.png in Resources */,
 				FACE6929175E75870009F595 /* Default-Portrait~ipad.png in Resources */,
 				FA58E0F6176FC88E007C9295 /* Icon-72.png in Resources */,
+				FAACED90180728A900E4F813 /* iTunesArtwork.png in Resources */,
 				FA58E0F7176FC88E007C9295 /* Icon-72@2x.png in Resources */,
 				FACB56F8178519ED0087FA1F /* DefaultCarDetailViewController.png in Resources */,
+				FAACED8C180728A900E4F813 /* Icon-Small.png in Resources */,
 				FAA6ED4F17878EBE00D803EE /* offerList.png in Resources */,
+				FAACED8E180728A900E4F813 /* Icon.png in Resources */,
 				FAA6ED51178791A400D803EE /* carList.png in Resources */,
+				FAACED8D180728A900E4F813 /* Icon-Small@2x.png in Resources */,
+				FAACED8A180728A900E4F813 /* Icon-Small-50.png in Resources */,
 				FA728D6117BD6F2800C525B5 /* car_dummy.jpg in Resources */,
+				FAACED91180728A900E4F813 /* iTunesArtwork@2x.png in Resources */,
 				FA728D6217BD6F2800C525B5 /* offer_dummy_large.jpg in Resources */,
 				FA728D6317BD6F2800C525B5 /* offer_dummy.jpg in Resources */,
 				FA9E09C017C27AEB008E4F7E /* README.md in Resources */,
@@ -1121,7 +1153,7 @@
 					"\"$(SRCROOT)/CarSideBySide/TestFlightSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1741937F-EF2C-437C-9809-C130E6274EF7";
+				PROVISIONING_PROFILE = "4B956EF8-57C4-4788-81D8-7712B7E3F8B6";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
