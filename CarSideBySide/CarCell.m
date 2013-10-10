@@ -19,7 +19,7 @@
 
 - (void)configureCell
 {
-    title.text = [self.car model];
+    title.text = [self.car modelName];
     subTitle.text = self.car.highlights;
 }
 

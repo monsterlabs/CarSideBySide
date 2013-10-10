@@ -57,6 +57,9 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [UIApplication sharedApplication].networkActivityIndicatorVisible =  NO;
         });
+        NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+        [appDelegate updateRemoteDeviceInfo:userInfo];
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     } else {
         HUD.labelText = [networkReachability currentReachabilityString];
         [HUD hide:YES afterDelay:2];
@@ -72,6 +75,7 @@
     } else {
         [self reloadData];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:@"reloadOffers" object:nil];
 }
 
 - (void)didReceiveMemoryWarning

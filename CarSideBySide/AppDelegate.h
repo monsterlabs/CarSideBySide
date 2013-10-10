@@ -23,4 +23,6 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) CoreDataStack *coreDataStack;
 @property (strong, nonatomic) NetworkReachability  *networkReachability;
+
+- (void)updateRemoteDeviceInfo:(NSDictionary*)userInfo;
 @end

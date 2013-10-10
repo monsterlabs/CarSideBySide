@@ -21,7 +21,7 @@
 
 @implementation SerieListViewController
 
-- (void) reloadData
+- (void)reloadData
 {
     results = [NSMutableArray arrayWithArray:[Serie findAllEnabled]];
     [self.tableView reloadData];
@@ -55,6 +55,9 @@
                         NSLog(@"Image downloader error %@", [error localizedDescription]);
                 }];
             });
+            NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+            [appDelegate updateRemoteDeviceInfo:userInfo];
+            [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
         });
     } else {
         HUD.labelText = [networkReachability currentReachabilityString];
@@ -73,6 +76,9 @@
     else {
         [self reloadData];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:@"reloadComparatives" object:nil];
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -360,7 +360,7 @@
         <!--Car Detail View Controller-->
         <scene sceneID="LPx-Ee-HGJ">
             <objects>
-                <viewController id="0yc-R0-Eeb" customClass="CarDetailViewController" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" id="0yc-R0-Eeb" customClass="CarDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zcG-m1-bAa"/>
                         <viewControllerLayoutGuide type="bottom" id="pkc-cG-fht"/>
@@ -392,8 +392,11 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2o-ry-RzK">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2o-ry-RzK">
+                                <rect key="frame" x="0.0" y="16" width="768" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Title" id="len-K3-L71"/>
                                 </items>
@@ -457,6 +460,7 @@
                             <constraint firstItem="E2o-ry-RzK" firstAttribute="trailing" secondItem="zHh-Xc-9yA" secondAttribute="trailing" id="pOw-5y-36f"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="qId-es-i5A"/>
                     <connections>
@@ -503,7 +507,7 @@
         <!--Serie List View Controller - Series-->
         <scene sceneID="ddo-3N-EIM">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="VZt-bw-jqI" customClass="SerieListViewController" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="currentContext" clearsSelectionOnViewWillAppear="NO" id="VZt-bw-jqI" customClass="SerieListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" id="B9X-Qp-xeT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -545,7 +549,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJf-Tc-73i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="924"/>
+            <point key="canvasLocation" x="909" y="924"/>
         </scene>
         <!--Car List View Controller-->
         <scene sceneID="EL8-sf-SEO">
