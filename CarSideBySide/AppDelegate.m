@@ -16,6 +16,9 @@
 #import "CoreDataSeed.h"
 #import "NetworkReachability.h"
 #import "CarCatalogApiClient.h"
+#import "Car.h"
+#import "Offer.h"
+#import "NSManagedObject+Find.h"
 
 @implementation AppDelegate
 
@@ -79,9 +82,20 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    if (([[Car findAll] count] > 0 ) || ([[Offer findAll] count] > 0)) {
+        [self doPendingNotification];
+    }
 }
 
+- (void)doPendingNotification {
+    if ([UIApplication sharedApplication].applicationIconBadgeNumber > 0)
+    {
+        NSDictionary *userInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+        if (userInfo != nil)
+            [self addMessageFromRemoteNotification:userInfo updateUI:YES];
+    }
+    
+}
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
@@ -149,13 +163,14 @@
 - (void)addMessageFromRemoteNotification:(NSDictionary*)userInfo updateUI:(BOOL)updateUI
 {
     
-	NSString *alertValue = @"The database was updated";
-    NSString *alertMessage = [NSString stringWithFormat:@"%@. Would you like to upgrade this?", alertValue];
+	NSString *alertValue = NSLocalizedString(@"La base de datos fué actualizada", nil);
+    NSString *questionValue = NSLocalizedString(@"¿Quieres descargar los cambios?", nil);
+    NSString *alertMessage = [NSString stringWithFormat:@"%@. %@", alertValue, questionValue];
     
-    __block MBAlertView *alert = [MBAlertView alertWithBody:alertMessage cancelTitle:@"Cancel" cancelBlock:nil];
+    __block MBAlertView *alert = [MBAlertView alertWithBody:alertMessage cancelTitle: NSLocalizedString(@"Cancelar",nil) cancelBlock:nil];
     alert.title = alertValue;
     alert.size = CGSizeMake(380, 280);
-    [alert addButtonWithText:@"OK" type:MBAlertViewItemTypePositive block:^{
+    [alert addButtonWithText: NSLocalizedString(@"Sí", nil) type:MBAlertViewItemTypePositive block:^{
         [alert dismiss];
         if ([[userInfo valueForKey:@"updated_section"] isEqualToString:@"offer"])
             [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadOffers" object:nil];

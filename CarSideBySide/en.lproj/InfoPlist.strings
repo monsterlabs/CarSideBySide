@@ -1,2 +1,4 @@
 /* Localized versions of Info.plist keys */
 
+"The database was updated" = "The database was updated";
+"Would you like to download those changes?" = "Would you like to download those changes?";
