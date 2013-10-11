@@ -6,13 +6,13 @@
 "1Oc-am-lHt.title" = "Seguridad";
 
 /* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "3oA-AH-0G6"; */
-"3oA-AH-0G6.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+"3oA-AH-0G6.text" = "Selecciona una serie y un modelo";
 
 /* Class = "IBUIBarButtonItem"; title = "Lines"; ObjectID = "7n0-nx-yIj"; */
 "7n0-nx-yIj.title" = "Opcionales";
 
 /* Class = "IBUILabel"; text = "Select a serie and a model"; ObjectID = "9so-la-dhO"; */
-"9so-la-dhO.text" = "Selecciona una serie y un modelo";
+"9so-la-dhO.text" = "BMW México";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "CBj-xW-10j"; */
 "CBj-xW-10j.text" = "Título 1";
