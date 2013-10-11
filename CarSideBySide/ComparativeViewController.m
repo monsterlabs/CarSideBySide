@@ -229,9 +229,13 @@
 
     l.text = cellTitle;
     l.font = [UIFont systemFontOfSize:13.0];
-    if (is_highlighted) {
+
+    if (is_highlighted == YES) {
         l.textColor = [UIColor blueColor];
+    } else {
+        l.textColor = [UIColor blackColor];
     }
+    
     l.backgroundColor = [UIColor colorWithWhite:249.0f/255.0f alpha:1.0f];
     l.numberOfLines = 0;
     l.lineBreakMode = NSLineBreakByWordWrapping;
