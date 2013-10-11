@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class Car;
 
-@interface CarDetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, UINavigationControllerDelegate, UINavigationBarDelegate>
+@interface CarDetailViewController : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, UINavigationControllerDelegate, UINavigationBarDelegate, UIBarPositioningDelegate>
 {
     
     IBOutlet UIImageView *carImageView;
@@ -28,6 +28,7 @@
 
 @property (strong, nonatomic) Car *car;
 @property (nonatomic, weak) IBOutlet UINavigationItem *navBarItem;
+@property (nonatomic, weak) IBOutlet UINavigationBar *navBar;
 @property (nonatomic, weak) UIPopoverController *popover;
 
 - (void)selectedCar:(Car *)newCar;

@@ -143,11 +143,11 @@
     BOOL isLandscape = UIDeviceOrientationIsLandscape(self.interfaceOrientation);
     if (isLandscape) {
         [self resizeCarImageView];
-        [highlighsTextView setFrame:CGRectMake(10, 488, 680, 152)];
-        [self.toolbar setFrame:CGRectMake(0, 655, 768, 44)];
+        [highlighsTextView setFrame:CGRectMake(10, 510, 680, 152)];
+        [self.toolbar setFrame:CGRectMake(0, 660, 768, 44)];
     } else {
-        [self.toolbar setFrame:CGRectMake(0, 910, 768, 44)];
-        [highlighsTextView setFrame:CGRectMake(20, 488, 728, 400)];
+        [self.toolbar setFrame:CGRectMake(0, 915, 768, 44)];
+        [highlighsTextView setFrame:CGRectMake(20, 510, 728, 400)];
     }
 }
 
@@ -175,6 +175,7 @@
 {
     self.popover = pc;
     barButtonItem.title = NSLocalizedString(@"Menú", nil);
+    barButtonItem.style = UIBarButtonItemStyleDone;
     [_navBarItem setLeftBarButtonItem:barButtonItem animated:YES];
 }
 
