@@ -32,7 +32,7 @@
     NetworkReachability *networkReachability = [appDelegate networkReachability];
 
     HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    HUD.labelText = [NSString localizedStringWithFormat:@"Loading...", nil];
+    HUD.labelText = [NSString localizedStringWithFormat:@"Cargando...", nil];
     HUD.mode = MBProgressHUDModeIndeterminate;
     if ([networkReachability isReachable])
     {

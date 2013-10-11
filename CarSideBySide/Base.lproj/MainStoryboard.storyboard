@@ -365,15 +365,15 @@
                         <viewControllerLayoutGuide type="top" id="zcG-m1-bAa"/>
                         <viewControllerLayoutGuide type="bottom" id="pkc-cG-fht"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zHh-Xc-9yA">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="zHh-Xc-9yA">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="DefaultCarDetailViewController.png" translatesAutoresizingMaskIntoConstraints="NO" id="hff-R3-4ej">
-                                <rect key="frame" x="20" y="61" width="728" height="364"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="DefaultCarDetailViewController.png" translatesAutoresizingMaskIntoConstraints="NO" id="hff-R3-4ej">
+                                <rect key="frame" x="20" y="46" width="728" height="364"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Select a serie and a model" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9so-la-dhO">
-                                <rect key="frame" x="20" y="433" width="728" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Select a serie and a model" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9so-la-dhO">
+                                <rect key="frame" x="20" y="438" width="728" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="3Zo-fs-Fvu"/>
                                 </constraints>
@@ -381,19 +381,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oA-AH-0G6">
-                                <rect key="frame" x="20" y="488" width="728" height="182"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oA-AH-0G6">
+                                <rect key="frame" x="20" y="490" width="728" height="120"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="182" id="fSL-0L-iP0"/>
+                                    <constraint firstAttribute="height" constant="120" id="fSL-0L-iP0"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2o-ry-RzK">
-                                <rect key="frame" x="0.0" y="16" width="768" height="44"/>
+                            <navigationBar contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="E2o-ry-RzK">
+                                <rect key="frame" x="0.0" y="20" width="768" height="68"/>
                                 <textAttributes key="titleTextAttributes">
                                     <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                                 </textAttributes>
@@ -401,7 +401,7 @@
                                     <navigationItem title="Title" id="len-K3-L71"/>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7P-3H-zTC">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7P-3H-zTC">
                                 <rect key="frame" x="0.0" y="931" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
@@ -447,16 +447,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hff-R3-4ej" firstAttribute="top" secondItem="zHh-Xc-9yA" secondAttribute="top" constant="61" id="4CS-sp-oCP"/>
+                            <constraint firstItem="hff-R3-4ej" firstAttribute="top" secondItem="zHh-Xc-9yA" secondAttribute="top" constant="96" id="4CS-sp-oCP"/>
                             <constraint firstItem="E2o-ry-RzK" firstAttribute="leading" secondItem="zHh-Xc-9yA" secondAttribute="leading" id="6w7-Dk-EeT"/>
-                            <constraint firstItem="E2o-ry-RzK" firstAttribute="top" secondItem="zHh-Xc-9yA" secondAttribute="top" id="7zS-ZE-mkY"/>
-                            <constraint firstItem="3oA-AH-0G6" firstAttribute="top" secondItem="9so-la-dhO" secondAttribute="bottom" constant="8" symbolic="YES" id="DW4-4t-dyp"/>
-                            <constraint firstItem="9so-la-dhO" firstAttribute="top" secondItem="hff-R3-4ej" secondAttribute="bottom" constant="8" symbolic="YES" id="GvQ-5M-3GM"/>
+                            <constraint firstItem="E2o-ry-RzK" firstAttribute="top" secondItem="zHh-Xc-9yA" secondAttribute="top" constant="20" id="7zS-ZE-mkY"/>
+                            <constraint firstItem="3oA-AH-0G6" firstAttribute="top" secondItem="9so-la-dhO" secondAttribute="bottom" constant="5" id="DW4-4t-dyp"/>
+                            <constraint firstItem="9so-la-dhO" firstAttribute="top" secondItem="hff-R3-4ej" secondAttribute="bottom" constant="-2" id="GvQ-5M-3GM"/>
                             <constraint firstAttribute="trailing" secondItem="3oA-AH-0G6" secondAttribute="trailing" constant="20" symbolic="YES" id="KAc-9Y-mXf"/>
                             <constraint firstAttribute="trailing" secondItem="9so-la-dhO" secondAttribute="trailing" constant="20" symbolic="YES" id="LRB-8o-wOR"/>
+                            <constraint firstItem="p7P-3H-zTC" firstAttribute="leading" secondItem="E2o-ry-RzK" secondAttribute="leading" id="PgH-Yd-lL5"/>
+                            <constraint firstItem="p7P-3H-zTC" firstAttribute="trailing" secondItem="E2o-ry-RzK" secondAttribute="trailing" id="UDm-A0-tmf"/>
+                            <constraint firstItem="E2o-ry-RzK" firstAttribute="top" secondItem="zcG-m1-bAa" secondAttribute="bottom" id="Whr-2X-Edh"/>
                             <constraint firstItem="hff-R3-4ej" firstAttribute="leading" secondItem="zHh-Xc-9yA" secondAttribute="leading" constant="20" symbolic="YES" id="XHP-1X-scw"/>
+                            <constraint firstItem="zcG-m1-bAa" firstAttribute="top" secondItem="E2o-ry-RzK" secondAttribute="bottom" constant="-68" id="XHt-za-2hZ"/>
+                            <constraint firstItem="pkc-cG-fht" firstAttribute="top" secondItem="p7P-3H-zTC" secondAttribute="bottom" id="baK-nO-pYT"/>
+                            <constraint firstItem="E2o-ry-RzK" firstAttribute="top" secondItem="zcG-m1-bAa" secondAttribute="bottom" id="dKk-zl-2XV"/>
                             <constraint firstItem="3oA-AH-0G6" firstAttribute="leading" secondItem="zHh-Xc-9yA" secondAttribute="leading" constant="20" symbolic="YES" id="hOp-Gp-Y3a"/>
+                            <constraint firstItem="E2o-ry-RzK" firstAttribute="top" secondItem="zcG-m1-bAa" secondAttribute="bottom" id="jA2-ZN-Vww"/>
                             <constraint firstItem="9so-la-dhO" firstAttribute="leading" secondItem="zHh-Xc-9yA" secondAttribute="leading" constant="20" symbolic="YES" id="jPc-2f-W8E"/>
+                            <constraint firstItem="E2o-ry-RzK" firstAttribute="top" secondItem="zcG-m1-bAa" secondAttribute="bottom" id="mIc-jr-EhQ"/>
                             <constraint firstItem="E2o-ry-RzK" firstAttribute="trailing" secondItem="zHh-Xc-9yA" secondAttribute="trailing" id="pOw-5y-36f"/>
                         </constraints>
                     </view>
@@ -469,6 +477,7 @@
                         <outlet property="highlighsTextView" destination="3oA-AH-0G6" id="GvG-Tm-QZ5"/>
                         <outlet property="linesBarButton" destination="7n0-nx-yIj" id="9n2-B4-s7D"/>
                         <outlet property="modelLabel" destination="9so-la-dhO" id="td0-fG-XaU"/>
+                        <outlet property="navBar" destination="E2o-ry-RzK" id="Bpy-83-vWt"/>
                         <outlet property="navBarItem" destination="len-K3-L71" id="ch5-Pn-S7z"/>
                         <outlet property="priceBarButton" destination="n0D-bm-Q2V" id="Kqu-1h-5rg"/>
                         <outlet property="safetyButton" destination="1Oc-am-lHt" id="aBE-a2-KvV"/>
