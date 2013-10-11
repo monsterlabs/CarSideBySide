@@ -41,7 +41,7 @@
     self.navBarItem.title = self.car.modelName;
     
     highlighsTextView.text = self.car.highlights;
-    
+    highlighsTextView.font = [UIFont systemFontOfSize:14.0f];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *imagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[self.car valueForKey:@"image"]];
     
@@ -106,10 +106,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     if (self.car == nil) {
-        highlighsTextView.text = @"";
+        highlighsTextView.text = @"Selecciona una serie y un modelo...";
+        highlighsTextView.font = [UIFont systemFontOfSize:32.0f];
         [self.toolbar setHidden:YES];
     }
-
     [self resizeItemsForInterfaceOrientation];
     [super viewDidAppear:TRUE];
 }
