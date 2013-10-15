@@ -31,7 +31,11 @@
     if (_car != newCar) {
         _car = newCar;
     }
-    [self configureView];
+    if (_car != nil) {
+        [self configureView];
+    } else {
+        [self resetView];
+    }
     self.prevSegueIdentifier = @"";
 }
 
@@ -198,6 +202,18 @@
         self.prevSegueIdentifier = self.segueIdentifier;
         return YES;
     }
+}
+
+- (void)resetView
+{
+    self.navBarItem.title = @"Tablas comparativas";
+    NSString *dummyImagePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"../CarSideBySide.app/DefaultCarDetailViewController.png"];
+    NSData *data = [NSData dataWithContentsOfFile:dummyImagePath];
+    carImageView.image = [UIImage imageWithData:data];
+    modelLabel.text = @"BMW México";
+    highlighsTextView.text = @"Selecciona una serie y un modelo...";
+    highlighsTextView.font = [UIFont systemFontOfSize:32.0f];
+    [self.toolbar setHidden:YES];
 }
 
 @end

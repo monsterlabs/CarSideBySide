@@ -54,8 +54,17 @@
 
     for (Line *line in [self.serie.lines sortedArrayUsingDescriptors:sortDescriptors])
     {
-        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: line, @"line", [line.cars sortedArrayUsingDescriptors:sortLines], @"cars", nil];
-        [data addObject:dict];
+        if ([line.enabled boolValue] == YES) {
+            NSMutableArray *cars = [NSMutableArray array];
+            for ( Car *car in [line.cars sortedArrayUsingDescriptors:sortLines]) {
+                if ([car.enabled boolValue] == YES) {
+                    [cars addObject: car];
+                }
+            }
+            NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: line, @"line", [cars copy], @"cars", nil];
+            [data addObject:dict];
+                
+        }
     }
     [self.filteredData removeAllObjects];
     [self.tableView reloadData];
