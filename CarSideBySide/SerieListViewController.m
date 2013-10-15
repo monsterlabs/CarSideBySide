@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Serie.h"
 #import "CarListViewController.h"
+#import "CarDetailViewController.h"
 #import "CoreDataSeed.h"
 #import "NetworkReachability.h"
 
@@ -59,6 +60,11 @@
             [appDelegate updateRemoteDeviceInfo:userInfo];
             [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
         });
+        
+        CarDetailViewController *carDetailViewController = [self.splitViewController.viewControllers lastObject];
+        
+        [carDetailViewController selectedCar:nil];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     } else {
         HUD.labelText = [networkReachability currentReachabilityString];
         [HUD hide:YES afterDelay:2];

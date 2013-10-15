@@ -32,6 +32,10 @@
     [request setEntity:entity];
     NSSortDescriptor *sortDescriptors = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
     [request setSortDescriptors: [NSArray arrayWithObject:sortDescriptors]];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"enabled == 1"];
+    [request setPredicate:predicate];
+
     NSError *error;
     NSFetchedResultsController *fetchResults = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:(id)[appDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:@"CarCatalogStream"];
     
