@@ -163,7 +163,7 @@
 - (void)addMessageFromRemoteNotification:(NSDictionary*)userInfo updateUI:(BOOL)updateUI
 {
     
-	NSString *alertValue = NSLocalizedString(@"La base de datos fué actualizada", nil);
+	NSString *alertValue = NSLocalizedString(@"La base de datos fue actualizada", nil);
     NSString *questionValue = NSLocalizedString(@"¿Quieres descargar los cambios?", nil);
     NSString *alertMessage = [NSString stringWithFormat:@"%@. %@", alertValue, questionValue];
     

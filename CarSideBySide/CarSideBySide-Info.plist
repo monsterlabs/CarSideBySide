@@ -20,7 +20,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>mx.monsterlabs.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>mx.bmwapps.catalog</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleLocalizations</key>

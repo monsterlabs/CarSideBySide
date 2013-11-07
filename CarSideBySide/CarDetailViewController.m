@@ -110,7 +110,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     if (self.car == nil) {
-        highlighsTextView.text = @"Selecciona una serie y un modelo...";
+        highlighsTextView.text = @"Selecciona una serie y un modelo.";
         highlighsTextView.font = [UIFont systemFontOfSize:32.0f];
         [self.toolbar setHidden:YES];
     }
@@ -211,7 +211,7 @@
     NSData *data = [NSData dataWithContentsOfFile:dummyImagePath];
     carImageView.image = [UIImage imageWithData:data];
     modelLabel.text = @"BMW México";
-    highlighsTextView.text = @"Selecciona una serie y un modelo...";
+    highlighsTextView.text = @"Selecciona una serie y un modelo.";
     highlighsTextView.font = [UIFont systemFontOfSize:32.0f];
     [self.toolbar setHidden:YES];
 }
